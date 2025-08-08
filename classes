@@ -1,0 +1,2970 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tesr - Toy Stores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Raleway:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary: #FF5722;
+            --secondary: #212529;
+            --accent: #4CAF50;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Raleway', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            font-weight: 700;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            font-family: var(--font-primary);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            font-family: var(--font-primary);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
+        }
+        
+        .navbar {
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-family: var(--font-primary);
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+        
+        .navbar-brand span {
+            color: var(--primary);
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark);
+            font-weight: 600;
+            padding: 0 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover, 
+        .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .navbar-nav .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            left: 20px;
+            bottom: -5px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover:after,
+        .navbar-nav .nav-link.active:after {
+            width: calc(100% - 40px);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-header {
+            position: relative;
+            padding: 150px 0 100px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/classes-header.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .breadcrumb {
+            display: inline-flex;
+            background-color: transparent;
+            padding: 0;
+            margin-bottom: 0;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .breadcrumb-item, 
+        .breadcrumb-item a {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--primary);
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: white;
+        }
+        
+        .class-filter-section {
+            padding: 100px 0 70px;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .filter-button {
+            background-color: white;
+            color: var(--dark);
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            padding: 12px 30px;
+            margin: 5px;
+            border-radius: 50px;
+            font-family: var(--font-primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .filter-button:hover,
+        .filter-button.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.1);
+        }
+        
+        .class-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .class-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .class-image {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+        
+        .class-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .class-card:hover .class-image img {
+            transform: scale(1.1);
+        }
+        
+        .class-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            font-family: var(--font-primary);
+        }
+        
+        .class-content {
+            padding: 30px;
+        }
+        
+        .class-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .class-meta {
+            margin-bottom: 15px;
+        }
+        
+        .class-meta-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .class-meta-icon {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .class-desc {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .class-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .class-trainer {
+            display: flex;
+            align-items: center;
+        }
+        
+        .trainer-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        
+        .trainer-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .trainer-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .schedule-section {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+        }
+        
+        .schedule-tab {
+            margin-bottom: 50px;
+        }
+        
+        .nav-tabs {
+            border: none;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .nav-tabs .nav-item {
+            margin: 0 5px;
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            background-color: white;
+            color: var(--dark);
+            font-weight: 600;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-family: var(--font-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-tabs .nav-link.active,
+        .nav-tabs .nav-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.1);
+        }
+        
+        .schedule-table {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .schedule-table table {
+            width: 100%;
+        }
+        
+        .schedule-table th,
+        .schedule-table td {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .schedule-table th {
+            background-color: var(--primary);
+            color: white;
+            font-family: var(--font-primary);
+            font-weight: 600;
+        }
+        
+        .class-box {
+            background-color: rgba(255, 87, 34, 0.1);
+            padding: 15px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .class-box:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .class-box h6 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .class-box p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+        
+        .trainers-section {
+            padding: 100px 0;
+        }
+        
+        .trainer-card {
+            text-align: center;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .trainer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .trainer-img-large {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .trainer-img-large img {
+            width: 100%;
+            height: auto;
+            transition: all 0.5s ease;
+        }
+        
+        .trainer-card:hover .trainer-img-large img {
+            transform: scale(1.05);
+        }
+        
+        .trainer-social {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 87, 34, 0.9);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+        
+        .trainer-card:hover .trainer-social {
+            bottom: 0;
+            opacity: 1;
+        }
+        
+        .trainer-social a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .trainer-social a:hover {
+            color: var(--dark);
+        }
+        
+        .trainer-content {
+            padding: 25px;
+            background-color: white;
+        }
+        
+        .trainer-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .trainer-content p.trainer-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .trainer-desc {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .trainer-info {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+            text-align: left;
+        }
+        
+        .trainer-info li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .trainer-info-icon {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/cta-bg.jpg') fixed no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 0;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+            left: 0;
+            bottom: 0;
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact-info li {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .footer-contact-icon {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .footer-links a:before {
+            content: '\f285';
+            font-family: "bootstrap-icons";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.7rem;
+            color: var(--primary);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 20px;
+        }
+        
+        .footer-newsletter p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .newsletter-form {
+            position: relative;
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            outline: none;
+            font-family: var(--font-secondary);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .newsletter-form button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            height: calc(100% - 10px);
+            padding: 0 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: var(--font-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+        }
+        
+        .footer-bottom a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .filter-buttons {
+                flex-wrap: wrap;
+            }
+            
+            .filter-button {
+                margin-bottom: 10px;
+            }
+            
+            .class-card {
+                margin-bottom: 30px;
+            }
+            
+            .schedule-table {
+                overflow-x: auto;
+            }
+            
+            .schedule-table table {
+                min-width: 800px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .page-header {
+                padding: 120px 0 80px;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .class-filter-section {
+                padding: 70px 0 40px;
+            }
+            
+            .trainer-card {
+                margin-bottom: 30px;
+            }
+            
+            .nav-tabs .nav-link {
+                padding: 10px 20px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+<meta name="description" content="** `Shop tesr's for educational toys that spark curiosity!  Discover STEM toys, learning games, and fun kids' toys that inspire a love of learning. Free shipping on orders over $50!` (158 characters)"><meta property="og:title" content="tesr - Toy Stores"><meta property="og:description" content="** `Shop tesr's for educational toys that spark curiosity!  Discover STEM toys, learning games, and fun kids' toys that inspire a love of learning. Free shipping on orders over $50!` (158 characters)"><meta property="og:type" content="website">    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Raleway:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary: #FF5722;
+            --secondary: #212529;
+            --accent: #4CAF50;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Raleway', sans-serif;
+        }
+
+
+        :root {
+            --primary: #FF5722;
+            --secondary: #212529;
+            --accent: #4CAF50;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --font-primary: 'Montserrat', sans-serif;
+            --font-secondary: 'Raleway', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-secondary);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            font-weight: 700;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            font-family: var(--font-primary);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            font-family: var(--font-primary);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
+        }
+        
+        .navbar {
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-family: var(--font-primary);
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+        
+        .navbar-brand span {
+            color: var(--primary);
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark);
+            font-weight: 600;
+            padding: 0 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover, 
+        .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .navbar-nav .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            left: 20px;
+            bottom: -5px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover:after,
+        .navbar-nav .nav-link.active:after {
+            width: calc(100% - 40px);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-header {
+            position: relative;
+            padding: 150px 0 100px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/classes-header.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .breadcrumb {
+            display: inline-flex;
+            background-color: transparent;
+            padding: 0;
+            margin-bottom: 0;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .breadcrumb-item, 
+        .breadcrumb-item a {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--primary);
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: white;
+        }
+        
+        .class-filter-section {
+            padding: 100px 0 70px;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .filter-button {
+            background-color: white;
+            color: var(--dark);
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            padding: 12px 30px;
+            margin: 5px;
+            border-radius: 50px;
+            font-family: var(--font-primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .filter-button:hover,
+        .filter-button.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.1);
+        }
+        
+        .class-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .class-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .class-image {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+        
+        .class-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .class-card:hover .class-image img {
+            transform: scale(1.1);
+        }
+        
+        .class-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            font-family: var(--font-primary);
+        }
+        
+        .class-content {
+            padding: 30px;
+        }
+        
+        .class-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .class-meta {
+            margin-bottom: 15px;
+        }
+        
+        .class-meta-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .class-meta-icon {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .class-desc {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .class-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .class-trainer {
+            display: flex;
+            align-items: center;
+        }
+        
+        .trainer-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        
+        .trainer-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .trainer-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .schedule-section {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+        }
+        
+        .schedule-tab {
+            margin-bottom: 50px;
+        }
+        
+        .nav-tabs {
+            border: none;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .nav-tabs .nav-item {
+            margin: 0 5px;
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            background-color: white;
+            color: var(--dark);
+            font-weight: 600;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-family: var(--font-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-tabs .nav-link.active,
+        .nav-tabs .nav-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.1);
+        }
+        
+        .schedule-table {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .schedule-table table {
+            width: 100%;
+        }
+        
+        .schedule-table th,
+        .schedule-table td {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .schedule-table th {
+            background-color: var(--primary);
+            color: white;
+            font-family: var(--font-primary);
+            font-weight: 600;
+        }
+        
+        .class-box {
+            background-color: rgba(255, 87, 34, 0.1);
+            padding: 15px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .class-box:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .class-box h6 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .class-box p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+        
+        .trainers-section {
+            padding: 100px 0;
+        }
+        
+        .trainer-card {
+            text-align: center;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .trainer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .trainer-img-large {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .trainer-img-large img {
+            width: 100%;
+            height: auto;
+            transition: all 0.5s ease;
+        }
+        
+        .trainer-card:hover .trainer-img-large img {
+            transform: scale(1.05);
+        }
+        
+        .trainer-social {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 87, 34, 0.9);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+        
+        .trainer-card:hover .trainer-social {
+            bottom: 0;
+            opacity: 1;
+        }
+        
+        .trainer-social a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .trainer-social a:hover {
+            color: var(--dark);
+        }
+        
+        .trainer-content {
+            padding: 25px;
+            background-color: white;
+        }
+        
+        .trainer-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .trainer-content p.trainer-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .trainer-desc {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .trainer-info {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+            text-align: left;
+        }
+        
+        .trainer-info li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .trainer-info-icon {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/cta-bg.jpg') fixed no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 0;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+            left: 0;
+            bottom: 0;
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact-info li {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .footer-contact-icon {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .footer-links a:before {
+            content: '\f285';
+            font-family: "bootstrap-icons";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 0.7rem;
+            color: var(--primary);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 20px;
+        }
+        
+        .footer-newsletter p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .newsletter-form {
+            position: relative;
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            outline: none;
+            font-family: var(--font-secondary);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .newsletter-form button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            height: calc(100% - 10px);
+            padding: 0 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: var(--font-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+        }
+        
+        .footer-bottom a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .filter-buttons {
+                flex-wrap: wrap;
+            }
+            
+            .filter-button {
+                margin-bottom: 10px;
+            }
+            
+            .class-card {
+                margin-bottom: 30px;
+            }
+            
+            .schedule-table {
+                overflow-x: auto;
+            }
+            
+            .schedule-table table {
+                min-width: 800px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .page-header {
+                padding: 120px 0 80px;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .class-filter-section {
+                padding: 70px 0 40px;
+            }
+            
+            .trainer-card {
+                margin-bottom: 30px;
+            }
+            
+            .nav-tabs .nav-link {
+                padding: 10px 20px;
+                margin-bottom: 10px;
+            }
+        }
+    
+    </style>
+<style>
+  /* Industry-specific color scheme for General Business */
+  :root {
+    /* Override ALL color variables with industry-specific colors */
+    --primary-color: #2563eb !important;
+    --primary-light: #1d4ed8 !important;
+    --primary-dark: #1e40af !important;
+    
+    --secondary-color: #64748b !important;
+    --secondary-light: #475569 !important;
+    --secondary-dark: #334155 !important;
+    
+    --accent-color: #059669 !important;
+    --accent-light: #047857 !important;
+    --accent-dark: #065f46 !important;
+    
+    /* Override common template color variables */
+    --primary: #2563eb !important;
+    --secondary: #64748b !important;
+    --accent: #059669 !important;
+    --dark: #1A1A1A !important;
+    --light: #FFFFFF !important;
+    --gray: #6C6C6C !important;
+    
+    /* Override gradient */
+    --gradient: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    
+    /* Common color mappings */
+    --brand-primary: #2563eb !important;
+    --brand-secondary: #64748b !important;
+    --color-primary: #2563eb !important;
+    --color-secondary: #64748b !important;
+    --theme-primary: #2563eb !important;
+    --theme-secondary: #64748b !important;
+  }
+  
+  /* Apply colors to common Bootstrap and template patterns */
+  .btn-primary,
+  .primary-button,
+  button.primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+  }
+  
+  .btn-primary:hover,
+  .primary-button:hover,
+  button.primary:hover {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+  }
+  
+  .text-primary {
+    color: var(--primary-color) !important;
+  }
+  
+  .bg-primary {
+    background-color: var(--primary-color) !important;
+  }
+  
+  .border-primary {
+    border-color: var(--primary-color) !important;
+  }
+  
+  /* Links */
+  a {
+    color: var(--primary-color);
+  }
+  
+  a:hover {
+    color: var(--primary-dark);
+  }
+  
+  /* Hero sections */
+  .hero,
+  .hero-section,
+  .jumbotron {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+  }
+  
+  /* Navigation */
+  .navbar-brand {
+    color: var(--primary-color) !important;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--primary-color) !important;
+  }
+  
+  /* Forms */
+  .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color), 0.25);
+  }
+  
+  /* Cards and sections */
+  .card-header {
+    background-color: var(--primary-light);
+    color: white;
+  }
+  
+  /* Industry-specific adjustments */
+  
+  
+  
+  
+  
+  
+  /* Aggressive overrides for templates with hardcoded colors */
+  /* Target specific color values that templates might use */
+  [style*="#FF6B35"] { color: #2563eb !important; }
+  [style*="#F7931E"] { color: #64748b !important; }
+  [style*="#FFD23F"] { color: #059669 !important; }
+  
+  /* Override inline styles and hardcoded backgrounds */
+  .hero[style*="background"] {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+  }
+  
+  /* Force color changes on elements that might have inline styles */
+  .text-primary,
+  [class*="text-primary"],
+  [class*="color-primary"] {
+    color: #2563eb !important;
+  }
+  
+  .bg-primary,
+  [class*="bg-primary"],
+  [class*="background-primary"] {
+    background-color: #2563eb !important;
+  }
+  
+  /* Override gradient classes */
+  .text-gradient,
+  [class*="gradient"] {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+  
+  /* Ensure buttons use new colors */
+  button,
+  .btn,
+  [type="button"],
+  [type="submit"] {
+    transition: all 0.3s ease;
+  }
+  
+  button:not(.btn-secondary):not(.btn-light):not(.btn-dark),
+  .btn:not(.btn-secondary):not(.btn-light):not(.btn-dark) {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+  }
+  
+  button:not(.btn-secondary):not(.btn-light):not(.btn-dark):hover,
+  .btn:not(.btn-secondary):not(.btn-light):not(.btn-dark):hover {
+    background-color: #1e40af !important;
+    border-color: #1e40af !important;
+  }
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">tesr</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="classes.html">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="trainers.html">Trainers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary ms-lg-4">Join Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Unleash Your Child's Imagination</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Classes</li>
+                </ol>
+            </nav>
+        </div>
+    <p class="content-paragraph page-header-paragraph">Discover a curated collection of toys that inspire creativity, learning, and endless fun.</p></section>
+
+    <!-- Class Filter Section -->
+    <section class="class-filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-button active" data-filter="all" type="button" onclick="handleButtonClick(this)">All Classes</button>
+                <button class="filter-button" data-filter="cardio" type="button" onclick="handleButtonClick(this)">Cardio</button>
+                <button class="filter-button" data-filter="strength" type="button" onclick="handleButtonClick(this)">Strength</button>
+                <button class="filter-button" data-filter="yoga" type="button" onclick="handleButtonClick(this)">Yoga &amp; Pilates</button>
+                <button class="filter-button" data-filter="hiit" type="button" onclick="handleButtonClick(this)">HIIT</button>
+                <button class="filter-button" data-filter="specialized" type="button" onclick="handleButtonClick(this)">Specialized</button>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 class-item cardio">
+                    <div class="class-card">
+                        <div class="class-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Spinning Class">
+                            <div class="class-badge">Cardio</div>
+                        </div>
+                        <div class="class-content">
+                            <h3>Unleash Your Child's Imagination</h3>
+                            <div class="class-meta">
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="class-meta-text">45 Minutes</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-lightning-charge"></i>
+                                    </div>
+                                    <div class="class-meta-text">High Intensity</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="class-meta-text">20 People Max</div>
+                                </div>
+                            </div>
+                            <div class="class-desc">
+                                A high-energy indoor cycling class set to motivating music. Improve cardiovascular fitness and burn calories with interval training and simulated hill climbs.
+                            </div>
+                            <div class="class-bottom">
+                                <div class="class-trainer">
+                                    <div class="trainer-img">
+                                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                                    </div>
+                                    <div class="trainer-name">David Martinez</div>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 class-item strength">
+                    <div class="class-card">
+                        <div class="class-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Body Pump Class">
+                            <div class="class-badge">Strength</div>
+                        </div>
+                        <div class="class-content">
+                            <h3>Toy Categories</h3>
+                            <div class="class-meta">
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="class-meta-text">60 Minutes</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-lightning-charge"></i>
+                                    </div>
+                                    <div class="class-meta-text">Moderate Intensity</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="class-meta-text">15 People Max</div>
+                                </div>
+                            </div>
+                            <div class="class-desc">
+                                A barbell workout designed to strengthen your entire body. This weightlifting class targets all major muscle groups using light to moderate weights with high repetitions.
+                            </div>
+                            <div class="class-bottom">
+                                <div class="class-trainer">
+                                    <div class="trainer-img">
+                                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                                    </div>
+                                    <div class="trainer-name">Michael Johnson</div>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 class-item yoga">
+                    <div class="class-card">
+                        <div class="class-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Yoga Class">
+                            <div class="class-badge">Yoga</div>
+                        </div>
+                        <div class="class-content">
+                            <h3>Educational Toys</h3>
+                            <div class="class-meta">
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="class-meta-text">75 Minutes</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-lightning-charge"></i>
+                                    </div>
+                                    <div class="class-meta-text">Low to Moderate Intensity</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="class-meta-text">20 People Max</div>
+                                </div>
+                            </div>
+                            <div class="class-desc">
+                                A dynamic yoga practice that synchronizes movement with breath. This flowing style of yoga builds strength, flexibility, and mindfulness.
+                            </div>
+                            <div class="class-bottom">
+                                <div class="class-trainer">
+                                    <div class="trainer-img">
+                                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                                    </div>
+                                    <div class="trainer-name">Sarah Thompson</div>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 class-item hiit">
+                    <div class="class-card">
+                        <div class="class-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="HIIT Class">
+                            <div class="class-badge">HIIT</div>
+                        </div>
+                        <div class="class-content">
+                            <h3>Action Figures</h3>
+                            <div class="class-meta">
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="class-meta-text">30 Minutes</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-lightning-charge"></i>
+                                    </div>
+                                    <div class="class-meta-text">High Intensity</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="class-meta-text">15 People Max</div>
+                                </div>
+                            </div>
+                            <div class="class-desc">
+                                A full-body workout featuring quick, intense bursts of exercise followed by short recovery periods. Effectively burn fat and improve cardiovascular health in minimal time.
+                            </div>
+                            <div class="class-bottom">
+                                <div class="class-trainer">
+                                    <div class="trainer-img">
+                                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                                    </div>
+                                    <div class="trainer-name">David Martinez</div>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 class-item yoga">
+                    <div class="class-card">
+                        <div class="class-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Pilates Class">
+                            <div class="class-badge">Pilates</div>
+                        </div>
+                        <div class="class-content">
+                            <h3>Dolls &amp; Plush</h3>
+                            <div class="class-meta">
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="class-meta-text">60 Minutes</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-lightning-charge"></i>
+                                    </div>
+                                    <div class="class-meta-text">Low to Moderate Intensity</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="class-meta-text">15 People Max</div>
+                                </div>
+                            </div>
+                            <div class="class-desc">
+                                Focus on developing core strength, improving posture, and enhancing flexibility through controlled movements. This class emphasizes precise form and mind-body connection.
+                            </div>
+                            <div class="class-bottom">
+                                <div class="class-trainer">
+                                    <div class="trainer-img">
+                                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                                    </div>
+                                    <div class="trainer-name">Emily Wilson</div>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 class-item cardio">
+                    <div class="class-card">
+                        <div class="class-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Zumba Class">
+                            <div class="class-badge">Cardio</div>
+                        </div>
+                        <div class="class-content">
+                            <h3>Games &amp; Puzzles</h3>
+                            <div class="class-meta">
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="class-meta-text">60 Minutes</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-lightning-charge"></i>
+                                    </div>
+                                    <div class="class-meta-text">Moderate Intensity</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="class-meta-text">25 People Max</div>
+                                </div>
+                            </div>
+                            <div class="class-desc">
+                                A dance fitness party featuring Latin and international music. Burn calories while having fun with easy-to-follow dance moves in this energetic, mood-boosting class.
+                            </div>
+                            <div class="class-bottom">
+                                <div class="class-trainer">
+                                    <div class="trainer-img">
+                                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                                    </div>
+                                    <div class="trainer-name">Emily Wilson</div>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 class-item strength">
+                    <div class="class-card">
+                        <div class="class-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Functional Training Class">
+                            <div class="class-badge">Strength</div>
+                        </div>
+                        <div class="class-content">
+                            <h3>Featured Toys</h3>
+                            <div class="class-meta">
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="class-meta-text">45 Minutes</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-lightning-charge"></i>
+                                    </div>
+                                    <div class="class-meta-text">Moderate to High Intensity</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="class-meta-text">12 People Max</div>
+                                </div>
+                            </div>
+                            <div class="class-desc">
+                                Train your body for real-life movements and activities with this practical approach to fitness. Improve coordination, strength, and mobility using various equipment and bodyweight exercises.
+                            </div>
+                            <div class="class-bottom">
+                                <div class="class-trainer">
+                                    <div class="trainer-img">
+                                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                                    </div>
+                                    <div class="trainer-name">Michael Johnson</div>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 class-item specialized">
+                    <div class="class-card">
+                        <div class="class-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Boxing Class">
+                            <div class="class-badge">Specialized</div>
+                        </div>
+                        <div class="class-content">
+                            <h3>Awesome Action Figure</h3>
+                            <div class="class-meta">
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="class-meta-text">60 Minutes</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-lightning-charge"></i>
+                                    </div>
+                                    <div class="class-meta-text">High Intensity</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="class-meta-text">15 People Max</div>
+                                </div>
+                            </div>
+                            <div class="class-desc">
+                                Learn boxing techniques while getting a full-body workout. Improve cardiovascular fitness, strength, and coordination with combinations, pad work, and conditioning exercises.
+                            </div>
+                            <div class="class-bottom">
+                                <div class="class-trainer">
+                                    <div class="trainer-img">
+                                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                                    </div>
+                                    <div class="trainer-name">David Martinez</div>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 class-item hiit">
+                    <div class="class-card">
+                        <div class="class-image">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Circuit Training Class">
+                            <div class="class-badge">HIIT</div>
+                        </div>
+                        <div class="class-content">
+                            <h3>Cuddly Plush Toy</h3>
+                            <div class="class-meta">
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div class="class-meta-text">45 Minutes</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-lightning-charge"></i>
+                                    </div>
+                                    <div class="class-meta-text">High Intensity</div>
+                                </div>
+                                <div class="class-meta-item">
+                                    <div class="class-meta-icon">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="class-meta-text">20 People Max</div>
+                                </div>
+                            </div>
+                            <div class="class-desc">
+                                Move through a series of exercise stations targeting different muscle groups with minimal rest between stations. This efficient workout builds strength and cardio endurance simultaneously.
+                            </div>
+                            <div class="class-bottom">
+                                <div class="class-trainer">
+                                    <div class="trainer-img">
+                                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                                    </div>
+                                    <div class="trainer-name">Michael Johnson</div>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-primary btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <p class="content-paragraph class-filter-section-paragraph">This action figure is sure to provide hours of fun.</p></section>
+
+    <!-- Schedule Section -->
+    <section class="schedule-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Unleash Your Child's Imagination</h2>
+                <p>Discover a curated collection of toys that inspire creativity, learning, and endless fun.</p>
+            </div>
+            
+            <div class="schedule-tab">
+                <ul class="nav nav-tabs" id="scheduleTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="monday-tab" data-bs-toggle="tab" data-bs-target="#monday" type="button" role="tab" aria-controls="monday" aria-selected="true">Monday</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tuesday-tab" data-bs-toggle="tab" data-bs-target="#tuesday" type="button" role="tab" aria-controls="tuesday" aria-selected="false">Tuesday</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="wednesday-tab" data-bs-toggle="tab" data-bs-target="#wednesday" type="button" role="tab" aria-controls="wednesday" aria-selected="false">Wednesday</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="thursday-tab" data-bs-toggle="tab" data-bs-target="#thursday" type="button" role="tab" aria-controls="thursday" aria-selected="false">Thursday</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="friday-tab" data-bs-toggle="tab" data-bs-target="#friday" type="button" role="tab" aria-controls="friday" aria-selected="false">Friday</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="weekend-tab" data-bs-toggle="tab" data-bs-target="#weekend" type="button" role="tab" aria-controls="weekend" aria-selected="false">Weekend</button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="scheduleTabContent">
+                    <div class="tab-pane fade show active" id="monday" role="tabpanel" aria-labelledby="monday-tab">
+                        <div class="schedule-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th width="15%">Time</th>
+                                        <th width="28%">Studio 1</th>
+                                        <th width="28%">Studio 2</th>
+                                        <th width="28%">Studio 3</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>06:00 - 07:00</td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Toy Categories</h6>
+                                                <p>This action figure is sure to provide hours of fun.</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Educational Toys</h6>
+                                                <p>A soft and huggable companion for your little one.</p>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>08:00 - 09:00</td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Action Figures</h6>
+                                                <p>At tesr, we believe in the power of play. We carefully select toys that encourage creativity, learning, and social development. beasy's commitment to automotive excellence is to provide parents with high-quality, safe, and engaging toys that will spark joy in their children's lives.</p>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Dolls &amp; Plush</h6>
+                                                <p>We are committed to providing excellent customer service and a seamless online shopping experience.  We believe in fostering a community of happy customers who trust us to deliver the best toys for their children.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10:00 - 11:00</td>
+                                        <td></td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Games &amp; Puzzles</h6>
+                                                <p>"tesr has the best selection of educational toys! My son loves his new science kit."</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Featured Toys</h6>
+                                                <p>- Sarah M.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>12:00 - 13:00</td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Awesome Action Figure</h6>
+                                                <p>"I was so impressed with the quality of the toys and the fast shipping. I'll definitely be ordering again!"</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Cuddly Plush Toy</h6>
+                                                <p>- John B.</p>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>17:00 - 18:00</td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>About tesr</h6>
+                                                <p>© 2024 tesr. All rights reserved.</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>What Parents Are Saying</h6>
+                                                <p>Discover a curated collection of toys that inspire creativity, learning, and endless fun.</p>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>18:30 - 19:30</td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Contact Us</h6>
+                                                <p>This action figure is sure to provide hours of fun.</p>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Unleash Your Child's Imagination</h6>
+                                                <p>A soft and huggable companion for your little one.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>19:00 - 20:00</td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Toy Categories</h6>
+                                                <p>At tesr, we believe in the power of play. We carefully select toys that encourage creativity, learning, and social development. beasy's commitment to automotive excellence is to provide parents with high-quality, safe, and engaging toys that will spark joy in their children's lives.</p>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Educational Toys</h6>
+                                                <p>We are committed to providing excellent customer service and a seamless online shopping experience.  We believe in fostering a community of happy customers who trust us to deliver the best toys for their children.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="tuesday" role="tabpanel" aria-labelledby="tuesday-tab">
+                        <div class="schedule-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th width="15%">Time</th>
+                                        <th width="28%">Studio 1</th>
+                                        <th width="28%">Studio 2</th>
+                                        <th width="28%">Studio 3</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>06:00 - 07:00</td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Action Figures</h6>
+                                                <p>"tesr has the best selection of educational toys! My son loves his new science kit."</p>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Dolls &amp; Plush</h6>
+                                                <p>- Sarah M.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>08:00 - 09:00</td>
+                                        <td></td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Games &amp; Puzzles</h6>
+                                                <p>"I was so impressed with the quality of the toys and the fast shipping. I'll definitely be ordering again!"</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Featured Toys</h6>
+                                                <p>- John B.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10:00 - 11:00</td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Awesome Action Figure</h6>
+                                                <p>© 2024 tesr. All rights reserved.</p>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Cuddly Plush Toy</h6>
+                                                <p>Discover a curated collection of toys that inspire creativity, learning, and endless fun.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>12:00 - 13:00</td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>About tesr</h6>
+                                                <p>This action figure is sure to provide hours of fun.</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>What Parents Are Saying</h6>
+                                                <p>A soft and huggable companion for your little one.</p>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>17:00 - 18:00</td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Contact Us</h6>
+                                                <p>At tesr, we believe in the power of play. We carefully select toys that encourage creativity, learning, and social development. beasy's commitment to automotive excellence is to provide parents with high-quality, safe, and engaging toys that will spark joy in their children's lives.</p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Unleash Your Child's Imagination</h6>
+                                                <p>We are committed to providing excellent customer service and a seamless online shopping experience.  We believe in fostering a community of happy customers who trust us to deliver the best toys for their children.</p>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>19:00 - 20:00</td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Toy Categories</h6>
+                                                <p>"tesr has the best selection of educational toys! My son loves his new science kit."</p>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <div class="class-box">
+                                                <h6>Educational Toys</h6>
+                                                <p>- Sarah M.</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="wednesday" role="tabpanel" aria-labelledby="wednesday-tab">
+                        <!-- Similar schedule content for Wednesday -->
+                        <div class="text-center py-5">
+                            <a href="contact.html" class="btn btn-primary">Book a Class</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="thursday" role="tabpanel" aria-labelledby="thursday-tab">
+                        <!-- Similar schedule content for Thursday -->
+                        <div class="text-center py-5">
+                            <a href="contact.html" class="btn btn-primary">Book a Class</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="friday" role="tabpanel" aria-labelledby="friday-tab">
+                        <!-- Similar schedule content for Friday -->
+                        <div class="text-center py-5">
+                            <a href="contact.html" class="btn btn-primary">Book a Class</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="weekend" role="tabpanel" aria-labelledby="weekend-tab">
+                        <!-- Similar schedule content for Weekend -->
+                        <div class="text-center py-5">
+                            <a href="contact.html" class="btn btn-primary">Book a Class</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section class="trainers-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Unleash Your Child's Imagination</h2>
+                <p>Discover a curated collection of toys that inspire creativity, learning, and endless fun.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="trainer-card">
+                        <div class="trainer-img-large">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                            <div class="trainer-social">
+                                <a href="javascript:void(0)"><i class="bi bi-facebook"></i></a>
+                                <a href="javascript:void(0)"><i class="bi bi-instagram"></i></a>
+                                <a href="javascript:void(0)"><i class="bi bi-twitter"></i></a>
+                                <a href="javascript:void(0)"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="trainer-content">
+                            <h4>Toy Categories</h4>
+                            <p class="trainer-role">This action figure is sure to provide hours of fun.</p>
+                            <ul class="trainer-info">
+                                <li>
+                                    <span class="trainer-info-icon"><i class="bi bi-award"></i></span>
+                                    <span>NASM Certified</span>
+                                </li>
+                                <li>
+                                    <span class="trainer-info-icon"><i class="bi bi-check-circle"></i></span>
+                                    <span>10+ Years Experience</span>
+                                </li>
+                            </ul>
+                            <a href="trainers.html" class="btn btn-outline-primary btn-sm w-100">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="trainer-card">
+                        <div class="trainer-img-large">
+                            <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                            <div class="trainer-social">
+                                <a href="javascript:void(0)"><i class="bi bi-facebook"></i></a>
+                                <a href="javascript:void(0)"><i class="bi bi-instagram"></i></a>
+                                <a href="javascript:void(0)"><i class="bi bi-twitter"></i></a>
+                                <a href="javascript:void(0)"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="trainer-content">
+                            <h4>Educational Toys</h4>
+                            <p class="trainer-role">A soft and huggable companion for your little one.</p>
+                            <ul class="trainer-info">
+                                <li>
+                                    <span class="trainer-info-icon"><i class="bi bi-award"></i></span>
+                                    <span>RYT 500 Certified</span>
+                                </li>
+                                <li>
+                                    <span class="trainer-info-icon"><i class="bi bi-check-circle"></i></span>
+                                    <span>8+ Years Experience</span>
+                                </li>
+                            </ul>
+                            <a href="trainers.html" class="btn btn-outline-primary btn-sm w-100">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="trainer-card">
+                        <div class="trainer-img-large">
+                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                            <div class="trainer-social">
+                                <a href="javascript:void(0)"><i class="bi bi-facebook"></i></a>
+                                <a href="javascript:void(0)"><i class="bi bi-instagram"></i></a>
+                                <a href="javascript:void(0)"><i class="bi bi-twitter"></i></a>
+                                <a href="javascript:void(0)"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="trainer-content">
+                            <h4>Action Figures</h4>
+                            <p class="trainer-role">At tesr, we believe in the power of play. We carefully select toys that encourage creativity, learning, and social development. beasy's commitment to automotive excellence is to provide parents with high-quality, safe, and engaging toys that will spark joy in their children's lives.</p>
+                            <ul class="trainer-info">
+                                <li>
+                                    <span class="trainer-info-icon"><i class="bi bi-award"></i></span>
+                                    <span>ACE Certified</span>
+                                </li>
+                                <li>
+                                    <span class="trainer-info-icon"><i class="bi bi-check-circle"></i></span>
+                                    <span>7+ Years Experience</span>
+                                </li>
+                            </ul>
+                            <a href="trainers.html" class="btn btn-outline-primary btn-sm w-100">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="trainer-card">
+                        <div class="trainer-img-large">
+                            <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Trainer">
+                            <div class="trainer-social">
+                                <a href="javascript:void(0)"><i class="bi bi-facebook"></i></a>
+                                <a href="javascript:void(0)"><i class="bi bi-instagram"></i></a>
+                                <a href="javascript:void(0)"><i class="bi bi-twitter"></i></a>
+                                <a href="javascript:void(0)"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="trainer-content">
+                            <h4>Dolls &amp; Plush</h4>
+                            <p class="trainer-role">We are committed to providing excellent customer service and a seamless online shopping experience.  We believe in fostering a community of happy customers who trust us to deliver the best toys for their children.</p>
+                            <ul class="trainer-info">
+                                <li>
+                                    <span class="trainer-info-icon"><i class="bi bi-award"></i></span>
+                                    <span>BASI Pilates Certified</span>
+                                </li>
+                                <li>
+                                    <span class="trainer-info-icon"><i class="bi bi-check-circle"></i></span>
+                                    <span>5+ Years Experience</span>
+                                </li>
+                            </ul>
+                            <a href="trainers.html" class="btn btn-outline-primary btn-sm w-100">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="trainers.html" class="btn btn-primary">Meet All Trainers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Unleash Your Child's Imagination</h2>
+                <p>Discover a curated collection of toys that inspire creativity, learning, and endless fun.</p>
+                <a href="contact.html" class="btn btn-primary me-3">Book a Free Class</a>
+                <a href="pricing.html" class="btn btn-outline-primary">View Membership Plans</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <div class="footer-widget footer-about">
+                        <h4 class="footer-title">About EnergyFit</h4>
+                        <p>EnergyFit is a modern fitness studio dedicated to helping people achieve their health and fitness goals through expert guidance, diverse workout options, and a supportive community.</p>
+                        <div class="footer-social">
+                            <a href="javascript:void(0)"><i class="bi bi-facebook"></i></a>
+                            <a href="javascript:void(0)"><i class="bi bi-instagram"></i></a>
+                            <a href="javascript:void(0)"><i class="bi bi-twitter"></i></a>
+                            <a href="javascript:void(0)"><i class="bi bi-linkedin"></i></a>
+                            <a href="javascript:void(0)"><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <div class="footer-widget">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="classes.html">Classes</a></li>
+                            <li><a href="trainers.html">Trainers</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="footer-widget">
+                        <h4 class="footer-title">Contact Info</h4>
+                        <ul class="footer-contact-info">
+                            <li>
+                                <div class="footer-contact-icon">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <div class="footer-contact-text">
+                                    123 Fitness Street, New York, NY 10001
+                                </div>
+                            </li>
+                            <li>
+                                <div class="footer-contact-icon">
+                                    <i class="bi bi-telephone"></i>
+                                </div>
+                                <div class="footer-contact-text">
+                                    (123) 456-7890
+                                </div>
+                            </li>
+                            <li>
+                                <div class="footer-contact-icon">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="footer-contact-text">
+                                    info@energyfit.com
+                                </div>
+                            </li>
+                            <li>
+                                <div class="footer-contact-icon">
+                                    <i class="bi bi-clock"></i>
+                                </div>
+                                <div class="footer-contact-text">
+                                    Mon-Fri: 6am - 10pm<br>
+                                    Sat-Sun: 8am - 8pm
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="footer-widget footer-newsletter">
+                        <h4 class="footer-title">Newsletter</h4>
+                        <p>Subscribe to our newsletter to get updates on classes, events, and fitness tips.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email Address" required="">
+                            <button type="submit" onclick="validateForm(this.form)">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2023 EnergyFit. All Rights Reserved. Designed by <a href="javascript:void(0)">TemplateCreator</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Classes Filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const classItems = document.querySelectorAll('.class-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Show/hide class items based on filter
+                    classItems.forEach(item => {
+                        if (filterValue === 'all') {
+                            item.style.display = 'block';
+                        } else {
+                            if (item.classList.contains(filterValue)) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+<script>
+        // Mobile Menu Toggle Function
+        function toggleMobileMenu() {
+          const navbar = document.querySelector('nav, .navbar, .navigation, header');
+          const mobileMenu = document.querySelector('.navbar-collapse, .mobile-menu, .menu-items, .nav-menu');
+          const toggler = document.querySelector('.navbar-toggler, .menu-toggle, .mobile-menu-button');
+          
+          if (!mobileMenu) return;
+          
+          // Toggle the 'show' or 'active' class
+          mobileMenu.classList.toggle('show');
+          mobileMenu.classList.toggle('active');
+          
+          // Update aria-expanded attribute
+          const isExpanded = mobileMenu.classList.contains('show') || mobileMenu.classList.contains('active');
+          if (toggler) {
+            toggler.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+          }
+          
+          // Close menu when clicking outside
+          if (isExpanded) {
+            document.addEventListener('click', function closeMenu(e) {
+              if (!navbar.contains(e.target)) {
+                mobileMenu.classList.remove('show');
+                mobileMenu.classList.remove('active');
+                if (toggler) {
+                  toggler.setAttribute('aria-expanded', 'false');
+                }
+                document.removeEventListener('click', closeMenu);
+              }
+            });
+          }
+        }
+        
+        // Close mobile menu on window resize (for desktop view)
+        window.addEventListener('resize', function() {
+          if (window.innerWidth > 992) { // Bootstrap's lg breakpoint
+            const mobileMenu = document.querySelector('.navbar-collapse, .mobile-menu, .menu-items, .nav-menu');
+            const toggler = document.querySelector('.navbar-toggler, .menu-toggle, .mobile-menu-button');
+            
+            if (mobileMenu) {
+              mobileMenu.classList.remove('show');
+              mobileMenu.classList.remove('active');
+            }
+            
+            if (toggler) {
+              toggler.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+      </script><script>
+      // Form Validation
+      function validateForm(form) {
+        if (!form) return true;
+        
+        let isValid = true;
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        
+        // Remove any existing error messages
+        const existingErrors = form.querySelectorAll('.form-error');
+        existingErrors.forEach(error => error.remove());
+        
+        // Check required fields
+        const requiredFields = form.querySelectorAll('[required]');
+        requiredFields.forEach(field => {
+          field.classList.remove('is-invalid');
+          
+          if (!field.value.trim()) {
+            isValid = false;
+            field.classList.add('is-invalid');
+            
+            // Add error message
+            const errorMsg = document.createElement('div');
+            errorMsg.className = 'form-error text-danger mt-1';
+            errorMsg.textContent = 'This field is required';
+            field.parentNode.appendChild(errorMsg);
+          }
+        });
+        
+        // Check email fields
+        const emailFields = form.querySelectorAll('input[type="email"], input[name*="email"]');
+        emailFields.forEach(field => {
+          if (field.value.trim() && !emailRegex.test(field.value.trim())) {
+            isValid = false;
+            field.classList.add('is-invalid');
+            
+            // Add error message
+            const errorMsg = document.createElement('div');
+            errorMsg.className = 'form-error text-danger mt-1';
+            errorMsg.textContent = 'Please enter a valid email address';
+            field.parentNode.appendChild(errorMsg);
+          }
+        });
+        
+        return isValid;
+      }
+      
+      // Smooth Scroll
+      document.addEventListener('DOMContentLoaded', function() {
+        const scrollLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+        
+        scrollLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+              // Close mobile menu if open
+              const mobileMenu = document.querySelector('.navbar-collapse, .mobile-menu, .menu-items, .nav-menu');
+              if (mobileMenu && (mobileMenu.classList.contains('show') || mobileMenu.classList.contains('active'))) {
+                mobileMenu.classList.remove('show');
+                mobileMenu.classList.remove('active');
+                
+                const toggler = document.querySelector('.navbar-toggler, .menu-toggle, .mobile-menu-button');
+                if (toggler) {
+                  toggler.setAttribute('aria-expanded', 'false');
+                }
+              }
+              
+              // Scroll to target
+              window.scrollTo({
+                top: targetElement.offsetTop - 80, // Offset for fixed header
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+      });
+      
+      // Lazy Load Images
+      document.addEventListener('DOMContentLoaded', function() {
+        // Check if browser supports native lazy loading
+        if ('loading' in HTMLImageElement.prototype) {
+          // Add loading="lazy" to all images that don't have it
+          const images = document.querySelectorAll('img:not([loading])');
+          images.forEach(img => {
+            img.setAttribute('loading', 'lazy');
+          });
+        } else {
+          // Fallback for browsers that don't support native lazy loading
+          const lazyLoadImages = function() {
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            const scrollTop = window.pageYOffset;
+            
+            lazyImages.forEach(img => {
+              if (img.offsetTop < window.innerHeight + scrollTop) {
+                img.src = img.getAttribute('data-src');
+                img.removeAttribute('data-src');
+              }
+            });
+            
+            // If all images have been loaded, remove the event listeners
+            if (lazyImages.length === 0) {
+              document.removeEventListener('scroll', lazyLoadImages);
+              window.removeEventListener('resize', lazyLoadImages);
+              window.removeEventListener('orientationChange', lazyLoadImages);
+            }
+          };
+          
+          document.addEventListener('scroll', lazyLoadImages);
+          window.addEventListener('resize', lazyLoadImages);
+          window.addEventListener('orientationChange', lazyLoadImages);
+        }
+      });
+      
+      // Handle Button Click (for buttons without specific handlers)
+      function handleButtonClick(button) {
+        // Default behavior based on button classes or context
+        if (button.classList.contains('scroll-top')) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (button.classList.contains('load-more')) {
+          // Simulate loading more content
+          const loadingText = button.getAttribute('data-loading-text') || 'Loading...';
+          const originalText = button.textContent;
+          button.textContent = loadingText;
+          button.disabled = true;
+          
+          setTimeout(() => {
+            button.textContent = originalText;
+            button.disabled = false;
+            
+            // Show alert if no actual implementation
+            alert('Load more functionality would be implemented here');
+          }, 1500);
+        }
+      }
+      
+      // Close Modal
+      function closeModal(element) {
+        const modal = element.closest('.modal');
+        if (modal) {
+          modal.style.display = 'none';
+          document.body.classList.remove('modal-open');
+        }
+      }
+    </script>
+    <!-- Universal Form Handler -->
+    <script>
+      window.FORM_HANDLER_CONFIG = {
+        apiEndpoint: 'https://genmysite.com/api/forms/submit',
+        websiteId: null,
+        recaptchaSiteKey: null,
+        debug: false
+      };
+    </script>
+    <script src="/js/form-handler.js" defer></script>
+</body></html>
