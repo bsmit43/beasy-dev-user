@@ -1,0 +1,2938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - PowerFit Fitness Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --primary-dark: #E85826;
+            --secondary: #2EC4B6;
+            --secondary-dark: #20A99D;
+            --accent: #7209B7;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6C757D;
+            --white: #FFFFFF;
+            --black: #000000;
+            --body-bg: #FFFFFF;
+            --success: #4CAF50;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Montserrat', sans-serif;
+            --border-radius-sm: 4px;
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 24px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        /* Base Styles */
+        body {
+            font-family: var(--font-primary);
+            color: var(--dark);
+            background-color: var(--body-bg);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-secondary);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        a {
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        /* Buttons */
+        .btn {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            z-index: -1;
+            border-radius: 50px;
+            transition: all 0.5s ease;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+        }
+        
+        .btn-primary:before {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            background-color: transparent;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+        }
+        
+        /* Navbar */
+        .navbar {
+            padding: 20px 0;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+        
+        .navbar-brand {
+            font-family: var(--font-secondary);
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+        
+        .navbar-brand span {
+            color: var(--primary);
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark);
+            font-weight: 600;
+            padding: 0 20px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .navbar-nav .nav-link:hover, 
+        .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .navbar-nav .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            left: 20px;
+            bottom: -5px;
+            transition: var(--transition);
+        }
+        
+        .navbar-nav .nav-link:hover:after,
+        .navbar-nav .nav-link.active:after {
+            width: calc(100% - 40px);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: var(--white);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Page Header */
+        .page-header {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/about-header.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .breadcrumb {
+            display: inline-flex;
+            padding: 0;
+            margin-bottom: 0;
+            background-color: transparent;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .breadcrumb-item, 
+        .breadcrumb-item a {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--primary);
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: var(--white);
+        }
+        
+        /* About Section */
+        .about-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-content {
+            padding-left: 30px;
+        }
+        
+        .section-title {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-title .subtitle {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .about-text {
+            margin-bottom: 30px;
+        }
+        
+        .video-box {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .video-box img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+        
+        .video-box:hover img {
+            transform: scale(1.05);
+        }
+        
+        .video-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            z-index: 1;
+            transition: var(--transition);
+        }
+        
+        .video-btn:hover {
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            color: var(--white);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .video-btn:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            z-index: -1;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            background-color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header .subtitle {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--gray);
+        }
+        
+        .mission-box {
+            background-color: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 40px 30px;
+            height: 100%;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .mission-box:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 107, 53, 0.1);
+            color: var(--primary);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+        
+        .mission-box:hover .mission-icon {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: rotateY(360deg);
+            transition: transform 0.8s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .mission-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .mission-box h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .mission-box:hover h3:after {
+            width: 80px;
+        }
+        
+        .mission-box p {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+        
+        /* History Section */
+        .history-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline:after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 6px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: var(--white);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+            transition: var(--transition);
+        }
+        
+        .timeline-item:hover:after {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+        
+        .timeline-item:nth-child(odd):after {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even):after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            background-color: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .timeline-year {
+            position: absolute;
+            top: -15px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: var(--font-secondary);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: 20px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-year {
+            left: 20px;
+        }
+        
+        .timeline-content h3 {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .timeline-content p {
+            margin-bottom: 0;
+            color: var(--gray);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/stats-bg.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 120px 0;
+        }
+        
+        .stats-box {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .stats-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 107, 53, 0.2);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+        
+        .stats-box:hover .stats-icon {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: rotateY(360deg);
+            transition: transform 0.8s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: var(--font-secondary);
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stats-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        /* Team Section */
+        .team-section {
+            background-color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            margin-bottom: 30px;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .team-image {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .team-card:hover .team-image img {
+            transform: scale(1.1);
+        }
+        
+        .team-social {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+            opacity: 0;
+        }
+        
+        .team-card:hover .team-social {
+            bottom: 0;
+            opacity: 1;
+        }
+        
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 8px;
+            transition: var(--transition);
+        }
+        
+        .team-social a:hover {
+            background-color: var(--white);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .team-content {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .team-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .team-content p {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .team-desc {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/cta-bg.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            color: var(--white);
+            text-align: center;
+            padding: 120px 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .cta-text {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 0 0;
+            position: relative;
+        }
+        
+        .footer-widget {
+            margin-bottom: 40px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:before {
+            content: '\f054';
+            font-family: 'bootstrap-icons';
+            margin-right: 10px;
+            font-size: 0.8rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .footer-links a:hover:before {
+            margin-right: 15px;
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .footer-contact-icon {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-newsletter p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .newsletter-form {
+            position: relative;
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            outline: none;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .newsletter-form button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            height: calc(100% - 10px);
+            padding: 0 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+        }
+        
+        .footer-bottom a {
+            color: var(--primary);
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1199px) {
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            section {
+                padding: 80px 0;
+            }
+            
+            .page-header {
+                min-height: 300px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2,
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                padding-left: 0;
+                margin-top: 50px;
+            }
+            
+            .video-box {
+                margin-top: 30px;
+            }
+            
+            .timeline:after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd):after,
+            .timeline-item:nth-child(even):after {
+                left: 18px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-year,
+            .timeline-item:nth-child(even) .timeline-year {
+                left: 20px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .page-header {
+                min-height: 250px;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2,
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .mission-box,
+            .team-card {
+                margin-bottom: 30px;
+            }
+            
+            .stats-number {
+                font-size: 2.5rem;
+            }
+            
+            .stats-text {
+                font-size: 1rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2,
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+            }
+            
+            .footer-widget {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+    <meta name="description" content="Learn about PowerFit, beasy's commitment to automotive excellence, history, and the dedicated team behind our fitness studio.">
+    <meta property="og:title" content="About Us - PowerFit Fitness Studio">
+    <meta property="og:description" content="Learn about PowerFit, beasy's commitment to automotive excellence, history, and the dedicated team behind our fitness studio.">
+    <meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --primary-dark: #E85826;
+            --secondary: #2EC4B6;
+            --secondary-dark: #20A99D;
+            --accent: #7209B7;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6C757D;
+            --white: #FFFFFF;
+            --black: #000000;
+            --body-bg: #FFFFFF;
+            --success: #4CAF50;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Montserrat', sans-serif;
+            --border-radius-sm: 4px;
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 24px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+
+        :root {
+            --primary: #FF6B35;
+            --primary-dark: #E85826;
+            --secondary: #2EC4B6;
+            --secondary-dark: #20A99D;
+            --accent: #7209B7;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gray: #6C757D;
+            --white: #FFFFFF;
+            --black: #000000;
+            --body-bg: #FFFFFF;
+            --success: #4CAF50;
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Montserrat', sans-serif;
+            --border-radius-sm: 4px;
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 24px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        /* Base Styles */
+        body {
+            font-family: var(--font-primary);
+            color: var(--dark);
+            background-color: var(--body-bg);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-secondary);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        a {
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        /* Buttons */
+        .btn {
+            font-family: var(--font-primary);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            z-index: -1;
+            border-radius: 50px;
+            transition: all 0.5s ease;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+        }
+        
+        .btn-primary:before {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            background-color: transparent;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+        }
+        
+        /* Navbar */
+        .navbar {
+            padding: 20px 0;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+        
+        .navbar-brand {
+            font-family: var(--font-secondary);
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+        
+        .navbar-brand span {
+            color: var(--primary);
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark);
+            font-weight: 600;
+            padding: 0 20px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .navbar-nav .nav-link:hover, 
+        .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .navbar-nav .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            left: 20px;
+            bottom: -5px;
+            transition: var(--transition);
+        }
+        
+        .navbar-nav .nav-link:hover:after,
+        .navbar-nav .nav-link.active:after {
+            width: calc(100% - 40px);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: var(--white);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Page Header */
+        .page-header {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/about-header.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .breadcrumb {
+            display: inline-flex;
+            padding: 0;
+            margin-bottom: 0;
+            background-color: transparent;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .breadcrumb-item, 
+        .breadcrumb-item a {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--primary);
+        }
+        
+        .breadcrumb-item + .breadcrumb-item::before {
+            color: var(--white);
+        }
+        
+        /* About Section */
+        .about-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-content {
+            padding-left: 30px;
+        }
+        
+        .section-title {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-title .subtitle {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .about-text {
+            margin-bottom: 30px;
+        }
+        
+        .video-box {
+            position: relative;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .video-box img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+        
+        .video-box:hover img {
+            transform: scale(1.05);
+        }
+        
+        .video-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            z-index: 1;
+            transition: var(--transition);
+        }
+        
+        .video-btn:hover {
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            color: var(--white);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .video-btn:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            z-index: -1;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            background-color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header .subtitle {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--gray);
+        }
+        
+        .mission-box {
+            background-color: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 40px 30px;
+            height: 100%;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .mission-box:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 107, 53, 0.1);
+            color: var(--primary);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+        
+        .mission-box:hover .mission-icon {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: rotateY(360deg);
+            transition: transform 0.8s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .mission-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .mission-box h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .mission-box:hover h3:after {
+            width: 80px;
+        }
+        
+        .mission-box p {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+        
+        /* History Section */
+        .history-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline:after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 6px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: var(--white);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+            transition: var(--transition);
+        }
+        
+        .timeline-item:hover:after {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+        
+        .timeline-item:nth-child(odd):after {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even):after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            background-color: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .timeline-year {
+            position: absolute;
+            top: -15px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: var(--font-secondary);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: 20px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-year {
+            left: 20px;
+        }
+        
+        .timeline-content h3 {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .timeline-content p {
+            margin-bottom: 0;
+            color: var(--gray);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/stats-bg.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 120px 0;
+        }
+        
+        .stats-box {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .stats-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 107, 53, 0.2);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+        
+        .stats-box:hover .stats-icon {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: rotateY(360deg);
+            transition: transform 0.8s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: var(--font-secondary);
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stats-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        /* Team Section */
+        .team-section {
+            background-color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            margin-bottom: 30px;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .team-image {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .team-card:hover .team-image img {
+            transform: scale(1.1);
+        }
+        
+        .team-social {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+            opacity: 0;
+        }
+        
+        .team-card:hover .team-social {
+            bottom: 0;
+            opacity: 1;
+        }
+        
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 8px;
+            transition: var(--transition);
+        }
+        
+        .team-social a:hover {
+            background-color: var(--white);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .team-content {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .team-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .team-content p {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .team-desc {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/cta-bg.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            color: var(--white);
+            text-align: center;
+            padding: 120px 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .cta-text {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 0 0;
+            position: relative;
+        }
+        
+        .footer-widget {
+            margin-bottom: 40px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:before {
+            content: '\f054';
+            font-family: 'bootstrap-icons';
+            margin-right: 10px;
+            font-size: 0.8rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .footer-links a:hover:before {
+            margin-right: 15px;
+        }
+        
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact li {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .footer-contact-icon {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-newsletter p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .newsletter-form {
+            position: relative;
+        }
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            outline: none;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .newsletter-form button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            height: calc(100% - 10px);
+            padding: 0 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-form button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+        }
+        
+        .footer-bottom a {
+            color: var(--primary);
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1199px) {
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            section {
+                padding: 80px 0;
+            }
+            
+            .page-header {
+                min-height: 300px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2,
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                padding-left: 0;
+                margin-top: 50px;
+            }
+            
+            .video-box {
+                margin-top: 30px;
+            }
+            
+            .timeline:after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd):after,
+            .timeline-item:nth-child(even):after {
+                left: 18px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-year,
+            .timeline-item:nth-child(even) .timeline-year {
+                left: 20px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .page-header {
+                min-height: 250px;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2,
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .mission-box,
+            .team-card {
+                margin-bottom: 30px;
+            }
+            
+            .stats-number {
+                font-size: 2.5rem;
+            }
+            
+            .stats-text {
+                font-size: 1rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2,
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+            }
+            
+            .footer-widget {
+                margin-bottom: 30px;
+            }
+        }
+    
+    </style>
+<style>
+  /* Industry-specific color scheme for General Business */
+  :root {
+    /* Override ALL color variables with industry-specific colors */
+    --primary-color: #2563eb !important;
+    --primary-light: #1d4ed8 !important;
+    --primary-dark: #1e40af !important;
+    
+    --secondary-color: #64748b !important;
+    --secondary-light: #475569 !important;
+    --secondary-dark: #334155 !important;
+    
+    --accent-color: #059669 !important;
+    --accent-light: #047857 !important;
+    --accent-dark: #065f46 !important;
+    
+    /* Override common template color variables */
+    --primary: #2563eb !important;
+    --secondary: #64748b !important;
+    --accent: #059669 !important;
+    --dark: #1A1A1A !important;
+    --light: #FFFFFF !important;
+    --gray: #6C6C6C !important;
+    
+    /* Override gradient */
+    --gradient: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    
+    /* Common color mappings */
+    --brand-primary: #2563eb !important;
+    --brand-secondary: #64748b !important;
+    --color-primary: #2563eb !important;
+    --color-secondary: #64748b !important;
+    --theme-primary: #2563eb !important;
+    --theme-secondary: #64748b !important;
+  }
+  
+  /* Apply colors to common Bootstrap and template patterns */
+  .btn-primary,
+  .primary-button,
+  button.primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+  }
+  
+  .btn-primary:hover,
+  .primary-button:hover,
+  button.primary:hover {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+  }
+  
+  .text-primary {
+    color: var(--primary-color) !important;
+  }
+  
+  .bg-primary {
+    background-color: var(--primary-color) !important;
+  }
+  
+  .border-primary {
+    border-color: var(--primary-color) !important;
+  }
+  
+  /* Links */
+  a {
+    color: var(--primary-color);
+  }
+  
+  a:hover {
+    color: var(--primary-dark);
+  }
+  
+  /* Hero sections */
+  .hero,
+  .hero-section,
+  .jumbotron {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+  }
+  
+  /* Navigation */
+  .navbar-brand {
+    color: var(--primary-color) !important;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--primary-color) !important;
+  }
+  
+  /* Forms */
+  .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color), 0.25);
+  }
+  
+  /* Cards and sections */
+  .card-header {
+    background-color: var(--primary-light);
+    color: white;
+  }
+  
+  /* Industry-specific adjustments */
+  
+  
+  
+  
+  
+  
+  /* Aggressive overrides for templates with hardcoded colors */
+  /* Target specific color values that templates might use */
+  [style*="#FF6B35"] { color: #2563eb !important; }
+  [style*="#F7931E"] { color: #64748b !important; }
+  [style*="#FFD23F"] { color: #059669 !important; }
+  
+  /* Override inline styles and hardcoded backgrounds */
+  .hero[style*="background"] {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+  }
+  
+  /* Force color changes on elements that might have inline styles */
+  .text-primary,
+  [class*="text-primary"],
+  [class*="color-primary"] {
+    color: #2563eb !important;
+  }
+  
+  .bg-primary,
+  [class*="bg-primary"],
+  [class*="background-primary"] {
+    background-color: #2563eb !important;
+  }
+  
+  /* Override gradient classes */
+  .text-gradient,
+  [class*="gradient"] {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+  }
+  
+  /* Ensure buttons use new colors */
+  button,
+  .btn,
+  [type="button"],
+  [type="submit"] {
+    transition: all 0.3s ease;
+  }
+  
+  button:not(.btn-secondary):not(.btn-light):not(.btn-dark),
+  .btn:not(.btn-secondary):not(.btn-light):not(.btn-dark) {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+  }
+  
+  button:not(.btn-secondary):not(.btn-light):not(.btn-dark):hover,
+  .btn:not(.btn-secondary):not(.btn-light):not(.btn-dark):hover {
+    background-color: #1e40af !important;
+    border-color: #1e40af !important;
+  }
+</style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Power<span>Fit</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="classes.html">Classes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="trainers.html">Trainers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary ms-lg-4">Join Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About PowerFit</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="section-title">
+                            <span class="subtitle">Our Story</span>
+                            <h2>Transforming Lives Since 2010</h2>
+                        </div>
+                        <div class="about-text">
+                            <p>PowerFit was founded with a simple mission: to create a fitness environment that empowers people to become the best version of themselves. What started as a small studio with just a handful of members has grown into a thriving community of fitness enthusiasts.</p>
+                            <p>Our approach combines cutting-edge exercise science with personalized coaching to help members achieve sustainable results. We believe fitness is not just about physical transformation but about enhancing overall quality of life.</p>
+                            <p>Over the years, we've helped thousands of members overcome challenges, build strength, and gain confidence. Our expert trainers, diverse class offerings, and supportive community continue to inspire and motivate people every day.</p>
+                        </div>
+                        <a href="classes.html" class="btn btn-primary me-3">Explore Our Classes</a>
+                        <a href="contact.html" class="btn btn-outline-primary">Free Trial</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="video-box">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="About PowerFit">
+                        <a href="#" class="video-btn">
+                            <i class="bi bi-play-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">What Drives Us</span>
+                <h2>Our Core Values</h2>
+                <p>At PowerFit, we're guided by a set of core values that inform everything we do. These principles help us deliver exceptional fitness experiences and foster a community where everyone can thrive.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="mission-box">
+                        <div class="mission-icon">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+                        <h3>beasy's commitment to automotive excellence</h3>
+                        <p>To create a welcoming fitness environment that inspires, educates, and empowers people to transform their lives through sustainable health practices and community support.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="mission-box">
+                        <div class="mission-icon">
+                            <i class="bi bi-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To be the leading fitness community that redefines what's possible, helping members unlock their potential and creating a positive ripple effect in their lives and communities.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="mission-box">
+                        <div class="mission-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>We continuously evolve our approach, incorporating the latest fitness science and technology to deliver effective, engaging, and results-driven workout experiences.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="mission-box">
+                        <div class="mission-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h3>Community</h3>
+                        <p>We foster a supportive, inclusive environment where members feel connected, motivated, and accountable on their fitness journey, celebrating each other's victories.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="mission-box">
+                        <div class="mission-icon">
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <h3>Excellence</h3>
+                        <p>We pursue excellence in everything we do, from the quality of our facilities and equipment to the expertise of our trainers and the service we provide to our members.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="mission-box">
+                        <div class="mission-icon">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h3>Holistic Wellness</h3>
+                        <p>We believe in nurturing the whole person—physical, mental, and emotional wellbeing—through fitness practices that promote long-term health and sustainable lifestyle changes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Our Journey</span>
+                <h2>PowerFit Timeline</h2>
+                <p>From humble beginnings to a thriving fitness community, our journey has been filled with growth, innovation, and countless transformations. Here's how we've evolved over the years.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2010</div>
+                        <h3>The Beginning</h3>
+                        <p>PowerFit was founded with a small studio in downtown, offering basic fitness classes and personal training with just three trainers and a handful of dedicated members.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2012</div>
+                        <h3>Community Growth</h3>
+                        <p>Expanded to a larger facility to accommodate our growing community. Introduced specialized programs for different fitness levels and added nutrition coaching to our service offerings.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2014</div>
+                        <h3>Innovation in Training</h3>
+                        <p>Launched our signature high-intensity interval training program and expanded our class offerings to include yoga, pilates, and specialized strength training programs.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2016</div>
+                        <h3>Facility Upgrade</h3>
+                        <p>Moved to our current state-of-the-art facility with expanded training areas, premium equipment, and dedicated studios for specialized classes.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018</div>
+                        <h3>Holistic Approach</h3>
+                        <p>Introduced our holistic wellness program, incorporating mental wellness, recovery practices, and personalized health assessments into our approach.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <h3>Digital Transformation</h3>
+                        <p>Launched our virtual training platform, allowing members to access workouts, nutrition guidance, and coaching from anywhere, complementing our in-person experiences.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <h3>Community Milestone</h3>
+                        <p>Celebrated our 10,000th member and expanded our community outreach programs, partnering with local organizations to promote health and wellness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-box">
+                        <div class="stats-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <div class="stats-number" data-count="10000">10,000+</div>
+                        <div class="stats-text">Happy Members</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-box">
+                        <div class="stats-icon">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <div class="stats-number" data-count="50">50+</div>
+                        <div class="stats-text">Weekly Classes</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-box">
+                        <div class="stats-icon">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <div class="stats-number" data-count="15">15</div>
+                        <div class="stats-text">Expert Trainers</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-box">
+                        <div class="stats-icon">
+                            <i class="bi bi-award"></i>
+                        </div>
+                        <div class="stats-number" data-count="13">13</div>
+                        <div class="stats-text">Years of Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">The Faces Behind PowerFit</span>
+                <h2>Our Leadership Team</h2>
+                <p>Meet the dedicated professionals who lead PowerFit's mission to transform lives through fitness. With diverse backgrounds and expertise, our leadership team is committed to delivering exceptional fitness experiences.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member">
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3>Michael Johnson</h3>
+                            <p>Founder & CEO</p>
+                            <div class="team-desc">
+                                A former professional athlete with over 20 Trusted automotive expertise in Not specified in the fitness industry. Michael's vision and leadership have been instrumental in PowerFit's growth and success.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member">
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3>Sarah Williams</h3>
+                            <p>Fitness Director</p>
+                            <div class="team-desc">
+                                A certified nutritionist and yoga instructor, Sarah oversees PowerFit's holistic wellness programs, ensuring members receive comprehensive support for their health goals.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member">
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3>David Rodriguez</h3>
+                            <p>Head of Training</p>
+                            <div class="team-desc">
+                                With multiple fitness certifications and a degree in Exercise Science, David develops PowerFit's innovative workout programs and leads trainer education.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member">
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3>Emily Chen</h3>
+                            <p>Nutrition Director</p>
+                            <div class="team-desc">
+                                A registered dietitian with specialized training in sports nutrition, Emily leads PowerFit's nutrition programs and personalized meal planning services.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member">
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3>James Wilson</h3>
+                            <p>Community Director</p>
+                            <div class="team-desc">
+                                With a background in event planning and community outreach, James coordinates PowerFit's community programs and member engagement initiatives.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member">
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h3>Sophie Taylor</h3>
+                            <p>Operations Manager</p>
+                            <div class="team-desc">
+                                Dedicated to creating exceptional member experiences, Sophie oversees all aspects of customer service and facility operations at PowerFit.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Start Your Fitness Journey?</h2>
+                <p class="cta-text">Join PowerFit today and take the first step towards a healthier, stronger you. Our expert trainers, diverse classes, and supportive community are waiting to help you achieve your goals.</p>
+                <a href="contact.html" class="btn btn-primary me-3">Free Trial Class</a>
+                <a href="pricing.html" class="btn btn-outline-primary">View Membership Plans</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <div class="footer-widget footer-about">
+                        <h4 class="footer-title">About PowerFit</h4>
+                        <p>PowerFit is a modern fitness studio dedicated to helping people achieve their health and fitness goals through expert guidance, diverse workout options, and a supportive community.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                            <a href="#"><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <div class="footer-widget">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="classes.html">Classes</a></li>
+                            <li><a href="trainers.html">Trainers</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="footer-widget">
+                        <h4 class="footer-title">Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <div class="footer-contact-icon">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <div class="footer-contact-text">
+                                    123 Fitness Street, New York, NY 10001
+                                </div>
+                            </li>
+                            <li>
+                                <div class="footer-contact-icon">
+                                    <i class="bi bi-telephone"></i>
+                                </div>
+                                <div class="footer-contact-text">
+                                    (123) 456-7890
+                                </div>
+                            </li>
+                            <li>
+                                <div class="footer-contact-icon">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="footer-contact-text">
+                                    info@powerfit.com
+                                </div>
+                            </li>
+                            <li>
+                                <div class="footer-contact-icon">
+                                    <i class="bi bi-clock"></i>
+                                </div>
+                                <div class="footer-contact-text">
+                                    Mon-Fri: 6am - 10pm<br>
+                                    Sat-Sun: 8am - 8pm
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="footer-widget footer-newsletter">
+                        <h4 class="footer-title">Newsletter</h4>
+                        <p>Subscribe to our newsletter to get updates on classes, events, and fitness tips.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2025 PowerFit. All Rights Reserved. Designed by <a href="#">TemplateCreator</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Stats Counter Animation
+        function animateCounter(el) {
+            const target = parseInt(el.getAttribute('data-count'));
+            const duration = 2000;
+            const step = target / duration * 10;
+            let current = 0;
+            let timer = setInterval(function() {
+                current += step;
+                if (current >= target) {
+                    clearInterval(timer);
+                    current = target;
+                }
+                el.textContent = Math.floor(current).toLocaleString();
+                if (el.classList.contains('plus')) {
+                    el.textContent += '+';
+                }
+            }, 10);
+        }
+        
+        // Initialize Stats Animation on Scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const statsSection = document.querySelector('.stats-section');
+            const statsNumbers = document.querySelectorAll('.stats-number');
+            let animated = false;
+            
+            function checkScroll() {
+                if (animated) return;
+                const sectionPos = statsSection.getBoundingClientRect().top;
+                const screenPos = window.innerHeight;
+                if (sectionPos < screenPos - 100) {
+                    statsNumbers.forEach(animateCounter);
+                    animated = true;
+                }
+            }
+            
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+        });
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Mobile Menu
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        
+        if (navbarToggler && navbarCollapse) {
+            navbarToggler.addEventListener('click', function() {
+                navbarCollapse.classList.toggle('show');
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+                    navbarCollapse.classList.remove('show');
+                }
+            });
+        }
+        
+        // Form Validation
+        function validateForm(form) {
+            if (!form) return false;
+            
+            const email = form.querySelector('input[type="email"]');
+            if (!email || !email.value.trim()) {
+                alert('Please enter your email address');
+                return false;
+            }
+            
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email.value.trim())) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+            
+            alert('Thank you for subscribing to our newsletter!');
+            email.value = '';
+            return false; // Prevent actual form submission for demo
+        }
+        
+        // Apply validation to newsletter forms
+        document.querySelectorAll('.newsletter-form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                validateForm(this);
+            });
+        });
+    </script>
+
+    <!-- Universal Form Handler -->
+    <script>
+      window.FORM_HANDLER_CONFIG = {
+        apiEndpoint: 'https://genmysite.com/api/forms/submit',
+        websiteId: null,
+        recaptchaSiteKey: null,
+        debug: false
+      };
+    </script>
+    <script src="/js/form-handler.js" defer></script>
+</body>
+</html>
