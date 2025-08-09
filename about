@@ -3,2134 +3,1850 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - PowerFit Fitness Studio</title>
+    <title>About Us | Elegance Interiors</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <!-- Custom CSS -->
     <style>
         :root {
-            --primary: #FF6B35;
-            --primary-dark: #E85826;
-            --secondary: #2EC4B6;
-            --secondary-dark: #20A99D;
-            --accent: #7209B7;
-            --light: #F8F9FA;
-            --dark: #212529;
-            --gray: #6C757D;
-            --white: #FFFFFF;
-            --black: #000000;
-            --body-bg: #FFFFFF;
-            --success: #4CAF50;
-            --font-primary: 'Poppins', sans-serif;
-            --font-secondary: 'Montserrat', sans-serif;
-            --border-radius-sm: 4px;
-            --border-radius: 8px;
-            --border-radius-lg: 16px;
-            --border-radius-xl: 24px;
-            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.1);
+            --primary-color: #927a5a;
+            --secondary-color: #21282f;
+            --accent-color: #d3bea5;
+            --light-color: #f9f7f4;
+            --dark-color: #333333;
+            --text-color: #555555;
+            --white: #ffffff;
             --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
-        
-        /* Base Styles */
+
         body {
-            font-family: var(--font-primary);
-            color: var(--dark);
-            background-color: var(--body-bg);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.8;
+            background-color: var(--white);
             overflow-x: hidden;
-            line-height: 1.6;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-secondary);
-            font-weight: 700;
-            line-height: 1.3;
+            font-family: 'Playfair Display', serif;
+            color: var(--secondary-color);
+            font-weight: 600;
+            line-height: 1.4;
         }
-        
+
+        p {
+            font-size: 16px;
+        }
+
         a {
             text-decoration: none;
+            color: var(--dark-color);
             transition: var(--transition);
         }
-        
-        img {
-            max-width: 100%;
+
+        a:hover {
+            color: var(--primary-color);
         }
-        
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        /* Buttons */
-        .btn {
-            font-family: var(--font-primary);
-            font-weight: 600;
-            padding: 12px 30px;
-            border-radius: 50px;
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 0;
             transition: var(--transition);
-            text-transform: uppercase;
             letter-spacing: 0.5px;
-            font-size: 0.9rem;
+            text-transform: uppercase;
             position: relative;
             overflow: hidden;
             z-index: 1;
         }
-        
-        .btn:before {
+
+        .btn-primary::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            z-index: -1;
-            border-radius: 50px;
-            transition: all 0.5s ease;
-        }
-        
-        .btn:hover:before {
+            left: -100%;
             width: 100%;
+            height: 100%;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+            z-index: -1;
         }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: var(--white);
-        }
-        
+
         .btn-primary:hover {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+            background-color: var(--primary-color);
         }
-        
-        .btn-primary:before {
-            background-color: var(--primary-dark);
+
+        .btn-primary:hover::before {
+            left: 0;
         }
-        
-        .btn-outline-primary {
-            color: var(--primary);
-            border-color: var(--primary);
+
+        .btn-outline {
             background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 26px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 0;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary);
-            border-color: var(--primary);
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
             color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
         }
-        
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 42px;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .section-title p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-color);
+        }
+
         /* Navbar */
         .navbar {
             padding: 20px 0;
-            transition: var(--transition);
-            z-index: 1000;
+            transition: all 0.5s ease;
         }
-        
+
         .navbar-brand {
-            font-family: var(--font-secondary);
-            font-weight: 800;
-            font-size: 1.8rem;
-            color: var(--dark);
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary-color);
         }
-        
+
         .navbar-brand span {
-            color: var(--primary);
+            color: var(--primary-color);
         }
-        
+
         .navbar-nav .nav-link {
-            color: var(--dark);
-            font-weight: 600;
-            padding: 0 20px;
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 16px;
+            margin: 0 15px;
             position: relative;
-            transition: var(--transition);
+            padding: 8px 0;
         }
-        
-        .navbar-nav .nav-link:hover, 
-        .navbar-nav .nav-link.active {
-            color: var(--primary);
-        }
-        
-        .navbar-nav .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            left: 20px;
-            bottom: -5px;
-            transition: var(--transition);
-        }
-        
-        .navbar-nav .nav-link:hover:after,
-        .navbar-nav .nav-link.active:after {
-            width: calc(100% - 40px);
-        }
-        
-        .navbar.scrolled {
-            padding: 10px 0;
-            background-color: var(--white);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Page Header */
-        .page-header {
-            position: relative;
-            height: 50vh;
-            min-height: 400px;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/about-header.jpg') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            text-align: center;
-            overflow: hidden;
-        }
-        
-        .page-header h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease;
-        }
-        
-        .breadcrumb {
-            display: inline-flex;
-            padding: 0;
-            margin-bottom: 0;
-            background-color: transparent;
-            animation: fadeInUp 1s ease;
-        }
-        
-        .breadcrumb-item, 
-        .breadcrumb-item a {
-            color: var(--white);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        
-        .breadcrumb-item.active {
-            color: var(--primary);
-        }
-        
-        .breadcrumb-item + .breadcrumb-item::before {
-            color: var(--white);
-        }
-        
-        /* About Section */
-        .about-section {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .about-image {
-            position: relative;
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            transition: var(--transition);
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-        
-        .about-content {
-            padding-left: 30px;
-        }
-        
-        .section-title {
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .section-title .subtitle {
-            font-size: 1rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2:after {
+
+        .navbar-nav .nav-link::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 70px;
-            height: 3px;
-            background-color: var(--primary);
-        }
-        
-        .about-text {
-            margin-bottom: 30px;
-        }
-        
-        .video-box {
-            position: relative;
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .video-box img {
-            width: 100%;
-            height: auto;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
             transition: var(--transition);
         }
-        
-        .video-box:hover img {
-            transform: scale(1.05);
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
         }
-        
-        .video-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-button {
+            background-color: var(--primary-color);
             color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            text-decoration: none;
-            z-index: 1;
+            padding: 10px 25px;
+            border-radius: 0;
+            font-weight: 500;
+            font-size: 16px;
             transition: var(--transition);
         }
-        
-        .video-btn:hover {
-            background: linear-gradient(to right, var(--accent), var(--primary));
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
             color: var(--white);
-            transform: translate(-50%, -50%) scale(1.1);
         }
-        
-        .video-btn:before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            z-index: -1;
-            animation: pulse 2s infinite;
+
+        .navbar-toggler {
+            border: none;
+            padding: 0;
         }
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
         }
-        
-        /* Mission Section */
-        .mission-section {
-            background-color: var(--light);
+
+        .navbar-toggler-icon {
+            width: 24px;
+            height: 17px;
+            background-image: none;
             position: relative;
-            overflow: hidden;
+            border-bottom: 2px solid var(--secondary-color);
+            transition: all 300ms linear;
         }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-header .subtitle {
-            font-size: 1rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 15px;
-            display: inline-block;
-        }
-        
-        .section-header h2:after {
-            content: '';
+
+        .navbar-toggler-icon:after, 
+        .navbar-toggler-icon:before {
+            width: 24px;
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
-            height: 3px;
-            background-color: var(--primary);
+            height: 2px;
+            background-color: var(--secondary-color);
+            top: 0;
+            left: 0;
+            content: '';
+            z-index: 2;
+            transition: all 300ms linear;
         }
-        
-        .section-header p {
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            color: var(--gray);
+
+        .navbar-toggler-icon:after {
+            top: 8px;
         }
-        
-        .mission-box {
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+            transform: rotate(45deg);
+            background-color: var(--secondary-color);
+            height: 2px;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+            transform: translateY(8px) rotate(-45deg);
+            background-color: var(--secondary-color);
+            height: 2px;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+            border-color: transparent;
+        }
+
+        /* Fix navbar mobile background */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                border-radius: 0 0 10px 10px;
+                margin-top: 10px;
+            }
+        }
+
+        .navbar.sticky {
             background-color: var(--white);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--box-shadow);
-            padding: 40px 30px;
-            height: 100%;
-            transition: var(--transition);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Page Header */
+        .page-header {
+            background-color: var(--light-color);
+            padding: 150px 0 80px;
             text-align: center;
+            position: relative;
         }
-        
-        .mission-box:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-hover);
-        }
-        
-        .mission-icon {
-            width: 80px;
-            height: 80px;
-            background-color: rgba(255, 107, 53, 0.1);
-            color: var(--primary);
-            border-radius: var(--border-radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 25px;
-            transition: var(--transition);
-        }
-        
-        .mission-box:hover .mission-icon {
-            background-color: var(--primary);
-            color: var(--white);
-            transform: rotateY(360deg);
-            transition: transform 0.8s ease, background-color 0.3s ease, color 0.3s ease;
-        }
-        
-        .mission-box h3 {
-            font-size: 1.5rem;
+
+        .page-header h1 {
+            font-size: 48px;
             margin-bottom: 15px;
             position: relative;
+            display: inline-block;
+            padding-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .page-header h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .breadcrumb-item {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .breadcrumb-item a {
+            color: var(--text-color);
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .breadcrumb-item.active {
+            color: var(--primary-color);
+        }
+
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: '\f105';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--text-color);
+        }
+
+        /* About Intro */
+        .about-intro {
+            padding: 100px 0;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border: 5px solid var(--primary-color);
+            top: -20px;
+            left: -20px;
+            border-radius: 10px;
+            z-index: -1;
+        }
+
+        .about-content h2 {
+            font-size: 38px;
+            margin-bottom: 25px;
+            position: relative;
             padding-bottom: 15px;
         }
-        
-        .mission-box h3:after {
+
+        .about-content h2::after {
             content: '';
             position: absolute;
+            left: 0;
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 2px;
-            background-color: var(--primary);
-            transition: var(--transition);
-        }
-        
-        .mission-box:hover h3:after {
             width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
         }
-        
-        .mission-box p {
-            color: var(--gray);
-            margin-bottom: 0;
+
+        .about-content p {
+            margin-bottom: 20px;
         }
-        
-        /* History Section */
-        .history-section {
-            position: relative;
-            overflow: hidden;
+
+        .signature {
+            margin-top: 30px;
+            display: block;
+            max-width: 200px;
         }
-        
+
+        /* Timeline Section */
+        .timeline-section {
+            background-color: var(--light-color);
+            padding: 100px 0;
+        }
+
         .timeline {
             position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1000px;
+            margin: 60px auto 0;
         }
-        
-        .timeline:after {
+
+        .timeline:before {
             content: '';
             position: absolute;
-            width: 6px;
-            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            width: 2px;
+            background-color: var(--accent-color);
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -3px;
-            border-radius: 6px;
+            margin-left: -1px;
         }
-        
+
         .timeline-item {
-            padding: 10px 40px;
+            padding: 20px 30px;
             position: relative;
             width: 50%;
-            box-sizing: border-box;
-            margin-bottom: 40px;
-        }
-        
-        .timeline-item:nth-child(odd) {
             left: 0;
+            margin-bottom: 60px;
         }
-        
+
         .timeline-item:nth-child(even) {
             left: 50%;
         }
-        
+
         .timeline-item:after {
             content: '';
             position: absolute;
             width: 25px;
             height: 25px;
-            background-color: var(--white);
-            border: 4px solid var(--primary);
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-            box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
-            transition: var(--transition);
-        }
-        
-        .timeline-item:hover:after {
-            background-color: var(--primary);
-            transform: scale(1.2);
-        }
-        
-        .timeline-item:nth-child(odd):after {
             right: -12px;
-        }
-        
-        .timeline-item:nth-child(even):after {
-            left: -12px;
-        }
-        
-        .timeline-content {
             background-color: var(--white);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--box-shadow);
+            border: 4px solid var(--primary-color);
+            top: 35px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even):after {
+            left: -13px;
+        }
+
+        .timeline-content {
             padding: 30px;
+            background-color: var(--white);
             position: relative;
-            transition: var(--transition);
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
         }
-        
-        .timeline-content:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-hover);
-        }
-        
-        .timeline-year {
-            position: absolute;
-            top: -15px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
+
+        .timeline-date {
+            display: inline-block;
+            background-color: var(--primary-color);
             color: var(--white);
             padding: 5px 15px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-family: var(--font-secondary);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-year {
-            right: 20px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-year {
-            left: 20px;
-        }
-        
-        .timeline-content h3 {
-            margin-top: 10px;
+            font-size: 14px;
+            border-radius: 5px;
             margin-bottom: 15px;
-            font-size: 1.3rem;
         }
-        
-        .timeline-content p {
-            margin-bottom: 0;
-            color: var(--gray);
+
+        .timeline-content h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
         }
-        
-        /* Stats Section */
-        .stats-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/stats-bg.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
-            color: var(--white);
-            padding: 120px 0;
+
+        @media (max-width: 767px) {
+            .timeline:before {
+                left: 40px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 0;
+                left: 0 !important;
+            }
+            
+            .timeline-item:after {
+                left: 27px;
+                right: auto;
+            }
         }
-        
-        .stats-box {
-            text-align: center;
-            margin-bottom: 30px;
+
+        /* Mission & Vision */
+        .mission-vision {
+            padding: 100px 0;
         }
-        
-        .stats-icon {
+
+        .mv-item {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            height: 100%;
+            transition: var(--transition);
+        }
+
+        .mv-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .mv-icon {
             width: 80px;
             height: 80px;
-            background-color: rgba(255, 107, 53, 0.2);
-            color: var(--primary);
+            background-color: var(--light-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 25px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            font-size: 30px;
             transition: var(--transition);
         }
-        
-        .stats-box:hover .stats-icon {
-            background-color: var(--primary);
+
+        .mv-item:hover .mv-icon {
+            background-color: var(--primary-color);
             color: var(--white);
-            transform: rotateY(360deg);
-            transition: transform 0.8s ease, background-color 0.3s ease, color 0.3s ease;
         }
-        
-        .stats-number {
-            font-size: 3rem;
-            font-weight: 800;
-            font-family: var(--font-secondary);
-            margin-bottom: 10px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        .mv-item h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
         }
-        
-        .stats-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
+
         /* Team Section */
-        .team-section {
-            background-color: var(--light);
-            position: relative;
-            overflow: hidden;
+        .team {
+            background-color: var(--light-color);
+            padding: 100px 0;
         }
-        
-        .team-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
+
+        .team-member {
+            text-align: center;
             margin-bottom: 30px;
         }
-        
-        .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-hover);
-        }
-        
-        .team-image {
-            height: 350px;
-            overflow: hidden;
+
+        .member-image {
             position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 25px;
         }
-        
-        .team-image img {
+
+        .member-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
             transition: var(--transition);
+            height: 350px;
+            object-fit: cover;
         }
-        
-        .team-card:hover .team-image img {
-            transform: scale(1.1);
-        }
-        
-        .team-social {
+
+        .member-social {
             position: absolute;
             bottom: -50px;
             left: 0;
             width: 100%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             padding: 15px 0;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            display: flex;
-            justify-content: center;
-            align-items: center;
             transition: var(--transition);
-            opacity: 0;
         }
-        
-        .team-card:hover .team-social {
-            bottom: 0;
-            opacity: 1;
-        }
-        
-        .team-social a {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+
+        .social-link {
             color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 8px;
+            font-size: 16px;
             transition: var(--transition);
         }
-        
-        .team-social a:hover {
-            background-color: var(--white);
-            color: var(--primary);
-            transform: translateY(-5px);
+
+        .social-link:hover {
+            color: var(--accent-color);
         }
-        
-        .team-content {
-            padding: 25px;
-            text-align: center;
+
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
         }
-        
-        .team-content h3 {
-            font-size: 1.5rem;
+
+        .team-member:hover .member-social {
+            bottom: 0;
+        }
+
+        .member-info h4 {
+            font-size: 22px;
             margin-bottom: 5px;
         }
-        
-        .team-content p {
-            color: var(--primary);
-            font-weight: 600;
+
+        .member-position {
+            color: var(--primary-color);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--secondary-color);
+            padding: 80px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: var(--white);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--white);
             margin-bottom: 10px;
         }
-        
-        .team-desc {
-            color: var(--gray);
-            margin-bottom: 0;
+
+        .stat-text {
+            font-size: 18px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/cta-bg.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
             position: relative;
-            color: var(--white);
+            overflow: hidden;
+        }
+
+        .testimonial-slider {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .testimonial-slide {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
             text-align: center;
-            padding: 120px 0;
+            transition: var(--transition);
         }
-        
-        .cta-content {
-            position: relative;
-            z-index: 1;
+
+        .testimonial-slide:hover {
+            transform: translateY(-10px);
         }
-        
-        .cta-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 800;
+
+        .client-image {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            overflow: hidden;
+            border: 5px solid var(--accent-color);
         }
-        
-        .cta-text {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+
+        .client-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        
-        /* Footer */
-        .footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 80px 0 0;
-            position: relative;
-        }
-        
-        .footer-widget {
-            margin-bottom: 40px;
-        }
-        
-        .footer-title {
-            font-size: 1.3rem;
+
+        .testimonial-text {
             margin-bottom: 25px;
             position: relative;
-            padding-bottom: 10px;
+            font-style: italic;
         }
-        
-        .footer-title:after {
-            content: '';
+
+        .testimonial-text::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 24px;
+            color: var(--accent-color);
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--primary);
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        
-        .footer-about p {
+
+        .client-info h5 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .client-info p {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: var(--accent-color);
+            opacity: 0.3;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background-color: var(--primary-color);
+        }
+
+        /* Partners Section */
+        .partners {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+
+        .partner-logo {
+            text-align: center;
+            margin-bottom: 30px;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .partner-logo:hover {
+            opacity: 1;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 80px;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+
+        .partner-logo:hover img {
+            filter: grayscale(0);
+        }
+
+        /* CTA Section */
+        .cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: var(--white);
+            font-size: 42px;
             margin-bottom: 20px;
-            line-height: 1.8;
         }
-        
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+
+        .btn-light {
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 12px 28px;
+            font-weight: 500;
+            border-radius: 0;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-light:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--secondary-color);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 80px 0 0;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+
+        .footer-about p {
+            margin-bottom: 25px;
+        }
+
         .footer-social {
             display: flex;
             gap: 15px;
         }
-        
-        .footer-social a {
+
+        .social-icon {
             width: 40px;
             height: 40px;
             background-color: rgba(255, 255, 255, 0.1);
-            color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--white);
+            font-size: 16px;
             transition: var(--transition);
         }
-        
-        .footer-social a:hover {
-            background-color: var(--primary);
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
             color: var(--white);
-            transform: translateY(-5px);
         }
-        
+
+        .footer-title {
+            color: var(--white);
+            font-size: 22px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
         .footer-links {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .footer-links li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
-        
+
         .footer-links a {
-            color: var(--white);
+            color: rgba(255, 255, 255, 0.7);
             transition: var(--transition);
             display: flex;
             align-items: center;
         }
-        
-        .footer-links a:before {
-            content: '\f054';
-            font-family: 'bootstrap-icons';
+
+        .footer-links a i {
             margin-right: 10px;
-            font-size: 0.8rem;
-            color: var(--primary);
-            transition: var(--transition);
+            color: var(--primary-color);
+            font-size: 12px;
         }
-        
+
         .footer-links a:hover {
-            color: var(--primary);
+            color: var(--primary-color);
             padding-left: 5px;
         }
-        
-        .footer-links a:hover:before {
-            margin-right: 15px;
-        }
-        
-        .footer-contact {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .footer-contact li {
+
+        .contact-item {
             display: flex;
+            align-items: flex-start;
             margin-bottom: 20px;
         }
-        
-        .footer-contact-icon {
-            color: var(--primary);
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-        
-        .footer-newsletter p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        
-        .newsletter-form {
-            position: relative;
-        }
-        
-        .newsletter-form input {
-            width: 100%;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 50px;
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
             background-color: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            outline: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 16px;
+            margin-right: 15px;
+            flex-shrink: 0;
         }
-        
-        .newsletter-form input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+
+        .contact-text {
+            line-height: 1.6;
         }
-        
-        .newsletter-form button {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            height: calc(100% - 10px);
-            padding: 0 20px;
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .newsletter-form button:hover {
-            background-color: var(--primary-dark);
-        }
-        
+
         .footer-bottom {
-            background-color: rgba(0, 0, 0, 0.2);
-            padding: 20px 0;
+            padding: 25px 0;
             text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             margin-top: 60px;
         }
-        
+
         .footer-bottom p {
-            margin-bottom: 0;
+            margin: 0;
+            font-size: 14px;
         }
-        
-        .footer-bottom a {
-            color: var(--primary);
-        }
-        
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 1199px) {
-            .page-header h1 {
-                font-size: 3rem;
-            }
-        }
-        
-        @media (max-width: 991px) {
-            section {
-                padding: 80px 0;
-            }
-            
-            .page-header {
-                min-height: 300px;
-            }
-            
-            .page-header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title h2,
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-            
-            .about-content {
-                padding-left: 0;
-                margin-top: 50px;
-            }
-            
-            .video-box {
-                margin-top: 30px;
-            }
-            
-            .timeline:after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item:nth-child(odd):after,
-            .timeline-item:nth-child(even):after {
-                left: 18px;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-year,
-            .timeline-item:nth-child(even) .timeline-year {
-                left: 20px;
-                right: auto;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            section {
-                padding: 60px 0;
-            }
-            
-            .page-header {
-                min-height: 250px;
-            }
-            
-            .page-header h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title h2,
-            .section-header h2 {
-                font-size: 2rem;
-            }
-            
-            .mission-box,
-            .team-card {
-                margin-bottom: 30px;
-            }
-            
-            .stats-number {
-                font-size: 2.5rem;
-            }
-            
-            .stats-text {
-                font-size: 1rem;
-            }
-            
-            .cta-title {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 575px) {
-            .page-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title h2,
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-            
-            .btn {
-                padding: 10px 25px;
-            }
-            
+
+        @media (max-width: 991.98px) {
             .footer-widget {
-                margin-bottom: 30px;
+                margin-bottom: 40px;
             }
+        }
+
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
         }
     </style>
-    <meta name="description" content="Learn about PowerFit, beasy's commitment to automotive excellence, history, and the dedicated team behind our fitness studio.">
-    <meta property="og:title" content="About Us - PowerFit Fitness Studio">
-    <meta property="og:description" content="Learn about PowerFit, beasy's commitment to automotive excellence, history, and the dedicated team behind our fitness studio.">
-    <meta property="og:type" content="website">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <style type="text/css">
         :root {
-            --primary: #FF6B35;
-            --primary-dark: #E85826;
-            --secondary: #2EC4B6;
-            --secondary-dark: #20A99D;
-            --accent: #7209B7;
-            --light: #F8F9FA;
-            --dark: #212529;
-            --gray: #6C757D;
-            --white: #FFFFFF;
-            --black: #000000;
-            --body-bg: #FFFFFF;
-            --success: #4CAF50;
-            --font-primary: 'Poppins', sans-serif;
-            --font-secondary: 'Montserrat', sans-serif;
-            --border-radius-sm: 4px;
-            --border-radius: 8px;
-            --border-radius-lg: 16px;
-            --border-radius-xl: 24px;
-            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.1);
+            --primary-color: #927a5a;
+            --secondary-color: #21282f;
+            --accent-color: #d3bea5;
+            --light-color: #f9f7f4;
+            --dark-color: #333333;
+            --text-color: #555555;
+            --white: #ffffff;
             --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
 
 
         :root {
-            --primary: #FF6B35;
-            --primary-dark: #E85826;
-            --secondary: #2EC4B6;
-            --secondary-dark: #20A99D;
-            --accent: #7209B7;
-            --light: #F8F9FA;
-            --dark: #212529;
-            --gray: #6C757D;
-            --white: #FFFFFF;
-            --black: #000000;
-            --body-bg: #FFFFFF;
-            --success: #4CAF50;
-            --font-primary: 'Poppins', sans-serif;
-            --font-secondary: 'Montserrat', sans-serif;
-            --border-radius-sm: 4px;
-            --border-radius: 8px;
-            --border-radius-lg: 16px;
-            --border-radius-xl: 24px;
-            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.1);
+            --primary-color: #927a5a;
+            --secondary-color: #21282f;
+            --accent-color: #d3bea5;
+            --light-color: #f9f7f4;
+            --dark-color: #333333;
+            --text-color: #555555;
+            --white: #ffffff;
             --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
-        
-        /* Base Styles */
+
         body {
-            font-family: var(--font-primary);
-            color: var(--dark);
-            background-color: var(--body-bg);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.8;
+            background-color: var(--white);
             overflow-x: hidden;
-            line-height: 1.6;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-secondary);
-            font-weight: 700;
-            line-height: 1.3;
+            font-family: 'Playfair Display', serif;
+            color: var(--secondary-color);
+            font-weight: 600;
+            line-height: 1.4;
         }
-        
+
+        p {
+            font-size: 16px;
+        }
+
         a {
             text-decoration: none;
+            color: var(--dark-color);
             transition: var(--transition);
         }
-        
-        img {
-            max-width: 100%;
+
+        a:hover {
+            color: var(--primary-color);
         }
-        
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        /* Buttons */
-        .btn {
-            font-family: var(--font-primary);
-            font-weight: 600;
-            padding: 12px 30px;
-            border-radius: 50px;
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 0;
             transition: var(--transition);
-            text-transform: uppercase;
             letter-spacing: 0.5px;
-            font-size: 0.9rem;
+            text-transform: uppercase;
             position: relative;
             overflow: hidden;
             z-index: 1;
         }
-        
-        .btn:before {
+
+        .btn-primary::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            z-index: -1;
-            border-radius: 50px;
-            transition: all 0.5s ease;
-        }
-        
-        .btn:hover:before {
+            left: -100%;
             width: 100%;
+            height: 100%;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+            z-index: -1;
         }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: var(--white);
-        }
-        
+
         .btn-primary:hover {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
+            background-color: var(--primary-color);
         }
-        
-        .btn-primary:before {
-            background-color: var(--primary-dark);
+
+        .btn-primary:hover::before {
+            left: 0;
         }
-        
-        .btn-outline-primary {
-            color: var(--primary);
-            border-color: var(--primary);
+
+        .btn-outline {
             background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 26px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 0;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary);
-            border-color: var(--primary);
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
             color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2);
         }
-        
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 42px;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .section-title p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-color);
+        }
+
         /* Navbar */
         .navbar {
             padding: 20px 0;
-            transition: var(--transition);
-            z-index: 1000;
+            transition: all 0.5s ease;
         }
-        
+
         .navbar-brand {
-            font-family: var(--font-secondary);
-            font-weight: 800;
-            font-size: 1.8rem;
-            color: var(--dark);
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary-color);
         }
-        
+
         .navbar-brand span {
-            color: var(--primary);
+            color: var(--primary-color);
         }
-        
+
         .navbar-nav .nav-link {
-            color: var(--dark);
-            font-weight: 600;
-            padding: 0 20px;
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 16px;
+            margin: 0 15px;
             position: relative;
-            transition: var(--transition);
+            padding: 8px 0;
         }
-        
-        .navbar-nav .nav-link:hover, 
-        .navbar-nav .nav-link.active {
-            color: var(--primary);
-        }
-        
-        .navbar-nav .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            left: 20px;
-            bottom: -5px;
-            transition: var(--transition);
-        }
-        
-        .navbar-nav .nav-link:hover:after,
-        .navbar-nav .nav-link.active:after {
-            width: calc(100% - 40px);
-        }
-        
-        .navbar.scrolled {
-            padding: 10px 0;
-            background-color: var(--white);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Page Header */
-        .page-header {
-            position: relative;
-            height: 50vh;
-            min-height: 400px;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/about-header.jpg') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            text-align: center;
-            overflow: hidden;
-        }
-        
-        .page-header h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease;
-        }
-        
-        .breadcrumb {
-            display: inline-flex;
-            padding: 0;
-            margin-bottom: 0;
-            background-color: transparent;
-            animation: fadeInUp 1s ease;
-        }
-        
-        .breadcrumb-item, 
-        .breadcrumb-item a {
-            color: var(--white);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        
-        .breadcrumb-item.active {
-            color: var(--primary);
-        }
-        
-        .breadcrumb-item + .breadcrumb-item::before {
-            color: var(--white);
-        }
-        
-        /* About Section */
-        .about-section {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .about-image {
-            position: relative;
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            transition: var(--transition);
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-        
-        .about-content {
-            padding-left: 30px;
-        }
-        
-        .section-title {
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .section-title .subtitle {
-            font-size: 1rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2:after {
+
+        .navbar-nav .nav-link::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 70px;
-            height: 3px;
-            background-color: var(--primary);
-        }
-        
-        .about-text {
-            margin-bottom: 30px;
-        }
-        
-        .video-box {
-            position: relative;
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .video-box img {
-            width: 100%;
-            height: auto;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
             transition: var(--transition);
         }
-        
-        .video-box:hover img {
-            transform: scale(1.05);
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
         }
-        
-        .video-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-button {
+            background-color: var(--primary-color);
             color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            text-decoration: none;
-            z-index: 1;
+            padding: 10px 25px;
+            border-radius: 0;
+            font-weight: 500;
+            font-size: 16px;
             transition: var(--transition);
         }
-        
-        .video-btn:hover {
-            background: linear-gradient(to right, var(--accent), var(--primary));
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
             color: var(--white);
-            transform: translate(-50%, -50%) scale(1.1);
         }
-        
-        .video-btn:before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            z-index: -1;
-            animation: pulse 2s infinite;
+
+        .navbar-toggler {
+            border: none;
+            padding: 0;
         }
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
         }
-        
-        /* Mission Section */
-        .mission-section {
-            background-color: var(--light);
+
+        .navbar-toggler-icon {
+            width: 24px;
+            height: 17px;
+            background-image: none;
             position: relative;
-            overflow: hidden;
+            border-bottom: 2px solid var(--secondary-color);
+            transition: all 300ms linear;
         }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-header .subtitle {
-            font-size: 1rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 15px;
-            display: inline-block;
-        }
-        
-        .section-header h2:after {
-            content: '';
+
+        .navbar-toggler-icon:after, 
+        .navbar-toggler-icon:before {
+            width: 24px;
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
-            height: 3px;
-            background-color: var(--primary);
+            height: 2px;
+            background-color: var(--secondary-color);
+            top: 0;
+            left: 0;
+            content: '';
+            z-index: 2;
+            transition: all 300ms linear;
         }
-        
-        .section-header p {
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            color: var(--gray);
+
+        .navbar-toggler-icon:after {
+            top: 8px;
         }
-        
-        .mission-box {
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+            transform: rotate(45deg);
+            background-color: var(--secondary-color);
+            height: 2px;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+            transform: translateY(8px) rotate(-45deg);
+            background-color: var(--secondary-color);
+            height: 2px;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+            border-color: transparent;
+        }
+
+        /* Fix navbar mobile background */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                border-radius: 0 0 10px 10px;
+                margin-top: 10px;
+            }
+        }
+
+        .navbar.sticky {
             background-color: var(--white);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--box-shadow);
-            padding: 40px 30px;
-            height: 100%;
-            transition: var(--transition);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Page Header */
+        .page-header {
+            background-color: var(--light-color);
+            padding: 150px 0 80px;
             text-align: center;
+            position: relative;
         }
-        
-        .mission-box:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-hover);
-        }
-        
-        .mission-icon {
-            width: 80px;
-            height: 80px;
-            background-color: rgba(255, 107, 53, 0.1);
-            color: var(--primary);
-            border-radius: var(--border-radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 25px;
-            transition: var(--transition);
-        }
-        
-        .mission-box:hover .mission-icon {
-            background-color: var(--primary);
-            color: var(--white);
-            transform: rotateY(360deg);
-            transition: transform 0.8s ease, background-color 0.3s ease, color 0.3s ease;
-        }
-        
-        .mission-box h3 {
-            font-size: 1.5rem;
+
+        .page-header h1 {
+            font-size: 48px;
             margin-bottom: 15px;
             position: relative;
+            display: inline-block;
+            padding-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .page-header h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .breadcrumb-item {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .breadcrumb-item a {
+            color: var(--text-color);
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .breadcrumb-item.active {
+            color: var(--primary-color);
+        }
+
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: '\f105';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--text-color);
+        }
+
+        /* About Intro */
+        .about-intro {
+            padding: 100px 0;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border: 5px solid var(--primary-color);
+            top: -20px;
+            left: -20px;
+            border-radius: 10px;
+            z-index: -1;
+        }
+
+        .about-content h2 {
+            font-size: 38px;
+            margin-bottom: 25px;
+            position: relative;
             padding-bottom: 15px;
         }
-        
-        .mission-box h3:after {
+
+        .about-content h2::after {
             content: '';
             position: absolute;
+            left: 0;
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 2px;
-            background-color: var(--primary);
-            transition: var(--transition);
-        }
-        
-        .mission-box:hover h3:after {
             width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
         }
-        
-        .mission-box p {
-            color: var(--gray);
-            margin-bottom: 0;
+
+        .about-content p {
+            margin-bottom: 20px;
         }
-        
-        /* History Section */
-        .history-section {
-            position: relative;
-            overflow: hidden;
+
+        .signature {
+            margin-top: 30px;
+            display: block;
+            max-width: 200px;
         }
-        
+
+        /* Timeline Section */
+        .timeline-section {
+            background-color: var(--light-color);
+            padding: 100px 0;
+        }
+
         .timeline {
             position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1000px;
+            margin: 60px auto 0;
         }
-        
-        .timeline:after {
+
+        .timeline:before {
             content: '';
             position: absolute;
-            width: 6px;
-            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            width: 2px;
+            background-color: var(--accent-color);
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -3px;
-            border-radius: 6px;
+            margin-left: -1px;
         }
-        
+
         .timeline-item {
-            padding: 10px 40px;
+            padding: 20px 30px;
             position: relative;
             width: 50%;
-            box-sizing: border-box;
-            margin-bottom: 40px;
-        }
-        
-        .timeline-item:nth-child(odd) {
             left: 0;
+            margin-bottom: 60px;
         }
-        
+
         .timeline-item:nth-child(even) {
             left: 50%;
         }
-        
+
         .timeline-item:after {
             content: '';
             position: absolute;
             width: 25px;
             height: 25px;
-            background-color: var(--white);
-            border: 4px solid var(--primary);
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-            box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
-            transition: var(--transition);
-        }
-        
-        .timeline-item:hover:after {
-            background-color: var(--primary);
-            transform: scale(1.2);
-        }
-        
-        .timeline-item:nth-child(odd):after {
             right: -12px;
-        }
-        
-        .timeline-item:nth-child(even):after {
-            left: -12px;
-        }
-        
-        .timeline-content {
             background-color: var(--white);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--box-shadow);
+            border: 4px solid var(--primary-color);
+            top: 35px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even):after {
+            left: -13px;
+        }
+
+        .timeline-content {
             padding: 30px;
+            background-color: var(--white);
             position: relative;
-            transition: var(--transition);
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
         }
-        
-        .timeline-content:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-hover);
-        }
-        
-        .timeline-year {
-            position: absolute;
-            top: -15px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
+
+        .timeline-date {
+            display: inline-block;
+            background-color: var(--primary-color);
             color: var(--white);
             padding: 5px 15px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-family: var(--font-secondary);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-year {
-            right: 20px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-year {
-            left: 20px;
-        }
-        
-        .timeline-content h3 {
-            margin-top: 10px;
+            font-size: 14px;
+            border-radius: 5px;
             margin-bottom: 15px;
-            font-size: 1.3rem;
         }
-        
-        .timeline-content p {
-            margin-bottom: 0;
-            color: var(--gray);
+
+        .timeline-content h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
         }
-        
-        /* Stats Section */
-        .stats-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/stats-bg.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
-            color: var(--white);
-            padding: 120px 0;
+
+        @media (max-width: 767px) {
+            .timeline:before {
+                left: 40px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 0;
+                left: 0 !important;
+            }
+            
+            .timeline-item:after {
+                left: 27px;
+                right: auto;
+            }
         }
-        
-        .stats-box {
-            text-align: center;
-            margin-bottom: 30px;
+
+        /* Mission & Vision */
+        .mission-vision {
+            padding: 100px 0;
         }
-        
-        .stats-icon {
+
+        .mv-item {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            height: 100%;
+            transition: var(--transition);
+        }
+
+        .mv-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .mv-icon {
             width: 80px;
             height: 80px;
-            background-color: rgba(255, 107, 53, 0.2);
-            color: var(--primary);
+            background-color: var(--light-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 25px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            font-size: 30px;
             transition: var(--transition);
         }
-        
-        .stats-box:hover .stats-icon {
-            background-color: var(--primary);
+
+        .mv-item:hover .mv-icon {
+            background-color: var(--primary-color);
             color: var(--white);
-            transform: rotateY(360deg);
-            transition: transform 0.8s ease, background-color 0.3s ease, color 0.3s ease;
         }
-        
-        .stats-number {
-            font-size: 3rem;
-            font-weight: 800;
-            font-family: var(--font-secondary);
-            margin-bottom: 10px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        .mv-item h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
         }
-        
-        .stats-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
+
         /* Team Section */
-        .team-section {
-            background-color: var(--light);
-            position: relative;
-            overflow: hidden;
+        .team {
+            background-color: var(--light-color);
+            padding: 100px 0;
         }
-        
-        .team-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
+
+        .team-member {
+            text-align: center;
             margin-bottom: 30px;
         }
-        
-        .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-hover);
-        }
-        
-        .team-image {
-            height: 350px;
-            overflow: hidden;
+
+        .member-image {
             position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 25px;
         }
-        
-        .team-image img {
+
+        .member-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
             transition: var(--transition);
+            height: 350px;
+            object-fit: cover;
         }
-        
-        .team-card:hover .team-image img {
-            transform: scale(1.1);
-        }
-        
-        .team-social {
+
+        .member-social {
             position: absolute;
             bottom: -50px;
             left: 0;
             width: 100%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             padding: 15px 0;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            display: flex;
-            justify-content: center;
-            align-items: center;
             transition: var(--transition);
-            opacity: 0;
         }
-        
-        .team-card:hover .team-social {
-            bottom: 0;
-            opacity: 1;
-        }
-        
-        .team-social a {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+
+        .social-link {
             color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 8px;
+            font-size: 16px;
             transition: var(--transition);
         }
-        
-        .team-social a:hover {
-            background-color: var(--white);
-            color: var(--primary);
-            transform: translateY(-5px);
+
+        .social-link:hover {
+            color: var(--accent-color);
         }
-        
-        .team-content {
-            padding: 25px;
-            text-align: center;
+
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
         }
-        
-        .team-content h3 {
-            font-size: 1.5rem;
+
+        .team-member:hover .member-social {
+            bottom: 0;
+        }
+
+        .member-info h4 {
+            font-size: 22px;
             margin-bottom: 5px;
         }
-        
-        .team-content p {
-            color: var(--primary);
-            font-weight: 600;
+
+        .member-position {
+            color: var(--primary-color);
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--secondary-color);
+            padding: 80px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: var(--white);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--white);
             margin-bottom: 10px;
         }
-        
-        .team-desc {
-            color: var(--gray);
-            margin-bottom: 0;
+
+        .stat-text {
+            font-size: 18px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/cta-bg.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
             position: relative;
-            color: var(--white);
+            overflow: hidden;
+        }
+
+        .testimonial-slider {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .testimonial-slide {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
             text-align: center;
-            padding: 120px 0;
+            transition: var(--transition);
         }
-        
-        .cta-content {
-            position: relative;
-            z-index: 1;
+
+        .testimonial-slide:hover {
+            transform: translateY(-10px);
         }
-        
-        .cta-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 800;
+
+        .client-image {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            overflow: hidden;
+            border: 5px solid var(--accent-color);
         }
-        
-        .cta-text {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+
+        .client-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        
-        /* Footer */
-        .footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 80px 0 0;
-            position: relative;
-        }
-        
-        .footer-widget {
-            margin-bottom: 40px;
-        }
-        
-        .footer-title {
-            font-size: 1.3rem;
+
+        .testimonial-text {
             margin-bottom: 25px;
             position: relative;
-            padding-bottom: 10px;
+            font-style: italic;
         }
-        
-        .footer-title:after {
-            content: '';
+
+        .testimonial-text::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 24px;
+            color: var(--accent-color);
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--primary);
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        
-        .footer-about p {
+
+        .client-info h5 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .client-info p {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background-color: var(--accent-color);
+            opacity: 0.3;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background-color: var(--primary-color);
+        }
+
+        /* Partners Section */
+        .partners {
+            background-color: var(--light-color);
+            padding: 80px 0;
+        }
+
+        .partner-logo {
+            text-align: center;
+            margin-bottom: 30px;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .partner-logo:hover {
+            opacity: 1;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 80px;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+
+        .partner-logo:hover img {
+            filter: grayscale(0);
+        }
+
+        /* CTA Section */
+        .cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: var(--white);
+            font-size: 42px;
             margin-bottom: 20px;
-            line-height: 1.8;
         }
-        
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+
+        .btn-light {
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 12px 28px;
+            font-weight: 500;
+            border-radius: 0;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-light:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--secondary-color);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 80px 0 0;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+
+        .footer-about p {
+            margin-bottom: 25px;
+        }
+
         .footer-social {
             display: flex;
             gap: 15px;
         }
-        
-        .footer-social a {
+
+        .social-icon {
             width: 40px;
             height: 40px;
             background-color: rgba(255, 255, 255, 0.1);
-            color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--white);
+            font-size: 16px;
             transition: var(--transition);
         }
-        
-        .footer-social a:hover {
-            background-color: var(--primary);
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
             color: var(--white);
-            transform: translateY(-5px);
         }
-        
+
+        .footer-title {
+            color: var(--white);
+            font-size: 22px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
         .footer-links {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .footer-links li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
-        
+
         .footer-links a {
-            color: var(--white);
+            color: rgba(255, 255, 255, 0.7);
             transition: var(--transition);
             display: flex;
             align-items: center;
         }
-        
-        .footer-links a:before {
-            content: '\f054';
-            font-family: 'bootstrap-icons';
+
+        .footer-links a i {
             margin-right: 10px;
-            font-size: 0.8rem;
-            color: var(--primary);
-            transition: var(--transition);
+            color: var(--primary-color);
+            font-size: 12px;
         }
-        
+
         .footer-links a:hover {
-            color: var(--primary);
+            color: var(--primary-color);
             padding-left: 5px;
         }
-        
-        .footer-links a:hover:before {
-            margin-right: 15px;
-        }
-        
-        .footer-contact {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .footer-contact li {
+
+        .contact-item {
             display: flex;
+            align-items: flex-start;
             margin-bottom: 20px;
         }
-        
-        .footer-contact-icon {
-            color: var(--primary);
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-        
-        .footer-newsletter p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        
-        .newsletter-form {
-            position: relative;
-        }
-        
-        .newsletter-form input {
-            width: 100%;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 50px;
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
             background-color: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            outline: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 16px;
+            margin-right: 15px;
+            flex-shrink: 0;
         }
-        
-        .newsletter-form input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+
+        .contact-text {
+            line-height: 1.6;
         }
-        
-        .newsletter-form button {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            height: calc(100% - 10px);
-            padding: 0 20px;
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .newsletter-form button:hover {
-            background-color: var(--primary-dark);
-        }
-        
+
         .footer-bottom {
-            background-color: rgba(0, 0, 0, 0.2);
-            padding: 20px 0;
+            padding: 25px 0;
             text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             margin-top: 60px;
         }
-        
+
         .footer-bottom p {
-            margin-bottom: 0;
+            margin: 0;
+            font-size: 14px;
         }
-        
-        .footer-bottom a {
-            color: var(--primary);
-        }
-        
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 1199px) {
-            .page-header h1 {
-                font-size: 3rem;
-            }
-        }
-        
-        @media (max-width: 991px) {
-            section {
-                padding: 80px 0;
-            }
-            
-            .page-header {
-                min-height: 300px;
-            }
-            
-            .page-header h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title h2,
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-            
-            .about-content {
-                padding-left: 0;
-                margin-top: 50px;
-            }
-            
-            .video-box {
-                margin-top: 30px;
-            }
-            
-            .timeline:after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item:nth-child(odd):after,
-            .timeline-item:nth-child(even):after {
-                left: 18px;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-year,
-            .timeline-item:nth-child(even) .timeline-year {
-                left: 20px;
-                right: auto;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            section {
-                padding: 60px 0;
-            }
-            
-            .page-header {
-                min-height: 250px;
-            }
-            
-            .page-header h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title h2,
-            .section-header h2 {
-                font-size: 2rem;
-            }
-            
-            .mission-box,
-            .team-card {
-                margin-bottom: 30px;
-            }
-            
-            .stats-number {
-                font-size: 2.5rem;
-            }
-            
-            .stats-text {
-                font-size: 1rem;
-            }
-            
-            .cta-title {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 575px) {
-            .page-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title h2,
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-            
-            .btn {
-                padding: 10px 25px;
-            }
-            
+
+        @media (max-width: 991.98px) {
             .footer-widget {
-                margin-bottom: 30px;
+                margin-bottom: 40px;
             }
+        }
+
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
         }
     
     </style>
@@ -2297,10 +2013,15 @@
 </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Power<span>Fit</span></a>
+            <a class="navbar-brand" href="index.html">Elegance<span>Interiors</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -2313,19 +2034,19 @@
                         <a class="nav-link active" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="classes.html">Classes</a>
+                        <a class="nav-link" href="services.html">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="trainers.html">Trainers</a>
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pricing.html">Pricing</a>
+                        <a class="nav-link" href="blog.html">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
-                <a href="contact.html" class="btn btn-primary ms-lg-4">Join Now</a>
+                <a href="contact.html" class="btn nav-button ms-lg-4">Get Quote</a>
             </div>
         </div>
     </nav>
@@ -2333,9 +2054,9 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>About PowerFit</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
+            <h1 data-aos="fade-up" data-aos-duration="1000">About Us</h1>
+            <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                <ol class="breadcrumb justify-content-center">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">About Us</li>
                 </ol>
@@ -2343,220 +2064,111 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section">
+    <!-- About Intro -->
+    <section class="about-intro">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <div class="section-title">
-                            <span class="subtitle">Our Story</span>
-                            <h2>Transforming Lives Since 2010</h2>
-                        </div>
-                        <div class="about-text">
-                            <p>PowerFit was founded with a simple mission: to create a fitness environment that empowers people to become the best version of themselves. What started as a small studio with just a handful of members has grown into a thriving community of fitness enthusiasts.</p>
-                            <p>Our approach combines cutting-edge exercise science with personalized coaching to help members achieve sustainable results. We believe fitness is not just about physical transformation but about enhancing overall quality of life.</p>
-                            <p>Over the years, we've helped thousands of members overcome challenges, build strength, and gain confidence. Our expert trainers, diverse class offerings, and supportive community continue to inspire and motivate people every day.</p>
-                        </div>
-                        <a href="classes.html" class="btn btn-primary me-3">Explore Our Classes</a>
-                        <a href="contact.html" class="btn btn-outline-primary">Free Trial</a>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="About Elegance Interiors">
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="video-box">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="About PowerFit">
-                        <a href="#" class="video-btn">
-                            <i class="bi bi-play-fill"></i>
-                        </a>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="about-content">
+                        <h2>Transforming Spaces Since 2008</h2>
+                        <p>Elegance Interiors was founded with a simple yet powerful vision: to create beautiful, functional spaces that inspire and delight. For over 15 years, we've been transforming residential and commercial interiors throughout the region, establishing ourselves as a leading design firm known for our creativity, attention to detail, and client-centered approach.</p>
+                        <p>Our team of experienced, passionate designers brings together diverse backgrounds and expertise, allowing us to tackle implementations and deployments of any size or style. From contemporary urban apartments to traditional suburban homes, sleek corporate offices to charming boutique retail spaces, we approach each project with fresh perspectives and innovative software solutions and digital innovations.</p>
+                        <p>What sets us apart is our commitment to truly understanding our users and businesses' needs, preferences, and lifestyles. We don't just create beautiful spaces; we create personalized environments that enhance how you live, work, and interact with your surroundings.</p>
+                        <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Director's Signature" class="signature">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission Section -->
-    <section class="mission-section">
+    <!-- Timeline Section -->
+    <section class="timeline-section">
         <div class="container">
-            <div class="section-header">
-                <span class="subtitle">What Drives Us</span>
-                <h2>Our Core Values</h2>
-                <p>At PowerFit, we're guided by a set of core values that inform everything we do. These principles help us deliver exceptional fitness experiences and foster a community where everyone can thrive.</p>
+            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+                <h2>Our Journey</h2>
+                <p>From a small startup to a renowned interior design firm, here's how our story unfolded over the years.</p>
             </div>
             
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="mission-box">
-                        <div class="mission-icon">
-                            <i class="bi bi-bullseye"></i>
-                        </div>
-                        <h3>beasy's commitment to automotive excellence</h3>
-                        <p>To create a welcoming fitness environment that inspires, educates, and empowers people to transform their lives through sustainable health practices and community support.</p>
+            <div class="timeline" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2008</div>
+                        <h3>The Beginning</h3>
+                        <p>Elegance Interiors was founded by Emily Richardson with just a small office and a team of three passionate designers dedicated to transforming spaces.</p>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="mission-box">
-                        <div class="mission-icon">
-                            <i class="bi bi-eye"></i>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2010</div>
+                        <h3>First Major Project</h3>
+                        <p>We completed our first major commercial project, designing the headquarters for a leading tech company, which earned us recognition in the industry.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2013</div>
+                        <h3>Expansion & Growth</h3>
+                        <p>Our team expanded to 10 designers, and we moved to a larger studio space to accommodate our growing portfolio of residential and commercial implementations and deployments.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2015</div>
+                        <h3>First Design Award</h3>
+                        <p>Elegance Interiors won its first prestigious design award for an innovative residential project that showcased sustainable design principles.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018</div>
+                        <h3>10 Year Anniversary</h3>
+                        <p>We celebrated our 10th anniversary with the opening of a new design studio and showroom space, featuring curated furniture and decor pieces.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3>Today & Beyond</h3>
+                        <p>Now with a team of 25+ designers and over 350 completed implementations and deployments, we continue to push boundaries and create exceptional spaces for our users and businesses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="mv-item">
+                        <div class="mv-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>beasy's commitment to interior excellence</h3>
+                        <p>To transform ordinary spaces into extraordinary environments that inspire, function beautifully, and reflect the unique personalities and needs of our users and businesses. We aim to create interiors that enhance the quality of life and work for those who inhabit them.</p>
+                        <p>At Elegance Interiors, we believe that thoughtful, well-designed spaces have the power to positively impact how people live, work, and feel. beasy's commitment to interior excellence is to harness that power through creative design software solutions and digital innovations that blend aesthetics, functionality, and client vision.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="mv-item">
+                        <div class="mv-icon">
+                            <i class="fas fa-eye"></i>
                         </div>
                         <h3>Our Vision</h3>
-                        <p>To be the leading fitness community that redefines what's possible, helping members unlock their potential and creating a positive ripple effect in their lives and communities.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="mission-box">
-                        <div class="mission-icon">
-                            <i class="bi bi-graph-up-arrow"></i>
-                        </div>
-                        <h3>Innovation</h3>
-                        <p>We continuously evolve our approach, incorporating the latest fitness science and technology to deliver effective, engaging, and results-driven workout experiences.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="mission-box">
-                        <div class="mission-icon">
-                            <i class="bi bi-people"></i>
-                        </div>
-                        <h3>Community</h3>
-                        <p>We foster a supportive, inclusive environment where members feel connected, motivated, and accountable on their fitness journey, celebrating each other's victories.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="mission-box">
-                        <div class="mission-icon">
-                            <i class="bi bi-star"></i>
-                        </div>
-                        <h3>Excellence</h3>
-                        <p>We pursue excellence in everything we do, from the quality of our facilities and equipment to the expertise of our trainers and the service we provide to our members.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="mission-box">
-                        <div class="mission-icon">
-                            <i class="bi bi-heart-pulse"></i>
-                        </div>
-                        <h3>Holistic Wellness</h3>
-                        <p>We believe in nurturing the whole person—physical, mental, and emotional wellbeing—through fitness practices that promote long-term health and sustainable lifestyle changes.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- History Section -->
-    <section class="history-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="subtitle">Our Journey</span>
-                <h2>PowerFit Timeline</h2>
-                <p>From humble beginnings to a thriving fitness community, our journey has been filled with growth, innovation, and countless transformations. Here's how we've evolved over the years.</p>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2010</div>
-                        <h3>The Beginning</h3>
-                        <p>PowerFit was founded with a small studio in downtown, offering basic fitness classes and personal training with just three trainers and a handful of dedicated members.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2012</div>
-                        <h3>Community Growth</h3>
-                        <p>Expanded to a larger facility to accommodate our growing community. Introduced specialized programs for different fitness levels and added nutrition coaching to our service offerings.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2014</div>
-                        <h3>Innovation in Training</h3>
-                        <p>Launched our signature high-intensity interval training program and expanded our class offerings to include yoga, pilates, and specialized strength training programs.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2016</div>
-                        <h3>Facility Upgrade</h3>
-                        <p>Moved to our current state-of-the-art facility with expanded training areas, premium equipment, and dedicated studios for specialized classes.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2018</div>
-                        <h3>Holistic Approach</h3>
-                        <p>Introduced our holistic wellness program, incorporating mental wellness, recovery practices, and personalized health assessments into our approach.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2020</div>
-                        <h3>Digital Transformation</h3>
-                        <p>Launched our virtual training platform, allowing members to access workouts, nutrition guidance, and coaching from anywhere, complementing our in-person experiences.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2023</div>
-                        <h3>Community Milestone</h3>
-                        <p>Celebrated our 10,000th member and expanded our community outreach programs, partnering with local organizations to promote health and wellness.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-box">
-                        <div class="stats-icon">
-                            <i class="bi bi-people"></i>
-                        </div>
-                        <div class="stats-number" data-count="10000">10,000+</div>
-                        <div class="stats-text">Happy Members</div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-box">
-                        <div class="stats-icon">
-                            <i class="bi bi-calendar-check"></i>
-                        </div>
-                        <div class="stats-number" data-count="50">50+</div>
-                        <div class="stats-text">Weekly Classes</div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-box">
-                        <div class="stats-icon">
-                            <i class="bi bi-trophy"></i>
-                        </div>
-                        <div class="stats-number" data-count="15">15</div>
-                        <div class="stats-text">Expert Trainers</div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-box">
-                        <div class="stats-icon">
-                            <i class="bi bi-award"></i>
-                        </div>
-                        <div class="stats-number" data-count="13">13</div>
-                        <div class="stats-text">Years of Excellence</div>
+                        <p>To be recognized as the premier interior design firm known for creating timeless, innovative spaces that set new standards in the industry. We envision a future where our designs not only meet current needs but anticipate and adapt to the evolving ways people interact with their environments.</p>
+                        <p>We strive to lead the industry in sustainable practices, technological integration, and client satisfaction, while fostering a creative, collaborative work environment where our team can grow and thrive.</p>
                     </div>
                 </div>
             </div>
@@ -2564,137 +2176,82 @@
     </section>
 
     <!-- Team Section -->
-    <section class="team-section">
+    <section class="team">
         <div class="container">
-            <div class="section-header">
-                <span class="subtitle">The Faces Behind PowerFit</span>
-                <h2>Our Leadership Team</h2>
-                <p>Meet the dedicated professionals who lead PowerFit's mission to transform lives through fitness. With diverse backgrounds and expertise, our leadership team is committed to delivering exceptional fitness experiences.</p>
+            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+                <h2>Meet Our Team</h2>
+                <p>Our talented team of designers and professionals bring creativity, expertise, and passion to every project.</p>
             </div>
             
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member">
-                            <div class="team-social">
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Emily Richardson">
+                            <div class="member-social">
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
-                        <div class="team-content">
-                            <h3>Michael Johnson</h3>
-                            <p>Founder & CEO</p>
-                            <div class="team-desc">
-                                A former professional athlete with over 20 Trusted automotive expertise in Not specified in the fitness industry. Michael's vision and leadership have been instrumental in PowerFit's growth and success.
-                            </div>
+                        <div class="member-info">
+                            <h4>Emily Richardson</h4>
+                            <p class="member-position">Founder & Principal Designer</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member">
-                            <div class="team-social">
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="David Carter">
+                            <div class="member-social">
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
-                        <div class="team-content">
-                            <h3>Sarah Williams</h3>
-                            <p>Fitness Director</p>
-                            <div class="team-desc">
-                                A certified nutritionist and yoga instructor, Sarah oversees PowerFit's holistic wellness programs, ensuring members receive comprehensive support for their health goals.
-                            </div>
+                        <div class="member-info">
+                            <h4>David Carter</h4>
+                            <p class="member-position">Senior Interior Designer</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member">
-                            <div class="team-social">
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Sophia Martinez">
+                            <div class="member-social">
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
-                        <div class="team-content">
-                            <h3>David Rodriguez</h3>
-                            <p>Head of Training</p>
-                            <div class="team-desc">
-                                With multiple fitness certifications and a degree in Exercise Science, David develops PowerFit's innovative workout programs and leads trainer education.
-                            </div>
+                        <div class="member-info">
+                            <h4>Sophia Martinez</h4>
+                            <p class="member-position">Space Planning Specialist</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member">
-                            <div class="team-social">
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Michael Thompson">
+                            <div class="member-social">
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
-                        <div class="team-content">
-                            <h3>Emily Chen</h3>
-                            <p>Nutrition Director</p>
-                            <div class="team-desc">
-                                A registered dietitian with specialized training in sports nutrition, Emily leads PowerFit's nutrition programs and personalized meal planning services.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member">
-                            <div class="team-social">
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-content">
-                            <h3>James Wilson</h3>
-                            <p>Community Director</p>
-                            <div class="team-desc">
-                                With a background in event planning and community outreach, James coordinates PowerFit's community programs and member engagement initiatives.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member">
-                            <div class="team-social">
-                                <a href="#"><i class="bi bi-facebook"></i></a>
-                                <a href="#"><i class="bi bi-instagram"></i></a>
-                                <a href="#"><i class="bi bi-twitter"></i></a>
-                                <a href="#"><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-content">
-                            <h3>Sophie Taylor</h3>
-                            <p>Operations Manager</p>
-                            <div class="team-desc">
-                                Dedicated to creating exceptional member experiences, Sophie oversees all aspects of customer service and facility operations at PowerFit.
-                            </div>
+                        <div class="member-info">
+                            <h4>Michael Thompson</h4>
+                            <p class="member-position">Project Manager</p>
                         </div>
                     </div>
                 </div>
@@ -2702,14 +2259,175 @@
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="cta-section">
+    <!-- Stats Section -->
+    <section class="stats">
         <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Start Your Fitness Journey?</h2>
-                <p class="cta-text">Join PowerFit today and take the first step towards a healthier, stronger you. Our expert trainers, diverse classes, and supportive community are waiting to help you achieve your goals.</p>
-                <a href="contact.html" class="btn btn-primary me-3">Free Trial Class</a>
-                <a href="pricing.html" class="btn btn-outline-primary">View Membership Plans</a>
+            <div class="row">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-count="350">0</h3>
+                        <p class="stat-text">implementations and deployments Completed</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-count="15">0</h3>
+                        <p class="stat-text">Trusted interior expertise in Not specified</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-count="25">0</h3>
+                        <p class="stat-text">Design Awards</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-count="280">0</h3>
+                        <p class="stat-text">Happy users and businesses</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+                <h2>Client Testimonials</h2>
+                <p>Don't just take our word for it. Here's what our users and businesses have to say about working with Elegance Interiors.</p>
+            </div>
+            
+            <div class="testimonial-slider swiper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-slide">
+                            <div class="client-image">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Sarah Johnson">
+                            </div>
+                            <p class="testimonial-text">Working with Elegance Interiors was a pleasure from start to finish. They transformed our outdated living space into a modern, functional, and beautiful home that we love spending time in. Their attention to detail was impressive, and they truly understood our vision.</p>
+                            <div class="client-info">
+                                <h5>Sarah Johnson</h5>
+                                <p>Homeowner</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="testimonial-slide">
+                            <div class="client-image">
+                                <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Robert Davis">
+                            </div>
+                            <p class="testimonial-text">As a business owner, I needed an office space that reflects our brand identity and impresses users and businesses. Elegance Interiors delivered beyond my expectations, creating a stylish yet functional workspace that my team loves. The project was completed on time and within budget.</p>
+                            <div class="client-info">
+                                <h5>Robert Davis</h5>
+                                <p>CEO, Davis Enterprises</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="testimonial-slide">
+                            <div class="client-image">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Jennifer Williams">
+                            </div>
+                            <p class="testimonial-text">I was amazed by how well the design team understood my vision. They took my ideas and elevated them to create a home that truly reflects my personality. The process was collaborative and enjoyable, and I wouldn't hesitate to recommend them to anyone looking for interior design services.</p>
+                            <div class="client-info">
+                                <h5>Jennifer Williams</h5>
+                                <p>Homeowner</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <div class="testimonial-slide">
+                            <div class="client-image">
+                                <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Thomas Brown">
+                            </div>
+                            <p class="testimonial-text">The Elegance Interiors team transformed our restaurant space into an inviting, Instagram-worthy venue that our customers love. Their understanding of commercial design and customer flow has actually helped increase our revenue. They were professional, creative, and a joy to work with.</p>
+                            <div class="client-info">
+                                <h5>Thomas Brown</h5>
+                                <p>Owner, Bistro Deluxe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+                <h2>Our Partners</h2>
+                <p>We collaborate with leading brands and suppliers to bring you the highest quality materials and products.</p>
+            </div>
+            
+            <div class="row" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="partner-logo">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Partner Logo">
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="partner-logo">
+                        <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Partner Logo">
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="partner-logo">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Partner Logo">
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="partner-logo">
+                        <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Partner Logo">
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="partner-logo">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Partner Logo">
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="partner-logo">
+                        <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Partner Logo">
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="partner-logo">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Partner Logo">
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="partner-logo">
+                        <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Partner Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h2>Ready to Transform Your Space?</h2>
+                <p>Connect with beasy for exceptional interior services for a technical assessment and take the first step towards your dream interior.</p>
+                <a href="contact.html" class="btn btn-light">Reach out to our interior experts today</a>
             </div>
         </div>
     </section>
@@ -2718,83 +2436,79 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-5">
+                <div class="col-lg-4 col-md-6">
                     <div class="footer-widget footer-about">
-                        <h4 class="footer-title">About PowerFit</h4>
-                        <p>PowerFit is a modern fitness studio dedicated to helping people achieve their health and fitness goals through expert guidance, diverse workout options, and a supportive community.</p>
+                        <a href="index.html" class="footer-logo">Elegance<span>Interiors</span></a>
+                        <p>We create beautiful and functional spaces that inspire and delight. With our expertise and passion for design, we transform ordinary spaces into extraordinary environments.</p>
                         <div class="footer-social">
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                            <a href="#"><i class="bi bi-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-2 col-md-6 mb-5">
+                <div class="col-lg-2 col-md-6">
                     <div class="footer-widget">
                         <h4 class="footer-title">Quick Links</h4>
                         <ul class="footer-links">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="classes.html">Classes</a></li>
-                            <li><a href="trainers.html">Trainers</a></li>
-                            <li><a href="pricing.html">Pricing</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                            <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                            <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                         </ul>
                     </div>
                 </div>
                 
-                <div class="col-lg-3 col-md-6 mb-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h4 class="footer-title">our innovative tech software solutions and digital innovations</h4>
+                        <ul class="footer-links">
+                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Residential Design</a></li>
+                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Commercial Design</a></li>
+                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Space Planning</a></li>
+                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Furniture Selection</a></li>
+                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Color technical assessment</a></li>
+                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Lighting Design</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
                     <div class="footer-widget">
                         <h4 class="footer-title">Contact Info</h4>
-                        <ul class="footer-contact">
-                            <li>
-                                <div class="footer-contact-icon">
-                                    <i class="bi bi-geo-alt"></i>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
-                                <div class="footer-contact-text">
-                                    123 Fitness Street, New York, NY 10001
+                                <div class="contact-text">
+                                    123 Design Street, Creative Avenue<br>New York, NY 10001
                                 </div>
-                            </li>
-                            <li>
-                                <div class="footer-contact-icon">
-                                    <i class="bi bi-telephone"></i>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
                                 </div>
-                                <div class="footer-contact-text">
-                                    (123) 456-7890
+                                <div class="contact-text">
+                                    +1 (555) 123-4567<br>+1 (555) 987-6543
                                 </div>
-                            </li>
-                            <li>
-                                <div class="footer-contact-icon">
-                                    <i class="bi bi-envelope"></i>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
-                                <div class="footer-contact-text">
-                                    info@powerfit.com
+                                <div class="contact-text">
+                                    info@eleganceinteriors.com<br>support@eleganceinteriors.com
                                 </div>
-                            </li>
-                            <li>
-                                <div class="footer-contact-icon">
-                                    <i class="bi bi-clock"></i>
-                                </div>
-                                <div class="footer-contact-text">
-                                    Mon-Fri: 6am - 10pm<br>
-                                    Sat-Sun: 8am - 8pm
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 mb-5">
-                    <div class="footer-widget footer-newsletter">
-                        <h4 class="footer-title">Newsletter</h4>
-                        <p>Subscribe to our newsletter to get updates on classes, events, and fitness tips.</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your Email Address" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2802,125 +2516,124 @@
         
         <div class="footer-bottom">
             <div class="container">
-                <p>© 2025 PowerFit. All Rights Reserved. Designed by <a href="#">TemplateCreator</a></p>
+                <p>&copy; 2023 Elegance Interiors. All Rights Reserved. Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i> by CreativeDesign</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    
+    <!-- Custom JS -->
     <script>
-        // Navbar Scroll Effect
+        // Initialize AOS Animation
+        AOS.init();
+        
+        // Sticky Navbar
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+                navbar.classList.add('sticky');
             } else {
-                navbar.classList.remove('scrolled');
+                navbar.classList.remove('sticky');
+            }
+        });
+        
+        // Testimonial Slider
+        const testimonialSlider = new Swiper('.testimonial-slider', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                }
             }
         });
         
         // Stats Counter Animation
-        function animateCounter(el) {
-            const target = parseInt(el.getAttribute('data-count'));
-            const duration = 2000;
-            const step = target / duration * 10;
-            let current = 0;
-            let timer = setInterval(function() {
-                current += step;
-                if (current >= target) {
-                    clearInterval(timer);
-                    current = target;
-                }
-                el.textContent = Math.floor(current).toLocaleString();
-                if (el.classList.contains('plus')) {
-                    el.textContent += '+';
-                }
-            }, 10);
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
         }
         
-        // Initialize Stats Animation on Scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const statsSection = document.querySelector('.stats-section');
-            const statsNumbers = document.querySelectorAll('.stats-number');
-            let animated = false;
-            
-            function checkScroll() {
-                if (animated) return;
-                const sectionPos = statsSection.getBoundingClientRect().top;
-                const screenPos = window.innerHeight;
-                if (sectionPos < screenPos - 100) {
-                    statsNumbers.forEach(animateCounter);
-                    animated = true;
+        function animateStats() {
+            statNumbers.forEach(number => {
+                if (isInViewport(number) && !number.classList.contains('animated')) {
+                    const target = parseInt(number.getAttribute('data-count'));
+                    let count = 0;
+                    const increment = Math.ceil(target / 60); // 60 frames for animation
+                    const duration = 2000; // 2 seconds
+                    const interval = duration / (target / increment);
+                    
+                    const timer = setInterval(() => {
+                        count += increment;
+                        if (count >= target) {
+                            clearInterval(timer);
+                            number.textContent = target + '+';
+                        } else {
+                            number.textContent = count + '+';
+                        }
+                    }, interval);
+                    
+                    number.classList.add('animated');
                 }
+            });
+        }
+        
+        // Back to Top Button
+        const backToTop = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
             }
             
-            window.addEventListener('scroll', checkScroll);
-            checkScroll();
+            // Animate stats when in viewport
+            animateStats();
         });
         
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const target = document.querySelector(targetId);
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
         
-        // Mobile Menu
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        
-        if (navbarToggler && navbarCollapse) {
-            navbarToggler.addEventListener('click', function() {
-                navbarCollapse.classList.toggle('show');
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!navbarToggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
-                    navbarCollapse.classList.remove('show');
-                }
-            });
-        }
-        
-        // Form Validation
-        function validateForm(form) {
-            if (!form) return false;
-            
-            const email = form.querySelector('input[type="email"]');
-            if (!email || !email.value.trim()) {
-                alert('Please enter your email address');
-                return false;
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
             }
-            
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email.value.trim())) {
-                alert('Please enter a valid email address');
-                return false;
-            }
-            
-            alert('Thank you for subscribing to our newsletter!');
-            email.value = '';
-            return false; // Prevent actual form submission for demo
-        }
-        
-        // Apply validation to newsletter forms
-        document.querySelectorAll('.newsletter-form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                validateForm(this);
-            });
         });
     </script>
 
