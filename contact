@@ -3,1762 +3,1494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Elegance Interiors</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <title>Contact Us - Grace Community Church</title>
+    <meta name="description" content="Reach out to our creative experts today with Grace Community Church. Find our location, service times, contact information, and online contact form.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #927a5a;
-            --secondary-color: #21282f;
-            --accent-color: #d3bea5;
-            --light-color: #f9f7f4;
-            --dark-color: #333333;
-            --text-color: #555555;
-            --white: #ffffff;
-            --transition: all 0.3s ease;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --primary: #3b5173;
+            --primary-dark: #2a3b54;
+            --secondary: #e5b167;
+            --accent: #d4a04f;
+            --light: #f5f5f5;
+            --dark: #333;
+            --text: #555;
+            --white: #fff;
+            --max-width: 1200px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            line-height: 1.8;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
             background-color: var(--white);
-            overflow-x: hidden;
         }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: var(--secondary-color);
-            font-weight: 600;
-            line-height: 1.4;
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Lora', serif;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
         }
-
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
         p {
-            font-size: 16px;
+            margin-bottom: 1rem;
         }
-
+        
         a {
+            color: var(--primary);
             text-decoration: none;
-            color: var(--dark-color);
-            transition: var(--transition);
+            transition: color 0.3s ease;
         }
-
+        
         a:hover {
-            color: var(--primary-color);
+            color: var(--accent);
         }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            padding: 12px 28px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        
+        .container {
             width: 100%;
-            height: 100%;
-            background-color: var(--secondary-color);
-            transition: var(--transition);
-            z-index: -1;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
         }
-
-        .btn-primary:hover {
-            background-color: var(--primary-color);
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
-
-        .btn-primary:hover::before {
-            left: 0;
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
         }
-
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+        
         .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 10px 26px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
-
+        
         .btn-outline:hover {
-            background-color: var(--primary-color);
+            background-color: var(--primary);
             color: var(--white);
         }
-
-        .section-padding {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            margin-bottom: 60px;
-            text-align: center;
-        }
-
-        .section-title h2 {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-size: 42px;
-            padding-bottom: 15px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .section-title p {
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--text-color);
-        }
-
-        /* Navbar */
-        .navbar {
-            padding: 20px 0;
-            transition: all 0.5s ease;
-        }
-
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-
-        .navbar-brand span {
-            color: var(--primary-color);
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--secondary-color);
-            font-weight: 500;
-            font-size: 16px;
-            margin: 0 15px;
-            position: relative;
-            padding: 8px 0;
-        }
-
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: var(--transition);
-        }
-
-        .navbar-nav .nav-link:hover::after,
-        .navbar-nav .nav-link.active::after {
-            width: 100%;
-        }
-
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-button {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 0;
-            font-weight: 500;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .nav-button:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 0;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-toggler-icon {
-            width: 24px;
-            height: 17px;
-            background-image: none;
-            position: relative;
-            border-bottom: 2px solid var(--secondary-color);
-            transition: all 300ms linear;
-        }
-
-        .navbar-toggler-icon:after, 
-        .navbar-toggler-icon:before {
-            width: 24px;
-            position: absolute;
-            height: 2px;
-            background-color: var(--secondary-color);
-            top: 0;
-            left: 0;
-            content: '';
-            z-index: 2;
-            transition: all 300ms linear;
-        }
-
-        .navbar-toggler-icon:after {
-            top: 8px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-            transform: rotate(45deg);
-            background-color: var(--secondary-color);
-            height: 2px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-            transform: translateY(8px) rotate(-45deg);
-            background-color: var(--secondary-color);
-            height: 2px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-            border-color: transparent;
-        }
-
-        /* Fix navbar mobile background */
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                background-color: var(--white);
-                padding: 20px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                border-radius: 0 0 10px 10px;
-                margin-top: 10px;
-            }
-        }
-
-        .navbar.sticky {
+        
+        /* Header Styles */
+        header {
             background-color: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-family: 'Lora', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 500;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
         /* Page Header */
         .page-header {
-            background-color: var(--light-color);
-            padding: 150px 0 80px;
+            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1565035010268-a3816f98589a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
             text-align: center;
-            position: relative;
+            padding: 120px 0 80px;
+            margin-top: 76px;
         }
-
+        
         .page-header h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .breadcrumbs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .breadcrumbs a {
+            color: var(--secondary);
+        }
+        
+        .breadcrumbs span {
+            color: var(--white);
+        }
+        
+        /* Contact Info Section */
+        .contact-info-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
             position: relative;
             display: inline-block;
-            padding-bottom: 20px;
-            color: var(--secondary-color);
+            padding-bottom: 15px;
         }
-
-        .page-header h1::after {
+        
+        .section-header h2::after {
             content: '';
             position: absolute;
-            left: 50%;
             bottom: 0;
+            left: 50%;
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--primary-color);
+            background-color: var(--secondary);
         }
-
-        .breadcrumb-item {
-            font-size: 16px;
-            font-weight: 500;
+        
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
-
-        .breadcrumb-item a {
-            color: var(--text-color);
-        }
-
-        .breadcrumb-item a:hover {
-            color: var(--primary-color);
-        }
-
-        .breadcrumb-item.active {
-            color: var(--primary-color);
-        }
-
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: '\f105';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--text-color);
-        }
-
-        /* Contact Info Cards */
-        .contact-info-section {
-            padding: 100px 0;
-        }
-
+        
         .contact-card {
             background-color: var(--white);
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            padding: 30px;
             text-align: center;
-            height: 100%;
-            transition: var(--transition);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
         }
-
+        
         .contact-card:hover {
             transform: translateY(-10px);
         }
-
+        
         .contact-icon {
-            width: 80px;
-            height: 80px;
-            background-color: var(--light-color);
-            color: var(--primary-color);
-            font-size: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin: 0 auto 25px;
-            transition: var(--transition);
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
-
-        .contact-card:hover .contact-icon {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .contact-card h3 {
-            font-size: 22px;
+        
+        .contact-title {
+            font-size: 1.3rem;
             margin-bottom: 15px;
+            color: var(--primary-dark);
         }
-
-        .contact-card p {
-            margin-bottom: 0;
-        }
-
-        .contact-card a {
-            color: var(--text-color);
-            transition: var(--transition);
-        }
-
-        .contact-card a:hover {
-            color: var(--primary-color);
-        }
-
+        
         /* Contact Form Section */
         .contact-form-section {
-            background-color: var(--light-color);
-            padding: 100px 0;
-        }
-
-        .contact-form {
-            background-color: var(--white);
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-control {
-            height: 55px;
-            padding: 10px 20px;
-            border: 1px solid #e9e9e9;
-            border-radius: 0;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            box-shadow: none;
-            border-color: var(--primary-color);
-        }
-
-        textarea.form-control {
-            height: 180px;
-            padding: 15px 20px;
-        }
-
-        .form-label {
-            font-weight: 500;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-
-        .form-check-input {
-            width: 20px;
-            height: 20px;
-            margin-top: 0.25em;
-        }
-
-        .form-check-input:checked {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-
-        .form-check-label {
-            padding-left: 10px;
-            font-size: 15px;
-        }
-
-        .contact-image {
-            position: relative;
-            height: 100%;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .contact-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .contact-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(33, 40, 47, 0.7);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .contact-overlay h3 {
-            color: var(--white);
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .contact-overlay p {
-            margin-bottom: 30px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .contact-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .contact-social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .contact-social-icon:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        /* Map Section */
-        .map-section {
-            position: relative;
-            height: 500px;
-        }
-
-        .map-container {
-            width: 100%;
-            height: 500px;
-            filter: grayscale(1);
-            transition: var(--transition);
-        }
-
-        .map-container:hover {
-            filter: grayscale(0);
-        }
-
-        /* Office Locations */
-        .office-locations {
-            padding: 100px 0;
-        }
-
-        .office-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            height: 100%;
-            transition: var(--transition);
-        }
-
-        .office-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .office-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .office-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .office-card:hover .office-image img {
-            transform: scale(1.1);
-        }
-
-        .office-content {
-            padding: 30px;
-        }
-
-        .office-content h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            transition: var(--transition);
-        }
-
-        .office-card:hover .office-content h3 {
-            color: var(--primary-color);
-        }
-
-        .office-info {
-            margin-bottom: 20px;
-        }
-
-        .office-info-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .office-info-icon {
-            color: var(--primary-color);
-            font-size: 18px;
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-
-        .office-info-text {
-            line-height: 1.6;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            background-color: var(--light-color);
-            padding: 100px 0;
-        }
-
-        .accordion-item {
-            border: none;
-            background-color: transparent;
-            margin-bottom: 20px;
-        }
-
-        .accordion-header {
-            margin-bottom: 0;
-        }
-
-        .accordion-button {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--secondary-color);
-            background-color: var(--white);
-            border-radius: 10px !important;
-            box-shadow: var(--box-shadow);
-            padding: 20px 25px;
-        }
-
-        .accordion-button:not(.collapsed) {
-            color: var(--white);
-            background-color: var(--primary-color);
-            box-shadow: none;
-        }
-
-        .accordion-button::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-
-        .accordion-button:not(.collapsed)::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-
-        .accordion-collapse {
-            border: none;
-        }
-
-        .accordion-body {
-            padding: 20px 25px;
-            background-color: var(--white);
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        /* CTA Section */
-        .cta {
-            background-color: var(--primary-color);
-            color: var(--white);
             padding: 80px 0;
-            text-align: center;
         }
-
-        .cta h2 {
-            color: var(--white);
-            font-size: 42px;
-            margin-bottom: 20px;
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
         }
-
-        .cta p {
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-size: 18px;
-        }
-
-        .btn-light {
+        
+        .form-container {
             background-color: var(--white);
-            color: var(--primary-color);
-            padding: 12px 28px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
         }
-
-        .btn-light:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--secondary-color);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 80px 0 0;
-        }
-
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--white);
+        
+        .form-group {
             margin-bottom: 20px;
-            display: inline-block;
         }
-
-        .footer-logo span {
-            color: var(--primary-color);
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-dark);
         }
-
-        .footer-about p {
-            margin-bottom: 25px;
+        
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--text);
+            transition: border-color 0.3s ease;
         }
-
-        .footer-social {
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
             display: flex;
-            gap: 15px;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 10px;
         }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .footer-title {
-            color: var(--white);
-            font-size: 22px;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            transition: var(--transition);
+        
+        .checkbox-item {
             display: flex;
             align-items: center;
+            gap: 8px;
         }
-
-        .footer-links a i {
-            margin-right: 10px;
-            color: var(--primary-color);
-            font-size: 12px;
+        
+        .checkbox-item input {
+            width: auto;
         }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-            padding-left: 5px;
+        
+        .contact-info-side h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
         }
-
+        
         .contact-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 20px;
         }
-
-        .contact-icon {
+        
+        .contact-item-icon {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-item-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .service-times {
+            margin-top: 40px;
+        }
+        
+        .service-time {
+            margin-bottom: 15px;
+        }
+        
+        .service-day {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 16px;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        .contact-text {
-            line-height: 1.6;
-        }
-
-        .footer-bottom {
-            padding: 25px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 60px;
-        }
-
-        .footer-bottom p {
-            margin: 0;
-            font-size: 14px;
-        }
-
-        @media (max-width: 991.98px) {
-            .footer-widget {
-                margin-bottom: 40px;
-            }
-        }
-
-        /* Back to top */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
-            background-color: var(--primary-color);
+            background-color: var(--primary);
             color: var(--white);
             border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 0 0 80px;
+        }
+        
+        .map-container {
+            height: 450px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Staff Section */
+        .staff-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .staff-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .staff-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .staff-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .staff-content {
+            padding: 20px;
+        }
+        
+        .staff-name {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .staff-role {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .staff-contact {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .staff-contact a {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 20px;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+        }
+        
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .accordion-header {
+            background-color: var(--white);
+            padding: 15px 20px;
             cursor: pointer;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
         }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
+        
+        .accordion-header:hover {
+            background-color: rgba(59, 81, 115, 0.05);
         }
-
-        .back-to-top:hover {
-            background-color: var(--secondary-color);
+        
+        .accordion-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
         }
-
-        /* Success Message */
-        .success-message {
-            display: none;
-            background-color: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+        
+        .accordion-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            background-color: var(--white);
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-content {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* Call to Action */
+        .cta {
+            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1508420223351-d3eea27b023e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: var(--white);
             text-align: center;
+        }
+        
+        .cta h2 {
+            color: var(--white);
+            margin-bottom: 25px;
+            font-size: 2.5rem;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-widget h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-widget h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-widget p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-service {
+            margin-bottom: 15px;
+        }
+        
+        .footer-service-day {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .subscribe-form {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .subscribe-input {
+            flex-grow: 1;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            border: none;
+            padding: 10px 15px;
+        }
+        
+        .subscribe-btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+            font-weight: 600;
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .subscribe-btn:hover {
+            background-color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .contact-cards,
+            .staff-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info-side {
+                order: -1;
+                margin-bottom: 40px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 76px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 15px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .contact-cards,
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     <style type="text/css">
         :root {
-            --primary-color: #927a5a;
-            --secondary-color: #21282f;
-            --accent-color: #d3bea5;
-            --light-color: #f9f7f4;
-            --dark-color: #333333;
-            --text-color: #555555;
-            --white: #ffffff;
-            --transition: all 0.3s ease;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --primary: #3b5173;
+            --primary-dark: #2a3b54;
+            --secondary: #e5b167;
+            --accent: #d4a04f;
+            --light: #f5f5f5;
+            --dark: #333;
+            --text: #555;
+            --white: #fff;
+            --max-width: 1200px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
 
         :root {
-            --primary-color: #927a5a;
-            --secondary-color: #21282f;
-            --accent-color: #d3bea5;
-            --light-color: #f9f7f4;
-            --dark-color: #333333;
-            --text-color: #555555;
-            --white: #ffffff;
-            --transition: all 0.3s ease;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --primary: #3b5173;
+            --primary-dark: #2a3b54;
+            --secondary: #e5b167;
+            --accent: #d4a04f;
+            --light: #f5f5f5;
+            --dark: #333;
+            --text: #555;
+            --white: #fff;
+            --max-width: 1200px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            line-height: 1.8;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
             background-color: var(--white);
-            overflow-x: hidden;
         }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: var(--secondary-color);
-            font-weight: 600;
-            line-height: 1.4;
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Lora', serif;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
         }
-
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
         p {
-            font-size: 16px;
+            margin-bottom: 1rem;
         }
-
+        
         a {
+            color: var(--primary);
             text-decoration: none;
-            color: var(--dark-color);
-            transition: var(--transition);
+            transition: color 0.3s ease;
         }
-
+        
         a:hover {
-            color: var(--primary-color);
+            color: var(--accent);
         }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            padding: 12px 28px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        
+        .container {
             width: 100%;
-            height: 100%;
-            background-color: var(--secondary-color);
-            transition: var(--transition);
-            z-index: -1;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
         }
-
-        .btn-primary:hover {
-            background-color: var(--primary-color);
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
-
-        .btn-primary:hover::before {
-            left: 0;
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
         }
-
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+        
         .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 10px 26px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
-
+        
         .btn-outline:hover {
-            background-color: var(--primary-color);
+            background-color: var(--primary);
             color: var(--white);
         }
-
-        .section-padding {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            margin-bottom: 60px;
-            text-align: center;
-        }
-
-        .section-title h2 {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-size: 42px;
-            padding-bottom: 15px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .section-title p {
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--text-color);
-        }
-
-        /* Navbar */
-        .navbar {
-            padding: 20px 0;
-            transition: all 0.5s ease;
-        }
-
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-
-        .navbar-brand span {
-            color: var(--primary-color);
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--secondary-color);
-            font-weight: 500;
-            font-size: 16px;
-            margin: 0 15px;
-            position: relative;
-            padding: 8px 0;
-        }
-
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: var(--transition);
-        }
-
-        .navbar-nav .nav-link:hover::after,
-        .navbar-nav .nav-link.active::after {
-            width: 100%;
-        }
-
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-button {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 0;
-            font-weight: 500;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .nav-button:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 0;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-toggler-icon {
-            width: 24px;
-            height: 17px;
-            background-image: none;
-            position: relative;
-            border-bottom: 2px solid var(--secondary-color);
-            transition: all 300ms linear;
-        }
-
-        .navbar-toggler-icon:after, 
-        .navbar-toggler-icon:before {
-            width: 24px;
-            position: absolute;
-            height: 2px;
-            background-color: var(--secondary-color);
-            top: 0;
-            left: 0;
-            content: '';
-            z-index: 2;
-            transition: all 300ms linear;
-        }
-
-        .navbar-toggler-icon:after {
-            top: 8px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-            transform: rotate(45deg);
-            background-color: var(--secondary-color);
-            height: 2px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-            transform: translateY(8px) rotate(-45deg);
-            background-color: var(--secondary-color);
-            height: 2px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-            border-color: transparent;
-        }
-
-        /* Fix navbar mobile background */
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                background-color: var(--white);
-                padding: 20px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                border-radius: 0 0 10px 10px;
-                margin-top: 10px;
-            }
-        }
-
-        .navbar.sticky {
+        
+        /* Header Styles */
+        header {
             background-color: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-family: 'Lora', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 500;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
         /* Page Header */
         .page-header {
-            background-color: var(--light-color);
-            padding: 150px 0 80px;
+            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1565035010268-a3816f98589a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
             text-align: center;
-            position: relative;
+            padding: 120px 0 80px;
+            margin-top: 76px;
         }
-
+        
         .page-header h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .breadcrumbs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .breadcrumbs a {
+            color: var(--secondary);
+        }
+        
+        .breadcrumbs span {
+            color: var(--white);
+        }
+        
+        /* Contact Info Section */
+        .contact-info-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
             position: relative;
             display: inline-block;
-            padding-bottom: 20px;
-            color: var(--secondary-color);
+            padding-bottom: 15px;
         }
-
-        .page-header h1::after {
+        
+        .section-header h2::after {
             content: '';
             position: absolute;
-            left: 50%;
             bottom: 0;
+            left: 50%;
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background-color: var(--primary-color);
+            background-color: var(--secondary);
         }
-
-        .breadcrumb-item {
-            font-size: 16px;
-            font-weight: 500;
+        
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
-
-        .breadcrumb-item a {
-            color: var(--text-color);
-        }
-
-        .breadcrumb-item a:hover {
-            color: var(--primary-color);
-        }
-
-        .breadcrumb-item.active {
-            color: var(--primary-color);
-        }
-
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: '\f105';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--text-color);
-        }
-
-        /* Contact Info Cards */
-        .contact-info-section {
-            padding: 100px 0;
-        }
-
+        
         .contact-card {
             background-color: var(--white);
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            padding: 30px;
             text-align: center;
-            height: 100%;
-            transition: var(--transition);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
         }
-
+        
         .contact-card:hover {
             transform: translateY(-10px);
         }
-
+        
         .contact-icon {
-            width: 80px;
-            height: 80px;
-            background-color: var(--light-color);
-            color: var(--primary-color);
-            font-size: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin: 0 auto 25px;
-            transition: var(--transition);
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
-
-        .contact-card:hover .contact-icon {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .contact-card h3 {
-            font-size: 22px;
+        
+        .contact-title {
+            font-size: 1.3rem;
             margin-bottom: 15px;
+            color: var(--primary-dark);
         }
-
-        .contact-card p {
-            margin-bottom: 0;
-        }
-
-        .contact-card a {
-            color: var(--text-color);
-            transition: var(--transition);
-        }
-
-        .contact-card a:hover {
-            color: var(--primary-color);
-        }
-
+        
         /* Contact Form Section */
         .contact-form-section {
-            background-color: var(--light-color);
-            padding: 100px 0;
-        }
-
-        .contact-form {
-            background-color: var(--white);
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-control {
-            height: 55px;
-            padding: 10px 20px;
-            border: 1px solid #e9e9e9;
-            border-radius: 0;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            box-shadow: none;
-            border-color: var(--primary-color);
-        }
-
-        textarea.form-control {
-            height: 180px;
-            padding: 15px 20px;
-        }
-
-        .form-label {
-            font-weight: 500;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-
-        .form-check-input {
-            width: 20px;
-            height: 20px;
-            margin-top: 0.25em;
-        }
-
-        .form-check-input:checked {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-
-        .form-check-label {
-            padding-left: 10px;
-            font-size: 15px;
-        }
-
-        .contact-image {
-            position: relative;
-            height: 100%;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .contact-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .contact-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(33, 40, 47, 0.7);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .contact-overlay h3 {
-            color: var(--white);
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .contact-overlay p {
-            margin-bottom: 30px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .contact-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .contact-social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .contact-social-icon:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        /* Map Section */
-        .map-section {
-            position: relative;
-            height: 500px;
-        }
-
-        .map-container {
-            width: 100%;
-            height: 500px;
-            filter: grayscale(1);
-            transition: var(--transition);
-        }
-
-        .map-container:hover {
-            filter: grayscale(0);
-        }
-
-        /* Office Locations */
-        .office-locations {
-            padding: 100px 0;
-        }
-
-        .office-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            height: 100%;
-            transition: var(--transition);
-        }
-
-        .office-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .office-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .office-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .office-card:hover .office-image img {
-            transform: scale(1.1);
-        }
-
-        .office-content {
-            padding: 30px;
-        }
-
-        .office-content h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            transition: var(--transition);
-        }
-
-        .office-card:hover .office-content h3 {
-            color: var(--primary-color);
-        }
-
-        .office-info {
-            margin-bottom: 20px;
-        }
-
-        .office-info-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .office-info-icon {
-            color: var(--primary-color);
-            font-size: 18px;
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-
-        .office-info-text {
-            line-height: 1.6;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            background-color: var(--light-color);
-            padding: 100px 0;
-        }
-
-        .accordion-item {
-            border: none;
-            background-color: transparent;
-            margin-bottom: 20px;
-        }
-
-        .accordion-header {
-            margin-bottom: 0;
-        }
-
-        .accordion-button {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--secondary-color);
-            background-color: var(--white);
-            border-radius: 10px !important;
-            box-shadow: var(--box-shadow);
-            padding: 20px 25px;
-        }
-
-        .accordion-button:not(.collapsed) {
-            color: var(--white);
-            background-color: var(--primary-color);
-            box-shadow: none;
-        }
-
-        .accordion-button::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-
-        .accordion-button:not(.collapsed)::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-
-        .accordion-collapse {
-            border: none;
-        }
-
-        .accordion-body {
-            padding: 20px 25px;
-            background-color: var(--white);
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        /* CTA Section */
-        .cta {
-            background-color: var(--primary-color);
-            color: var(--white);
             padding: 80px 0;
-            text-align: center;
         }
-
-        .cta h2 {
-            color: var(--white);
-            font-size: 42px;
-            margin-bottom: 20px;
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
         }
-
-        .cta p {
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-size: 18px;
-        }
-
-        .btn-light {
+        
+        .form-container {
             background-color: var(--white);
-            color: var(--primary-color);
-            padding: 12px 28px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
         }
-
-        .btn-light:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--secondary-color);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 80px 0 0;
-        }
-
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--white);
+        
+        .form-group {
             margin-bottom: 20px;
-            display: inline-block;
         }
-
-        .footer-logo span {
-            color: var(--primary-color);
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-dark);
         }
-
-        .footer-about p {
-            margin-bottom: 25px;
+        
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--text);
+            transition: border-color 0.3s ease;
         }
-
-        .footer-social {
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .checkbox-group {
             display: flex;
-            gap: 15px;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 10px;
         }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .footer-title {
-            color: var(--white);
-            font-size: 22px;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            transition: var(--transition);
+        
+        .checkbox-item {
             display: flex;
             align-items: center;
+            gap: 8px;
         }
-
-        .footer-links a i {
-            margin-right: 10px;
-            color: var(--primary-color);
-            font-size: 12px;
+        
+        .checkbox-item input {
+            width: auto;
         }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-            padding-left: 5px;
+        
+        .contact-info-side h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
         }
-
+        
         .contact-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 20px;
         }
-
-        .contact-icon {
+        
+        .contact-item-icon {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-item-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .service-times {
+            margin-top: 40px;
+        }
+        
+        .service-time {
+            margin-bottom: 15px;
+        }
+        
+        .service-day {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 16px;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        .contact-text {
-            line-height: 1.6;
-        }
-
-        .footer-bottom {
-            padding: 25px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 60px;
-        }
-
-        .footer-bottom p {
-            margin: 0;
-            font-size: 14px;
-        }
-
-        @media (max-width: 991.98px) {
-            .footer-widget {
-                margin-bottom: 40px;
-            }
-        }
-
-        /* Back to top */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
-            background-color: var(--primary-color);
+            background-color: var(--primary);
             color: var(--white);
             border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 0 0 80px;
+        }
+        
+        .map-container {
+            height: 450px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Staff Section */
+        .staff-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .staff-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .staff-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .staff-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .staff-content {
+            padding: 20px;
+        }
+        
+        .staff-name {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .staff-role {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .staff-contact {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .staff-contact a {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 20px;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+        }
+        
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .accordion-header {
+            background-color: var(--white);
+            padding: 15px 20px;
             cursor: pointer;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
         }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
+        
+        .accordion-header:hover {
+            background-color: rgba(59, 81, 115, 0.05);
         }
-
-        .back-to-top:hover {
-            background-color: var(--secondary-color);
+        
+        .accordion-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
         }
-
-        /* Success Message */
-        .success-message {
-            display: none;
-            background-color: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+        
+        .accordion-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            background-color: var(--white);
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-content {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* Call to Action */
+        .cta {
+            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1508420223351-d3eea27b023e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            color: var(--white);
             text-align: center;
+        }
+        
+        .cta h2 {
+            color: var(--white);
+            margin-bottom: 25px;
+            font-size: 2.5rem;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-widget h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-widget h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-widget p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-service {
+            margin-bottom: 15px;
+        }
+        
+        .footer-service-day {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .subscribe-form {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .subscribe-input {
+            flex-grow: 1;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            border: none;
+            padding: 10px 15px;
+        }
+        
+        .subscribe-btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+            font-weight: 600;
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .subscribe-btn:hover {
+            background-color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .contact-cards,
+            .staff-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info-side {
+                order: -1;
+                margin-bottom: 40px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 76px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 15px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .contact-cards,
+            .staff-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
         }
     
     </style>
 <style>
-  /* Industry-specific color scheme for General Business */
+  /* Industry-specific color scheme for Creative & Design */
   :root {
     /* Override ALL color variables with industry-specific colors */
-    --primary-color: #2563eb !important;
-    --primary-light: #1d4ed8 !important;
-    --primary-dark: #1e40af !important;
+    --primary-color: #7c3aed !important;
+    --primary-light: #6d28d9 !important;
+    --primary-dark: #5b21b6 !important;
     
-    --secondary-color: #64748b !important;
-    --secondary-light: #475569 !important;
-    --secondary-dark: #334155 !important;
+    --secondary-color: #f59e0b !important;
+    --secondary-light: #d97706 !important;
+    --secondary-dark: #b45309 !important;
     
-    --accent-color: #059669 !important;
-    --accent-light: #047857 !important;
-    --accent-dark: #065f46 !important;
+    --accent-color: #ec4899 !important;
+    --accent-light: #db2777 !important;
+    --accent-dark: #be185d !important;
     
     /* Override common template color variables */
-    --primary: #2563eb !important;
-    --secondary: #64748b !important;
-    --accent: #059669 !important;
+    --primary: #7c3aed !important;
+    --secondary: #f59e0b !important;
+    --accent: #ec4899 !important;
     --dark: #1A1A1A !important;
     --light: #FFFFFF !important;
     --gray: #6C6C6C !important;
     
     /* Override gradient */
-    --gradient: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    --gradient: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%) !important;
     
     /* Common color mappings */
-    --brand-primary: #2563eb !important;
-    --brand-secondary: #64748b !important;
-    --color-primary: #2563eb !important;
-    --color-secondary: #64748b !important;
-    --theme-primary: #2563eb !important;
-    --theme-secondary: #64748b !important;
+    --brand-primary: #7c3aed !important;
+    --brand-secondary: #f59e0b !important;
+    --color-primary: #7c3aed !important;
+    --color-secondary: #f59e0b !important;
+    --theme-primary: #7c3aed !important;
+    --theme-secondary: #f59e0b !important;
   }
   
   /* Apply colors to common Bootstrap and template patterns */
@@ -1835,32 +1567,32 @@
   
   /* Aggressive overrides for templates with hardcoded colors */
   /* Target specific color values that templates might use */
-  [style*="#FF6B35"] { color: #2563eb !important; }
-  [style*="#F7931E"] { color: #64748b !important; }
-  [style*="#FFD23F"] { color: #059669 !important; }
+  [style*="#FF6B35"] { color: #7c3aed !important; }
+  [style*="#F7931E"] { color: #f59e0b !important; }
+  [style*="#FFD23F"] { color: #ec4899 !important; }
   
   /* Override inline styles and hardcoded backgrounds */
   .hero[style*="background"] {
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%) !important;
   }
   
   /* Force color changes on elements that might have inline styles */
   .text-primary,
   [class*="text-primary"],
   [class*="color-primary"] {
-    color: #2563eb !important;
+    color: #7c3aed !important;
   }
   
   .bg-primary,
   [class*="bg-primary"],
   [class*="background-primary"] {
-    background-color: #2563eb !important;
+    background-color: #7c3aed !important;
   }
   
   /* Override gradient classes */
   .text-gradient,
   [class*="gradient"] {
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
@@ -1876,337 +1608,288 @@
   
   button:not(.btn-secondary):not(.btn-light):not(.btn-dark),
   .btn:not(.btn-secondary):not(.btn-light):not(.btn-dark) {
-    background-color: #2563eb !important;
-    border-color: #2563eb !important;
+    background-color: #7c3aed !important;
+    border-color: #7c3aed !important;
   }
   
   button:not(.btn-secondary):not(.btn-light):not(.btn-dark):hover,
   .btn:not(.btn-secondary):not(.btn-light):not(.btn-dark):hover {
-    background-color: #1e40af !important;
-    border-color: #1e40af !important;
+    background-color: #5b21b6 !important;
+    border-color: #5b21b6 !important;
   }
 </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Elegance<span>Interiors</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="portfolio.html">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Contact</a>
-                    </li>
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Grace<span>Community</span></a>
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="ministries.html">Ministries</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <a href="contact.html" class="btn nav-button ms-lg-4">Get Quote</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 data-aos="fade-up" data-aos-duration="1000">Contact Us</h1>
-            <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                </ol>
             </nav>
         </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Contact</span>
+            </div>
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you and answer any questions you may have</p>
+        </div>
     </section>
 
-    <!-- Contact Info Cards -->
     <section class="contact-info-section">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                <h2>Reach out to our interior experts today</h2>
-                <p>We'd love to hear from you. Reach out to us through any of these channels, and we'll get back to you as soon as possible.</p>
+            <div class="section-header">
+                <h2>Reach out to our creative experts today</h2>
+                <p>Here's how you can reach us</p>
             </div>
-            
-            <div class="row">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3>Visit Us</h3>
-                        <p>123 Design Street, Creative Avenue<br>New York, NY 10001<br>United States</p>
-                    </div>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3 class="contact-title">Our Location</h3>
+                    <p>123 Faith Avenue<br>Grace City, GC 12345</p>
+                    <a href="#map" class="btn btn-outline">View Map</a>
                 </div>
-                
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h3>Call Us</h3>
-                        <p>
-                            <a href="tel:+15551234567">+1 (555) 123-4567</a><br>
-                            <a href="tel:+15559876543">+1 (555) 987-6543</a><br>
-                            Monday-Friday: 9am-6pm
-                        </p>
-                    </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3 class="contact-title">Phone & Email</h3>
+                    <p>Phone: (123) 456-7890<br>Email: info@gracecommunity.org</p>
+                    <a href="mailto:info@gracecommunity.org" class="btn btn-outline">Email Us</a>
                 </div>
-                
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email Us</h3>
-                        <p>
-                            <a href="mailto:info@eleganceinteriors.com">info@eleganceinteriors.com</a><br>
-                            <a href="mailto:support@eleganceinteriors.com">support@eleganceinteriors.com</a><br>
-                            We respond within 24 hours
-                        </p>
-                    </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🕒</div>
+                    <h3 class="contact-title">Office Hours</h3>
+                    <p>Monday - Friday<br>9:00 AM - 5:00 PM</p>
+                    <a href="#service-times" class="btn btn-outline">Service Times</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
     <section class="contact-form-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-7" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="contact-form">
-                        <h2 class="mb-4">Send Us a Message</h2>
-                        <div class="success-message" id="successMessage">
-                            <i class="fas fa-check-circle me-2"></i> Thank you for your message! We'll get back to you shortly.
+            <div class="section-header">
+                <h2>Send Us a Message</h2>
+                <p>We'll get back to you as soon as possible</p>
+            </div>
+            <div class="contact-container">
+                <div class="form-container">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name*</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                        <form id="contactForm">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="name" class="form-label">Your Name *</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
-                                    </div>
+                        <div class="form-group">
+                            <label for="email">Your Email*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject*</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label>I'm interested in:</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="worship" name="interest" value="Worship">
+                                    <label for="worship">Worship</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="email" class="form-label">Your Email *</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                    </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="children" name="interest" value="Children">
+                                    <label for="children">Children</label>
                                 </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="phone" class="form-label">Phone Number</label>
-                                        <input type="tel" class="form-control" id="phone" name="phone">
-                                    </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="youth" name="interest" value="Youth">
+                                    <label for="youth">Youth</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="subject" class="form-label">Subject *</label>
-                                        <input type="text" class="form-control" id="subject" name="subject" required>
-                                    </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="adult" name="interest" value="Adult">
+                                    <label for="adult">Adult</label>
                                 </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message" class="form-label">Your Message *</label>
-                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="privacy" required>
-                                    <label class="form-check-label" for="privacy">
-                                        I agree to the privacy policy and terms of service
-                                    </label>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="missions" name="interest" value="Missions">
+                                    <label for="missions">Missions</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="other" name="interest" value="Other">
+                                    <label for="other">Other</label>
                                 </div>
                             </div>
-                            
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message*</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
                 </div>
-                
-                <div class="col-lg-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="contact-image">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Contact Elegance Interiors">
-                        <div class="contact-overlay">
-                            <h3>Connect With Us</h3>
-                            <p>Follow us on social media for design inspiration, project updates, and the latest trends in interior design.</p>
-                            <div class="contact-social">
-                                <a href="#" class="contact-social-icon"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="contact-social-icon"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="contact-social-icon"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="contact-social-icon"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#" class="contact-social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
+                <div class="contact-info-side">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div class="contact-item-content">
+                            <h4>Address</h4>
+                            <p>123 Faith Avenue<br>Grace City, GC 12345</p>
                         </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div class="contact-item-content">
+                            <h4>Phone</h4>
+                            <p>(123) 456-7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">✉️</div>
+                        <div class="contact-item-content">
+                            <h4>Email</h4>
+                            <p>info@gracecommunity.org</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🕒</div>
+                        <div class="contact-item-content">
+                            <h4>Office Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div id="service-times" class="service-times">
+                        <h3>Service Times</h3>
+                        <div class="service-time">
+                            <p class="service-day">Sunday Morning</p>
+                            <p>9:00 AM & 11:00 AM</p>
+                        </div>
+                        <div class="service-time">
+                            <p class="service-day">Sunday Evening</p>
+                            <p>6:00 PM</p>
+                        </div>
+                        <div class="service-time">
+                            <p class="service-day">Wednesday Evening</p>
+                            <p>7:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">yt</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="map-section" data-aos="fade-up" data-aos-duration="1000">
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304603!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1645675511260!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </section>
-
-    <!-- Office Locations -->
-    <section class="office-locations">
+    <section id="map" class="map-section">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                <h2>Our Offices</h2>
-                <p>Visit us at one of our office locations to discuss your project in person and meet our design team.</p>
+            <div class="section-header">
+                <h2>Find Us</h2>
+                <p>Directions to our church</p>
             </div>
-            
-            <div class="row">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="office-card">
-                        <div class="office-image">
-                            <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="New York Office">
-                        </div>
-                        <div class="office-content">
-                            <h3>New York (Headquarters)</h3>
-                            <div class="office-info">
-                                <div class="office-info-item">
-                                    <div class="office-info-icon">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="office-info-text">
-                                        123 Design Street, Creative Avenue<br>New York, NY 10001
-                                    </div>
-                                </div>
-                                
-                                <div class="office-info-item">
-                                    <div class="office-info-icon">
-                                        <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                    <div class="office-info-text">
-                                        +1 (555) 123-4567
-                                    </div>
-                                </div>
-                                
-                                <div class="office-info-item">
-                                    <div class="office-info-icon">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <div class="office-info-text">
-                                        Monday-Friday: 9am-6pm<br>
-                                        Saturday: 10am-4pm<br>
-                                        Sunday: Closed
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-outline">Get Directions</a>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215747493078!2d-73.98784492429542!3d40.758985834869584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1sen!2sus!4v1561344282132!5m2!1sen!2sus" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="staff-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Church Staff</h2>
+                <p>Meet our dedicated team</p>
+            </div>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pastor John Williams">
+                    </div>
+                    <div class="staff-content">
+                        <h3 class="staff-name">John Williams</h3>
+                        <p class="staff-role">Senior Pastor</p>
+                        <div class="staff-contact">
+                            <a href="mailto:john@gracecommunity.org">
+                                <span>✉️</span>
+                                <span>Email</span>
+                            </a>
+                            <a href="tel:+11234567890">
+                                <span>📞</span>
+                                <span>Call</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                    <div class="office-card">
-                        <div class="office-image">
-                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Los Angeles Office">
-                        </div>
-                        <div class="office-content">
-                            <h3>Los Angeles</h3>
-                            <div class="office-info">
-                                <div class="office-info-item">
-                                    <div class="office-info-icon">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="office-info-text">
-                                        456 Pacific Boulevard<br>Los Angeles, CA 90001
-                                    </div>
-                                </div>
-                                
-                                <div class="office-info-item">
-                                    <div class="office-info-icon">
-                                        <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                    <div class="office-info-text">
-                                        +1 (555) 987-6543
-                                    </div>
-                                </div>
-                                
-                                <div class="office-info-item">
-                                    <div class="office-info-icon">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <div class="office-info-text">
-                                        Monday-Friday: 9am-6pm<br>
-                                        Saturday: 10am-4pm<br>
-                                        Sunday: Closed
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-outline">Get Directions</a>
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+                    </div>
+                    <div class="staff-content">
+                        <h3 class="staff-name">Sarah Johnson</h3>
+                        <p class="staff-role">Children's Director</p>
+                        <div class="staff-contact">
+                            <a href="mailto:sarah@gracecommunity.org">
+                                <span>✉️</span>
+                                <span>Email</span>
+                            </a>
+                            <a href="tel:+11234567891">
+                                <span>📞</span>
+                                <span>Call</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="office-card">
-                        <div class="office-image">
-                            <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Chicago Office">
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Jason Martinez">
+                    </div>
+                    <div class="staff-content">
+                        <h3 class="staff-name">Jason Martinez</h3>
+                        <p class="staff-role">Youth Pastor</p>
+                        <div class="staff-contact">
+                            <a href="mailto:jason@gracecommunity.org">
+                                <span>✉️</span>
+                                <span>Email</span>
+                            </a>
+                            <a href="tel:+11234567892">
+                                <span>📞</span>
+                                <span>Call</span>
+                            </a>
                         </div>
-                        <div class="office-content">
-                            <h3>Chicago</h3>
-                            <div class="office-info">
-                                <div class="office-info-item">
-                                    <div class="office-info-icon">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="office-info-text">
-                                        789 Windy Avenue<br>Chicago, IL 60007
-                                    </div>
-                                </div>
-                                
-                                <div class="office-info-item">
-                                    <div class="office-info-icon">
-                                        <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                    <div class="office-info-text">
-                                        +1 (555) 456-7890
-                                    </div>
-                                </div>
-                                
-                                <div class="office-info-item">
-                                    <div class="office-info-icon">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <div class="office-info-text">
-                                        Monday-Friday: 9am-6pm<br>
-                                        Saturday: 10am-4pm<br>
-                                        Sunday: Closed
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-outline">Get Directions</a>
+                    </div>
+                </div>
+                <div class="staff-card">
+                    <div class="staff-image">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Emily Chen">
+                    </div>
+                    <div class="staff-content">
+                        <h3 class="staff-name">Emily Chen</h3>
+                        <p class="staff-role">Church Administrator</p>
+                        <div class="staff-contact">
+                            <a href="mailto:emily@gracecommunity.org">
+                                <span>✉️</span>
+                                <span>Email</span>
+                            </a>
+                            <a href="tel:+11234567893">
+                                <span>📞</span>
+                                <span>Call</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -2214,283 +1897,168 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+            <div class="section-header">
                 <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions about our contact and technical assessment process.</p>
+                <p>Find answers to common questions</p>
             </div>
-            
-            <div class="row">
-                <div class="col-lg-8 mx-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What happens after I submit a contact form?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    After submitting your contact form, one of our team members will review your inquiry and reach out to you within 24 business hours. We'll either email or call you (based on your provided contact information) to discuss your needs further and schedule an initial technical assessment if appropriate.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Is there a fee for the initial technical assessment?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    We offer a complimentary 30-minute initial phone or video technical assessment to discuss your project needs and determine if we're a good fit. For in-person technical assessments at your home or property, we charge a technical assessment fee which can be applied to your project if you decide to move forward with our innovative tech software solutions and digital innovations.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Do I need to prepare anything for the technical assessment?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    To make the most of your technical assessment, we recommend gathering inspiration images, measurements of your space, and a list of your needs and preferences. If you have a budget in mind, that's helpful information as well. The more information you can provide about your vision, the more productive our initial discussion will be.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    Can you work with users and businesses remotely?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Yes, we offer e-design services for users and businesses who are not located near our offices. Through video technical assessments, digital mood boards, and 3D renderings, we can work with you virtually to create beautiful spaces. While we prefer in-person meetings for local implementations and deployments, our remote design services have successfully helped users and businesses across the country transform their spaces.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    How quickly can you start on my project?
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Our availability varies based on our current project load. After our initial technical assessment, we can provide you with an estimated start date. For smaller implementations and deployments, we may be able to begin within a few weeks, while larger implementations and deployments typically require more lead time. We always strive to accommodate our users and businesses' timelines as best as possible.
-                                </div>
-                            </div>
-                        </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What time are your Sunday services?</h3>
+                        <div class="accordion-icon">▼</div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>We have Sunday morning services at 9:00 AM and 11:00 AM, with an evening service at 6:00 PM. Our morning services feature a blend of traditional and contemporary worship, while the evening service has a more casual, contemporary feel.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Is there childcare available during services?</h3>
+                        <div class="accordion-icon">▼</div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Yes, beasy specializes in this is a church website.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How do I become a member of the church?</h3>
+                        <div class="accordion-icon">▼</div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>We offer a membership class called "Discover Grace" on the first Sunday of each month after the 11:00 AM service. This class covers our church's history, beliefs, mission, and the benefits and responsibilities of membership. After completing the class, you can schedule a meeting with one of our pastors to discuss membership further.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How can I get involved in a ministry?</h3>
+                        <div class="accordion-icon">▼</div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>We have many opportunities to serve in various ministries! You can fill out a Ministry Interest Form on our website, pick one up at the Welcome Center on Sundays, or contact the church office. Someone from our staff will follow up with you to discuss your interests, gifts, and the available opportunities.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What should I wear to church?</h3>
+                        <div class="accordion-icon">▼</div>
+                    </div>
+                    <div class="accordion-content">
+                        <p>We don't have a dress code at Grace Community Church. Some people dress casually in jeans and t-shirts, while others prefer to dress more formally. We invite you to come as you are and dress in a way that is comfortable for you.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <div data-aos="fade-up" data-aos-duration="1000">
-                <h2>Ready to Transform Your Space?</h2>
-                <p>Connect with beasy for exceptional interior services for a technical assessment and take the first step towards your dream interior.</p>
-                <a href="#contactForm" class="btn btn-light">Reach out to our interior experts today</a>
+            <h2>We'd Love to Meet You</h2>
+            <p>Whether you're exploring faith, looking for a church home, or interested in serving, we invite you to join us for a Sunday service or contact us with any questions. Our doors are open to everyone!</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-secondary">Plan Your Visit</a>
+                <a href="#" class="btn btn-outline">View Service Times</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-widget footer-about">
-                        <a href="index.html" class="footer-logo">Elegance<span>Interiors</span></a>
-                        <p>We create beautiful and functional spaces that inspire and delight. With our expertise and passion for design, we transform ordinary spaces into extraordinary environments.</p>
-                        <div class="footer-social">
-                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
-                        </div>
+            <div class="footer-container">
+                <div class="footer-widget">
+                    <h4>About Us</h4>
+                    <p>Grace Community Church is a welcoming community of believers dedicated to worship, fellowship, and service.</p>
+                    <p>beasy's commitment to creative excellence is to love God, love people, and make disciples in our community and around the world.</p>
+                </div>
+                <div class="footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="sermons.html">Sermons</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="ministries.html">Ministries</a></li>
+                        <li><a href="giving.html">Online Giving</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Service Times</h4>
+                    <div class="footer-service">
+                        <p class="footer-service-day">Sunday</p>
+                        <p>9:00 AM & 11:00 AM</p>
+                    </div>
+                    <div class="footer-service">
+                        <p class="footer-service-day">Sunday Evening</p>
+                        <p>6:00 PM</p>
+                    </div>
+                    <div class="footer-service">
+                        <p class="footer-service-day">Wednesday</p>
+                        <p>7:00 PM</p>
                     </div>
                 </div>
-                
-                <div class="col-lg-2 col-md-6">
-                    <div class="footer-widget">
-                        <h4 class="footer-title">Quick Links</h4>
-                        <ul class="footer-links">
-                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
-                            <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
-                            <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget">
-                        <h4 class="footer-title">our innovative tech software solutions and digital innovations</h4>
-                        <ul class="footer-links">
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Residential Design</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Commercial Design</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Space Planning</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Furniture Selection</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Color technical assessment</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Lighting Design</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget">
-                        <h4 class="footer-title">Contact Info</h4>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-text">
-                                    123 Design Street, Creative Avenue<br>New York, NY 10001
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div class="contact-text">
-                                    +1 (555) 123-4567<br>+1 (555) 987-6543
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-text">
-                                    info@eleganceinteriors.com<br>support@eleganceinteriors.com
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="footer-widget">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter to receive updates and announcements.</p>
+                    <form class="subscribe-form">
+                        <input type="email" class="subscribe-input" placeholder="Your Email">
+                        <button type="submit" class="subscribe-btn">Subscribe</button>
+                    </form>
                 </div>
             </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2023 Elegance Interiors. All Rights Reserved. Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i> by CreativeDesign</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Grace Community Church. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top -->
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS Animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Custom JS -->
     <script>
-        // Initialize AOS Animation
-        AOS.init();
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('nav ul');
         
-        // Sticky Navbar
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('sticky');
-            } else {
-                navbar.classList.remove('sticky');
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav') && !e.target.closest('.mobile-menu-btn')) {
+                navMenu.classList.remove('active');
             }
         });
         
-        // Contact Form Submission
-        const contactForm = document.getElementById('contactForm');
-        const successMessage = document.getElementById('successMessage');
+        // Accordion functionality
+        const accordionItems = document.querySelectorAll('.accordion-item');
         
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Simple form validation
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const message = document.getElementById('message').value;
-                
-                if (name && email && subject && message) {
-                    // In a real scenario, here you would send the form data to your server
-                    // For this demo, we'll just show a success message
-                    successMessage.style.display = 'block';
-                    contactForm.reset();
-                    
-                    // Hide the success message after 5 seconds
-                    setTimeout(() => {
-                        successMessage.style.display = 'none';
-                    }, 5000);
-                }
-            });
-        }
-        
-        // Back to Top Button
-        const backToTop = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-        
-        backToTop.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Smooth Scroll for CTA Button
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    
-                    const targetElement = document.querySelector(this.getAttribute('href'));
-                    if (targetElement) {
-                        const offset = 100; // Adjust scroll position to account for fixed navbar
-                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-                        
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            
+            header.addEventListener('click', () => {
+                // Close all other items
+                accordionItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
                     }
-                }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
             });
         });
         
-        // Preloader
-        window.addEventListener('load', function() {
-            const preloader = document.querySelector('.preloader');
-            if (preloader) {
-                preloader.style.display = 'none';
-            }
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Here you would typically have code to handle the form submission
+            // For this example, we'll just show an alert
+            
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
         });
     </script>
 
