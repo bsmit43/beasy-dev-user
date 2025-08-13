@@ -1,749 +1,747 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grace Community Church - Welcome to our faith community</title>
-    <meta name="description" content="Grace Community Church is a welcoming faith community dedicated to worship, fellowship, and service. Join us for Sunday services and community outreach.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Lora:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <title>LensVision | Professional Photography Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style>
         :root {
-            --primary: #3b5173;
-            --primary-dark: #2a3b54;
-            --secondary: #e5b167;
-            --accent: #d4a04f;
-            --light: #f5f5f5;
-            --dark: #333;
-            --text: #555;
-            --white: #fff;
-            --max-width: 1200px;
-            --border-radius: 8px;
-            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
+            --transition: all 0.3s ease;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            background-color: var(--white);
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: #fcfcfc;
         }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Lora', serif;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
         }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--accent);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+
         .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            font-weight: 600;
-            padding: 12px 24px;
             border-radius: var(--border-radius);
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            padding: 12px 28px;
+            font-weight: 500;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
         }
-        
-        .btn:hover {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary);
-            color: var(--dark);
-        }
-        
-        .btn-secondary:hover {
-            background-color: var(--accent);
-            color: var(--dark);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
+
+        .btn-primary {
             background-color: var(--primary);
-            color: var(--white);
+            border-color: var(--primary);
         }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
         }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background-color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             padding: 15px 0;
         }
-        
-        .logo {
-            font-family: 'Lora', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 28px;
             color: var(--primary);
         }
-        
-        .logo span {
+
+        .navbar-brand span {
             color: var(--secondary);
         }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
+
+        .nav-link {
             font-weight: 500;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background-image: linear-gradient(rgba(59, 81, 115, 0.7), rgba(59, 81, 115, 0.7)), url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            color: var(--white);
-            margin-top: 76px;
-        }
-        
-        .hero-content {
-            max-width: 650px;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        
-        /* Welcome Section */
-        .welcome {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .welcome-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .welcome-image {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .welcome-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-header h2 {
+            color: var(--dark);
             position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
+            margin: 0 15px;
+            transition: var(--transition);
         }
-        
-        .section-header h2::after {
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            position: relative;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            font-size: 42px;
+        }
+
+        .section-title h2::after {
             content: '';
             position: absolute;
             bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .section-title.text-center h2::after {
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary);
         }
-        
-        .service-times {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 50px;
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            background-color: var(--dark);
+            overflow: hidden;
         }
-        
-        .service-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 30px;
+
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 1s ease;
+        }
+
+        .hero-slide.active {
+            opacity: 0.7;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
             text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
+            color: var(--light);
+            max-width: 800px;
+            margin: 0 auto;
         }
-        
+
+        .hero-content h1 {
+            font-size: 64px;
+            color: var(--light);
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards 0.8s;
+        }
+
+        .hero-btn {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards 1.1s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* About Section */
+        .about-img {
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-img img {
+            transition: var(--transition);
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content h2 {
+            margin-bottom: 25px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        .about-signature {
+            margin-top: 30px;
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        /* Services */
+        .services {
+            background-color: #f9f9f9;
+        }
+
+        .service-card {
+            padding: 40px 30px;
+            text-align: center;
+            background: #fff;
+            transition: var(--transition);
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            height: 100%;
+            border-radius: var(--border-radius);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--primary);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
         .service-card:hover {
             transform: translateY(-10px);
         }
-        
+
+        .service-card:hover h3, 
+        .service-card:hover p {
+            color: var(--light);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--light);
+            color: var(--primary);
+        }
+
         .service-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-        
-        .service-day {
-            font-family: 'Lora', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .service-time {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-        
-        .weekly-activities {
-            background-color: var(--primary);
-            color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            margin-top: 30px;
-        }
-        
-        .weekly-activities h3 {
-            color: var(--white);
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
             text-align: center;
+            background: var(--primary);
+            color: var(--light);
+            font-size: 30px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+
+        .service-card h3 {
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .service-card p {
+            margin-bottom: 0;
+            transition: var(--transition);
+        }
+
+        /* Portfolio */
+        .portfolio-filter {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .portfolio-filter button {
+            border: none;
+            background: transparent;
+            font-weight: 500;
+            padding: 5px 15px;
+            margin: 0 5px;
+            color: var(--text-dark);
+            position: relative;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .portfolio-filter button.active,
+        .portfolio-filter button:hover {
+            color: var(--primary);
+        }
+
+        .portfolio-filter button::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .portfolio-filter button.active::after,
+        .portfolio-filter button:hover::after {
+            width: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
             margin-bottom: 30px;
-        }
-        
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        
-        .activity-item {
-            margin-bottom: 15px;
-        }
-        
-        .activity-day {
-            font-weight: 600;
-            color: var(--secondary);
-        }
-        
-        /* Events Section */
-        .events {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .events-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .event-card {
-            background-color: var(--white);
             border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
+            box-shadow: var(--box-shadow);
         }
-        
-        .event-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .event-image {
-            height: 200px;
+
+        .portfolio-img {
             overflow: hidden;
         }
-        
-        .event-image img {
+
+        .portfolio-img img {
+            transition: var(--transition);
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
         }
-        
-        .event-card:hover .event-image img {
+
+        .portfolio-item:hover .portfolio-img img {
             transform: scale(1.1);
         }
-        
-        .event-content {
-            padding: 20px;
-        }
-        
-        .event-date {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: var(--dark);
-            font-weight: 600;
-            padding: 5px 10px;
-            border-radius: 4px;
-            margin-bottom: 15px;
-        }
-        
-        .event-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .event-description {
-            margin-bottom: 15px;
-            color: var(--text);
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            padding: 80px 0;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--shadow);
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: '"';
+
+        .portfolio-info {
             position: absolute;
-            top: 15px;
-            left: 15px;
-            font-size: 4rem;
-            font-family: Georgia, serif;
-            color: var(--secondary);
-            opacity: 0.2;
-            line-height: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 44, 64, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
         }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
+
+        .portfolio-item:hover .portfolio-info {
+            opacity: 1;
+        }
+
+        .portfolio-info h4 {
+            color: var(--light);
+            font-size: 22px;
+            margin-bottom: 10px;
+            transform: translateY(20px);
+            transition: var(--transition);
+            transition-delay: 0.1s;
+            opacity: 0;
+        }
+
+        .portfolio-item:hover .portfolio-info h4 {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .portfolio-info p {
+            color: var(--accent);
+            margin-bottom: 15px;
+            transform: translateY(20px);
+            transition: var(--transition);
+            transition-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .portfolio-item:hover .portfolio-info p {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .portfolio-btns {
+            transform: translateY(20px);
+            transition: var(--transition);
+            transition-delay: 0.3s;
+            opacity: 0;
+        }
+
+        .portfolio-item:hover .portfolio-btns {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .portfolio-btn {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: var(--light);
+            color: var(--primary);
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+
+        .portfolio-btn:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        .testimonials .section-title h2 {
+            color: var(--light);
+        }
+
+        .testimonials .section-title h2::after {
+            background: var(--accent);
+        }
+
+        .testimonial-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
             position: relative;
-            z-index: 1;
         }
-        
+
+        .testimonial-item::before {
+            content: '\f10d';
+            font-family: 'Bootstrap-icons';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-text {
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
         .testimonial-author {
             display: flex;
             align-items: center;
         }
-        
-        .author-image {
-            width: 50px;
-            height: 50px;
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
+            object-fit: cover;
+            margin-right: 20px;
         }
-        
-        .author-image img {
+
+        .testimonial-author-info h5 {
+            margin-bottom: 5px;
+            color: var(--light);
+        }
+
+        .testimonial-author-info span {
+            font-size: 14px;
+            color: var(--accent);
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .contact-cta h2 {
+            margin-bottom: 30px;
+        }
+
+        .contact-cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Instagram Feed */
+        .insta-feed {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .insta-item {
+            flex: 0 0 16.666667%;
+            max-width: 16.666667%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 991px) {
+            .insta-item {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        }
+
+        .insta-item img {
+            transition: var(--transition);
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
-        .author-name {
-            font-weight: 600;
-            color: var(--primary-dark);
+
+        .insta-item:hover img {
+            transform: scale(1.1);
         }
-        
-        .author-role {
-            font-size: 0.9rem;
-            color: var(--text);
-        }
-        
-        /* Call to Action */
-        .cta {
-            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1508420223351-d3eea27b023e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 0;
-            color: var(--white);
-            text-align: center;
-        }
-        
-        .cta h2 {
-            color: var(--white);
-            margin-bottom: 25px;
-            font-size: 2.5rem;
-        }
-        
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        
-        .contact-info h3 {
-            margin-bottom: 25px;
-        }
-        
-        .contact-details {
-            margin-bottom: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-        
-        .contact-icon {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        .contact-text h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-link {
+
+        .insta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 44, 64, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            transition: all 0.3s ease;
+            opacity: 0;
+            transition: var(--transition);
         }
-        
-        .social-link:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
+
+        .insta-item:hover .insta-overlay {
+            opacity: 1;
         }
-        
-        .contact-form {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--shadow);
+
+        .insta-icon {
+            color: #fff;
+            font-size: 24px;
         }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        input,
-        textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-        }
-        
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
+
         /* Footer */
-        footer {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            padding: 60px 0 20px;
+        .footer {
+            background: var(--dark);
+            color: #999;
         }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 25px;
+            display: block;
         }
-        
-        .footer-widget h4 {
-            color: var(--white);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer h5 {
+            color: #fff;
+            margin-bottom: 25px;
+            font-size: 20px;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
-        
-        .footer-widget h4::after {
+
+        .footer h5::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 50px;
             height: 2px;
-            background-color: var(--secondary);
+            background: var(--accent);
         }
-        
-        .footer-widget p {
-            margin-bottom: 15px;
-        }
-        
+
         .footer-links {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
         }
-        
-        .footer-links a {
-            color: #ddd;
-            transition: color 0.3s ease;
+
+        .footer-links li a {
+            color: #999;
+            transition: var(--transition);
+            text-decoration: none;
         }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
+
+        .footer-links li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
         }
-        
-        .footer-service {
+
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-contact-info li {
+            padding-left: 30px;
+            position: relative;
             margin-bottom: 15px;
         }
-        
-        .footer-service-day {
-            font-weight: 600;
-            color: var(--secondary);
+
+        .footer-contact-info li i {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            color: var(--accent);
         }
-        
-        .subscribe-form {
-            display: flex;
-            margin-top: 15px;
+
+        .footer-social {
+            margin-top: 30px;
         }
-        
-        .subscribe-input {
-            flex-grow: 1;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
-            border: none;
-            padding: 10px 15px;
-        }
-        
-        .subscribe-btn {
-            background-color: var(--secondary);
-            color: var(--dark);
-            font-weight: 600;
-            border: none;
-            padding: 0 15px;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .subscribe-btn:hover {
-            background-color: var(--accent);
-        }
-        
-        .footer-bottom {
+
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
             text-align: center;
-            padding-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
         }
-        
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .service-times,
-            .events-grid {
-                grid-template-columns: repeat(2, 1fr);
+
+        .footer-bottom p {
+            margin-bottom: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
+            .hero-content h1 {
+                font-size: 48px;
+            }
+            .section-padding {
+                padding: 80px 0;
+            }
+            .section-title h2 {
+                font-size: 36px;
             }
         }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
+
+        @media (max-width: 767px) {
+            .hero-content h1 {
+                font-size: 36px;
             }
-            
-            h2 {
-                font-size: 1.8rem;
+            .section-padding {
+                padding: 60px 0;
             }
-            
-            .welcome-container,
-            .contact-container,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 76px;
-                left: 0;
-                width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 0;
-                text-align: center;
-                border-bottom: 1px solid #eee;
-            }
-            
-            nav ul li a {
-                display: block;
-                padding: 15px 0;
-            }
-            
-            .hero {
-                height: 70vh;
-                text-align: center;
-            }
-            
-            .hero-content {
-                margin: 0 auto;
-            }
-            
-            .welcome-image {
+            .about-img {
                 margin-bottom: 30px;
-                order: -1;
             }
-        }
-        
-        @media (max-width: 576px) {
-            .service-times,
-            .events-grid,
-            .activities-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
+            .section-title h2 {
+                font-size: 30px;
             }
         }
     </style>
@@ -757,7 +755,12 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <meta name="cache-bust" content="1755016488839">
+    <meta name="cache-bust" content="1755046526277">
+    <!-- Cache busting for CSS and content refresh -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="cache-bust" content="1755083530953">
       <style id="form-handler-styles">
         .form-feedback {
           margin-bottom: 1rem;
@@ -841,335 +844,463 @@
           }
         }
       </style>
-    </head>
+    
+    <!-- Cache busting for CSS and content refresh -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="cache-bust" content="1755084222634"></head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container header-container">
-            <a href="#" class="logo">Grace<span>Community</span></a>
-            <button class="mobile-menu-btn">☰</button>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="sermons.html">Sermons</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="ministries.html">Ministries</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Welcome to Grace Community Church</h1>
-                <p>A place where faith, hope, and love come together. Join us for worship and fellowship as we grow in our relationship with God and each other.</p>
-                <a href="#" class="btn">Join Us This Sunday</a>
-                <a href="#" class="btn btn-secondary">Watch Online</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="welcome">
-        <div class="container welcome-container">
-            <div class="welcome-content">
-                <h2>Welcome to Our Church Family</h2>
-                <p>Grace Community Church is a place where everyone is welcome, regardless of where you are in your spiritual journey. We believe in the transformative power of God's love and strive to create a community where everyone can experience that love.</p>
-                <p>Our mission is to love God, love people, and make disciples. We accomplish this through authentic worship, Biblical teaching, genuine community, and compassionate service.</p>
-                <a href="about.html" class="btn">Learn More About Us</a>
-            </div>
-            <div class="welcome-image">
-                <img src="https://images.unsplash.com/photo-1536103041009-3693a03dbbb6?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Church congregation">
-            </div>
-        </div>
-    </section>
-
-    <section class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Worship Services</h2>
-                <p>Join us for worship, prayer, and Biblical teaching</p>
-            </div>
-            <div class="service-times">
-                <div class="service-card">
-                    <div class="service-icon">✝️</div>
-                    <h3 class="service-day">Sunday Morning</h3>
-                    <p class="service-time">9:00 AM &amp; 11:00 AM</p>
-                    <p>Traditional worship service with choir and orchestra</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🙏</div>
-                    <h3 class="service-day">Sunday Evening</h3>
-                    <p class="service-time">6:00 PM</p>
-                    <p>Contemporary worship service with modern music</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📖</div>
-                    <h3 class="service-day">Wednesday</h3>
-                    <p class="service-time">7:00 PM</p>
-                    <p>Midweek Bible study and prayer service</p>
-                </div>
-            </div>
-            
-            <div class="weekly-activities">
-                <h3>Weekly Activities</h3>
-                <div class="activities-grid">
-                    <div class="activity-item">
-                        <p class="activity-day">Monday, 7:00 PM</p>
-                        <p>Men's Bible Study</p>
-                    </div>
-                    <div class="activity-item">
-                        <p class="activity-day">Tuesday, 10:00 AM</p>
-                        <p>Women's Prayer Group</p>
-                    </div>
-                    <div class="activity-item">
-                        <p class="activity-day">Wednesday, 6:00 PM</p>
-                        <p>Youth Group</p>
-                    </div>
-                    <div class="activity-item">
-                        <p class="activity-day">Thursday, 7:00 PM</p>
-                        <p>Choir Practice</p>
-                    </div>
-                    <div class="activity-item">
-                        <p class="activity-day">Friday, 6:30 PM</p>
-                        <p>Community Dinner</p>
-                    </div>
-                    <div class="activity-item">
-                        <p class="activity-day">Saturday, 9:00 AM</p>
-                        <p>Community Service</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="events">
-        <div class="container">
-            <div class="section-header">
-                <h2>Upcoming Events</h2>
-                <p>Join us for these special events and activities</p>
-            </div>
-            <div class="events-grid">
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1603072388338-e587f1181b20?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Community Picnic">
-                    </div>
-                    <div class="event-content">
-                        <span class="event-date">July 15</span>
-                        <h3 class="event-title">Annual Church Picnic</h3>
-                        <p class="event-description">Join us for food, games, and fellowship at our annual church picnic at Riverside Park.</p>
-                        <a href="#" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1613963931023-5dc59437c8a6?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Vacation Bible School">
-                    </div>
-                    <div class="event-content">
-                        <span class="event-date">July 24-28</span>
-                        <h3 class="event-title">Vacation Bible School</h3>
-                        <p class="event-description">A week of fun, learning, and adventure for children ages 5-12. Register today!</p>
-                        <a href="#" class="btn btn-outline">Register Now</a>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="Worship Concert">
-                    </div>
-                    <div class="event-content">
-                        <span class="event-date">August 5</span>
-                        <h3 class="event-title">Worship Night</h3>
-                        <p class="event-description">An evening of worship, prayer, and spiritual renewal. Everyone is welcome.</p>
-                        <a href="#" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Community</h2>
-                <p>Hear from members of our church family</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">Grace Community Church has been a spiritual home for my family for over 10 years. The genuine love and support we've received here has helped us grow in our faith and navigate life's challenges.</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
-                        </div>
-                        <div class="author-info">
-                            <p class="author-name">Sarah Johnson</p>
-                            <p class="author-role">Church Member since 2012</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">I was looking for a church where I could learn and grow spiritually. The biblical teaching and warm community at Grace have exceeded my expectations. I'm thankful to have found my church home.</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Rodriguez">
-                        </div>
-                        <div class="author-info">
-                            <p class="author-name">Michael Rodriguez</p>
-                            <p class="author-role">New Member</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <div class="container">
-            <h2>Come Worship With Us</h2>
-            <p>We would love to have you join us for worship this Sunday. Our doors are open to everyone seeking to know God better and experience His love in community.</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-secondary">Plan Your Visit</a>
-                <a href="#" class="btn btn-outline">Contact Us</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get in Touch</h2>
-                <p>We'd love to hear from you</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <div class="contact-text">
-                                <h4>Address</h4>
-                                <p>123 Faith Avenue<br>Grace City, GC 12345</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <div class="contact-text">
-                                <h4>Phone</h4>
-                                <p>(123) 456-7890</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">✉️</div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p>info@gracecommunity.org</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">🕒</div>
-                            <div class="contact-text">
-                                <h4>Office Hours</h4>
-                                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>Connect With Us</h3>
-                    <div class="social-links">
-                        <a href="#" class="social-link">f</a>
-                        <a href="#" class="social-link">t</a>
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">yt</a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" required=""></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-widget">
-                    <h4>About Us</h4>
-                    <p>Grace Community Church is a welcoming community of believers dedicated to worship, fellowship, and service.</p>
-                    <p>Our mission is to love God, love people, and make disciples in our community and around the world.</p>
-                </div>
-                <div class="footer-widget">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="sermons.html">Sermons</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="ministries.html">Ministries</a></li>
-                        <li><a href="giving.html">Online Giving</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Lens<span>Vision</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
                     </ul>
                 </div>
-                <div class="footer-widget">
-                    <h4>Service Times</h4>
-                    <div class="footer-service">
-                        <p class="footer-service-day">Sunday</p>
-                        <p>9:00 AM &amp; 11:00 AM</p>
-                    </div>
-                    <div class="footer-service">
-                        <p class="footer-service-day">Sunday Evening</p>
-                        <p>6:00 PM</p>
-                    </div>
-                    <div class="footer-service">
-                        <p class="footer-service-day">Wednesday</p>
-                        <p>7:00 PM</p>
-                    </div>
-                </div>
-                <div class="footer-widget">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to our newsletter to receive updates and announcements.</p>
-                    <form class="subscribe-form">
-                        <input type="email" class="subscribe-input" placeholder="Your Email">
-                        <button type="submit" class="subscribe-btn">Subscribe</button>
-                    </form>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('images/hero-1.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/hero-2.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/hero-3.jpg');"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Capture Life's Beautiful Moments</h1>
+                <p>We specialize in portrait, wedding, commercial and fine art photography that truly captures the essence of your special moments.</p>
+                <div class="hero-btn">
+                    <a href="portfolio.html" class="btn btn-primary me-3">View Portfolio</a>
+                    <a href="contact.html" class="btn btn-outline-light">Book Session</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2025 Grace Community Church. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=80" alt="About LensVision Studio" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="section-title">
+                            <h2>About Our Studio</h2>
+                        </div>
+                        <p>LensVision is a premium photography studio based in New York, dedicated to capturing life's most precious moments with creativity and passion. Founded in 2010, we've spent over a decade perfecting our craft and delivering exceptional photography services.</p>
+                        <p>Our team of professional photographers specializes in various styles and techniques, ensuring that we capture the perfect shot every time. We believe that photography is more than just taking pictures – it's about telling stories and preserving memories that last a lifetime.</p>
+                        <div class="about-signature">Michael Anderson</div>
+                        <p class="text-muted">Founder &amp; Lead Photographer</p>
+                        <a href="about.html" class="btn btn-primary mt-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Photography Services</h2>
+                <p>We offer a wide range of professional photography services to meet your specific needs</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-camera"></i>
+                        </div>
+                        <h3>Portrait Photography</h3>
+                        <p>Capture your personality with our professional portrait photography services, perfect for individuals, families, and corporate headshots.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h3>Wedding Photography</h3>
+                        <p>Let us document your special day with beautiful, timeless wedding photography that tells the story of your love and celebration.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h3>Commercial Photography</h3>
+                        <p>Elevate your brand with professional commercial photography for products, real estate, corporate events, and advertising campaigns.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-calendar-event"></i>
+                        </div>
+                        <h3>Event Photography</h3>
+                        <p>From corporate events to private parties, our event photography services capture all the important moments of your special occasion.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-easel"></i>
+                        </div>
+                        <h3>Fine Art Photography</h3>
+                        <p>Express your creative vision with our fine art photography services, creating striking images that make a statement in any space.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-camera-video"></i>
+                        </div>
+                        <h3>Video Production</h3>
+                        <p>Complement your photography with our professional video production services for weddings, events, commercials, and more.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="services.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Portfolio</h2>
+                <p>Explore some of our finest work across different photography styles</p>
+            </div>
+            <div class="portfolio-filter">
+                <button class="active" data-filter="all">All</button>
+                <button data-filter="portrait">Portrait</button>
+                <button data-filter="wedding">Wedding</button>
+                <button data-filter="commercial">Commercial</button>
+                <button data-filter="event">Event</button>
+                <button data-filter="fine-art">Fine Art</button>
+            </div>
+            <div class="row portfolio-container">
+                <div class="col-lg-4 col-md-6 portfolio-item portrait">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Portfolio" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Corporate Headshot</h4>
+                        <p>Portrait Photography</p>
+                        <div class="portfolio-btns">
+                            <a href="images/portfolio-1.jpg" class="portfolio-btn" title="View Full Image"><i class="bi bi-plus"></i></a>
+                            <a href="portfolio-details.html" class="portfolio-btn"><i class="bi bi-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item wedding">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1493421419110-74f4e85ba126?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Portfolio" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Garden Wedding</h4>
+                        <p>Wedding Photography</p>
+                        <div class="portfolio-btns">
+                            <a href="images/portfolio-2.jpg" class="portfolio-btn" title="View Full Image"><i class="bi bi-plus"></i></a>
+                            <a href="portfolio-details.html" class="portfolio-btn"><i class="bi bi-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item commercial">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1542744173-8659b8e77b29?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Portfolio" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Product Photography</h4>
+                        <p>Commercial Photography</p>
+                        <div class="portfolio-btns">
+                            <a href="images/portfolio-3.jpg" class="portfolio-btn" title="View Full Image"><i class="bi bi-plus"></i></a>
+                            <a href="portfolio-details.html" class="portfolio-btn"><i class="bi bi-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item event">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Portfolio" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Corporate Event</h4>
+                        <p>Event Photography</p>
+                        <div class="portfolio-btns">
+                            <a href="images/portfolio-4.jpg" class="portfolio-btn" title="View Full Image"><i class="bi bi-plus"></i></a>
+                            <a href="portfolio-details.html" class="portfolio-btn"><i class="bi bi-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item fine-art">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Portfolio" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Urban Landscape</h4>
+                        <p>Fine Art Photography</p>
+                        <div class="portfolio-btns">
+                            <a href="images/portfolio-5.jpg" class="portfolio-btn" title="View Full Image"><i class="bi bi-plus"></i></a>
+                            <a href="portfolio-details.html" class="portfolio-btn"><i class="bi bi-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item portrait">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=600&amp;h=400&amp;q=80" alt="Portfolio" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Family Portrait</h4>
+                        <p>Portrait Photography</p>
+                        <div class="portfolio-btns">
+                            <a href="images/portfolio-6.jpg" class="portfolio-btn" title="View Full Image"><i class="bi bi-plus"></i></a>
+                            <a href="portfolio-details.html" class="portfolio-btn"><i class="bi bi-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="portfolio.html" class="btn btn-primary">View All Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>What Our Clients Say</h2>
+                <p>Read testimonials from our satisfied clients</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-item">
+                        <div class="testimonial-text">
+                            <p>"LensVision did an amazing job capturing our wedding day. Every moment was beautifully preserved, and the photos exceeded our expectations. The team was professional, creative, and a joy to work with."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=100&amp;h=100&amp;q=80" alt="Testimonial Author">
+                            <div class="testimonial-author-info">
+                                <h5>Emily &amp; David</h5>
+                                <span>Wedding Clients</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-item">
+                        <div class="testimonial-text">
+                            <p>"We hired LensVision for our company's product photoshoot and were blown away by the results. The attention to detail and quality of the images have significantly improved our marketing materials."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=100&amp;h=100&amp;q=80" alt="Testimonial Author">
+                            <div class="testimonial-author-info">
+                                <h5>Robert Johnson</h5>
+                                <span>Marketing Director</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-item">
+                        <div class="testimonial-text">
+                            <p>"The family portrait session with LensVision was a wonderful experience. They made everyone feel comfortable, especially our children, and captured genuine moments that we'll cherish forever."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=100&amp;h=100&amp;q=80" alt="Testimonial Author">
+                            <div class="testimonial-author-info">
+                                <h5>The Wilson Family</h5>
+                                <span>Portrait Clients</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta section-padding">
+        <div class="container">
+            <h2>Ready to Capture Your Special Moments?</h2>
+            <p>Whether you're planning a wedding, need professional portraits, or want to elevate your brand with commercial photography, we're here to help bring your vision to life.</p>
+            <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <div class="insta-feed">
+        <div class="insta-item">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=80" alt="Instagram">
+            <a href="#" class="insta-overlay">
+                <i class="bi bi-instagram insta-icon"></i>
+            </a>
+        </div>
+        <div class="insta-item">
+            <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=80" alt="Instagram">
+            <a href="#" class="insta-overlay">
+                <i class="bi bi-instagram insta-icon"></i>
+            </a>
+        </div>
+        <div class="insta-item">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=80" alt="Instagram">
+            <a href="#" class="insta-overlay">
+                <i class="bi bi-instagram insta-icon"></i>
+            </a>
+        </div>
+        <div class="insta-item">
+            <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=80" alt="Instagram">
+            <a href="#" class="insta-overlay">
+                <i class="bi bi-instagram insta-icon"></i>
+            </a>
+        </div>
+        <div class="insta-item">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=80" alt="Instagram">
+            <a href="#" class="insta-overlay">
+                <i class="bi bi-instagram insta-icon"></i>
+            </a>
+        </div>
+        <div class="insta-item">
+            <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;h=600&amp;q=80" alt="Instagram">
+            <a href="#" class="insta-overlay">
+                <i class="bi bi-instagram insta-icon"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a href="index.html" class="footer-logo">Lens<span>Vision</span></a>
+                        <p>Premium photography studio specializing in portrait, wedding, commercial, and fine art photography. We capture life's precious moments with creativity and passion.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Portrait Photography</a></li>
+                        <li><a href="services.html">Wedding Photography</a></li>
+                        <li><a href="services.html">Commercial Photography</a></li>
+                        <li><a href="services.html">Event Photography</a></li>
+                        <li><a href="services.html">Fine Art Photography</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact-info">
+                        <li><i class="bi bi-geo-alt"></i> 123 Broadway, New York, NY 10001</li>
+                        <li><i class="bi bi-telephone"></i> (212) 555-1234</li>
+                        <li><i class="bi bi-envelope"></i> info@lensvision.com</li>
+                        <li><i class="bi bi-clock"></i> Monday-Friday: 9am-6pm<br>Saturday: 10am-4pm<br>Sunday: Closed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2025 LensVision Photography Studio. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('nav ul');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav') && !e.target.closest('.mobile-menu-btn')) {
-                navMenu.classList.remove('active');
+        // Navbar scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
+        });
+
+        // Hero slider
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000);
+
+        // Portfolio filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.portfolio-filter button');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
         });
     </script>
 
