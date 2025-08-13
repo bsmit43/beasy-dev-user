@@ -3,1456 +3,1226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Grace Community Church</title>
-    <meta name="description" content="Reach out to our creative experts today with Grace Community Church. Find our location, service times, contact information, and online contact form.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Contact Us | LensVision Photography Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style>
         :root {
-            --primary: #3b5173;
-            --primary-dark: #2a3b54;
-            --secondary: #e5b167;
-            --accent: #d4a04f;
-            --light: #f5f5f5;
-            --dark: #333;
-            --text: #555;
-            --white: #fff;
-            --max-width: 1200px;
-            --border-radius: 8px;
-            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
+            --transition: all 0.3s ease;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            background-color: var(--white);
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: #fcfcfc;
         }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Lora', serif;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
         }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--accent);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+
         .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            font-weight: 600;
-            padding: 12px 24px;
             border-radius: var(--border-radius);
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            padding: 12px 28px;
+            font-weight: 500;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
         }
-        
-        .btn:hover {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary);
-            color: var(--dark);
-        }
-        
-        .btn-secondary:hover {
-            background-color: var(--accent);
-            color: var(--dark);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
+
+        .btn-primary {
             background-color: var(--primary);
-            color: var(--white);
+            border-color: var(--primary);
         }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
         }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background-color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             padding: 15px 0;
         }
-        
-        .logo {
-            font-family: 'Lora', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 28px;
             color: var(--primary);
         }
-        
-        .logo span {
+
+        .navbar-brand span {
             color: var(--secondary);
         }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
+
+        .nav-link {
             font-weight: 500;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-        
-        /* Page Header */
-        .page-header {
-            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1565035010268-a3816f98589a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            text-align: center;
-            padding: 120px 0 80px;
-            margin-top: 76px;
-        }
-        
-        .page-header h1 {
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-        
-        .breadcrumbs {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 1rem;
-        }
-        
-        .breadcrumbs a {
-            color: var(--secondary);
-        }
-        
-        .breadcrumbs span {
-            color: var(--white);
-        }
-        
-        /* Contact Info Section */
-        .contact-info-section {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-header h2 {
+            color: var(--dark);
             position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
+            margin: 0 15px;
+            transition: var(--transition);
         }
-        
-        .section-header h2::after {
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            position: relative;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            font-size: 42px;
+        }
+
+        .section-title h2::after {
             content: '';
             position: absolute;
             bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .section-title.text-center h2::after {
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary);
         }
-        
-        .contact-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .contact-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .contact-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .contact-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--primary-dark);
-        }
-        
-        /* Contact Form Section */
-        .contact-form-section {
-            padding: 80px 0;
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        
-        .form-container {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            box-shadow: var(--shadow);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--primary-dark);
-        }
-        
-        input,
-        textarea,
-        select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            color: var(--text);
-            transition: border-color 0.3s ease;
-        }
-        
-        input:focus,
-        textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .checkbox-group {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-        
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .checkbox-item input {
-            width: auto;
-        }
-        
-        .contact-info-side h3 {
-            color: var(--primary);
-            margin-bottom: 25px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .contact-item-icon {
-            font-size: 1.2rem;
-            color: var(--secondary);
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        .contact-item-content h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        
-        .service-times {
-            margin-top: 40px;
-        }
-        
-        .service-time {
-            margin-bottom: 15px;
-        }
-        
-        .service-day {
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .social-link {
+
+        /* Page Banner */
+        .page-banner {
+            position: relative;
+            height: 400px;
+            background-color: var(--dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: var(--white);
+            text-align: center;
+            color: var(--light);
+            margin-top: 90px;
+            overflow: hidden;
+        }
+
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+        }
+
+        .page-banner-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-banner h1 {
+            font-size: 48px;
+            color: var(--light);
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            background: transparent;
+            margin-bottom: 0;
+            justify-content: center;
+        }
+
+        .breadcrumb-item {
+            color: var(--secondary);
+        }
+
+        .breadcrumb-item.active {
+            color: var(--light);
+        }
+
+        .breadcrumb-item a {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--accent);
+        }
+
+        /* Contact Info */
+        .contact-info-box {
+            background: #fff;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .contact-info-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-info-icon {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            background: var(--primary);
+            color: var(--light);
+            font-size: 30px;
             border-radius: 50%;
-            transition: all 0.3s ease;
+            margin: 0 auto 25px;
+            transition: var(--transition);
         }
-        
-        .social-link:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
+
+        .contact-info-box:hover .contact-info-icon {
+            background: var(--accent);
+            color: var(--primary);
         }
-        
-        /* Map Section */
-        .map-section {
-            padding: 0 0 80px;
+
+        .contact-info-box h3 {
+            margin-bottom: 15px;
         }
-        
+
+        .contact-info-box p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info-box a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-info-box a:hover {
+            color: var(--primary);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: #fff;
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-control {
+            height: 50px;
+            border: 1px solid #e1e1e1;
+            border-radius: var(--border-radius);
+            padding: 10px 20px;
+            font-size: 16px;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: none;
+        }
+
+        textarea.form-control {
+            height: 200px;
+            resize: none;
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        /* Map */
         .map-container {
             height: 450px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
         }
-        
+
         .map-container iframe {
             width: 100%;
             height: 100%;
-            border: none;
+            border: 0;
         }
-        
-        /* Staff Section */
-        .staff-section {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .staff-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-        
-        .staff-card {
-            background-color: var(--white);
+
+        /* Business Hours */
+        .business-hours {
+            background: var(--primary);
+            color: var(--light);
+            padding: 50px 40px;
             border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            text-align: center;
+            margin-bottom: 30px;
         }
-        
-        .staff-image {
-            height: 200px;
-            overflow: hidden;
+
+        .business-hours h3 {
+            color: var(--light);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        .staff-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        
-        .staff-content {
-            padding: 20px;
-        }
-        
-        .staff-name {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .staff-role {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .staff-contact {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .staff-contact a {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.9rem;
-        }
-        
-        /* FAQ Section */
-        .faq-section {
-            padding: 80px 0;
-        }
-        
-        .accordion {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .accordion-item {
-            margin-bottom: 15px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .accordion-header {
-            background-color: var(--white);
-            padding: 15px 20px;
-            cursor: pointer;
+
+        .hours-list li {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s ease;
+            padding: 12px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
         }
-        
-        .accordion-header:hover {
-            background-color: rgba(59, 81, 115, 0.05);
+
+        .hours-list li:last-child {
+            border-bottom: none;
         }
-        
-        .accordion-header h3 {
-            margin: 0;
-            font-size: 1.1rem;
+
+        .day {
+            font-weight: 500;
         }
-        
-        .accordion-icon {
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
+
+        .closed {
+            color: var(--accent);
         }
-        
-        .accordion-item.active .accordion-icon {
-            transform: rotate(180deg);
+
+        /* Follow Us */
+        .social-follow {
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
-        
-        .accordion-content {
-            background-color: var(--white);
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-        
-        .accordion-item.active .accordion-content {
-            padding: 20px;
-            max-height: 500px;
-        }
-        
-        /* Call to Action */
-        .cta {
-            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1508420223351-d3eea27b023e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 0;
-            color: var(--white);
-            text-align: center;
-        }
-        
-        .cta h2 {
-            color: var(--white);
+
+        .social-follow h3 {
             margin-bottom: 25px;
-            font-size: 2.5rem;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
         }
-        
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
-        }
-        
-        .cta-buttons {
+
+        .social-icons {
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            flex-wrap: wrap;
         }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            padding: 60px 0 20px;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-widget h4 {
-            color: var(--white);
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
             margin-bottom: 20px;
-            font-size: 1.3rem;
-            position: relative;
-            padding-bottom: 10px;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
         }
-        
-        .footer-widget h4::after {
+
+        .social-icon:hover {
+            color: var(--primary);
+        }
+
+        .social-icon i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .social-icon span {
+            font-weight: 500;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .faq-question {
+            position: relative;
+            padding: 20px 50px 20px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .faq-question::after {
+            content: '\f282';
+            font-family: 'Bootstrap-icons';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: var(--transition);
+        }
+
+        .faq-question.active {
+            color: var(--primary);
+        }
+
+        .faq-question.active::after {
+            content: '\f286';
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            display: none;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: #999;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer h5 {
+            color: #fff;
+            margin-bottom: 25px;
+            font-size: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer h5::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 50px;
             height: 2px;
-            background-color: var(--secondary);
+            background: var(--accent);
         }
-        
-        .footer-widget p {
-            margin-bottom: 15px;
-        }
-        
+
         .footer-links {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
         }
-        
-        .footer-links a {
-            color: #ddd;
-            transition: color 0.3s ease;
+
+        .footer-links li a {
+            color: #999;
+            transition: var(--transition);
+            text-decoration: none;
         }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
+
+        .footer-links li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
         }
-        
-        .footer-service {
+
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-contact-info li {
+            padding-left: 30px;
+            position: relative;
             margin-bottom: 15px;
         }
-        
-        .footer-service-day {
-            font-weight: 600;
-            color: var(--secondary);
+
+        .footer-contact-info li i {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            color: var(--accent);
         }
-        
-        .subscribe-form {
-            display: flex;
-            margin-top: 15px;
+
+        .footer-social {
+            margin-top: 30px;
         }
-        
-        .subscribe-input {
-            flex-grow: 1;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
-            border: none;
-            padding: 10px 15px;
-        }
-        
-        .subscribe-btn {
-            background-color: var(--secondary);
-            color: var(--dark);
-            font-weight: 600;
-            border: none;
-            padding: 0 15px;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .subscribe-btn:hover {
-            background-color: var(--accent);
-        }
-        
-        .footer-bottom {
+
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
             text-align: center;
-            padding-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
         }
-        
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .contact-cards,
-            .staff-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
+
+        .footer-bottom p {
+            margin-bottom: 0;
         }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
+
+        /* Form Success/Error Messages */
+        .form-message {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: var(--border-radius);
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             }
-            
-            h2 {
-                font-size: 1.8rem;
+            .section-padding {
+                padding: 80px 0;
             }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
+            .section-title h2 {
+                font-size: 36px;
             }
-            
-            .contact-info-side {
-                order: -1;
-                margin-bottom: 40px;
+            .page-banner h1 {
+                font-size: 36px;
             }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 76px;
-                left: 0;
-                width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 0;
-                text-align: center;
-                border-bottom: 1px solid #eee;
-            }
-            
-            nav ul li a {
-                display: block;
-                padding: 15px 0;
+            .contact-form {
+                padding: 30px;
+                margin-bottom: 30px;
             }
         }
-        
-        @media (max-width: 576px) {
-            .contact-cards,
-            .staff-grid {
-                grid-template-columns: 1fr;
+
+        @media (max-width: 767px) {
+            .section-padding {
+                padding: 60px 0;
             }
-            
-            .cta-buttons {
-                flex-direction: column;
-                gap: 15px;
+            .section-title h2 {
+                font-size: 30px;
             }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
+            .page-banner h1 {
+                font-size: 32px;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style type="text/css">
         :root {
-            --primary: #3b5173;
-            --primary-dark: #2a3b54;
-            --secondary: #e5b167;
-            --accent: #d4a04f;
-            --light: #f5f5f5;
-            --dark: #333;
-            --text: #555;
-            --white: #fff;
-            --max-width: 1200px;
-            --border-radius: 8px;
-            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
+            --transition: all 0.3s ease;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
 
         :root {
-            --primary: #3b5173;
-            --primary-dark: #2a3b54;
-            --secondary: #e5b167;
-            --accent: #d4a04f;
-            --light: #f5f5f5;
-            --dark: #333;
-            --text: #555;
-            --white: #fff;
-            --max-width: 1200px;
-            --border-radius: 8px;
-            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
+            --transition: all 0.3s ease;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            background-color: var(--white);
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: #fcfcfc;
         }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Lora', serif;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
         }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--accent);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+
         .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            font-weight: 600;
-            padding: 12px 24px;
             border-radius: var(--border-radius);
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            padding: 12px 28px;
+            font-weight: 500;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
         }
-        
-        .btn:hover {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary);
-            color: var(--dark);
-        }
-        
-        .btn-secondary:hover {
-            background-color: var(--accent);
-            color: var(--dark);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
+
+        .btn-primary {
             background-color: var(--primary);
-            color: var(--white);
+            border-color: var(--primary);
         }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
         }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background-color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             padding: 15px 0;
         }
-        
-        .logo {
-            font-family: 'Lora', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 28px;
             color: var(--primary);
         }
-        
-        .logo span {
+
+        .navbar-brand span {
             color: var(--secondary);
         }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
+
+        .nav-link {
             font-weight: 500;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-        
-        /* Page Header */
-        .page-header {
-            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1565035010268-a3816f98589a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            text-align: center;
-            padding: 120px 0 80px;
-            margin-top: 76px;
-        }
-        
-        .page-header h1 {
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-        
-        .breadcrumbs {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 1rem;
-        }
-        
-        .breadcrumbs a {
-            color: var(--secondary);
-        }
-        
-        .breadcrumbs span {
-            color: var(--white);
-        }
-        
-        /* Contact Info Section */
-        .contact-info-section {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-header h2 {
+            color: var(--dark);
             position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
+            margin: 0 15px;
+            transition: var(--transition);
         }
-        
-        .section-header h2::after {
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            position: relative;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            font-size: 42px;
+        }
+
+        .section-title h2::after {
             content: '';
             position: absolute;
             bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .section-title.text-center h2::after {
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary);
         }
-        
-        .contact-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .contact-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .contact-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .contact-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--primary-dark);
-        }
-        
-        /* Contact Form Section */
-        .contact-form-section {
-            padding: 80px 0;
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        
-        .form-container {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            box-shadow: var(--shadow);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--primary-dark);
-        }
-        
-        input,
-        textarea,
-        select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            color: var(--text);
-            transition: border-color 0.3s ease;
-        }
-        
-        input:focus,
-        textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .checkbox-group {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-        
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .checkbox-item input {
-            width: auto;
-        }
-        
-        .contact-info-side h3 {
-            color: var(--primary);
-            margin-bottom: 25px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .contact-item-icon {
-            font-size: 1.2rem;
-            color: var(--secondary);
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        .contact-item-content h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        
-        .service-times {
-            margin-top: 40px;
-        }
-        
-        .service-time {
-            margin-bottom: 15px;
-        }
-        
-        .service-day {
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .social-link {
+
+        /* Page Banner */
+        .page-banner {
+            position: relative;
+            height: 400px;
+            background-color: var(--dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: var(--white);
+            text-align: center;
+            color: var(--light);
+            margin-top: 90px;
+            overflow: hidden;
+        }
+
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+        }
+
+        .page-banner-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-banner h1 {
+            font-size: 48px;
+            color: var(--light);
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            background: transparent;
+            margin-bottom: 0;
+            justify-content: center;
+        }
+
+        .breadcrumb-item {
+            color: var(--secondary);
+        }
+
+        .breadcrumb-item.active {
+            color: var(--light);
+        }
+
+        .breadcrumb-item a {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--accent);
+        }
+
+        /* Contact Info */
+        .contact-info-box {
+            background: #fff;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .contact-info-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-info-icon {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            background: var(--primary);
+            color: var(--light);
+            font-size: 30px;
             border-radius: 50%;
-            transition: all 0.3s ease;
+            margin: 0 auto 25px;
+            transition: var(--transition);
         }
-        
-        .social-link:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
+
+        .contact-info-box:hover .contact-info-icon {
+            background: var(--accent);
+            color: var(--primary);
         }
-        
-        /* Map Section */
-        .map-section {
-            padding: 0 0 80px;
+
+        .contact-info-box h3 {
+            margin-bottom: 15px;
         }
-        
+
+        .contact-info-box p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info-box a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-info-box a:hover {
+            color: var(--primary);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: #fff;
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-control {
+            height: 50px;
+            border: 1px solid #e1e1e1;
+            border-radius: var(--border-radius);
+            padding: 10px 20px;
+            font-size: 16px;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: none;
+        }
+
+        textarea.form-control {
+            height: 200px;
+            resize: none;
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        /* Map */
         .map-container {
             height: 450px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
         }
-        
+
         .map-container iframe {
             width: 100%;
             height: 100%;
-            border: none;
+            border: 0;
         }
-        
-        /* Staff Section */
-        .staff-section {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .staff-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-        
-        .staff-card {
-            background-color: var(--white);
+
+        /* Business Hours */
+        .business-hours {
+            background: var(--primary);
+            color: var(--light);
+            padding: 50px 40px;
             border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            text-align: center;
+            margin-bottom: 30px;
         }
-        
-        .staff-image {
-            height: 200px;
-            overflow: hidden;
+
+        .business-hours h3 {
+            color: var(--light);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        .staff-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        
-        .staff-content {
-            padding: 20px;
-        }
-        
-        .staff-name {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .staff-role {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .staff-contact {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .staff-contact a {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.9rem;
-        }
-        
-        /* FAQ Section */
-        .faq-section {
-            padding: 80px 0;
-        }
-        
-        .accordion {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .accordion-item {
-            margin-bottom: 15px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .accordion-header {
-            background-color: var(--white);
-            padding: 15px 20px;
-            cursor: pointer;
+
+        .hours-list li {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s ease;
+            padding: 12px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
         }
-        
-        .accordion-header:hover {
-            background-color: rgba(59, 81, 115, 0.05);
+
+        .hours-list li:last-child {
+            border-bottom: none;
         }
-        
-        .accordion-header h3 {
-            margin: 0;
-            font-size: 1.1rem;
+
+        .day {
+            font-weight: 500;
         }
-        
-        .accordion-icon {
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
+
+        .closed {
+            color: var(--accent);
         }
-        
-        .accordion-item.active .accordion-icon {
-            transform: rotate(180deg);
+
+        /* Follow Us */
+        .social-follow {
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
-        
-        .accordion-content {
-            background-color: var(--white);
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-        
-        .accordion-item.active .accordion-content {
-            padding: 20px;
-            max-height: 500px;
-        }
-        
-        /* Call to Action */
-        .cta {
-            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1508420223351-d3eea27b023e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 0;
-            color: var(--white);
-            text-align: center;
-        }
-        
-        .cta h2 {
-            color: var(--white);
+
+        .social-follow h3 {
             margin-bottom: 25px;
-            font-size: 2.5rem;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
         }
-        
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
-        }
-        
-        .cta-buttons {
+
+        .social-icons {
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            flex-wrap: wrap;
         }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            padding: 60px 0 20px;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-widget h4 {
-            color: var(--white);
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
             margin-bottom: 20px;
-            font-size: 1.3rem;
-            position: relative;
-            padding-bottom: 10px;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
         }
-        
-        .footer-widget h4::after {
+
+        .social-icon:hover {
+            color: var(--primary);
+        }
+
+        .social-icon i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .social-icon span {
+            font-weight: 500;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .faq-question {
+            position: relative;
+            padding: 20px 50px 20px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .faq-question::after {
+            content: '\f282';
+            font-family: 'Bootstrap-icons';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: var(--transition);
+        }
+
+        .faq-question.active {
+            color: var(--primary);
+        }
+
+        .faq-question.active::after {
+            content: '\f286';
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            display: none;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: #999;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer h5 {
+            color: #fff;
+            margin-bottom: 25px;
+            font-size: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer h5::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 50px;
             height: 2px;
-            background-color: var(--secondary);
+            background: var(--accent);
         }
-        
-        .footer-widget p {
-            margin-bottom: 15px;
-        }
-        
+
         .footer-links {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
         }
-        
-        .footer-links a {
-            color: #ddd;
-            transition: color 0.3s ease;
+
+        .footer-links li a {
+            color: #999;
+            transition: var(--transition);
+            text-decoration: none;
         }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
+
+        .footer-links li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
         }
-        
-        .footer-service {
+
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-contact-info li {
+            padding-left: 30px;
+            position: relative;
             margin-bottom: 15px;
         }
-        
-        .footer-service-day {
-            font-weight: 600;
-            color: var(--secondary);
+
+        .footer-contact-info li i {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            color: var(--accent);
         }
-        
-        .subscribe-form {
-            display: flex;
-            margin-top: 15px;
+
+        .footer-social {
+            margin-top: 30px;
         }
-        
-        .subscribe-input {
-            flex-grow: 1;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
-            border: none;
-            padding: 10px 15px;
-        }
-        
-        .subscribe-btn {
-            background-color: var(--secondary);
-            color: var(--dark);
-            font-weight: 600;
-            border: none;
-            padding: 0 15px;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .subscribe-btn:hover {
-            background-color: var(--accent);
-        }
-        
-        .footer-bottom {
+
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
             text-align: center;
-            padding-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
         }
-        
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .contact-cards,
-            .staff-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
+
+        .footer-bottom p {
+            margin-bottom: 0;
         }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
+
+        /* Form Success/Error Messages */
+        .form-message {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: var(--border-radius);
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             }
-            
-            h2 {
-                font-size: 1.8rem;
+            .section-padding {
+                padding: 80px 0;
             }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
+            .section-title h2 {
+                font-size: 36px;
             }
-            
-            .contact-info-side {
-                order: -1;
-                margin-bottom: 40px;
+            .page-banner h1 {
+                font-size: 36px;
             }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 76px;
-                left: 0;
-                width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 0;
-                text-align: center;
-                border-bottom: 1px solid #eee;
-            }
-            
-            nav ul li a {
-                display: block;
-                padding: 15px 0;
+            .contact-form {
+                padding: 30px;
+                margin-bottom: 30px;
             }
         }
-        
-        @media (max-width: 576px) {
-            .contact-cards,
-            .staff-grid {
-                grid-template-columns: 1fr;
+
+        @media (max-width: 767px) {
+            .section-padding {
+                padding: 60px 0;
             }
-            
-            .cta-buttons {
-                flex-direction: column;
-                gap: 15px;
+            .section-title h2 {
+                font-size: 30px;
             }
-            
-            .btn {
-                width: 100%;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
+            .page-banner h1 {
+                font-size: 32px;
             }
         }
     
@@ -1620,445 +1390,390 @@
 </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container header-container">
-            <a href="#" class="logo">Grace<span>Community</span></a>
-            <button class="mobile-menu-btn">☰</button>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="sermons.html">Sermons</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="ministries.html">Ministries</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="page-header">
-        <div class="container">
-            <div class="breadcrumbs">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <span>Contact</span>
-            </div>
-            <h1>Contact Us</h1>
-            <p>We'd love to hear from you and answer any questions you may have</p>
-        </div>
-    </section>
-
-    <section class="contact-info-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Reach out to our creative experts today</h2>
-                <p>Here's how you can reach us</p>
-            </div>
-            <div class="contact-cards">
-                <div class="contact-card">
-                    <div class="contact-icon">📍</div>
-                    <h3 class="contact-title">Our Location</h3>
-                    <p>123 Faith Avenue<br>Grace City, GC 12345</p>
-                    <a href="#map" class="btn btn-outline">View Map</a>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">📞</div>
-                    <h3 class="contact-title">Phone & Email</h3>
-                    <p>Phone: (123) 456-7890<br>Email: info@gracecommunity.org</p>
-                    <a href="mailto:info@gracecommunity.org" class="btn btn-outline">Email Us</a>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">🕒</div>
-                    <h3 class="contact-title">Office Hours</h3>
-                    <p>Monday - Friday<br>9:00 AM - 5:00 PM</p>
-                    <a href="#service-times" class="btn btn-outline">Service Times</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-form-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Send Us a Message</h2>
-                <p>We'll get back to you as soon as possible</p>
-            </div>
-            <div class="contact-container">
-                <div class="form-container">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Your Name*</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email*</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject*</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label>I'm interested in:</label>
-                            <div class="checkbox-group">
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="worship" name="interest" value="Worship">
-                                    <label for="worship">Worship</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="children" name="interest" value="Children">
-                                    <label for="children">Children</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="youth" name="interest" value="Youth">
-                                    <label for="youth">Youth</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="adult" name="interest" value="Adult">
-                                    <label for="adult">Adult</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="missions" name="interest" value="Missions">
-                                    <label for="missions">Missions</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="other" name="interest" value="Other">
-                                    <label for="other">Other</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message*</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-                <div class="contact-info-side">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <div class="contact-item-icon">📍</div>
-                        <div class="contact-item-content">
-                            <h4>Address</h4>
-                            <p>123 Faith Avenue<br>Grace City, GC 12345</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon">📞</div>
-                        <div class="contact-item-content">
-                            <h4>Phone</h4>
-                            <p>(123) 456-7890</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon">✉️</div>
-                        <div class="contact-item-content">
-                            <h4>Email</h4>
-                            <p>info@gracecommunity.org</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon">🕒</div>
-                        <div class="contact-item-content">
-                            <h4>Office Hours</h4>
-                            <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                        </div>
-                    </div>
-                    
-                    <div id="service-times" class="service-times">
-                        <h3>Service Times</h3>
-                        <div class="service-time">
-                            <p class="service-day">Sunday Morning</p>
-                            <p>9:00 AM & 11:00 AM</p>
-                        </div>
-                        <div class="service-time">
-                            <p class="service-day">Sunday Evening</p>
-                            <p>6:00 PM</p>
-                        </div>
-                        <div class="service-time">
-                            <p class="service-day">Wednesday Evening</p>
-                            <p>7:00 PM</p>
-                        </div>
-                    </div>
-                    
-                    <h3>Connect With Us</h3>
-                    <div class="social-links">
-                        <a href="#" class="social-link">f</a>
-                        <a href="#" class="social-link">t</a>
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">yt</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="map" class="map-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Find Us</h2>
-                <p>Directions to our church</p>
-            </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215747493078!2d-73.98784492429542!3d40.758985834869584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1sen!2sus!4v1561344282132!5m2!1sen!2sus" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
-
-    <section class="staff-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Church Staff</h2>
-                <p>Meet our dedicated team</p>
-            </div>
-            <div class="staff-grid">
-                <div class="staff-card">
-                    <div class="staff-image">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pastor John Williams">
-                    </div>
-                    <div class="staff-content">
-                        <h3 class="staff-name">John Williams</h3>
-                        <p class="staff-role">Senior Pastor</p>
-                        <div class="staff-contact">
-                            <a href="mailto:john@gracecommunity.org">
-                                <span>✉️</span>
-                                <span>Email</span>
-                            </a>
-                            <a href="tel:+11234567890">
-                                <span>📞</span>
-                                <span>Call</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="staff-card">
-                    <div class="staff-image">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
-                    </div>
-                    <div class="staff-content">
-                        <h3 class="staff-name">Sarah Johnson</h3>
-                        <p class="staff-role">Children's Director</p>
-                        <div class="staff-contact">
-                            <a href="mailto:sarah@gracecommunity.org">
-                                <span>✉️</span>
-                                <span>Email</span>
-                            </a>
-                            <a href="tel:+11234567891">
-                                <span>📞</span>
-                                <span>Call</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="staff-card">
-                    <div class="staff-image">
-                        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Jason Martinez">
-                    </div>
-                    <div class="staff-content">
-                        <h3 class="staff-name">Jason Martinez</h3>
-                        <p class="staff-role">Youth Pastor</p>
-                        <div class="staff-contact">
-                            <a href="mailto:jason@gracecommunity.org">
-                                <span>✉️</span>
-                                <span>Email</span>
-                            </a>
-                            <a href="tel:+11234567892">
-                                <span>📞</span>
-                                <span>Call</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="staff-card">
-                    <div class="staff-image">
-                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Emily Chen">
-                    </div>
-                    <div class="staff-content">
-                        <h3 class="staff-name">Emily Chen</h3>
-                        <p class="staff-role">Church Administrator</p>
-                        <div class="staff-contact">
-                            <a href="mailto:emily@gracecommunity.org">
-                                <span>✉️</span>
-                                <span>Email</span>
-                            </a>
-                            <a href="tel:+11234567893">
-                                <span>📞</span>
-                                <span>Call</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="faq-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions</p>
-            </div>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>What time are your Sunday services?</h3>
-                        <div class="accordion-icon">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <p>We have Sunday morning services at 9:00 AM and 11:00 AM, with an evening service at 6:00 PM. Our morning services feature a blend of traditional and contemporary worship, while the evening service has a more casual, contemporary feel.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>Is there childcare available during services?</h3>
-                        <div class="accordion-icon">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Yes, beasy specializes in this is a church website.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>How do I become a member of the church?</h3>
-                        <div class="accordion-icon">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <p>We offer a membership class called "Discover Grace" on the first Sunday of each month after the 11:00 AM service. This class covers our church's history, beliefs, mission, and the benefits and responsibilities of membership. After completing the class, you can schedule a meeting with one of our pastors to discuss membership further.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>How can I get involved in a ministry?</h3>
-                        <div class="accordion-icon">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <p>We have many opportunities to serve in various ministries! You can fill out a Ministry Interest Form on our website, pick one up at the Welcome Center on Sundays, or contact the church office. Someone from our staff will follow up with you to discuss your interests, gifts, and the available opportunities.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>What should I wear to church?</h3>
-                        <div class="accordion-icon">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <p>We don't have a dress code at Grace Community Church. Some people dress casually in jeans and t-shirts, while others prefer to dress more formally. We invite you to come as you are and dress in a way that is comfortable for you.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <div class="container">
-            <h2>We'd Love to Meet You</h2>
-            <p>Whether you're exploring faith, looking for a church home, or interested in serving, we invite you to join us for a Sunday service or contact us with any questions. Our doors are open to everyone!</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-secondary">Plan Your Visit</a>
-                <a href="#" class="btn btn-outline">View Service Times</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-widget">
-                    <h4>About Us</h4>
-                    <p>Grace Community Church is a welcoming community of believers dedicated to worship, fellowship, and service.</p>
-                    <p>beasy's commitment to creative excellence is to love God, love people, and make disciples in our community and around the world.</p>
-                </div>
-                <div class="footer-widget">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="sermons.html">Sermons</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="ministries.html">Ministries</a></li>
-                        <li><a href="giving.html">Online Giving</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Lens<span>Vision</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contact</a>
+                        </li>
                     </ul>
                 </div>
-                <div class="footer-widget">
-                    <h4>Service Times</h4>
-                    <div class="footer-service">
-                        <p class="footer-service-day">Sunday</p>
-                        <p>9:00 AM & 11:00 AM</p>
-                    </div>
-                    <div class="footer-service">
-                        <p class="footer-service-day">Sunday Evening</p>
-                        <p>6:00 PM</p>
-                    </div>
-                    <div class="footer-service">
-                        <p class="footer-service-day">Wednesday</p>
-                        <p>7:00 PM</p>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner" style="background-image: url('images/contact-banner.jpg');">
+        <div class="container">
+            <div class="page-banner-content">
+                <h1>Contact Us</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Reach out to our photography experts today</h2>
+                <p>We're here to answer your questions and help you book your next photography session</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-info-box">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <h3>Visit Our Studio</h3>
+                        <p>123 Broadway</p>
+                        <p>New York, NY 10001</p>
+                        <p>United States</p>
                     </div>
                 </div>
-                <div class="footer-widget">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to our newsletter to receive updates and announcements.</p>
-                    <form class="subscribe-form">
-                        <input type="email" class="subscribe-input" placeholder="Your Email">
-                        <button type="submit" class="subscribe-btn">Subscribe</button>
-                    </form>
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-info-box">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p><a href="mailto:info@lensvision.com">info@lensvision.com</a></p>
+                        <p><a href="mailto:bookings@lensvision.com">bookings@lensvision.com</a></p>
+                        <p><a href="mailto:support@lensvision.com">support@lensvision.com</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-info-box">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p><a href="tel:+12125551234">(212) 555-1234</a> - Main</p>
+                        <p><a href="tel:+12125551235">(212) 555-1235</a> - Bookings</p>
+                        <p><a href="tel:+12125551236">(212) 555-1236</a> - Support</p>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Grace Community Church. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <div class="section-title">
+                            <h2>Send Us a Message</h2>
+                            <p>Fill out the form below and we'll get back to you as soon as possible</p>
+                        </div>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="name" class="form-label">Your Name *</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="email" class="form-label">Your Email *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone">
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="subject" class="form-label">Subject *</label>
+                                    <input type="text" class="form-control" id="subject" name="subject" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="service" class="form-label">Service Interested In</label>
+                                <select class="form-control" id="service" name="service">
+                                    <option value="">Select a Service</option>
+                                    <option value="Portrait Photography">Portrait Photography</option>
+                                    <option value="Wedding Photography">Wedding Photography</option>
+                                    <option value="Commercial Photography">Commercial Photography</option>
+                                    <option value="Event Photography">Event Photography</option>
+                                    <option value="Fine Art Photography">Fine Art Photography</option>
+                                    <option value="Video Production">Video Production</option>
+                                    <option value="Other">Other (Specify in Message)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Your Message *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                            <div class="form-message success" id="formSuccess">
+                                Your message has been sent successfully. We'll get back to you as soon as possible.
+                            </div>
+                            <div class="form-message error" id="formError">
+                                Oops! There was a problem sending your message. Please try again later.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="business-hours">
+                        <h3>Business Hours</h3>
+                        <ul class="hours-list">
+                            <li>
+                                <span class="day">Monday</span>
+                                <span class="time">9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Tuesday</span>
+                                <span class="time">9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Wednesday</span>
+                                <span class="time">9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Thursday</span>
+                                <span class="time">9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Friday</span>
+                                <span class="time">9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Saturday</span>
+                                <span class="time">10:00 AM - 4:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Sunday</span>
+                                <span class="time closed">Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="social-follow">
+                        <h3>Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-pinterest"></i>
+                                <span>Pinterest</span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="bi bi-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Visit Our Studio</h2>
+                <p>Find us at our centrally located studio in New York City</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343016!2d-74.0059418845959!3d40.74127977932881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9aeb1c6b5%3A0x35b1cfbc89a6097f!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1593517687662!5m2!1sen!2sus" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about booking and working with us</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I book a photography session?</div>
+                        <div class="faq-answer">
+                            <p>You can book a photography session by filling out the contact form on this page, calling our booking line at (212) 555-1235, or emailing us at bookings@lensvision.com. After your initial inquiry, we'll schedule a technical assessment (in-person or virtual) to discuss your needs and select the best package for you.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is your cancellation policy?</div>
+                        <div class="faq-answer">
+                            <p>For standard sessions, we require 48 hours' notice for cancellations or rescheduling. For weddings and larger events, our cancellation policy varies depending on how far in advance the cancellation occurs. Deposits are non-refundable, but they can be applied to a future session if rescheduled within 6 months.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="faq-item">
+                        <div class="faq-question">Do you travel for photography sessions?</div>
+                        <div class="faq-answer">
+                            <p>Yes, we are available for travel both domestically and internationally. Local sessions (within 30 miles of New York City) don't incur travel fees. For locations beyond this range, travel fees apply based on distance. For destination weddings and events, please contact us for a custom quote.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How quickly will I receive my photos?</div>
+                        <div class="faq-answer">
+                            <p>Delivery times vary by service: portrait sessions are typically delivered within 1-2 weeks, weddings within 4-6 weeks, and commercial implementations and deployments according to the agreed timeline. Rush delivery options are available for an additional fee. You'll receive your photos via a private online gallery for easy downloading and sharing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <p>Have more questions? Don't hesitate to Reach out to our photography experts today with us.</p>
+                <a href="#" class="btn btn-primary">Ask a Question</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a href="index.html" class="footer-logo">Lens<span>Vision</span></a>
+                        <p>Premium photography studio specializing in portrait, wedding, commercial, and fine art photography. We capture life's precious moments with creativity and passion.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="services.html#portrait">Portrait Photography</a></li>
+                        <li><a href="services.html#wedding">Wedding Photography</a></li>
+                        <li><a href="services.html#commercial">Commercial Photography</a></li>
+                        <li><a href="services.html#event">Event Photography</a></li>
+                        <li><a href="services.html#fineart">Fine Art Photography</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact-info">
+                        <li><i class="bi bi-geo-alt"></i> 123 Broadway, New York, NY 10001</li>
+                        <li><i class="bi bi-telephone"></i> (212) 555-1234</li>
+                        <li><i class="bi bi-envelope"></i> info@lensvision.com</li>
+                        <li><i class="bi bi-clock"></i> Monday-Friday: 9am-6pm<br>Saturday: 10am-4pm<br>Sunday: Closed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 LensVision Photography Studio. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('nav ul');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav') && !e.target.closest('.mobile-menu-btn')) {
-                navMenu.classList.remove('active');
+        // Navbar scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
         });
-        
-        // Accordion functionality
-        const accordionItems = document.querySelectorAll('.accordion-item');
-        
-        accordionItems.forEach(item => {
-            const header = item.querySelector('.accordion-header');
+
+        // FAQ Accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
             
-            header.addEventListener('click', () => {
-                // Close all other items
-                accordionItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    
+                    // Toggle active class on question
+                    this.classList.toggle('active');
+                    
+                    // Toggle show class on answer
+                    answer.classList.toggle('show');
                 });
-                
-                // Toggle current item
-                item.classList.toggle('active');
             });
         });
-        
-        // Form submission
-        const contactForm = document.getElementById('contact-form');
-        
-        contactForm.addEventListener('submit', (e) => {
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Here you would typically have code to handle the form submission
-            // For this example, we'll just show an alert
+            // Simulate form submission
+            const formSuccess = document.getElementById('formSuccess');
+            const formError = document.getElementById('formError');
             
-            alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
+            // In a real implementation, you would send the form data to a server
+            // Here we're just showing the success message for demonstration
+            
+            // Show success message
+            formSuccess.style.display = 'block';
+            
+            // Hide error message if visible
+            formError.style.display = 'none';
+            
+            // Reset form after submission
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(function() {
+                formSuccess.style.display = 'none';
+            }, 5000);
         });
     </script>
 
