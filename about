@@ -3,1456 +3,1376 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Grace Community Church</title>
-    <meta name="description" content="Learn about Grace Community Church's history, mission, vision, and values. Discover our leadership team and what we believe.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>About Us | LensVision Photography Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style>
         :root {
-            --primary: #3b5173;
-            --primary-dark: #2a3b54;
-            --secondary: #e5b167;
-            --accent: #d4a04f;
-            --light: #f5f5f5;
-            --dark: #333;
-            --text: #555;
-            --white: #fff;
-            --max-width: 1200px;
-            --border-radius: 8px;
-            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
+            --transition: all 0.3s ease;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            background-color: var(--white);
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: #fcfcfc;
         }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Lora', serif;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
         }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--accent);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+
         .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            font-weight: 600;
-            padding: 12px 24px;
             border-radius: var(--border-radius);
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            padding: 12px 28px;
+            font-weight: 500;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
         }
-        
-        .btn:hover {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary);
-            color: var(--dark);
-        }
-        
-        .btn-secondary:hover {
-            background-color: var(--accent);
-            color: var(--dark);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
+
+        .btn-primary {
             background-color: var(--primary);
-            color: var(--white);
+            border-color: var(--primary);
         }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
         }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background-color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             padding: 15px 0;
         }
-        
-        .logo {
-            font-family: 'Lora', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 28px;
             color: var(--primary);
         }
-        
-        .logo span {
+
+        .navbar-brand span {
             color: var(--secondary);
         }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
+
+        .nav-link {
             font-weight: 500;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-        
-        /* Page Header */
-        .page-header {
-            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1447678523326-1360892abab8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 150px 0 80px;
-            color: var(--white);
-            text-align: center;
-        }
-        
-        .page-header h1 {
-            color: var(--white);
-            margin-bottom: 20px;
-        }
-        
-        .breadcrumb {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-        
-        .breadcrumb li {
-            margin: 0 10px;
-        }
-        
-        .breadcrumb a {
-            color: var(--secondary);
-        }
-        
-        .breadcrumb .current {
-            color: var(--white);
-        }
-        
-        /* History Section */
-        .history {
-            padding: 80px 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-header h2 {
+            color: var(--dark);
             position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
+            margin: 0 15px;
+            transition: var(--transition);
         }
-        
-        .section-header h2::after {
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            position: relative;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            font-size: 42px;
+        }
+
+        .section-title h2::after {
             content: '';
             position: absolute;
             bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .section-title.text-center h2::after {
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary);
         }
-        
-        .history-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .history-image {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .history-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .timeline {
-            margin-top: 50px;
-        }
-        
-        .timeline-item {
-            display: flex;
-            margin-bottom: 30px;
-        }
-        
-        .timeline-year {
-            min-width: 100px;
-            font-weight: 700;
-            color: var(--secondary);
-            font-size: 1.2rem;
-        }
-        
-        .timeline-content {
-            border-left: 2px solid var(--secondary);
-            padding-left: 20px;
+
+        /* Page Banner */
+        .page-banner {
             position: relative;
+            height: 400px;
+            background-color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light);
+            margin-top: 90px;
+            overflow: hidden;
         }
-        
-        .timeline-content::before {
+
+        .page-banner::before {
             content: '';
             position: absolute;
-            left: -8px;
-            top: 10px;
-            width: 14px;
-            height: 14px;
-            background-color: var(--secondary);
-            border-radius: 50%;
-        }
-        
-        /* Mission and Values */
-        .mission-values {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .mission-container {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px;
-        }
-        
-        .mission-statement {
-            font-size: 1.5rem;
-            font-family: 'Lora', serif;
-            margin-bottom: 20px;
-            color: var(--primary-dark);
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .value-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .value-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .value-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-        
-        /* Beliefs Section */
-        .beliefs {
-            padding: 80px 0;
-        }
-        
-        .beliefs-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .beliefs-content {
-            max-width: 600px;
-        }
-        
-        .beliefs-list {
-            margin-top: 30px;
-        }
-        
-        .belief-item {
-            margin-bottom: 20px;
-        }
-        
-        .belief-title {
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .belief-title::before {
-            content: '✓';
-            color: var(--secondary);
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        
-        .beliefs-image {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .beliefs-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Leadership Team */
-        .leadership {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .team-member {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .team-member:hover {
-            transform: translateY(-10px);
-        }
-        
-        .member-image {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .member-image img {
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .team-member:hover .member-image img {
-            transform: scale(1.1);
-        }
-        
-        .member-info {
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .member-name {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .member-role {
-            color: var(--secondary);
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        
-        .member-bio {
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            background-color: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            font-size: 0.8rem;
-        }
-        
-        .social-link:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        /* Join Us Section */
-        .join-us {
-            padding: 80px 0;
-        }
-        
-        .join-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .join-content {
-            max-width: 600px;
-        }
-        
-        .join-steps {
-            margin-top: 30px;
-        }
-        
-        .step-item {
-            display: flex;
-            margin-bottom: 20px;
-        }
-        
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background-color: var(--secondary);
-            color: var(--dark);
-            font-weight: 700;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        .step-content h4 {
-            margin-bottom: 5px;
-        }
-        
-        .join-image {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .join-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Call to Action */
-        .cta {
-            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1508420223351-d3eea27b023e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            padding: 80px 0;
-            color: var(--white);
-            text-align: center;
+            opacity: 0.4;
         }
-        
-        .cta h2 {
-            color: var(--white);
-            margin-bottom: 25px;
-            font-size: 2.5rem;
-        }
-        
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            padding: 60px 0 20px;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-widget h4 {
-            color: var(--white);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+
+        .page-banner-content {
             position: relative;
-            padding-bottom: 10px;
+            z-index: 1;
         }
-        
-        .footer-widget h4::after {
+
+        .page-banner h1 {
+            font-size: 48px;
+            color: var(--light);
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            background: transparent;
+            margin-bottom: 0;
+            justify-content: center;
+        }
+
+        .breadcrumb-item {
+            color: var(--secondary);
+        }
+
+        .breadcrumb-item.active {
+            color: var(--light);
+        }
+
+        .breadcrumb-item a {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--accent);
+        }
+
+        /* About Section */
+        .about-img {
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-img img {
+            transition: var(--transition);
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content h2 {
+            margin-bottom: 25px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        .about-signature {
+            margin-top: 30px;
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        /* Mission Section */
+        .mission-box {
+            padding: 50px 40px;
+            text-align: center;
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            height: 100%;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+        }
+
+        .mission-box:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            background: var(--primary);
+            color: var(--light);
+            font-size: 30px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+
+        .mission-box:hover .mission-icon {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .mission-box h3 {
+            margin-bottom: 20px;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .timeline:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            margin-left: -1px;
+            background-color: var(--primary);
+        }
+
+        .timeline > li {
+            position: relative;
+            margin-bottom: 50px;
+            min-height: 170px;
+        }
+
+        .timeline > li:after, .timeline > li:before {
+            content: " ";
+            display: table;
+        }
+
+        .timeline > li:after {
+            clear: both;
+        }
+
+        .timeline > li .timeline-panel {
+            position: relative;
+            float: left;
+            width: 46%;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            background: #fff;
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel {
+            float: right;
+        }
+
+        .timeline > li .timeline-image {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            text-align: center;
+            color: var(--light);
+            background-color: var(--primary);
+            left: 50%;
+            top: 0;
+            margin-left: -60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .timeline > li .timeline-image h4 {
+            margin-top: 12px;
+            font-size: 18px;
+            line-height: 1.2;
+            color: var(--light);
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel:before {
+            border-left-width: 0;
+            border-right-width: 15px;
+            left: -15px;
+            right: auto;
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel:after {
+            border-left-width: 0;
+            border-right-width: 14px;
+            left: -14px;
+            right: auto;
+        }
+
+        .timeline-heading h3 {
+            margin-bottom: 15px;
+        }
+
+        .timeline-heading h4 {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Team Section */
+        .team-member {
+            position: relative;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+        }
+
+        .team-member img {
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .team-member:hover img {
+            transform: scale(1.05);
+        }
+
+        .team-info {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: rgba(74, 44, 64, 0.9);
+            transition: var(--transition);
+        }
+
+        .team-member:hover .team-info {
+            bottom: 0;
+        }
+
+        .team-info h4 {
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+
+        .team-info span {
+            display: block;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .team-info p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .team-social {
+            display: flex;
+        }
+
+        .team-social a {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            margin-right: 8px;
+            transition: var(--transition);
+        }
+
+        .team-social a:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Achievements */
+        .achievements {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        .achievements .section-title h2 {
+            color: var(--light);
+        }
+
+        .achievements .section-title h2::after {
+            background: var(--accent);
+        }
+
+        .achievement-item {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .achievement-icon {
+            font-size: 40px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .achievement-number {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+            font-family: var(--font-heading);
+            margin-bottom: 15px;
+        }
+
+        .achievement-text {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Equipment */
+        .equipment-box {
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .equipment-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .equipment-box img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .equipment-box h4 {
+            margin-bottom: 15px;
+        }
+
+        .equipment-box p {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: #999;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer h5 {
+            color: #fff;
+            margin-bottom: 25px;
+            font-size: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer h5::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 50px;
             height: 2px;
-            background-color: var(--secondary);
+            background: var(--accent);
         }
-        
-        .footer-widget p {
-            margin-bottom: 15px;
-        }
-        
+
         .footer-links {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
         }
-        
-        .footer-links a {
-            color: #ddd;
-            transition: color 0.3s ease;
+
+        .footer-links li a {
+            color: #999;
+            transition: var(--transition);
+            text-decoration: none;
         }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
+
+        .footer-links li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
         }
-        
-        .footer-service {
+
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-contact-info li {
+            padding-left: 30px;
+            position: relative;
             margin-bottom: 15px;
         }
-        
-        .footer-service-day {
-            font-weight: 600;
-            color: var(--secondary);
+
+        .footer-contact-info li i {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            color: var(--accent);
         }
-        
-        .subscribe-form {
-            display: flex;
-            margin-top: 15px;
+
+        .footer-social {
+            margin-top: 30px;
         }
-        
-        .subscribe-input {
-            flex-grow: 1;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
-            border: none;
-            padding: 10px 15px;
-        }
-        
-        .subscribe-btn {
-            background-color: var(--secondary);
-            color: var(--dark);
-            font-weight: 600;
-            border: none;
-            padding: 0 15px;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .subscribe-btn:hover {
-            background-color: var(--accent);
-        }
-        
-        .footer-bottom {
+
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
             text-align: center;
-            padding-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
         }
-        
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .values-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
+
+        .footer-bottom p {
+            margin-bottom: 0;
         }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             }
-            
-            h2 {
-                font-size: 1.8rem;
+            .section-padding {
+                padding: 80px 0;
             }
-            
-            .history-container,
-            .beliefs-container,
-            .join-container {
-                grid-template-columns: 1fr;
+            .section-title h2 {
+                font-size: 36px;
             }
-            
-            .mobile-menu-btn {
-                display: block;
+            .page-banner h1 {
+                font-size: 36px;
             }
-            
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 76px;
+            .timeline:before {
+                left: 60px;
+            }
+            .timeline > li .timeline-panel {
+                width: calc(100% - 140px);
+                float: right;
+            }
+            .timeline > li .timeline-image {
                 left: 0;
-                width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                margin-left: 0;
+                width: 100px;
+                height: 100px;
             }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 0;
-                text-align: center;
-                border-bottom: 1px solid #eee;
-            }
-            
-            nav ul li a {
-                display: block;
-                padding: 15px 0;
-            }
-            
-            .history-image,
-            .beliefs-image,
-            .join-image {
-                margin-bottom: 30px;
-                order: -1;
+            .timeline > li.timeline-inverted > .timeline-panel {
+                float: right;
             }
         }
-        
-        @media (max-width: 576px) {
-            .values-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
+
+        @media (max-width: 767px) {
+            .section-padding {
+                padding: 60px 0;
             }
-            
-            .cta-buttons {
-                flex-direction: column;
-                gap: 15px;
+            .about-img {
+                margin-bottom: 30px;
             }
-            
-            .btn {
-                width: 100%;
+            .section-title h2 {
+                font-size: 30px;
             }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
+            .page-banner h1 {
+                font-size: 32px;
+            }
+            .timeline > li .timeline-image {
+                width: 80px;
+                height: 80px;
+            }
+            .timeline > li .timeline-panel {
+                width: calc(100% - 110px);
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style type="text/css">
         :root {
-            --primary: #3b5173;
-            --primary-dark: #2a3b54;
-            --secondary: #e5b167;
-            --accent: #d4a04f;
-            --light: #f5f5f5;
-            --dark: #333;
-            --text: #555;
-            --white: #fff;
-            --max-width: 1200px;
-            --border-radius: 8px;
-            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
+            --transition: all 0.3s ease;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
 
         :root {
-            --primary: #3b5173;
-            --primary-dark: #2a3b54;
-            --secondary: #e5b167;
-            --accent: #d4a04f;
-            --light: #f5f5f5;
-            --dark: #333;
-            --text: #555;
-            --white: #fff;
-            --max-width: 1200px;
-            --border-radius: 8px;
-            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
+            --transition: all 0.3s ease;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            background-color: var(--white);
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-color: #fcfcfc;
         }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Lora', serif;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
         }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--accent);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
+
         .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--white);
-            font-weight: 600;
-            padding: 12px 24px;
             border-radius: var(--border-radius);
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            padding: 12px 28px;
+            font-weight: 500;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
         }
-        
-        .btn:hover {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary);
-            color: var(--dark);
-        }
-        
-        .btn-secondary:hover {
-            background-color: var(--accent);
-            color: var(--dark);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
+
+        .btn-primary {
             background-color: var(--primary);
-            color: var(--white);
+            border-color: var(--primary);
         }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
         }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background-color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             padding: 15px 0;
         }
-        
-        .logo {
-            font-family: 'Lora', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 28px;
             color: var(--primary);
         }
-        
-        .logo span {
+
+        .navbar-brand span {
             color: var(--secondary);
         }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
+
+        .nav-link {
             font-weight: 500;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-        
-        /* Page Header */
-        .page-header {
-            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1447678523326-1360892abab8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 150px 0 80px;
-            color: var(--white);
-            text-align: center;
-        }
-        
-        .page-header h1 {
-            color: var(--white);
-            margin-bottom: 20px;
-        }
-        
-        .breadcrumb {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-        
-        .breadcrumb li {
-            margin: 0 10px;
-        }
-        
-        .breadcrumb a {
-            color: var(--secondary);
-        }
-        
-        .breadcrumb .current {
-            color: var(--white);
-        }
-        
-        /* History Section */
-        .history {
-            padding: 80px 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-header h2 {
+            color: var(--dark);
             position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
+            margin: 0 15px;
+            transition: var(--transition);
         }
-        
-        .section-header h2::after {
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            position: relative;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            font-size: 42px;
+        }
+
+        .section-title h2::after {
             content: '';
             position: absolute;
             bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .section-title.text-center h2::after {
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary);
         }
-        
-        .history-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .history-image {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .history-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .timeline {
-            margin-top: 50px;
-        }
-        
-        .timeline-item {
-            display: flex;
-            margin-bottom: 30px;
-        }
-        
-        .timeline-year {
-            min-width: 100px;
-            font-weight: 700;
-            color: var(--secondary);
-            font-size: 1.2rem;
-        }
-        
-        .timeline-content {
-            border-left: 2px solid var(--secondary);
-            padding-left: 20px;
+
+        /* Page Banner */
+        .page-banner {
             position: relative;
+            height: 400px;
+            background-color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light);
+            margin-top: 90px;
+            overflow: hidden;
         }
-        
-        .timeline-content::before {
+
+        .page-banner::before {
             content: '';
             position: absolute;
-            left: -8px;
-            top: 10px;
-            width: 14px;
-            height: 14px;
-            background-color: var(--secondary);
-            border-radius: 50%;
-        }
-        
-        /* Mission and Values */
-        .mission-values {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .mission-container {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px;
-        }
-        
-        .mission-statement {
-            font-size: 1.5rem;
-            font-family: 'Lora', serif;
-            margin-bottom: 20px;
-            color: var(--primary-dark);
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .value-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .value-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .value-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 20px;
-        }
-        
-        /* Beliefs Section */
-        .beliefs {
-            padding: 80px 0;
-        }
-        
-        .beliefs-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .beliefs-content {
-            max-width: 600px;
-        }
-        
-        .beliefs-list {
-            margin-top: 30px;
-        }
-        
-        .belief-item {
-            margin-bottom: 20px;
-        }
-        
-        .belief-title {
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .belief-title::before {
-            content: '✓';
-            color: var(--secondary);
-            margin-right: 10px;
-            font-weight: bold;
-        }
-        
-        .beliefs-image {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .beliefs-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Leadership Team */
-        .leadership {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .team-member {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .team-member:hover {
-            transform: translateY(-10px);
-        }
-        
-        .member-image {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .member-image img {
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .team-member:hover .member-image img {
-            transform: scale(1.1);
-        }
-        
-        .member-info {
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .member-name {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .member-role {
-            color: var(--secondary);
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        
-        .member-bio {
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            background-color: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            font-size: 0.8rem;
-        }
-        
-        .social-link:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        /* Join Us Section */
-        .join-us {
-            padding: 80px 0;
-        }
-        
-        .join-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .join-content {
-            max-width: 600px;
-        }
-        
-        .join-steps {
-            margin-top: 30px;
-        }
-        
-        .step-item {
-            display: flex;
-            margin-bottom: 20px;
-        }
-        
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background-color: var(--secondary);
-            color: var(--dark);
-            font-weight: 700;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        .step-content h4 {
-            margin-bottom: 5px;
-        }
-        
-        .join-image {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .join-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Call to Action */
-        .cta {
-            background-image: linear-gradient(rgba(59, 81, 115, 0.8), rgba(59, 81, 115, 0.8)), url('https://images.unsplash.com/photo-1508420223351-d3eea27b023e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            padding: 80px 0;
-            color: var(--white);
-            text-align: center;
+            opacity: 0.4;
         }
-        
-        .cta h2 {
-            color: var(--white);
-            margin-bottom: 25px;
-            font-size: 2.5rem;
-        }
-        
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            padding: 60px 0 20px;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-widget h4 {
-            color: var(--white);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+
+        .page-banner-content {
             position: relative;
-            padding-bottom: 10px;
+            z-index: 1;
         }
-        
-        .footer-widget h4::after {
+
+        .page-banner h1 {
+            font-size: 48px;
+            color: var(--light);
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            background: transparent;
+            margin-bottom: 0;
+            justify-content: center;
+        }
+
+        .breadcrumb-item {
+            color: var(--secondary);
+        }
+
+        .breadcrumb-item.active {
+            color: var(--light);
+        }
+
+        .breadcrumb-item a {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--accent);
+        }
+
+        /* About Section */
+        .about-img {
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-img img {
+            transition: var(--transition);
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content h2 {
+            margin-bottom: 25px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        .about-signature {
+            margin-top: 30px;
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        /* Mission Section */
+        .mission-box {
+            padding: 50px 40px;
+            text-align: center;
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            height: 100%;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+        }
+
+        .mission-box:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            background: var(--primary);
+            color: var(--light);
+            font-size: 30px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+        }
+
+        .mission-box:hover .mission-icon {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .mission-box h3 {
+            margin-bottom: 20px;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .timeline:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            margin-left: -1px;
+            background-color: var(--primary);
+        }
+
+        .timeline > li {
+            position: relative;
+            margin-bottom: 50px;
+            min-height: 170px;
+        }
+
+        .timeline > li:after, .timeline > li:before {
+            content: " ";
+            display: table;
+        }
+
+        .timeline > li:after {
+            clear: both;
+        }
+
+        .timeline > li .timeline-panel {
+            position: relative;
+            float: left;
+            width: 46%;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            background: #fff;
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel {
+            float: right;
+        }
+
+        .timeline > li .timeline-image {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            text-align: center;
+            color: var(--light);
+            background-color: var(--primary);
+            left: 50%;
+            top: 0;
+            margin-left: -60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .timeline > li .timeline-image h4 {
+            margin-top: 12px;
+            font-size: 18px;
+            line-height: 1.2;
+            color: var(--light);
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel:before {
+            border-left-width: 0;
+            border-right-width: 15px;
+            left: -15px;
+            right: auto;
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel:after {
+            border-left-width: 0;
+            border-right-width: 14px;
+            left: -14px;
+            right: auto;
+        }
+
+        .timeline-heading h3 {
+            margin-bottom: 15px;
+        }
+
+        .timeline-heading h4 {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Team Section */
+        .team-member {
+            position: relative;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+        }
+
+        .team-member img {
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .team-member:hover img {
+            transform: scale(1.05);
+        }
+
+        .team-info {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: rgba(74, 44, 64, 0.9);
+            transition: var(--transition);
+        }
+
+        .team-member:hover .team-info {
+            bottom: 0;
+        }
+
+        .team-info h4 {
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+
+        .team-info span {
+            display: block;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .team-info p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .team-social {
+            display: flex;
+        }
+
+        .team-social a {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            margin-right: 8px;
+            transition: var(--transition);
+        }
+
+        .team-social a:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Achievements */
+        .achievements {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        .achievements .section-title h2 {
+            color: var(--light);
+        }
+
+        .achievements .section-title h2::after {
+            background: var(--accent);
+        }
+
+        .achievement-item {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .achievement-icon {
+            font-size: 40px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .achievement-number {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+            font-family: var(--font-heading);
+            margin-bottom: 15px;
+        }
+
+        .achievement-text {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Equipment */
+        .equipment-box {
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .equipment-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .equipment-box img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .equipment-box h4 {
+            margin-bottom: 15px;
+        }
+
+        .equipment-box p {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: #999;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer h5 {
+            color: #fff;
+            margin-bottom: 25px;
+            font-size: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer h5::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 50px;
             height: 2px;
-            background-color: var(--secondary);
+            background: var(--accent);
         }
-        
-        .footer-widget p {
-            margin-bottom: 15px;
-        }
-        
+
         .footer-links {
             list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
         }
-        
-        .footer-links a {
-            color: #ddd;
-            transition: color 0.3s ease;
+
+        .footer-links li a {
+            color: #999;
+            transition: var(--transition);
+            text-decoration: none;
         }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
+
+        .footer-links li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
         }
-        
-        .footer-service {
+
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-contact-info li {
+            padding-left: 30px;
+            position: relative;
             margin-bottom: 15px;
         }
-        
-        .footer-service-day {
-            font-weight: 600;
-            color: var(--secondary);
+
+        .footer-contact-info li i {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            color: var(--accent);
         }
-        
-        .subscribe-form {
-            display: flex;
-            margin-top: 15px;
+
+        .footer-social {
+            margin-top: 30px;
         }
-        
-        .subscribe-input {
-            flex-grow: 1;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
-            border: none;
-            padding: 10px 15px;
-        }
-        
-        .subscribe-btn {
-            background-color: var(--secondary);
-            color: var(--dark);
-            font-weight: 600;
-            border: none;
-            padding: 0 15px;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .subscribe-btn:hover {
-            background-color: var(--accent);
-        }
-        
-        .footer-bottom {
+
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
             text-align: center;
-            padding-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
         }
-        
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .values-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
+
+        .footer-bottom p {
+            margin-bottom: 0;
         }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             }
-            
-            h2 {
-                font-size: 1.8rem;
+            .section-padding {
+                padding: 80px 0;
             }
-            
-            .history-container,
-            .beliefs-container,
-            .join-container {
-                grid-template-columns: 1fr;
+            .section-title h2 {
+                font-size: 36px;
             }
-            
-            .mobile-menu-btn {
-                display: block;
+            .page-banner h1 {
+                font-size: 36px;
             }
-            
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 76px;
+            .timeline:before {
+                left: 60px;
+            }
+            .timeline > li .timeline-panel {
+                width: calc(100% - 140px);
+                float: right;
+            }
+            .timeline > li .timeline-image {
                 left: 0;
-                width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                margin-left: 0;
+                width: 100px;
+                height: 100px;
             }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 0;
-                text-align: center;
-                border-bottom: 1px solid #eee;
-            }
-            
-            nav ul li a {
-                display: block;
-                padding: 15px 0;
-            }
-            
-            .history-image,
-            .beliefs-image,
-            .join-image {
-                margin-bottom: 30px;
-                order: -1;
+            .timeline > li.timeline-inverted > .timeline-panel {
+                float: right;
             }
         }
-        
-        @media (max-width: 576px) {
-            .values-grid,
-            .team-grid {
-                grid-template-columns: 1fr;
+
+        @media (max-width: 767px) {
+            .section-padding {
+                padding: 60px 0;
             }
-            
-            .cta-buttons {
-                flex-direction: column;
-                gap: 15px;
+            .about-img {
+                margin-bottom: 30px;
             }
-            
-            .btn {
-                width: 100%;
+            .section-title h2 {
+                font-size: 30px;
             }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
+            .page-banner h1 {
+                font-size: 32px;
+            }
+            .timeline > li .timeline-image {
+                width: 80px;
+                height: 80px;
+            }
+            .timeline > li .timeline-panel {
+                width: calc(100% - 110px);
             }
         }
     
@@ -1620,372 +1540,523 @@
 </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="container header-container">
-            <a href="#" class="logo">Grace<span>Community</span></a>
-            <button class="mobile-menu-btn">☰</button>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="sermons.html">Sermons</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="ministries.html">Ministries</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Lens<span>Vision</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <section class="page-header">
+    <!-- Page Banner -->
+    <section class="page-banner" style="background-image: url('images/about-banner.jpg');">
         <div class="container">
-            <h1>About Us</h1>
-            <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li class="current">About Us</li>
+            <div class="page-banner-content">
+                <h1>About Us</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="about section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="About LensVision Studio" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="section-title">
+                            <h2>Our Story</h2>
+                        </div>
+                        <p>Founded in 2010 by Michael Anderson, LensVision Photography Studio began as a small passion project and has grown into one of New York's premier photography studios. Michael's love for photography started in his early teenage years when he received his first camera as a gift from his father, a hobbyist photographer himself.</p>
+                        <p>After graduating with a degree in Fine Arts Photography from the New York Institute of Photography, Michael worked for several established studios before deciding to pursue his own vision. What started as a one-person operation has now grown into a team of talented photographers, each bringing their unique style and expertise to the studio.</p>
+                        <p>Over the years, LensVision has had the privilege of working with hundreds of users and businesses, from couples celebrating their most precious moments to major brands seeking to elevate their visual presence. Our dedication to quality, creativity, and client satisfaction has earned us numerous awards and recognitions in the photography industry.</p>
+                        <div class="about-signature">Michael Anderson</div>
+                        <p class="text-muted">Founder & Lead Photographer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission section-padding bg-light">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>beasy's commitment to photography excellence & Values</h2>
+                <p>The principles that guide our work and define our approach to photography</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="mission-box">
+                        <div class="mission-icon">
+                            <i class="bi bi-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To create timeless, emotion-filled images that capture the essence of life's most precious moments. We strive to be at the forefront of photographic innovation while maintaining the highest standards of quality and artistic integrity.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="mission-box">
+                        <div class="mission-icon">
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <h3>beasy's commitment to photography excellence</h3>
+                        <p>To provide exceptional photography services that exceed client expectations, delivered with professionalism, creativity, and attention to detail. We are committed to helping our users and businesses preserve their memories and tell their stories through beautiful imagery.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="mission-box">
+                        <div class="mission-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h3>Our Values</h3>
+                        <p>We believe in creating an inclusive, collaborative environment that fosters creativity and growth. Our core values include authenticity, excellence, integrity, innovation, and a client-centered approach to everything we do.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Journey</h2>
+                <p>How we evolved from a small studio to a renowned photography business</p>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image">
+                        <h4>2010<br>The Start</h4>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h3>Humble Beginnings</h3>
+                            <h4>2010</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Michael Anderson establishes LensVision as a small home studio, focusing primarily on portrait photography for friends and family. Working with minimal equipment but maximum passion, he begins to build his portfolio and client base.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <h4>2013<br>Growing</h4>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h3>First Studio Space</h3>
+                            <h4>2013</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>After growing demand for his services, Michael moves LensVision to its first commercial studio space in Brooklyn. He expands the business to include wedding photography and hires his first assistant photographer, Sarah Williams.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image">
+                        <h4>2015<br>Expansion</h4>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h3>Team Expansion</h3>
+                            <h4>2015</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>LensVision begins to gain recognition in the New York photography scene. The team expands to include five photographers, each specializing in different areas of photography. The studio also starts offering commercial photography services to local businesses.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <h4>2018<br>Recognition</h4>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h3>Award Recognition</h3>
+                            <h4>2018</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>LensVision wins its first major industry award for wedding photography at the New York Photography Awards. The studio also relocates to a larger space in Manhattan to accommodate growing client needs and expanding team.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image">
+                        <h4>2020<br>Evolution</h4>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h3>Digital Transformation</h3>
+                            <h4>2020</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Amidst global challenges, LensVision pivots to include virtual photo sessions and expands its digital presence. The studio launches online photography workshops and masterclasses, reaching users and businesses beyond New York.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <h4>2025<br>Today</h4>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h3>Present Day Success</h3>
+                            <h4>2025</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Today, LensVision stands as one of New York's leading photography studios with a team of 12 talented photographers and staff. Having served over 1,000 users and businesses, the studio continues to evolve and innovate while maintaining its commitment to quality and personal touch.</p>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </section>
 
-    <section class="history">
+    <!-- Team Section -->
+    <section class="team section-padding bg-light">
         <div class="container">
-            <div class="section-header">
-                <h2>Our History</h2>
-                <p>Serving our community since 1985</p>
+            <div class="section-title text-center">
+                <h2>Meet Our Team</h2>
+                <p>The talented photographers and staff behind LensVision</p>
             </div>
-            <div class="history-container">
-                <div class="history-content">
-                    <p>Grace Community Church began in 1985 when a small group of 25 families gathered in a living room with a vision to create a church that would welcome all people and help them grow in their relationship with God.</p>
-                    <p>From those humble beginnings, we've grown into a thriving congregation of over 1,000 members, but beasy's commitment to creative excellence remains the same: to create a community where everyone can experience God's love and grace.</p>
-                    <p>Throughout our history, we've remained committed to Biblical teaching, authentic worship, and compassionate service to our community and world. We're grateful for God's faithfulness and excited about what He has in store for our future.</p>
-                </div>
-                <div class="history-image">
-                    <img src="https://images.unsplash.com/photo-1557683311-eac922347aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Church building">
-                </div>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">1985</div>
-                    <div class="timeline-content">
-                        <h3>The Beginning</h3>
-                        <p>Grace Community Church is founded by Pastor John Reynolds and 25 families meeting in homes.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">1990</div>
-                    <div class="timeline-content">
-                        <h3>First Building</h3>
-                        <p>The church purchases its first building, a small chapel on Main Street.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2000</div>
-                    <div class="timeline-content">
-                        <h3>Growth and Expansion</h3>
-                        <p>The congregation grows to 500 members, and we break ground on our current campus.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2010</div>
-                    <div class="timeline-content">
-                        <h3>Community Outreach</h3>
-                        <p>Launch of our food pantry, counseling center, and global missions program.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">Today</div>
-                    <div class="timeline-content">
-                        <h3>Continuing the Mission</h3>
-                        <p>Over 1,000 members, multiple services, and a thriving online ministry reaching people around the world.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="mission-values">
-        <div class="container">
-            <div class="section-header">
-                <h2>beasy's commitment to creative excellence & Values</h2>
-                <p>Guiding principles that shape our ministry</p>
-            </div>
-            <div class="mission-container">
-                <h3>beasy's commitment to creative excellence</h3>
-                <p class="mission-statement">"To love God, love people, and make disciples who transform communities with the gospel of Jesus Christ."</p>
-                <p>This mission drives everything we do at Grace Community Church. It's our purpose and passion to help people know God, find community, and make a difference in the world.</p>
-            </div>
-            
-            <h3 class="text-center">Our Core Values</h3>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">📖</div>
-                    <h3>Biblical Truth</h3>
-                    <p>We are committed to teaching and living according to God's Word, which is our ultimate authority for faith and practice.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🙏</div>
-                    <h3>Authentic Worship</h3>
-                    <p>We seek to honor God through genuine, heartfelt worship that engages our whole being and draws us closer to Him.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">❤️</div>
-                    <h3>Loving Community</h3>
-                    <p>We value relationships where people are known, loved, and cared for as we journey together in faith.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🌱</div>
-                    <h3>Spiritual Growth</h3>
-                    <p>We are committed to helping everyone grow in their relationship with Christ through discipleship and spiritual formation.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🤝</div>
-                    <h3>Compassionate Service</h3>
-                    <p>We demonstrate God's love by serving others and meeting practical needs in our community and world.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🌍</div>
-                    <h3>Global Mission</h3>
-                    <p>We are passionate about sharing the gospel and making disciples locally and around the world.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="beliefs">
-        <div class="container">
-            <div class="section-header">
-                <h2>What We Believe</h2>
-                <p>Our foundational beliefs based on Scripture</p>
-            </div>
-            <div class="beliefs-container">
-                <div class="beliefs-content">
-                    <p>At Grace Community Church, our beliefs are rooted in the historic Christian faith as revealed in the Bible. We affirm the essential doctrines that have united Christians throughout the centuries.</p>
-                    <div class="beliefs-list">
-                        <div class="belief-item">
-                            <h4 class="belief-title">The Bible</h4>
-                            <p>We believe the Bible is God's Word, divinely inspired, without error, and our ultimate authority for faith and life.</p>
-                        </div>
-                        <div class="belief-item">
-                            <h4 class="belief-title">God</h4>
-                            <p>We believe in one God who exists eternally in three persons: Father, Son, and Holy Spirit.</p>
-                        </div>
-                        <div class="belief-item">
-                            <h4 class="belief-title">Jesus Christ</h4>
-                            <p>We believe Jesus is fully God and fully man, born of a virgin, lived a sinless life, died for our sins, rose from the dead, and will return again.</p>
-                        </div>
-                        <div class="belief-item">
-                            <h4 class="belief-title">Salvation</h4>
-                            <p>We believe salvation is by grace alone, through faith alone, in Christ alone, and not by human works or merit.</p>
-                        </div>
-                        <div class="belief-item">
-                            <h4 class="belief-title">The Holy Spirit</h4>
-                            <p>We believe the Holy Spirit dwells in believers, empowering them for godly living and service.</p>
-                        </div>
-                        <div class="belief-item">
-                            <h4 class="belief-title">The Church</h4>
-                            <p>We believe the church is the body of Christ, called to worship God, make disciples, and serve the world.</p>
-                        </div>
-                    </div>
-                    <a href="#" class="btn btn-outline">Read Our Full Statement of Faith</a>
-                </div>
-                <div class="beliefs-image">
-                    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Church sanctuary">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="leadership">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Leadership Team</h2>
-                <p>Serving and guiding our church community</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pastor David Wilson">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Pastor David Wilson</h3>
-                        <p class="member-role">Senior Pastor</p>
-                        <p class="member-bio">Pastor David has been leading our church for over 15 years with wisdom, compassion, and vision.</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link">f</a>
-                            <a href="#" class="social-link">t</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://randomuser.me/api/portraits/women/64.jpg" alt="Sarah Thompson">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Sarah Thompson</h3>
-                        <p class="member-role">Worship Pastor</p>
-                        <p class="member-bio">Sarah leads our worship ministry with passion and creativity, helping us connect with God.</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link">f</a>
-                            <a href="#" class="social-link">t</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Mike Johnson">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Mike Johnson</h3>
-                        <p class="member-role">Youth Pastor</p>
-                        <p class="member-bio">Mike has a heart for helping young people grow in their faith and develop as leaders.</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link">f</a>
-                            <a href="#" class="social-link">t</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Lisa Chen">
-                    </div>
-                    <div class="member-info">
-                        <h3 class="member-name">Lisa Chen</h3>
-                        <p class="member-role">Children's Director</p>
-                        <p class="member-bio">Lisa creates a fun, safe environment where children can learn about God's love.</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link">f</a>
-                            <a href="#" class="social-link">t</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="join-us">
-        <div class="container">
-            <div class="section-header">
-                <h2>Join Our Church Family</h2>
-                <p>How to become a part of Grace Community</p>
-            </div>
-            <div class="join-container">
-                <div class="join-content">
-                    <p>We believe that being part of a church family is essential for spiritual growth. At Grace Community, we want to make it easy for you to get connected and find your place.</p>
-                    <p>Here are some simple steps to help you become part of our church family:</p>
-                    <div class="join-steps">
-                        <div class="step-item">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h4>Attend a Sunday Service</h4>
-                                <p>Experience our worship and teaching firsthand. We have services at 9:00 AM and 11:00 AM every Sunday.</p>
-                            </div>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h4>Attend a Welcome Lunch</h4>
-                                <p>Join us on the first Sunday of each month after the 11:00 AM service to meet our staff and learn more about our church.</p>
-                            </div>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h4>Join a Small Group</h4>
-                                <p>Connect with others in a smaller setting where you can build relationships and grow spiritually.</p>
-                            </div>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h4>Attend Membership Class</h4>
-                                <p>Learn about our beliefs, values, and vision, and discover how you can be a part of beasy's commitment to creative excellence.</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member" class="img-fluid">
+                        <div class="team-info">
+                            <h4>Michael Anderson</h4>
+                            <span>Founder & Lead Photographer</span>
+                            <p>With over 15 Trusted photography expertise in Not specified, Michael specializes in portrait and fine art photography. His work has been featured in numerous publications and galleries.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="btn">Plan Your Visit</a>
                 </div>
-                <div class="join-image">
-                    <img src="https://images.unsplash.com/photo-1470076892663-af684e5e15af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Church community">
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member" class="img-fluid">
+                        <div class="team-info">
+                            <h4>Sarah Williams</h4>
+                            <span>Senior Photographer</span>
+                            <p>Sarah joined LensVision in 2013 and has since become one of our most sought-after wedding photographers. Her candid style captures authentic moments.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member" class="img-fluid">
+                        <div class="team-info">
+                            <h4>David Chen</h4>
+                            <span>Commercial Photographer</span>
+                            <p>David specializes in commercial and product photography. With a background in graphic design, he brings a unique perspective to visual storytelling.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member" class="img-fluid">
+                        <div class="team-info">
+                            <h4>Elena Rodriguez</h4>
+                            <span>Event Photographer</span>
+                            <p>Elena's vibrant personality shines through in her event photography. She has a knack for capturing the energy and emotion of any occasion.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member" class="img-fluid">
+                        <div class="team-info">
+                            <h4>James Wilson</h4>
+                            <span>Fine Art Photographer</span>
+                            <p>James joined the team in 2017 and focuses on fine art and landscape photography. His work has been exhibited in galleries across the country.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500&q=80" alt="Team Member" class="img-fluid">
+                        <div class="team-info">
+                            <h4>Olivia Parker</h4>
+                            <span>Studio Manager</span>
+                            <p>Olivia keeps everything running smoothly at LensVision. With a background in business management and a passion for photography, she's an invaluable part of our team.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta">
+    <!-- Achievements Section -->
+    <section class="achievements section-padding">
         <div class="container">
-            <h2>Come Worship With Us</h2>
-            <p>We would love to have you join us for worship this Sunday. Our doors are open to everyone seeking to know God better and experience His love in community.</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-secondary">Plan Your Visit</a>
-                <a href="#" class="btn btn-outline">Contact Us</a>
+            <div class="section-title text-center">
+                <h2>Our Achievements</h2>
+                <p>A look at our journey through numbers</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="bi bi-camera"></i>
+                        </div>
+                        <div class="achievement-number">1,000+</div>
+                        <div class="achievement-text">users and businesses Served</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="bi bi-image"></i>
+                        </div>
+                        <div class="achievement-number">250,000+</div>
+                        <div class="achievement-text">Photos Taken</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <div class="achievement-number">500+</div>
+                        <div class="achievement-text">Weddings Shot</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="bi bi-trophy"></i>
+                        </div>
+                        <div class="achievement-number">15+</div>
+                        <div class="achievement-text">Industry Awards</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Equipment Section -->
+    <section class="equipment section-padding">
         <div class="container">
-            <div class="footer-container">
-                <div class="footer-widget">
-                    <h4>About Us</h4>
-                    <p>Grace Community Church is a welcoming community of believers dedicated to worship, fellowship, and service.</p>
-                    <p>beasy's commitment to creative excellence is to love God, love people, and make disciples in our community and around the world.</p>
+            <div class="section-title text-center">
+                <h2>Our Equipment</h2>
+                <p>The professional gear we use to capture your special moments</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="equipment-box">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Camera">
+                        <h4>Professional Cameras</h4>
+                        <p>We use top-of-the-line Canon and Sony cameras including the Canon EOS 5D Mark IV, Canon EOS R5, and Sony A7R IV for exceptional image quality.</p>
+                    </div>
                 </div>
-                <div class="footer-widget">
-                    <h4>Quick Links</h4>
+                <div class="col-lg-4 col-md-6">
+                    <div class="equipment-box">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Lens">
+                        <h4>Premium Lenses</h4>
+                        <p>Our collection includes professional lenses for every situation, from wide-angle landscapes to telephoto portraits, ensuring the perfect shot every time.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="equipment-box">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Lighting">
+                        <h4>Studio Lighting</h4>
+                        <p>Professional Profoto and Godox lighting equipment allows us to create the perfect lighting for studio portraits and on-location shoots.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="equipment-box">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Drone">
+                        <h4>Drone Photography</h4>
+                        <p>For breathtaking aerial shots, we use DJI Mavic Pro 2 drones operated by our licensed drone pilots for unique perspectives.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="equipment-box">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Editing">
+                        <h4>Post-Processing</h4>
+                        <p>High-performance workstations with professional editing software including Adobe Lightroom and Photoshop for perfect photo finishes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="equipment-box">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Printer">
+                        <h4>Professional Printing</h4>
+                        <p>In-house professional printing equipment for archival quality prints, photo books, and large format gallery pieces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a href="index.html" class="footer-logo">Lens<span>Vision</span></a>
+                        <p>Premium photography studio specializing in portrait, wedding, commercial, and fine art photography. We capture life's precious moments with creativity and passion.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
                     <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="sermons.html">Sermons</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="ministries.html">Ministries</a></li>
-                        <li><a href="giving.html">Online Giving</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-widget">
-                    <h4>Service Times</h4>
-                    <div class="footer-service">
-                        <p class="footer-service-day">Sunday</p>
-                        <p>9:00 AM & 11:00 AM</p>
-                    </div>
-                    <div class="footer-service">
-                        <p class="footer-service-day">Sunday Evening</p>
-                        <p>6:00 PM</p>
-                    </div>
-                    <div class="footer-service">
-                        <p class="footer-service-day">Wednesday</p>
-                        <p>7:00 PM</p>
-                    </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Portrait Photography</a></li>
+                        <li><a href="services.html">Wedding Photography</a></li>
+                        <li><a href="services.html">Commercial Photography</a></li>
+                        <li><a href="services.html">Event Photography</a></li>
+                        <li><a href="services.html">Fine Art Photography</a></li>
+                    </ul>
                 </div>
-                <div class="footer-widget">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to our newsletter to receive updates and announcements.</p>
-                    <form class="subscribe-form">
-                        <input type="email" class="subscribe-input" placeholder="Your Email">
-                        <button type="submit" class="subscribe-btn">Subscribe</button>
-                    </form>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact-info">
+                        <li><i class="bi bi-geo-alt"></i> 123 Broadway, New York, NY 10001</li>
+                        <li><i class="bi bi-telephone"></i> (212) 555-1234</li>
+                        <li><i class="bi bi-envelope"></i> info@lensvision.com</li>
+                        <li><i class="bi bi-clock"></i> Monday-Friday: 9am-6pm<br>Saturday: 10am-4pm<br>Sunday: Closed</li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Grace Community Church. All Rights Reserved.</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 LensVision Photography Studio. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('nav ul');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav') && !e.target.closest('.mobile-menu-btn')) {
-                navMenu.classList.remove('active');
+        // Navbar scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
             }
+        });
+
+        // Achievement counter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const achievementNumbers = document.querySelectorAll('.achievement-number');
+            
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+            
+            function animateCounter() {
+                achievementNumbers.forEach(number => {
+                    if (isInViewport(number) && !number.classList.contains('animated')) {
+                        const target = parseInt(number.textContent.replace(/,/g, '').replace(/\+/g, ''));
+                        let count = 0;
+                        const duration = 2000; // 2 seconds
+                        const increment = Math.ceil(target / (duration / 20));
+                        
+                        number.classList.add('animated');
+                        
+                        const counter = setInterval(() => {
+                            count += increment;
+                            if (count >= target) {
+                                count = target;
+                                clearInterval(counter);
+                                number.textContent = target.toLocaleString() + '+';
+                            } else {
+                                number.textContent = count.toLocaleString() + '+';
+                            }
+                        }, 20);
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', animateCounter);
+            animateCounter(); // Initial check
         });
     </script>
 
