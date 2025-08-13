@@ -3,114 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>our innovative tech software solutions and digital innovations | Elegance Interiors</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
+    <title>our innovative tech software solutions and digital innovations | LensVision Photography Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style>
         :root {
-            --primary-color: #927a5a;
-            --secondary-color: #21282f;
-            --accent-color: #d3bea5;
-            --light-color: #f9f7f4;
-            --dark-color: #333333;
-            --text-color: #555555;
-            --white: #ffffff;
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
             --transition: all 0.3s ease;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            line-height: 1.8;
-            background-color: var(--white);
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.7;
             overflow-x: hidden;
+            background-color: #fcfcfc;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: var(--secondary-color);
-            font-weight: 600;
-            line-height: 1.4;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
         }
 
-        p {
-            font-size: 16px;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--dark-color);
+        .btn {
+            border-radius: var(--border-radius);
+            padding: 12px 28px;
+            font-weight: 500;
             transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
         }
 
         .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            padding: 12px 28px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: var(--secondary-color);
-            transition: var(--transition);
-            z-index: -1;
+            background-color: var(--primary);
+            border-color: var(--primary);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-color);
-        }
-
-        .btn-primary:hover::before {
-            left: 0;
-        }
-
-        .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 10px 26px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            color: var(--primary);
+            border-color: var(--primary);
         }
 
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background-color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        .navbar-brand span {
+            color: var(--secondary);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark);
+            position: relative;
+            margin: 0 15px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
         }
 
         .section-padding {
@@ -119,620 +127,493 @@
 
         .section-title {
             margin-bottom: 60px;
-            text-align: center;
         }
 
         .section-title h2 {
             position: relative;
-            display: inline-block;
             margin-bottom: 20px;
+            padding-bottom: 20px;
             font-size: 42px;
-            padding-bottom: 15px;
         }
 
         .section-title h2::after {
             content: '';
             position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .section-title.text-center h2::after {
             left: 50%;
-            bottom: 0;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
         }
 
-        .section-title p {
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--text-color);
-        }
-
-        /* Navbar */
-        .navbar {
-            padding: 20px 0;
-            transition: all 0.5s ease;
-        }
-
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-
-        .navbar-brand span {
-            color: var(--primary-color);
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--secondary-color);
-            font-weight: 500;
-            font-size: 16px;
-            margin: 0 15px;
+        /* Page Banner */
+        .page-banner {
             position: relative;
-            padding: 8px 0;
-        }
-
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: var(--transition);
-        }
-
-        .navbar-nav .nav-link:hover::after,
-        .navbar-nav .nav-link.active::after {
-            width: 100%;
-        }
-
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-button {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 0;
-            font-weight: 500;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .nav-button:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 0;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-toggler-icon {
-            width: 24px;
-            height: 17px;
-            background-image: none;
-            position: relative;
-            border-bottom: 2px solid var(--secondary-color);
-            transition: all 300ms linear;
-        }
-
-        .navbar-toggler-icon:after, 
-        .navbar-toggler-icon:before {
-            width: 24px;
-            position: absolute;
-            height: 2px;
-            background-color: var(--secondary-color);
-            top: 0;
-            left: 0;
-            content: '';
-            z-index: 2;
-            transition: all 300ms linear;
-        }
-
-        .navbar-toggler-icon:after {
-            top: 8px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-            transform: rotate(45deg);
-            background-color: var(--secondary-color);
-            height: 2px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-            transform: translateY(8px) rotate(-45deg);
-            background-color: var(--secondary-color);
-            height: 2px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-            border-color: transparent;
-        }
-
-        /* Fix navbar mobile background */
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                background-color: var(--white);
-                padding: 20px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                border-radius: 0 0 10px 10px;
-                margin-top: 10px;
-            }
-        }
-
-        .navbar.sticky {
-            background-color: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Page Header */
-        .page-header {
-            background-color: var(--light-color);
-            padding: 150px 0 80px;
-            text-align: center;
-            position: relative;
-        }
-
-        .page-header h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 20px;
-            color: var(--secondary-color);
-        }
-
-        .page-header h1::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .breadcrumb-item {
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        .breadcrumb-item a {
-            color: var(--text-color);
-        }
-
-        .breadcrumb-item a:hover {
-            color: var(--primary-color);
-        }
-
-        .breadcrumb-item.active {
-            color: var(--primary-color);
-        }
-
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: '\f105';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--text-color);
-        }
-
-        /* Service Intro */
-        .service-intro {
-            padding: 100px 0;
-        }
-
-        .service-intro-image {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-intro-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .service-intro-content h2 {
-            font-size: 38px;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .service-intro-content h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .service-intro-content p {
-            margin-bottom: 30px;
-        }
-
-        /* Main Services */
-        .main-services {
-            background-color: var(--light-color);
-            padding: 100px 0;
-        }
-
-        .service-box {
-            background-color: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            margin-bottom: 30px;
-            transition: var(--transition);
-        }
-
-        .service-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-image {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .service-image img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .service-box:hover .service-image img {
-            transform: scale(1.1);
-        }
-
-        .service-content {
-            padding: 30px;
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background-color: var(--accent-color);
-            border-radius: 50%;
+            height: 400px;
+            background-color: var(--dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
-            font-size: 28px;
-            color: var(--white);
-            transition: var(--transition);
+            text-align: center;
+            color: var(--light);
+            margin-top: 90px;
+            overflow: hidden;
         }
 
-        .service-box:hover .service-icon {
-            background-color: var(--primary-color);
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
         }
 
-        .service-content h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            transition: var(--transition);
+        .page-banner-content {
+            position: relative;
+            z-index: 1;
         }
 
-        .service-box:hover .service-content h3 {
-            color: var(--primary-color);
-        }
-
-        .service-content p {
+        .page-banner h1 {
+            font-size: 48px;
+            color: var(--light);
             margin-bottom: 20px;
         }
 
-        /* Why Choose Us */
-        .why-choose-us {
-            padding: 100px 0;
-        }
-
-        .choose-item {
-            display: flex;
-            margin-bottom: 40px;
-        }
-
-        .choose-icon {
-            width: 80px;
-            height: 80px;
-            background-color: var(--light-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
+        .breadcrumb {
+            background: transparent;
+            margin-bottom: 0;
             justify-content: center;
-            margin-right: 25px;
-            flex-shrink: 0;
-            color: var(--primary-color);
-            font-size: 30px;
-            transition: var(--transition);
         }
 
-        .choose-item:hover .choose-icon {
-            background-color: var(--primary-color);
-            color: var(--white);
+        .breadcrumb-item {
+            color: var(--secondary);
         }
 
-        .choose-content h4 {
-            font-size: 22px;
-            margin-bottom: 10px;
+        .breadcrumb-item.active {
+            color: var(--light);
         }
 
-        .choose-image {
+        .breadcrumb-item a {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--accent);
+        }
+
+        /* Main Service Cards */
+        .service-main-card {
             position: relative;
-            height: 100%;
-        }
-
-        .choose-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
         }
 
-        .choose-image::before {
-            content: '';
+        .service-main-img {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .service-main-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-main-card:hover .service-main-img img {
+            transform: scale(1.1);
+        }
+
+        .service-main-content {
+            padding: 30px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .service-main-content h3 {
+            margin-bottom: 15px;
+        }
+
+        .service-main-content p {
+            margin-bottom: 25px;
+        }
+
+        .service-main-price {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-family: var(--font-heading);
+        }
+
+        .service-main-price span {
+            font-size: 16px;
+            color: var(--text-dark);
+            font-weight: normal;
+        }
+
+        /* Service Detail Sections */
+        .service-detail {
+            padding: 80px 0;
+        }
+
+        .service-detail:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .service-detail-img {
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 100%;
+        }
+
+        .service-detail-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-detail:hover .service-detail-img img {
+            transform: scale(1.05);
+        }
+
+        .service-detail-content {
+            padding: 30px 0;
+        }
+
+        .service-detail-content h2 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .service-detail-content p {
+            margin-bottom: 15px;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .service-features li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .service-features li i {
             position: absolute;
-            width: 90%;
-            height: 90%;
-            border: 5px solid var(--primary-color);
-            top: 5%;
-            right: -20px;
-            border-radius: 10px;
-            z-index: -1;
+            left: 0;
+            top: 5px;
+            color: var(--primary);
         }
 
         /* Process Section */
         .process {
-            background-color: var(--light-color);
-            padding: 100px 0;
+            background-color: var(--primary);
+            color: var(--light);
         }
 
-        .process-steps {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
+        .process .section-title h2 {
+            color: var(--light);
         }
 
-        .process-steps::before {
-            content: '';
-            position: absolute;
-            top: 85px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--accent-color);
-            z-index: 0;
+        .process .section-title h2::after {
+            background-color: var(--accent);
         }
 
         .process-step {
             text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
             position: relative;
-            z-index: 1;
-            width: 20%;
-            padding: 0 15px;
         }
 
-        .step-number {
-            width: 70px;
-            height: 70px;
-            background-color: var(--white);
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40%;
+            right: -50px;
+            width: 100px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 991px) {
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
             border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+            font-size: 30px;
+            font-weight: 700;
+            margin: 0 auto 25px;
+            font-family: var(--font-heading);
+        }
+
+        .process-step h3 {
+            color: var(--light);
+            margin-bottom: 20px;
+        }
+
+        /* Pricing Tables */
+        .pricing-table {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            height: 100%;
+            border-bottom: 3px solid transparent;
+        }
+
+        .pricing-table:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .pricing-header {
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .pricing-title {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .pricing-price {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--dark);
+            font-family: var(--font-heading);
+            margin-bottom: 10px;
+        }
+
+        .pricing-duration {
+            color: var(--secondary);
+            font-size: 14px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #f0f0f0;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-popular {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--primary);
+            color: var(--light);
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f9f9f9;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\f10d';
+            font-family: 'Bootstrap-icons';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            color: rgba(74, 44, 64, 0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .testimonial-author {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            color: var(--primary-color);
-            margin: 0 auto 25px;
-            border: 2px solid var(--accent-color);
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .testimonial-author-info h5 {
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .testimonial-author-info span {
+            font-size: 14px;
+            color: var(--secondary);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
+        }
+
+        .faq-question {
             position: relative;
+            padding: 20px 50px 20px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--dark);
             transition: var(--transition);
         }
 
-        .process-step:hover .step-number {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-color: var(--primary-color);
+        .faq-question::after {
+            content: '\f282';
+            font-family: 'Bootstrap-icons';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: var(--transition);
         }
 
-        .step-title {
-            font-size: 20px;
-            margin-bottom: 15px;
+        .faq-question.active {
+            color: var(--primary);
         }
 
-        .step-text {
-            font-size: 15px;
+        .faq-question.active::after {
+            content: '\f286';
         }
 
-        @media (max-width: 991.98px) {
-            .process-steps {
-                flex-direction: column;
-            }
-            
-            .process-steps::before {
-                display: none;
-            }
-            
-            .process-step {
-                width: 100%;
-                margin-bottom: 40px;
-                padding: 0;
-            }
-            
-            .step-number {
-                margin-bottom: 15px;
-            }
+        .faq-answer {
+            padding: 0 20px 20px;
+            display: none;
         }
 
-        /* Accordion */
-        .accordion-item {
-            border: none;
-            background-color: transparent;
-            margin-bottom: 20px;
+        .faq-answer.show {
+            display: block;
         }
 
-        .accordion-header {
-            margin-bottom: 0;
-        }
-
-        .accordion-button {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--secondary-color);
-            background-color: var(--white);
-            border-radius: 10px !important;
-            box-shadow: var(--box-shadow);
-            padding: 20px 25px;
-        }
-
-        .accordion-button:not(.collapsed) {
-            color: var(--white);
-            background-color: var(--primary-color);
-            box-shadow: none;
-        }
-
-        .accordion-button::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-
-        .accordion-button:not(.collapsed)::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-
-        .accordion-collapse {
-            border: none;
-        }
-
-        .accordion-body {
-            padding: 20px 25px;
-            background-color: var(--white);
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        /* CTA Section */
-        .cta {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 80px 0;
+        /* Contact CTA */
+        .contact-cta {
+            background-color: var(--primary);
             text-align: center;
+            color: var(--light);
         }
 
-        .cta h2 {
-            color: var(--white);
-            font-size: 42px;
-            margin-bottom: 20px;
+        .contact-cta h2 {
+            color: var(--light);
+            margin-bottom: 30px;
         }
 
-        .cta p {
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-size: 18px;
+        .contact-cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
         }
 
         .btn-light {
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 12px 28px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            background-color: var(--light);
+            color: var(--primary);
+            border-color: var(--light);
         }
 
         .btn-light:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
+            background-color: transparent;
+            color: var(--light);
+            border-color: var(--light);
         }
 
         /* Footer */
         .footer {
-            background-color: var(--secondary-color);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 80px 0 0;
+            background: var(--dark);
+            color: #999;
         }
 
         .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 20px;
-            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 25px;
+            display: block;
         }
 
         .footer-logo span {
-            color: var(--primary-color);
+            color: var(--accent);
         }
 
-        .footer-about p {
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer h5 {
+            color: #fff;
             margin-bottom: 25px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .footer-title {
-            color: var(--white);
-            font-size: 22px;
-            margin-bottom: 25px;
+            font-size: 20px;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
 
-        .footer-title::after {
+        .footer h5::after {
             content: '';
             position: absolute;
-            left: 0;
             bottom: 0;
-            width: 40px;
+            left: 0;
+            width: 50px;
             height: 2px;
-            background-color: var(--primary-color);
+            background: var(--accent);
         }
 
         .footer-links {
@@ -742,211 +623,233 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
+        .footer-links li a {
+            color: #999;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
+            text-decoration: none;
         }
 
-        .footer-links a i {
-            margin-right: 10px;
-            color: var(--primary-color);
-            font-size: 12px;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
+        .footer-links li a:hover {
+            color: var(--accent);
             padding-left: 5px;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .contact-icon {
+        .footer-contact-info li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact-info li i {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .footer-social {
+            margin-top: 30px;
+        }
+
+        .footer-social a {
+            display: inline-block;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            line-height: 40px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 16px;
-            margin-right: 15px;
-            flex-shrink: 0;
+            margin-right: 10px;
+            transition: var(--transition);
         }
 
-        .contact-text {
-            line-height: 1.6;
+        .footer-social a:hover {
+            background: var(--accent);
+            color: var(--dark);
         }
 
         .footer-bottom {
-            padding: 25px 0;
-            text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 60px;
+            padding: 20px 0;
+            text-align: center;
         }
 
         .footer-bottom p {
-            margin: 0;
-            font-size: 14px;
+            margin-bottom: 0;
         }
 
-        @media (max-width: 991.98px) {
-            .footer-widget {
-                margin-bottom: 40px;
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            .section-padding {
+                padding: 80px 0;
+            }
+            .section-title h2 {
+                font-size: 36px;
+            }
+            .page-banner h1 {
+                font-size: 36px;
+            }
+            .service-detail-img {
+                margin-bottom: 30px;
             }
         }
 
-        /* Back to top */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--secondary-color);
+        @media (max-width: 767px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            .section-title h2 {
+                font-size: 30px;
+            }
+            .page-banner h1 {
+                font-size: 32px;
+            }
         }
     </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style type="text/css">
         :root {
-            --primary-color: #927a5a;
-            --secondary-color: #21282f;
-            --accent-color: #d3bea5;
-            --light-color: #f9f7f4;
-            --dark-color: #333333;
-            --text-color: #555555;
-            --white: #ffffff;
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
             --transition: all 0.3s ease;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
 
         :root {
-            --primary-color: #927a5a;
-            --secondary-color: #21282f;
-            --accent-color: #d3bea5;
-            --light-color: #f9f7f4;
-            --dark-color: #333333;
-            --text-color: #555555;
-            --white: #ffffff;
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
             --transition: all 0.3s ease;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            line-height: 1.8;
-            background-color: var(--white);
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.7;
             overflow-x: hidden;
+            background-color: #fcfcfc;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: var(--secondary-color);
-            font-weight: 600;
-            line-height: 1.4;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
         }
 
-        p {
-            font-size: 16px;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--dark-color);
+        .btn {
+            border-radius: var(--border-radius);
+            padding: 12px 28px;
+            font-weight: 500;
             transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
         }
 
         .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            padding: 12px 28px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: var(--secondary-color);
-            transition: var(--transition);
-            z-index: -1;
+            background-color: var(--primary);
+            border-color: var(--primary);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-color);
-        }
-
-        .btn-primary:hover::before {
-            left: 0;
-        }
-
-        .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 10px 26px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            color: var(--primary);
+            border-color: var(--primary);
         }
 
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background-color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        .navbar-brand span {
+            color: var(--secondary);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark);
+            position: relative;
+            margin: 0 15px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
         }
 
         .section-padding {
@@ -955,620 +858,493 @@
 
         .section-title {
             margin-bottom: 60px;
-            text-align: center;
         }
 
         .section-title h2 {
             position: relative;
-            display: inline-block;
             margin-bottom: 20px;
+            padding-bottom: 20px;
             font-size: 42px;
-            padding-bottom: 15px;
         }
 
         .section-title h2::after {
             content: '';
             position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .section-title.text-center h2::after {
             left: 50%;
-            bottom: 0;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
         }
 
-        .section-title p {
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--text-color);
-        }
-
-        /* Navbar */
-        .navbar {
-            padding: 20px 0;
-            transition: all 0.5s ease;
-        }
-
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-
-        .navbar-brand span {
-            color: var(--primary-color);
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--secondary-color);
-            font-weight: 500;
-            font-size: 16px;
-            margin: 0 15px;
+        /* Page Banner */
+        .page-banner {
             position: relative;
-            padding: 8px 0;
-        }
-
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: var(--transition);
-        }
-
-        .navbar-nav .nav-link:hover::after,
-        .navbar-nav .nav-link.active::after {
-            width: 100%;
-        }
-
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-button {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 0;
-            font-weight: 500;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .nav-button:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 0;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-toggler-icon {
-            width: 24px;
-            height: 17px;
-            background-image: none;
-            position: relative;
-            border-bottom: 2px solid var(--secondary-color);
-            transition: all 300ms linear;
-        }
-
-        .navbar-toggler-icon:after, 
-        .navbar-toggler-icon:before {
-            width: 24px;
-            position: absolute;
-            height: 2px;
-            background-color: var(--secondary-color);
-            top: 0;
-            left: 0;
-            content: '';
-            z-index: 2;
-            transition: all 300ms linear;
-        }
-
-        .navbar-toggler-icon:after {
-            top: 8px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-            transform: rotate(45deg);
-            background-color: var(--secondary-color);
-            height: 2px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-            transform: translateY(8px) rotate(-45deg);
-            background-color: var(--secondary-color);
-            height: 2px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-            border-color: transparent;
-        }
-
-        /* Fix navbar mobile background */
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                background-color: var(--white);
-                padding: 20px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                border-radius: 0 0 10px 10px;
-                margin-top: 10px;
-            }
-        }
-
-        .navbar.sticky {
-            background-color: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Page Header */
-        .page-header {
-            background-color: var(--light-color);
-            padding: 150px 0 80px;
-            text-align: center;
-            position: relative;
-        }
-
-        .page-header h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 20px;
-            color: var(--secondary-color);
-        }
-
-        .page-header h1::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .breadcrumb-item {
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        .breadcrumb-item a {
-            color: var(--text-color);
-        }
-
-        .breadcrumb-item a:hover {
-            color: var(--primary-color);
-        }
-
-        .breadcrumb-item.active {
-            color: var(--primary-color);
-        }
-
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: '\f105';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--text-color);
-        }
-
-        /* Service Intro */
-        .service-intro {
-            padding: 100px 0;
-        }
-
-        .service-intro-image {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-intro-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .service-intro-content h2 {
-            font-size: 38px;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .service-intro-content h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .service-intro-content p {
-            margin-bottom: 30px;
-        }
-
-        /* Main Services */
-        .main-services {
-            background-color: var(--light-color);
-            padding: 100px 0;
-        }
-
-        .service-box {
-            background-color: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            margin-bottom: 30px;
-            transition: var(--transition);
-        }
-
-        .service-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-image {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .service-image img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .service-box:hover .service-image img {
-            transform: scale(1.1);
-        }
-
-        .service-content {
-            padding: 30px;
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background-color: var(--accent-color);
-            border-radius: 50%;
+            height: 400px;
+            background-color: var(--dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
-            font-size: 28px;
-            color: var(--white);
-            transition: var(--transition);
+            text-align: center;
+            color: var(--light);
+            margin-top: 90px;
+            overflow: hidden;
         }
 
-        .service-box:hover .service-icon {
-            background-color: var(--primary-color);
+        .page-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
         }
 
-        .service-content h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            transition: var(--transition);
+        .page-banner-content {
+            position: relative;
+            z-index: 1;
         }
 
-        .service-box:hover .service-content h3 {
-            color: var(--primary-color);
-        }
-
-        .service-content p {
+        .page-banner h1 {
+            font-size: 48px;
+            color: var(--light);
             margin-bottom: 20px;
         }
 
-        /* Why Choose Us */
-        .why-choose-us {
-            padding: 100px 0;
-        }
-
-        .choose-item {
-            display: flex;
-            margin-bottom: 40px;
-        }
-
-        .choose-icon {
-            width: 80px;
-            height: 80px;
-            background-color: var(--light-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
+        .breadcrumb {
+            background: transparent;
+            margin-bottom: 0;
             justify-content: center;
-            margin-right: 25px;
-            flex-shrink: 0;
-            color: var(--primary-color);
-            font-size: 30px;
-            transition: var(--transition);
         }
 
-        .choose-item:hover .choose-icon {
-            background-color: var(--primary-color);
-            color: var(--white);
+        .breadcrumb-item {
+            color: var(--secondary);
         }
 
-        .choose-content h4 {
-            font-size: 22px;
-            margin-bottom: 10px;
+        .breadcrumb-item.active {
+            color: var(--light);
         }
 
-        .choose-image {
+        .breadcrumb-item a {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item a:hover {
+            color: var(--accent);
+        }
+
+        /* Main Service Cards */
+        .service-main-card {
             position: relative;
-            height: 100%;
-        }
-
-        .choose-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
         }
 
-        .choose-image::before {
-            content: '';
+        .service-main-img {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .service-main-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-main-card:hover .service-main-img img {
+            transform: scale(1.1);
+        }
+
+        .service-main-content {
+            padding: 30px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .service-main-content h3 {
+            margin-bottom: 15px;
+        }
+
+        .service-main-content p {
+            margin-bottom: 25px;
+        }
+
+        .service-main-price {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-family: var(--font-heading);
+        }
+
+        .service-main-price span {
+            font-size: 16px;
+            color: var(--text-dark);
+            font-weight: normal;
+        }
+
+        /* Service Detail Sections */
+        .service-detail {
+            padding: 80px 0;
+        }
+
+        .service-detail:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .service-detail-img {
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 100%;
+        }
+
+        .service-detail-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-detail:hover .service-detail-img img {
+            transform: scale(1.05);
+        }
+
+        .service-detail-content {
+            padding: 30px 0;
+        }
+
+        .service-detail-content h2 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .service-detail-content p {
+            margin-bottom: 15px;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .service-features li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .service-features li i {
             position: absolute;
-            width: 90%;
-            height: 90%;
-            border: 5px solid var(--primary-color);
-            top: 5%;
-            right: -20px;
-            border-radius: 10px;
-            z-index: -1;
+            left: 0;
+            top: 5px;
+            color: var(--primary);
         }
 
         /* Process Section */
         .process {
-            background-color: var(--light-color);
-            padding: 100px 0;
+            background-color: var(--primary);
+            color: var(--light);
         }
 
-        .process-steps {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
+        .process .section-title h2 {
+            color: var(--light);
         }
 
-        .process-steps::before {
-            content: '';
-            position: absolute;
-            top: 85px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--accent-color);
-            z-index: 0;
+        .process .section-title h2::after {
+            background-color: var(--accent);
         }
 
         .process-step {
             text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 30px;
             position: relative;
-            z-index: 1;
-            width: 20%;
-            padding: 0 15px;
         }
 
-        .step-number {
-            width: 70px;
-            height: 70px;
-            background-color: var(--white);
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40%;
+            right: -50px;
+            width: 100px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 991px) {
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
             border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+            font-size: 30px;
+            font-weight: 700;
+            margin: 0 auto 25px;
+            font-family: var(--font-heading);
+        }
+
+        .process-step h3 {
+            color: var(--light);
+            margin-bottom: 20px;
+        }
+
+        /* Pricing Tables */
+        .pricing-table {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            height: 100%;
+            border-bottom: 3px solid transparent;
+        }
+
+        .pricing-table:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .pricing-header {
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .pricing-title {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .pricing-price {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--dark);
+            font-family: var(--font-heading);
+            margin-bottom: 10px;
+        }
+
+        .pricing-duration {
+            color: var(--secondary);
+            font-size: 14px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #f0f0f0;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-popular {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--primary);
+            color: var(--light);
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f9f9f9;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '\f10d';
+            font-family: 'Bootstrap-icons';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            color: rgba(74, 44, 64, 0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .testimonial-author {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            color: var(--primary-color);
-            margin: 0 auto 25px;
-            border: 2px solid var(--accent-color);
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .testimonial-author-info h5 {
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .testimonial-author-info span {
+            font-size: 14px;
+            color: var(--secondary);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
+        }
+
+        .faq-question {
             position: relative;
+            padding: 20px 50px 20px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--dark);
             transition: var(--transition);
         }
 
-        .process-step:hover .step-number {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-color: var(--primary-color);
+        .faq-question::after {
+            content: '\f282';
+            font-family: 'Bootstrap-icons';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: var(--transition);
         }
 
-        .step-title {
-            font-size: 20px;
-            margin-bottom: 15px;
+        .faq-question.active {
+            color: var(--primary);
         }
 
-        .step-text {
-            font-size: 15px;
+        .faq-question.active::after {
+            content: '\f286';
         }
 
-        @media (max-width: 991.98px) {
-            .process-steps {
-                flex-direction: column;
-            }
-            
-            .process-steps::before {
-                display: none;
-            }
-            
-            .process-step {
-                width: 100%;
-                margin-bottom: 40px;
-                padding: 0;
-            }
-            
-            .step-number {
-                margin-bottom: 15px;
-            }
+        .faq-answer {
+            padding: 0 20px 20px;
+            display: none;
         }
 
-        /* Accordion */
-        .accordion-item {
-            border: none;
-            background-color: transparent;
-            margin-bottom: 20px;
+        .faq-answer.show {
+            display: block;
         }
 
-        .accordion-header {
-            margin-bottom: 0;
-        }
-
-        .accordion-button {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--secondary-color);
-            background-color: var(--white);
-            border-radius: 10px !important;
-            box-shadow: var(--box-shadow);
-            padding: 20px 25px;
-        }
-
-        .accordion-button:not(.collapsed) {
-            color: var(--white);
-            background-color: var(--primary-color);
-            box-shadow: none;
-        }
-
-        .accordion-button::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-
-        .accordion-button:not(.collapsed)::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-
-        .accordion-collapse {
-            border: none;
-        }
-
-        .accordion-body {
-            padding: 20px 25px;
-            background-color: var(--white);
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        /* CTA Section */
-        .cta {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 80px 0;
+        /* Contact CTA */
+        .contact-cta {
+            background-color: var(--primary);
             text-align: center;
+            color: var(--light);
         }
 
-        .cta h2 {
-            color: var(--white);
-            font-size: 42px;
-            margin-bottom: 20px;
+        .contact-cta h2 {
+            color: var(--light);
+            margin-bottom: 30px;
         }
 
-        .cta p {
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-size: 18px;
+        .contact-cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
         }
 
         .btn-light {
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 12px 28px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            background-color: var(--light);
+            color: var(--primary);
+            border-color: var(--light);
         }
 
         .btn-light:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
+            background-color: transparent;
+            color: var(--light);
+            border-color: var(--light);
         }
 
         /* Footer */
         .footer {
-            background-color: var(--secondary-color);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 80px 0 0;
+            background: var(--dark);
+            color: #999;
         }
 
         .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 20px;
-            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 25px;
+            display: block;
         }
 
         .footer-logo span {
-            color: var(--primary-color);
+            color: var(--accent);
         }
 
-        .footer-about p {
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer h5 {
+            color: #fff;
             margin-bottom: 25px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .footer-title {
-            color: var(--white);
-            font-size: 22px;
-            margin-bottom: 25px;
+            font-size: 20px;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
 
-        .footer-title::after {
+        .footer h5::after {
             content: '';
             position: absolute;
-            left: 0;
             bottom: 0;
-            width: 40px;
+            left: 0;
+            width: 50px;
             height: 2px;
-            background-color: var(--primary-color);
+            background: var(--accent);
         }
 
         .footer-links {
@@ -1578,135 +1354,139 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
+        .footer-links li a {
+            color: #999;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
+            text-decoration: none;
         }
 
-        .footer-links a i {
-            margin-right: 10px;
-            color: var(--primary-color);
-            font-size: 12px;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
+        .footer-links li a:hover {
+            color: var(--accent);
             padding-left: 5px;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .contact-icon {
+        .footer-contact-info li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact-info li i {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .footer-social {
+            margin-top: 30px;
+        }
+
+        .footer-social a {
+            display: inline-block;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            line-height: 40px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 16px;
-            margin-right: 15px;
-            flex-shrink: 0;
+            margin-right: 10px;
+            transition: var(--transition);
         }
 
-        .contact-text {
-            line-height: 1.6;
+        .footer-social a:hover {
+            background: var(--accent);
+            color: var(--dark);
         }
 
         .footer-bottom {
-            padding: 25px 0;
-            text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 60px;
+            padding: 20px 0;
+            text-align: center;
         }
 
         .footer-bottom p {
-            margin: 0;
-            font-size: 14px;
+            margin-bottom: 0;
         }
 
-        @media (max-width: 991.98px) {
-            .footer-widget {
-                margin-bottom: 40px;
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            .section-padding {
+                padding: 80px 0;
+            }
+            .section-title h2 {
+                font-size: 36px;
+            }
+            .page-banner h1 {
+                font-size: 36px;
+            }
+            .service-detail-img {
+                margin-bottom: 30px;
             }
         }
 
-        /* Back to top */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--secondary-color);
+        @media (max-width: 767px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            .section-title h2 {
+                font-size: 30px;
+            }
+            .page-banner h1 {
+                font-size: 32px;
+            }
         }
     
     </style>
 <style>
-  /* Industry-specific color scheme for General Business */
+  /* Industry-specific color scheme for Creative & Design */
   :root {
     /* Override ALL color variables with industry-specific colors */
-    --primary-color: #2563eb !important;
-    --primary-light: #1d4ed8 !important;
-    --primary-dark: #1e40af !important;
+    --primary-color: #7c3aed !important;
+    --primary-light: #6d28d9 !important;
+    --primary-dark: #5b21b6 !important;
     
-    --secondary-color: #64748b !important;
-    --secondary-light: #475569 !important;
-    --secondary-dark: #334155 !important;
+    --secondary-color: #f59e0b !important;
+    --secondary-light: #d97706 !important;
+    --secondary-dark: #b45309 !important;
     
-    --accent-color: #059669 !important;
-    --accent-light: #047857 !important;
-    --accent-dark: #065f46 !important;
+    --accent-color: #ec4899 !important;
+    --accent-light: #db2777 !important;
+    --accent-dark: #be185d !important;
     
     /* Override common template color variables */
-    --primary: #2563eb !important;
-    --secondary: #64748b !important;
-    --accent: #059669 !important;
+    --primary: #7c3aed !important;
+    --secondary: #f59e0b !important;
+    --accent: #ec4899 !important;
     --dark: #1A1A1A !important;
     --light: #FFFFFF !important;
     --gray: #6C6C6C !important;
     
     /* Override gradient */
-    --gradient: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    --gradient: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%) !important;
     
     /* Common color mappings */
-    --brand-primary: #2563eb !important;
-    --brand-secondary: #64748b !important;
-    --color-primary: #2563eb !important;
-    --color-secondary: #64748b !important;
-    --theme-primary: #2563eb !important;
-    --theme-secondary: #64748b !important;
+    --brand-primary: #7c3aed !important;
+    --brand-secondary: #f59e0b !important;
+    --color-primary: #7c3aed !important;
+    --color-secondary: #f59e0b !important;
+    --theme-primary: #7c3aed !important;
+    --theme-secondary: #f59e0b !important;
   }
   
   /* Apply colors to common Bootstrap and template patterns */
@@ -1783,32 +1563,32 @@
   
   /* Aggressive overrides for templates with hardcoded colors */
   /* Target specific color values that templates might use */
-  [style*="#FF6B35"] { color: #2563eb !important; }
-  [style*="#F7931E"] { color: #64748b !important; }
-  [style*="#FFD23F"] { color: #059669 !important; }
+  [style*="#FF6B35"] { color: #7c3aed !important; }
+  [style*="#F7931E"] { color: #f59e0b !important; }
+  [style*="#FFD23F"] { color: #ec4899 !important; }
   
   /* Override inline styles and hardcoded backgrounds */
   .hero[style*="background"] {
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%) !important;
   }
   
   /* Force color changes on elements that might have inline styles */
   .text-primary,
   [class*="text-primary"],
   [class*="color-primary"] {
-    color: #2563eb !important;
+    color: #7c3aed !important;
   }
   
   .bg-primary,
   [class*="bg-primary"],
   [class*="background-primary"] {
-    background-color: #2563eb !important;
+    background-color: #7c3aed !important;
   }
   
   /* Override gradient classes */
   .text-gradient,
   [class*="gradient"] {
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
@@ -1824,233 +1604,147 @@
   
   button:not(.btn-secondary):not(.btn-light):not(.btn-dark),
   .btn:not(.btn-secondary):not(.btn-light):not(.btn-dark) {
-    background-color: #2563eb !important;
-    border-color: #2563eb !important;
+    background-color: #7c3aed !important;
+    border-color: #7c3aed !important;
   }
   
   button:not(.btn-secondary):not(.btn-light):not(.btn-dark):hover,
   .btn:not(.btn-secondary):not(.btn-light):not(.btn-dark):hover {
-    background-color: #1e40af !important;
-    border-color: #1e40af !important;
+    background-color: #5b21b6 !important;
+    border-color: #5b21b6 !important;
   }
 </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Elegance<span>Interiors</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="portfolio.html">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-                <a href="contact.html" class="btn nav-button ms-lg-4">Get Quote</a>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Lens<span>Vision</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Page Banner -->
+    <section class="page-banner" style="background-image: url('images/services-banner.jpg');">
         <div class="container">
-            <h1 data-aos="fade-up" data-aos-duration="1000">our innovative tech software solutions and digital innovations</h1>
-            <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Services</li>
-                </ol>
-            </nav>
-        </div>
-    </section>
-
-    <!-- Service Intro -->
-    <section class="service-intro">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="service-intro-image">
-                        <img src="https://images.unsplash.com/photo-1611224885990-ab7363d1f2a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Interior Design Services">
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="service-intro-content">
-                        <h2>Comprehensive Interior Design Services</h2>
-                        <p>At Elegance Interiors, we offer a wide range of interior design services tailored to meet the unique needs and preferences of our users and businesses. Whether you're looking to redesign a single room or transform your entire home or commercial space, our team of experienced designers is here to bring your vision to life.</p>
-                        <p>We take pride in our attention to detail, commitment to quality, and ability to create spaces that are not only aesthetically pleasing but also functional and reflective of your personality or brand identity. Our goal is to exceed your expectations and deliver results that you'll love for years to come.</p>
-                        <a href="contact.html" class="btn btn-primary">Request a technical assessment</a>
-                    </div>
-                </div>
+            <div class="page-banner-content">
+                <h1>our innovative tech software solutions and digital innovations</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Services</li>
+                    </ol>
+                </nav>
             </div>
         </div>
     </section>
 
-    <!-- Main Services -->
-    <section class="main-services">
+    <!-- Main Services Section -->
+    <section class="section-padding">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                <h2>Our Design Services</h2>
-                <p>We offer a comprehensive range of interior design services to meet all your needs, from concept development to final installation.</p>
+            <div class="section-title text-center">
+                <h2>Photography Services</h2>
+                <p>Explore our range of professional photography services designed to meet your specific needs</p>
             </div>
-            
             <div class="row">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="service-box">
-                        <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Residential Interior Design">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-main-card">
+                        <div class="service-main-img">
+                            <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Portrait Photography">
                         </div>
-                        <div class="service-content">
-                            <div class="service-icon">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <h3>Residential Design</h3>
-                            <p>Transform your home into a stunning sanctuary that reflects your personality and meets your lifestyle needs. From single rooms to entire homes, we'll create spaces that you'll love coming home to.</p>
-                            <ul class="mb-4">
-                                <li>Complete home redesign</li>
-                                <li>Room-by-room transformations</li>
-                                <li>New construction design</li>
-                                <li>Furniture selection and arrangement</li>
-                                <li>Color scheme development</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-outline">Learn More</a>
+                        <div class="service-main-content">
+                            <h3>Portrait Photography</h3>
+                            <p>Professional portrait photography for individuals, couples, families, and corporate headshots.</p>
+                            <div class="service-main-price">From $250 <span>per session</span></div>
+                            <a href="#portrait" class="btn btn-outline-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                    <div class="service-box">
-                        <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Commercial Interior Design">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-main-card">
+                        <div class="service-main-img">
+                            <img src="https://images.unsplash.com/photo-1611224885990-ab7363d1f2a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Wedding Photography">
                         </div>
-                        <div class="service-content">
-                            <div class="service-icon">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <h3>Commercial Design</h3>
-                            <p>Create functional and impressive commercial spaces that enhance productivity, reflect your brand identity, and impress users and businesses. We design for various commercial environments.</p>
-                            <ul class="mb-4">
-                                <li>Office spaces and corporate headquarters</li>
-                                <li>Retail stores and boutiques</li>
-                                <li>Restaurants and hospitality venues</li>
-                                <li>Healthcare facilities</li>
-                                <li>Educational institutions</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-outline">Learn More</a>
+                        <div class="service-main-content">
+                            <h3>Wedding Photography</h3>
+                            <p>Comprehensive wedding photography packages to capture your special day from start to finish.</p>
+                            <div class="service-main-price">From $1,800 <span>per event</span></div>
+                            <a href="#wedding" class="btn btn-outline-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="service-box">
-                        <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Space Planning">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-main-card">
+                        <div class="service-main-img">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Commercial Photography">
                         </div>
-                        <div class="service-content">
-                            <div class="service-icon">
-                                <i class="fas fa-pencil-ruler"></i>
-                            </div>
-                            <h3>Space Planning</h3>
-                            <p>Optimize your space layout for better flow, functionality, and aesthetic appeal. Our expert space planning ensures efficient use of every square foot while maintaining style and comfort.</p>
-                            <ul class="mb-4">
-                                <li>Functional layout development</li>
-                                <li>Traffic flow analysis</li>
-                                <li>Furniture placement strategy</li>
-                                <li>Spatial problem-solving</li>
-                                <li>3D visualization of space plans</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-outline">Learn More</a>
+                        <div class="service-main-content">
+                            <h3>Commercial Photography</h3>
+                            <p>Professional photography for products, real estate, and corporate branding materials.</p>
+                            <div class="service-main-price">From $500 <span>per project</span></div>
+                            <a href="#commercial" class="btn btn-outline-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                    <div class="service-box">
-                        <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1611224885990-ab7363d1f2a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Custom Furniture Design">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-main-card">
+                        <div class="service-main-img">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Event Photography">
                         </div>
-                        <div class="service-content">
-                            <div class="service-icon">
-                                <i class="fas fa-couch"></i>
-                            </div>
-                            <h3>Custom Furniture</h3>
-                            <p>Create unique, one-of-a-kind furniture pieces specifically designed for your space and needs. Our custom furniture software solutions and digital innovations ensure perfect fit, function, and style for your interior.</p>
-                            <ul class="mb-4">
-                                <li>Bespoke furniture design</li>
-                                <li>Custom cabinetry and built-ins</li>
-                                <li>Material selection guidance</li>
-                                <li>Artisanal craftsmanship coordination</li>
-                                <li>Unique statement pieces</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-outline">Learn More</a>
+                        <div class="service-main-content">
+                            <h3>Event Photography</h3>
+                            <p>Comprehensive coverage of corporate events, parties, conferences, and special occasions.</p>
+                            <div class="service-main-price">From $600 <span>per event</span></div>
+                            <a href="#event" class="btn btn-outline-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                    <div class="service-box">
-                        <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Color technical assessment">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-main-card">
+                        <div class="service-main-img">
+                            <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Fine Art Photography">
                         </div>
-                        <div class="service-content">
-                            <div class="service-icon">
-                                <i class="fas fa-paint-roller"></i>
-                            </div>
-                            <h3>Color technical assessment</h3>
-                            <p>Find the perfect color palette that creates the desired mood and complements your interior elements. Our color specialists help you navigate the psychology of color to achieve your desired atmosphere.</p>
-                            <ul class="mb-4">
-                                <li>Comprehensive color scheme development</li>
-                                <li>Paint and finish selection</li>
-                                <li>Color psychology application</li>
-                                <li>Material and fabric coordination</li>
-                                <li>Lighting impact analysis</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-outline">Learn More</a>
+                        <div class="service-main-content">
+                            <h3>Fine Art Photography</h3>
+                            <p>Creative fine art photography for personal collections, exhibitions, and interior design.</p>
+                            <div class="service-main-price">From $350 <span>per piece</span></div>
+                            <a href="#fineart" class="btn btn-outline-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                    <div class="service-box">
-                        <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Lighting Design">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-main-card">
+                        <div class="service-main-img">
+                            <img src="https://images.unsplash.com/photo-1611224885990-ab7363d1f2a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Video Production">
                         </div>
-                        <div class="service-content">
-                            <div class="service-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <h3>Lighting Design</h3>
-                            <p>Enhance the ambiance and functionality of your space with strategic lighting software solutions and digital innovations. Proper lighting can transform the look and feel of your interior while highlighting architectural features.</p>
-                            <ul class="mb-4">
-                                <li>Layered lighting plans</li>
-                                <li>Fixture selection and placement</li>
-                                <li>Natural light optimization</li>
-                                <li>Smart lighting integration</li>
-                                <li>Energy-efficient software solutions and digital innovations</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-outline">Learn More</a>
+                        <div class="service-main-content">
+                            <h3>Video Production</h3>
+                            <p>Professional video services for weddings, events, commercials, and corporate videos.</p>
+                            <div class="service-main-price">From $900 <span>per project</span></div>
+                            <a href="#video" class="btn btn-outline-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -2058,105 +1752,344 @@
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="why-choose-us">
+    <!-- Portrait Photography Details -->
+    <section id="portrait" class="service-detail">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                <h2>Why Choose Us</h2>
-                <p>What sets Elegance Interiors apart from other design firms? Here are just a few reasons why users and businesses choose to work with us.</p>
-            </div>
-            
             <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="choose-list">
-                        <div class="choose-item">
-                            <div class="choose-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <div class="choose-content">
-                                <h4>Award-Winning Design Team</h4>
-                                <p>Our team consists of highly trained, experienced, and award-winning designers who bring creativity, expertise, and passion to every project.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="choose-item">
-                            <div class="choose-icon">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <div class="choose-content">
-                                <h4>Personalized Service</h4>
-                                <p>We take the time to understand your unique needs, preferences, and lifestyle to create custom design software solutions and digital innovations that perfectly suit you.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="choose-item">
-                            <div class="choose-icon">
-                                <i class="fas fa-gem"></i>
-                            </div>
-                            <div class="choose-content">
-                                <h4>Quality Craftsmanship</h4>
-                                <p>We work with the finest craftsmen, artisans, and suppliers to ensure that every element of your design is executed with precision and quality.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="choose-item">
-                            <div class="choose-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="choose-content">
-                                <h4>Timely Delivery</h4>
-                                <p>We understand the importance of timelines and work diligently to ensure your project is completed on schedule without compromising quality.</p>
-                            </div>
-                        </div>
+                <div class="col-lg-6">
+                    <div class="service-detail-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Portrait Photography">
                     </div>
                 </div>
-                
-                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="choose-image">
-                        <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Why Choose Elegance Interiors">
+                <div class="col-lg-6">
+                    <div class="service-detail-content">
+                        <h2>Portrait Photography</h2>
+                        <p>Our portrait photography services capture the personality, character, and essence of individuals, couples, families, and professionals. We create beautiful, authentic portraits that tell your unique story.</p>
+                        <p>Whether you need professional headshots for your business, family portraits to preserve precious memories, or personal portraits to celebrate special milestones, our experienced photographers will work with you to create images that exceed your expectations.</p>
+                        <ul class="service-features">
+                            <li><i class="bi bi-check2-circle"></i> Professional studio or location shooting</li>
+                            <li><i class="bi bi-check2-circle"></i> Individual, couple, and family portraits</li>
+                            <li><i class="bi bi-check2-circle"></i> Corporate headshots and team photos</li>
+                            <li><i class="bi bi-check2-circle"></i> Maternity and newborn photography</li>
+                            <li><i class="bi bi-check2-circle"></i> Professional lighting and setup</li>
+                            <li><i class="bi bi-check2-circle"></i> Digital delivery and print options</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book a Session</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process">
+    <!-- Wedding Photography Details -->
+    <section id="wedding" class="service-detail">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                <h2>Our Design Process</h2>
-                <p>We follow a structured design process to ensure every project is completed to the highest standards and meets your expectations.</p>
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="service-detail-img">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Wedding Photography">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="service-detail-content">
+                        <h2>Wedding Photography</h2>
+                        <p>Your wedding day is one of the most important days of your life, and our wedding photography services ensure that every precious moment is captured beautifully. From the getting ready moments to the last dance, we document your day with creativity, passion, and attention to detail.</p>
+                        <p>Our wedding photographers blend candid, documentary-style photography with artistic portraits to create a comprehensive collection of images that tell the complete story of your special day. We offer customizable packages to suit different budgets and preferences.</p>
+                        <ul class="service-features">
+                            <li><i class="bi bi-check2-circle"></i> Engagement photo sessions</li>
+                            <li><i class="bi bi-check2-circle"></i> Full-day wedding coverage</li>
+                            <li><i class="bi bi-check2-circle"></i> Second photographer option</li>
+                            <li><i class="bi bi-check2-circle"></i> Professional editing and retouching</li>
+                            <li><i class="bi bi-check2-circle"></i> High-resolution digital images</li>
+                            <li><i class="bi bi-check2-circle"></i> Custom wedding albums and prints</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book a technical assessment</a>
+                    </div>
+                </div>
             </div>
-            
-            <div class="process-steps" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <h4 class="step-title">technical assessment</h4>
-                    <p class="step-text">Initial meeting to discuss your vision, requirements, preferences, and budget for the project.</p>
+        </div>
+    </section>
+
+    <!-- Commercial Photography Details -->
+    <section id="commercial" class="service-detail">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="service-detail-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Commercial Photography">
+                    </div>
                 </div>
-                
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <h4 class="step-title">Concept Development</h4>
-                    <p class="step-text">Creating preliminary design concepts based on your needs and our expertise.</p>
+                <div class="col-lg-6">
+                    <div class="service-detail-content">
+                        <h2>Commercial Photography</h2>
+                        <p>Elevate your brand with our professional commercial photography services. We create high-quality images that showcase your products, services, and properties in the best possible light, helping you attract customers and stand out from the competition.</p>
+                        <p>Our commercial photographers have extensive experience working with businesses of all sizes, from small startups to large corporations. We understand the importance of visual branding and work closely with you to create images that align with your brand identity and marketing goals.</p>
+                        <ul class="service-features">
+                            <li><i class="bi bi-check2-circle"></i> Product photography for e-commerce and catalogs</li>
+                            <li><i class="bi bi-check2-circle"></i> Real estate and architectural photography</li>
+                            <li><i class="bi bi-check2-circle"></i> Food and beverage photography</li>
+                            <li><i class="bi bi-check2-circle"></i> Corporate branding and marketing materials</li>
+                            <li><i class="bi bi-check2-circle"></i> Industrial and manufacturing photography</li>
+                            <li><i class="bi bi-check2-circle"></i> Advertising and editorial photography</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+                    </div>
                 </div>
-                
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <h4 class="step-title">Design Presentation</h4>
-                    <p class="step-text">Presenting detailed design plans, mood boards, and material selections for approval.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Photography Details -->
+    <section id="event" class="service-detail">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="service-detail-img">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Event Photography">
+                    </div>
                 </div>
-                
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <h4 class="step-title">Implementation</h4>
-                    <p class="step-text">Coordinating with contractors and vendors to execute the approved design plan.</p>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="service-detail-content">
+                        <h2>Event Photography</h2>
+                        <p>Capture the energy and excitement of your special events with our professional event photography services. Whether you're hosting a corporate conference, charity gala, birthday celebration, or any other special occasion, our photographers will document all the important moments.</p>
+                        <p>Our event photographers are skilled at being both present and unobtrusive, capturing candid moments as they happen while ensuring key presentations, speeches, and activities are well-documented. We provide quick turnaround times so you can share your event's success with attendees and on social media.</p>
+                        <ul class="service-features">
+                            <li><i class="bi bi-check2-circle"></i> Corporate events and conferences</li>
+                            <li><i class="bi bi-check2-circle"></i> Award ceremonies and galas</li>
+                            <li><i class="bi bi-check2-circle"></i> Birthday and anniversary celebrations</li>
+                            <li><i class="bi bi-check2-circle"></i> Concerts and performances</li>
+                            <li><i class="bi bi-check2-circle"></i> Trade shows and exhibitions</li>
+                            <li><i class="bi bi-check2-circle"></i> Corporate team building events</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book an Event</a>
+                    </div>
                 </div>
-                
-                <div class="process-step">
-                    <div class="step-number">05</div>
-                    <h4 class="step-title">Final Reveal</h4>
-                    <p class="step-text">The exciting moment when we reveal your beautifully transformed space.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fine Art Photography Details -->
+    <section id="fineart" class="service-detail">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="service-detail-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Fine Art Photography">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-detail-content">
+                        <h2>Fine Art Photography</h2>
+                        <p>Our fine art photography services combine technical expertise with artistic vision to create stunning, gallery-quality images. Whether for personal collections, exhibitions, or interior design, our fine art photographers create images that evoke emotion and tell stories.</p>
+                        <p>We offer both commissioned fine art photography where we create unique pieces tailored to your vision, as well as a selection of existing works available for purchase. All fine art prints are produced using archival-quality materials to ensure longevity and preservation of the image quality.</p>
+                        <ul class="service-features">
+                            <li><i class="bi bi-check2-circle"></i> Landscape and nature photography</li>
+                            <li><i class="bi bi-check2-circle"></i> Urban and architectural fine art</li>
+                            <li><i class="bi bi-check2-circle"></i> Abstract and conceptual photography</li>
+                            <li><i class="bi bi-check2-circle"></i> Black and white fine art</li>
+                            <li><i class="bi bi-check2-circle"></i> Limited edition prints</li>
+                            <li><i class="bi bi-check2-circle"></i> Custom framing options</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Commission Artwork</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Production Details -->
+    <section id="video" class="service-detail">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="service-detail-img">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Video Production">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="service-detail-content">
+                        <h2>Video Production</h2>
+                        <p>Complement your photography with our professional video production services. From wedding films to corporate promotional videos, we create cinematic, high-quality video content that captures the essence of your special moments or effectively communicates your brand message.</p>
+                        <p>Our videographers use state-of-the-art equipment and the latest editing techniques to produce stunning videos that exceed expectations. We offer a range of video services and can customize packages to suit your specific needs and budget.</p>
+                        <ul class="service-features">
+                            <li><i class="bi bi-check2-circle"></i> Wedding films and highlight reels</li>
+                            <li><i class="bi bi-check2-circle"></i> Corporate promotional videos</li>
+                            <li><i class="bi bi-check2-circle"></i> Event documentation</li>
+                            <li><i class="bi bi-check2-circle"></i> Product demonstration videos</li>
+                            <li><i class="bi bi-check2-circle"></i> Aerial drone footage</li>
+                            <li><i class="bi bi-check2-circle"></i> Professional editing and color grading</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Discuss Your Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="process section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Process</h2>
+                <p>How we work with you from initial technical assessment to final delivery</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <h3>technical assessment</h3>
+                        <p>We begin with a detailed technical assessment to understand your vision, needs, and expectations for the photography session.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <h3>Planning</h3>
+                        <p>We develop a detailed plan including location scouting, equipment preparation, and shooting schedule.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <h3>Photoshoot</h3>
+                        <p>Our professional photographers capture beautiful images following the established plan while remaining flexible and creative.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <h3>Delivery</h3>
+                        <p>We professionally edit and retouch your photos, then deliver them in your preferred format with options for prints and albums.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Pricing Packages</h2>
+                <p>Choose the perfect package that suits your needs and budget</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-table">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Basic</h3>
+                            <div class="pricing-price">$250</div>
+                            <div class="pricing-duration">Single Session</div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>1-Hour Photography Session</li>
+                            <li>1 Location</li>
+                            <li>25 Digital Images</li>
+                            <li>Basic Editing</li>
+                            <li>Digital Delivery</li>
+                            <li>Print Release</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-table">
+                        <div class="pricing-popular">Popular</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Premium</h3>
+                            <div class="pricing-price">$500</div>
+                            <div class="pricing-duration">Extended Session</div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>3-Hour Photography Session</li>
+                            <li>2 Locations</li>
+                            <li>50 Digital Images</li>
+                            <li>Advanced Editing</li>
+                            <li>Digital Delivery</li>
+                            <li>Print Release</li>
+                            <li>10 4x6 Prints</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-table">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Ultimate</h3>
+                            <div class="pricing-price">$900</div>
+                            <div class="pricing-duration">Full Experience</div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Full-Day Photography Session</li>
+                            <li>Multiple Locations</li>
+                            <li>100+ Digital Images</li>
+                            <li>Premium Editing</li>
+                            <li>Digital Delivery</li>
+                            <li>Print Release</li>
+                            <li>20 4x6 Prints</li>
+                            <li>1 16x20 Canvas Print</li>
+                            <li>Custom Photo Album</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <p>Need a custom package? We offer tailored software solutions and digital innovations to meet your specific needs.</p>
+                <a href="contact.html" class="btn btn-primary">Request Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Client Testimonials</h2>
+                <p>What our users and businesses say about our innovative tech software solutions and digital innovations</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <p>"LensVision did an incredible job capturing our wedding day. Michael and his team were professional, creative, and made everyone feel comfortable. The photos are absolutely stunning and capture all the emotions and special moments we wanted to remember."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100&q=80" alt="Client">
+                            <div class="testimonial-author-info">
+                                <h5>Jennifer & Mark</h5>
+                                <span>Wedding users and businesses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <p>"We hired LensVision for product photography for our e-commerce site, and the results were outstanding. The attention to detail and quality of the images have significantly improved our online presence and increased our sales conversion rate."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100&q=80" alt="Client">
+                            <div class="testimonial-author-info">
+                                <h5>Thomas Williams</h5>
+                                <span>Business Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            <p>"The family portrait session with LensVision was a wonderful experience. They were great with our children and captured natural, beautiful images that we'll treasure forever. The whole process from booking to receiving our photos was seamless."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100&q=80" alt="Client">
+                            <div class="testimonial-author-info">
+                                <h5>Sarah Johnson</h5>
+                                <span>Family Portrait Client</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2165,77 +2098,48 @@
     <!-- FAQ Section -->
     <section class="faq section-padding">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+            <div class="section-title text-center">
                 <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions about our interior design services and processes.</p>
+                <p>Find answers to common questions about our photography services</p>
             </div>
-            
             <div class="row">
-                <div class="col-lg-8 mx-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    How much does it cost to hire an interior designer?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    The cost varies depending on the scope and scale of your project, as well as the specific services required. We offer different service packages to accommodate various budgets and needs. During our initial technical assessment, we'll discuss your project requirements and provide a detailed cost estimate tailored to your specific needs.
-                                </div>
-                            </div>
+                <div class="col-lg-6">
+                    <div class="faq-item">
+                        <div class="faq-question">How far in advance should I book my photography session?</div>
+                        <div class="faq-answer">
+                            <p>For portrait sessions, we recommend booking 2-4 weeks in advance. For weddings and major events, we suggest booking 6-12 months ahead, especially for peak season dates (May-October). Commercial implementations and deployments typically require 2-3 weeks notice, but we can occasionally accommodate rush requests.</p>
                         </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    How long does the interior design process take?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    The timeline varies based on project size and complexity. A single room redesign might take 4-8 weeks, while a complete home or commercial space could take several months. Factors that affect the timeline include custom furniture lead times, contractor availability, and renovation complexity. We'll provide a detailed timeline during our planning phase.
-                                </div>
-                            </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is your payment policy?</div>
+                        <div class="faq-answer">
+                            <p>We require a 50% deposit to secure your booking date, with the remaining balance due on or before the day of the session. For weddings and larger events, we offer payment plans. We accept credit cards, bank transfers, and cash payments.</p>
                         </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Can I be involved in the design process?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Absolutely! We believe in collaborative design and value your input throughout the process. We'll present options, make recommendations based on our expertise, and guide you through decisions, but the final choices are always yours. Our goal is to create spaces that reflect your personal style and meet your needs.
-                                </div>
-                            </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How long will it take to receive my photos?</div>
+                        <div class="faq-answer">
+                            <p>Delivery times vary by service: portrait sessions are typically delivered within 1-2 weeks, weddings within 4-6 weeks, and commercial implementations and deployments according to the agreed timeline. Rush delivery options are available for an additional fee.</p>
                         </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    Do you work with existing furniture and décor?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Yes, we can incorporate your existing furniture and décor items that you wish to keep. During our initial technical assessment, we'll discuss which pieces you'd like to retain and how to integrate them into the new design. We're skilled at blending new elements with cherished existing pieces to create a cohesive and beautiful space.
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="faq-item">
+                        <div class="faq-question">Do you provide both digital files and prints?</div>
+                        <div class="faq-answer">
+                            <p>Yes, all our packages include high-resolution digital images with a print release. We also offer professional printing services for various sizes and formats, including canvas prints, photo albums, and framed artwork. Custom packages can be created to suit your specific needs.</p>
                         </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    What areas do you serve?
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    We primarily serve the greater metropolitan area and surrounding suburbs. For larger implementations and deployments, we're willing to travel further and can also offer virtual design services for users and businesses located outside our immediate service area. Contact us to discuss your specific location and project needs.
-                                </div>
-                            </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What should I wear for my portrait session?</div>
+                        <div class="faq-answer">
+                            <p>We recommend wearing clothes that make you feel comfortable and confident. Solid colors typically photograph better than busy patterns. For family or group sessions, coordinating (not matching) outfits work best. We provide detailed guidance after booking and are happy to offer specific suggestions for your session.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you travel for photography sessions?</div>
+                        <div class="faq-answer">
+                            <p>Yes, we are available for travel both domestically and internationally. Local sessions (within 30 miles of New York City) don't incur travel fees. For locations beyond this range, travel fees apply based on distance. For destination weddings and events, please contact us for a custom quote.</p>
                         </div>
                     </div>
                 </div>
@@ -2243,154 +2147,97 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
+    <!-- Contact CTA Section -->
+    <section class="contact-cta section-padding">
         <div class="container">
-            <div data-aos="fade-up" data-aos-duration="1000">
-                <h2>Ready to Transform Your Space?</h2>
-                <p>Connect with beasy for exceptional interior services for a technical assessment and take the first step towards your dream interior.</p>
-                <a href="contact.html" class="btn btn-light">Reach out to our interior experts today</a>
-            </div>
+            <h2>Ready to Book Your Photography Session?</h2>
+            <p>Connect with beasy for exceptional photography services to discuss your photography needs and secure your booking date.</p>
+            <a href="contact.html" class="btn btn-light">Reach out to our photography experts today</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <div class="footer-widget footer-about">
-                        <a href="index.html" class="footer-logo">Elegance<span>Interiors</span></a>
-                        <p>We create beautiful and functional spaces that inspire and delight. With our expertise and passion for design, we transform ordinary spaces into extraordinary environments.</p>
-                        <div class="footer-social">
-                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
-                        </div>
+                    <div class="footer-about">
+                        <a href="index.html" class="footer-logo">Lens<span>Vision</span></a>
+                        <p>Premium photography studio specializing in portrait, wedding, commercial, and fine art photography. We capture life's precious moments with creativity and passion.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
                     </div>
                 </div>
-                
                 <div class="col-lg-2 col-md-6">
-                    <div class="footer-widget">
-                        <h4 class="footer-title">Quick Links</h4>
-                        <ul class="footer-links">
-                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
-                            <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
-                            <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                        </ul>
-                    </div>
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget">
-                        <h4 class="footer-title">our innovative tech software solutions and digital innovations</h4>
-                        <ul class="footer-links">
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Residential Design</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Commercial Design</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Space Planning</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Furniture Selection</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Color technical assessment</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Lighting Design</a></li>
-                        </ul>
-                    </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#portrait">Portrait Photography</a></li>
+                        <li><a href="#wedding">Wedding Photography</a></li>
+                        <li><a href="#commercial">Commercial Photography</a></li>
+                        <li><a href="#event">Event Photography</a></li>
+                        <li><a href="#fineart">Fine Art Photography</a></li>
+                    </ul>
                 </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget">
-                        <h4 class="footer-title">Contact Info</h4>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-text">
-                                    123 Design Street, Creative Avenue<br>New York, NY 10001
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div class="contact-text">
-                                    +1 (555) 123-4567<br>+1 (555) 987-6543
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-text">
-                                    info@eleganceinteriors.com<br>support@eleganceinteriors.com
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact-info">
+                        <li><i class="bi bi-geo-alt"></i> 123 Broadway, New York, NY 10001</li>
+                        <li><i class="bi bi-telephone"></i> (212) 555-1234</li>
+                        <li><i class="bi bi-envelope"></i> info@lensvision.com</li>
+                        <li><i class="bi bi-clock"></i> Monday-Friday: 9am-6pm<br>Saturday: 10am-4pm<br>Sunday: Closed</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2023 Elegance Interiors. All Rights Reserved. Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i> by CreativeDesign</p>
+                <p>&copy; 2025 LensVision Photography Studio. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top -->
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS Animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Custom JS -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Initialize AOS Animation
-        AOS.init();
-        
-        // Sticky Navbar
+        // Navbar scroll
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
-                navbar.classList.add('sticky');
+                navbar.classList.add('scrolled');
             } else {
-                navbar.classList.remove('sticky');
+                navbar.classList.remove('scrolled');
             }
         });
-        
-        // Back to Top Button
-        const backToTop = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-        
-        backToTop.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+
+        // FAQ Accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    
+                    // Toggle active class on question
+                    this.classList.toggle('active');
+                    
+                    // Toggle show class on answer
+                    answer.classList.toggle('show');
+                });
             });
-        });
-        
-        // Preloader
-        window.addEventListener('load', function() {
-            const preloader = document.querySelector('.preloader');
-            if (preloader) {
-                preloader.style.display = 'none';
-            }
         });
     </script>
 
