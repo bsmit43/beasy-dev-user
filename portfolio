@@ -3,118 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Portfolio | Elegance Interiors</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
+    <title>Our Portfolio | LensVision Photography Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Lightbox CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lightgallery.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lg-zoom.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lg-thumbnail.css">
-    <!-- Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css">
     <style>
         :root {
-            --primary-color: #927a5a;
-            --secondary-color: #21282f;
-            --accent-color: #d3bea5;
-            --light-color: #f9f7f4;
-            --dark-color: #333333;
-            --text-color: #555555;
-            --white: #ffffff;
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
             --transition: all 0.3s ease;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            line-height: 1.8;
-            background-color: var(--white);
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.7;
             overflow-x: hidden;
+            background-color: #fcfcfc;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: var(--secondary-color);
-            font-weight: 600;
-            line-height: 1.4;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
         }
 
-        p {
-            font-size: 16px;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--dark-color);
+        .btn {
+            border-radius: var(--border-radius);
+            padding: 12px 28px;
+            font-weight: 500;
             transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
         }
 
         .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            padding: 12px 28px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: var(--secondary-color);
-            transition: var(--transition);
-            z-index: -1;
+            background-color: var(--primary);
+            border-color: var(--primary);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-color);
-        }
-
-        .btn-primary:hover::before {
-            left: 0;
-        }
-
-        .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 10px 26px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            color: var(--primary);
+            border-color: var(--primary);
         }
 
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background-color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        .navbar-brand span {
+            color: var(--secondary);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark);
+            position: relative;
+            margin: 0 15px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
         }
 
         .section-padding {
@@ -123,652 +128,407 @@
 
         .section-title {
             margin-bottom: 60px;
-            text-align: center;
         }
 
         .section-title h2 {
             position: relative;
-            display: inline-block;
             margin-bottom: 20px;
+            padding-bottom: 20px;
             font-size: 42px;
-            padding-bottom: 15px;
         }
 
         .section-title h2::after {
             content: '';
             position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .section-title p {
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--text-color);
-        }
-
-        /* Navbar */
-        .navbar {
-            padding: 20px 0;
-            transition: all 0.5s ease;
-        }
-
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-
-        .navbar-brand span {
-            color: var(--primary-color);
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--secondary-color);
-            font-weight: 500;
-            font-size: 16px;
-            margin: 0 15px;
-            position: relative;
-            padding: 8px 0;
-        }
-
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
             bottom: 0;
             left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: var(--transition);
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
         }
 
-        .navbar-nav .nav-link:hover::after,
-        .navbar-nav .nav-link.active::after {
-            width: 100%;
+        .section-title.text-center h2::after {
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-button {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 0;
-            font-weight: 500;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .nav-button:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 0;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-toggler-icon {
-            width: 24px;
-            height: 17px;
-            background-image: none;
+        /* Page Banner */
+        .page-banner {
             position: relative;
-            border-bottom: 2px solid var(--secondary-color);
-            transition: all 300ms linear;
+            height: 400px;
+            background-color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light);
+            margin-top: 90px;
+            overflow: hidden;
         }
 
-        .navbar-toggler-icon:after, 
-        .navbar-toggler-icon:before {
-            width: 24px;
+        .page-banner::before {
+            content: '';
             position: absolute;
-            height: 2px;
-            background-color: var(--secondary-color);
             top: 0;
             left: 0;
-            content: '';
-            z-index: 2;
-            transition: all 300ms linear;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
         }
 
-        .navbar-toggler-icon:after {
-            top: 8px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-            transform: rotate(45deg);
-            background-color: var(--secondary-color);
-            height: 2px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-            transform: translateY(8px) rotate(-45deg);
-            background-color: var(--secondary-color);
-            height: 2px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-            border-color: transparent;
-        }
-
-        /* Fix navbar mobile background */
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                background-color: var(--white);
-                padding: 20px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                border-radius: 0 0 10px 10px;
-                margin-top: 10px;
-            }
-        }
-
-        .navbar.sticky {
-            background-color: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Page Header */
-        .page-header {
-            background-color: var(--light-color);
-            padding: 150px 0 80px;
-            text-align: center;
+        .page-banner-content {
             position: relative;
+            z-index: 1;
         }
 
-        .page-header h1 {
+        .page-banner h1 {
             font-size: 48px;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 20px;
-            color: var(--secondary-color);
+            color: var(--light);
+            margin-bottom: 20px;
         }
 
-        .page-header h1::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
+        .breadcrumb {
+            background: transparent;
+            margin-bottom: 0;
+            justify-content: center;
         }
 
         .breadcrumb-item {
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        .breadcrumb-item a {
-            color: var(--text-color);
-        }
-
-        .breadcrumb-item a:hover {
-            color: var(--primary-color);
+            color: var(--secondary);
         }
 
         .breadcrumb-item.active {
-            color: var(--primary-color);
+            color: var(--light);
         }
 
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: '\f105';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--text-color);
+        .breadcrumb-item a {
+            color: var(--light);
+            text-decoration: none;
         }
 
-        /* Portfolio Section */
-        .portfolio-section {
-            padding: 100px 0;
+        .breadcrumb-item a:hover {
+            color: var(--accent);
         }
 
-        .portfolio-filters {
+        /* Portfolio Filter */
+        .portfolio-filter {
             margin-bottom: 40px;
             text-align: center;
         }
 
-        .filter-btn {
-            background-color: transparent;
+        .portfolio-filter button {
             border: none;
-            padding: 8px 20px;
-            font-size: 16px;
+            background: transparent;
             font-weight: 500;
-            color: var(--text-color);
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
+            padding: 5px 15px;
             margin: 0 5px 10px;
+            color: var(--text-dark);
+            position: relative;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
         }
 
-        .filter-btn::after {
+        .portfolio-filter button.active,
+        .portfolio-filter button:hover {
+            color: var(--primary);
+        }
+
+        .portfolio-filter button::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 50%;
             transform: translateX(-50%);
             width: 0;
             height: 2px;
-            background-color: var(--primary-color);
+            background: var(--primary);
             transition: var(--transition);
         }
 
-        .filter-btn:hover, 
-        .filter-btn.active {
-            color: var(--primary-color);
+        .portfolio-filter button.active::after,
+        .portfolio-filter button:hover::after {
+            width: 30px;
         }
 
-        .filter-btn:hover::after,
-        .filter-btn.active::after {
-            width: 80%;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 30px;
+        /* Portfolio Items */
+        .portfolio-container {
+            margin-bottom: 50px;
         }
 
         .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .portfolio-image {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .portfolio-image img {
-            width: 100%;
-            transition: transform 0.6s ease;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(33, 40, 47, 0.8);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .portfolio-title {
-            color: var(--white);
-            font-size: 22px;
-            margin-bottom: 10px;
-            transform: translateY(20px);
-            transition: transform 0.4s ease;
-        }
-
-        .portfolio-category {
-            color: var(--accent-color);
-            font-size: 14px;
-            transform: translateY(20px);
-            transition: transform 0.4s ease;
-        }
-
-        .portfolio-links {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            transform: translateY(-20px);
-            opacity: 0;
-            transition: all 0.4s ease 0.1s;
-        }
-
-        .portfolio-link {
-            width: 40px;
-            height: 40px;
-            background-color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            color: var(--secondary-color);
-            transition: var(--transition);
-        }
-
-        .portfolio-link:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .portfolio-item:hover .portfolio-image img {
-            transform: scale(1.1);
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-item:hover .portfolio-title,
-        .portfolio-item:hover .portfolio-category {
-            transform: translateY(0);
-        }
-
-        .portfolio-item:hover .portfolio-links {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        @media (max-width: 991.98px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Featured implementations and deployments */
-        .featured-implementations and deployments {
-            background-color: var(--light-color);
-            padding: 100px 0;
-        }
-
-        .featured-project {
-            margin-bottom: 100px;
-        }
-
-        .featured-project:last-child {
-            margin-bottom: 0;
-        }
-
-        .featured-image {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .featured-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .featured-content h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .featured-content h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .featured-meta {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .meta-item {
-            margin-right: 30px;
-            margin-bottom: 10px;
-        }
-
-        .meta-title {
-            font-weight: 600;
-            color: var(--secondary-color);
-            margin-bottom: 5px;
-        }
-
-        .meta-text {
-            color: var(--primary-color);
-        }
-
-        .featured-text {
             margin-bottom: 30px;
-        }
-
-        /* Project Gallery */
-        .project-gallery {
-            padding: 100px 0;
-        }
-
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 20px;
-        }
-
-        .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             cursor: pointer;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 991.98px) {
-            .gallery-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            .gallery-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background-color: var(--light-color);
-            padding: 100px 0;
+        .portfolio-img {
             position: relative;
             overflow: hidden;
         }
 
-        .testimonial-card {
-            background-color: var(--white);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-            text-align: center;
-            transition: var(--transition);
-            height: 100%;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .client-image {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            margin: 0 auto 25px;
-            overflow: hidden;
-            border: 5px solid var(--accent-color);
-        }
-
-        .client-image img {
+        .portfolio-img img {
             width: 100%;
-            height: 100%;
+            height: 350px;
             object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-info {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.8);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-info {
+            bottom: 0;
+        }
+
+        .portfolio-info h4 {
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+
+        .portfolio-info p {
+            color: var(--accent);
+            margin-bottom: 0;
+        }
+
+        /* Masonry Layout */
+        .masonry-layout {
+            column-count: 3;
+            column-gap: 30px;
+        }
+
+        @media (max-width: 991px) {
+            .masonry-layout {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .masonry-layout {
+                column-count: 1;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            cursor: pointer;
+        }
+
+        .masonry-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .masonry-img img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .masonry-item:hover .masonry-img img {
+            transform: scale(1.05);
+        }
+
+        .masonry-info {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.8);
+            transition: var(--transition);
+        }
+
+        .masonry-item:hover .masonry-info {
+            bottom: 0;
+        }
+
+        .masonry-info h4 {
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+
+        .masonry-info p {
+            color: var(--accent);
+            margin-bottom: 0;
+        }
+
+        /* Portfolio Categories */
+        .category-section {
+            padding: 80px 0;
+        }
+
+        .category-section:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .category-title {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .category-title h2 {
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .category-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* LightGallery Custom Styles */
+        .lg-backdrop {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lg-toolbar, .lg-outer .lg-thumb-outer, .lg-outer .lg-toogle-thumb {
+            background-color: rgba(0, 0, 0, 0.45);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        .testimonials .section-title h2 {
+            color: var(--light);
+        }
+
+        .testimonials .section-title h2::after {
+            background: var(--accent);
+        }
+
+        .testimonial-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-item::before {
+            content: '\f10d';
+            font-family: 'Bootstrap-icons';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.1);
         }
 
         .testimonial-text {
             margin-bottom: 25px;
-            position: relative;
             font-style: italic;
         }
 
-        .testimonial-text::before {
-            content: '\f10d';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            font-size: 24px;
-            color: var(--accent-color);
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
+        .testimonial-author {
+            display: flex;
+            align-items: center;
         }
 
-        .client-info h5 {
-            font-size: 20px;
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .testimonial-author-info h5 {
             margin-bottom: 5px;
+            color: var(--light);
         }
 
-        .client-info p {
-            color: var(--primary-color);
-            font-weight: 500;
+        .testimonial-author-info span {
             font-size: 14px;
+            color: var(--accent);
         }
 
-        /* CTA Section */
-        .cta {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 80px 0;
+        /* Contact CTA */
+        .contact-cta {
+            background-color: #f8f9fa;
             text-align: center;
         }
 
-        .cta h2 {
-            color: var(--white);
-            font-size: 42px;
-            margin-bottom: 20px;
+        .contact-cta h2 {
+            margin-bottom: 30px;
         }
 
-        .cta p {
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-size: 18px;
-        }
-
-        .btn-light {
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 12px 28px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .btn-light:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
+        .contact-cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
         }
 
         /* Footer */
         .footer {
-            background-color: var(--secondary-color);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 80px 0 0;
+            background: var(--dark);
+            color: #999;
         }
 
         .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 20px;
-            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 25px;
+            display: block;
         }
 
         .footer-logo span {
-            color: var(--primary-color);
+            color: var(--accent);
         }
 
-        .footer-about p {
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer h5 {
+            color: #fff;
             margin-bottom: 25px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .footer-title {
-            color: var(--white);
-            font-size: 22px;
-            margin-bottom: 25px;
+            font-size: 20px;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
 
-        .footer-title::after {
+        .footer h5::after {
             content: '';
             position: absolute;
-            left: 0;
             bottom: 0;
-            width: 40px;
+            left: 0;
+            width: 50px;
             height: 2px;
-            background-color: var(--primary-color);
+            background: var(--accent);
         }
 
         .footer-links {
@@ -778,214 +538,231 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
+        .footer-links li a {
+            color: #999;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
+            text-decoration: none;
         }
 
-        .footer-links a i {
-            margin-right: 10px;
-            color: var(--primary-color);
-            font-size: 12px;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
+        .footer-links li a:hover {
+            color: var(--accent);
             padding-left: 5px;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .contact-icon {
+        .footer-contact-info li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact-info li i {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .footer-social {
+            margin-top: 30px;
+        }
+
+        .footer-social a {
+            display: inline-block;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            line-height: 40px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 16px;
-            margin-right: 15px;
-            flex-shrink: 0;
+            margin-right: 10px;
+            transition: var(--transition);
         }
 
-        .contact-text {
-            line-height: 1.6;
+        .footer-social a:hover {
+            background: var(--accent);
+            color: var(--dark);
         }
 
         .footer-bottom {
-            padding: 25px 0;
-            text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 60px;
+            padding: 20px 0;
+            text-align: center;
         }
 
         .footer-bottom p {
-            margin: 0;
-            font-size: 14px;
+            margin-bottom: 0;
         }
 
-        @media (max-width: 991.98px) {
-            .footer-widget {
-                margin-bottom: 40px;
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            .section-padding {
+                padding: 80px 0;
+            }
+            .section-title h2 {
+                font-size: 36px;
+            }
+            .page-banner h1 {
+                font-size: 36px;
             }
         }
 
-        /* Back to top */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--secondary-color);
+        @media (max-width: 767px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            .section-title h2 {
+                font-size: 30px;
+            }
+            .page-banner h1 {
+                font-size: 32px;
+            }
         }
     </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lightgallery.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lg-zoom.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lg-thumbnail.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css">
     <style type="text/css">
         :root {
-            --primary-color: #927a5a;
-            --secondary-color: #21282f;
-            --accent-color: #d3bea5;
-            --light-color: #f9f7f4;
-            --dark-color: #333333;
-            --text-color: #555555;
-            --white: #ffffff;
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
             --transition: all 0.3s ease;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
 
         :root {
-            --primary-color: #927a5a;
-            --secondary-color: #21282f;
-            --accent-color: #d3bea5;
-            --light-color: #f9f7f4;
-            --dark-color: #333333;
-            --text-color: #555555;
-            --white: #ffffff;
+            --primary: #4a2c40;
+            --secondary: #b8a99b;
+            --dark: #1c1c1c;
+            --light: #f8f9fa;
+            --accent: #e7c8b6;
+            --text-dark: #333333;
+            --text-light: #f8f9fa;
             --transition: all 0.3s ease;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --border-radius: 0;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            line-height: 1.8;
-            background-color: var(--white);
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.7;
             overflow-x: hidden;
+            background-color: #fcfcfc;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            color: var(--secondary-color);
-            font-weight: 600;
-            line-height: 1.4;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.2;
         }
 
-        p {
-            font-size: 16px;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--dark-color);
+        .btn {
+            border-radius: var(--border-radius);
+            padding: 12px 28px;
+            font-weight: 500;
             transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
         }
 
         .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            padding: 12px 28px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: var(--secondary-color);
-            transition: var(--transition);
-            z-index: -1;
+            background-color: var(--primary);
+            border-color: var(--primary);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-color);
-        }
-
-        .btn-primary:hover::before {
-            left: 0;
-        }
-
-        .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 10px 26px;
-            font-size: 16px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            color: var(--primary);
+            border-color: var(--primary);
         }
 
-        .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .navbar {
+            background-color: transparent;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background-color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        .navbar-brand span {
+            color: var(--secondary);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark);
+            position: relative;
+            margin: 0 15px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
         }
 
         .section-padding {
@@ -994,652 +771,407 @@
 
         .section-title {
             margin-bottom: 60px;
-            text-align: center;
         }
 
         .section-title h2 {
             position: relative;
-            display: inline-block;
             margin-bottom: 20px;
+            padding-bottom: 20px;
             font-size: 42px;
-            padding-bottom: 15px;
         }
 
         .section-title h2::after {
             content: '';
             position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .section-title p {
-            max-width: 600px;
-            margin: 0 auto;
-            color: var(--text-color);
-        }
-
-        /* Navbar */
-        .navbar {
-            padding: 20px 0;
-            transition: all 0.5s ease;
-        }
-
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-
-        .navbar-brand span {
-            color: var(--primary-color);
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--secondary-color);
-            font-weight: 500;
-            font-size: 16px;
-            margin: 0 15px;
-            position: relative;
-            padding: 8px 0;
-        }
-
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
             bottom: 0;
             left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: var(--transition);
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
         }
 
-        .navbar-nav .nav-link:hover::after,
-        .navbar-nav .nav-link.active::after {
-            width: 100%;
+        .section-title.text-center h2::after {
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--primary-color);
-        }
-
-        .nav-button {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 0;
-            font-weight: 500;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .nav-button:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 0;
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-toggler-icon {
-            width: 24px;
-            height: 17px;
-            background-image: none;
+        /* Page Banner */
+        .page-banner {
             position: relative;
-            border-bottom: 2px solid var(--secondary-color);
-            transition: all 300ms linear;
+            height: 400px;
+            background-color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light);
+            margin-top: 90px;
+            overflow: hidden;
         }
 
-        .navbar-toggler-icon:after, 
-        .navbar-toggler-icon:before {
-            width: 24px;
+        .page-banner::before {
+            content: '';
             position: absolute;
-            height: 2px;
-            background-color: var(--secondary-color);
             top: 0;
             left: 0;
-            content: '';
-            z-index: 2;
-            transition: all 300ms linear;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
         }
 
-        .navbar-toggler-icon:after {
-            top: 8px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-            transform: rotate(45deg);
-            background-color: var(--secondary-color);
-            height: 2px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-            transform: translateY(8px) rotate(-45deg);
-            background-color: var(--secondary-color);
-            height: 2px;
-        }
-
-        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-            border-color: transparent;
-        }
-
-        /* Fix navbar mobile background */
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                background-color: var(--white);
-                padding: 20px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                border-radius: 0 0 10px 10px;
-                margin-top: 10px;
-            }
-        }
-
-        .navbar.sticky {
-            background-color: var(--white);
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        /* Page Header */
-        .page-header {
-            background-color: var(--light-color);
-            padding: 150px 0 80px;
-            text-align: center;
+        .page-banner-content {
             position: relative;
+            z-index: 1;
         }
 
-        .page-header h1 {
+        .page-banner h1 {
             font-size: 48px;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 20px;
-            color: var(--secondary-color);
+            color: var(--light);
+            margin-bottom: 20px;
         }
 
-        .page-header h1::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
+        .breadcrumb {
+            background: transparent;
+            margin-bottom: 0;
+            justify-content: center;
         }
 
         .breadcrumb-item {
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        .breadcrumb-item a {
-            color: var(--text-color);
-        }
-
-        .breadcrumb-item a:hover {
-            color: var(--primary-color);
+            color: var(--secondary);
         }
 
         .breadcrumb-item.active {
-            color: var(--primary-color);
+            color: var(--light);
         }
 
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: '\f105';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--text-color);
+        .breadcrumb-item a {
+            color: var(--light);
+            text-decoration: none;
         }
 
-        /* Portfolio Section */
-        .portfolio-section {
-            padding: 100px 0;
+        .breadcrumb-item a:hover {
+            color: var(--accent);
         }
 
-        .portfolio-filters {
+        /* Portfolio Filter */
+        .portfolio-filter {
             margin-bottom: 40px;
             text-align: center;
         }
 
-        .filter-btn {
-            background-color: transparent;
+        .portfolio-filter button {
             border: none;
-            padding: 8px 20px;
-            font-size: 16px;
+            background: transparent;
             font-weight: 500;
-            color: var(--text-color);
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
+            padding: 5px 15px;
             margin: 0 5px 10px;
+            color: var(--text-dark);
+            position: relative;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
         }
 
-        .filter-btn::after {
+        .portfolio-filter button.active,
+        .portfolio-filter button:hover {
+            color: var(--primary);
+        }
+
+        .portfolio-filter button::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 50%;
             transform: translateX(-50%);
             width: 0;
             height: 2px;
-            background-color: var(--primary-color);
+            background: var(--primary);
             transition: var(--transition);
         }
 
-        .filter-btn:hover, 
-        .filter-btn.active {
-            color: var(--primary-color);
+        .portfolio-filter button.active::after,
+        .portfolio-filter button:hover::after {
+            width: 30px;
         }
 
-        .filter-btn:hover::after,
-        .filter-btn.active::after {
-            width: 80%;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 30px;
+        /* Portfolio Items */
+        .portfolio-container {
+            margin-bottom: 50px;
         }
 
         .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .portfolio-image {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .portfolio-image img {
-            width: 100%;
-            transition: transform 0.6s ease;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(33, 40, 47, 0.8);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .portfolio-title {
-            color: var(--white);
-            font-size: 22px;
-            margin-bottom: 10px;
-            transform: translateY(20px);
-            transition: transform 0.4s ease;
-        }
-
-        .portfolio-category {
-            color: var(--accent-color);
-            font-size: 14px;
-            transform: translateY(20px);
-            transition: transform 0.4s ease;
-        }
-
-        .portfolio-links {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            transform: translateY(-20px);
-            opacity: 0;
-            transition: all 0.4s ease 0.1s;
-        }
-
-        .portfolio-link {
-            width: 40px;
-            height: 40px;
-            background-color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            color: var(--secondary-color);
-            transition: var(--transition);
-        }
-
-        .portfolio-link:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .portfolio-item:hover .portfolio-image img {
-            transform: scale(1.1);
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-item:hover .portfolio-title,
-        .portfolio-item:hover .portfolio-category {
-            transform: translateY(0);
-        }
-
-        .portfolio-item:hover .portfolio-links {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        @media (max-width: 991.98px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Featured Projects */
-        .featured-projects {
-            background-color: var(--light-color);
-            padding: 100px 0;
-        }
-
-        .featured-project {
-            margin-bottom: 100px;
-        }
-
-        .featured-project:last-child {
-            margin-bottom: 0;
-        }
-
-        .featured-image {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-        }
-
-        .featured-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .featured-content h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .featured-content h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .featured-meta {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .meta-item {
-            margin-right: 30px;
-            margin-bottom: 10px;
-        }
-
-        .meta-title {
-            font-weight: 600;
-            color: var(--secondary-color);
-            margin-bottom: 5px;
-        }
-
-        .meta-text {
-            color: var(--primary-color);
-        }
-
-        .featured-text {
             margin-bottom: 30px;
-        }
-
-        /* Project Gallery */
-        .project-gallery {
-            padding: 100px 0;
-        }
-
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 20px;
-        }
-
-        .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             cursor: pointer;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 991.98px) {
-            .gallery-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            .gallery-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background-color: var(--light-color);
-            padding: 100px 0;
+        .portfolio-img {
             position: relative;
             overflow: hidden;
         }
 
-        .testimonial-card {
-            background-color: var(--white);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-            text-align: center;
-            transition: var(--transition);
-            height: 100%;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .client-image {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            margin: 0 auto 25px;
-            overflow: hidden;
-            border: 5px solid var(--accent-color);
-        }
-
-        .client-image img {
+        .portfolio-img img {
             width: 100%;
-            height: 100%;
+            height: 350px;
             object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-info {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.8);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-info {
+            bottom: 0;
+        }
+
+        .portfolio-info h4 {
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+
+        .portfolio-info p {
+            color: var(--accent);
+            margin-bottom: 0;
+        }
+
+        /* Masonry Layout */
+        .masonry-layout {
+            column-count: 3;
+            column-gap: 30px;
+        }
+
+        @media (max-width: 991px) {
+            .masonry-layout {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .masonry-layout {
+                column-count: 1;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            cursor: pointer;
+        }
+
+        .masonry-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .masonry-img img {
+            width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .masonry-item:hover .masonry-img img {
+            transform: scale(1.05);
+        }
+
+        .masonry-info {
+            position: absolute;
+            bottom: -100px;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.8);
+            transition: var(--transition);
+        }
+
+        .masonry-item:hover .masonry-info {
+            bottom: 0;
+        }
+
+        .masonry-info h4 {
+            color: var(--light);
+            margin-bottom: 5px;
+        }
+
+        .masonry-info p {
+            color: var(--accent);
+            margin-bottom: 0;
+        }
+
+        /* Portfolio Categories */
+        .category-section {
+            padding: 80px 0;
+        }
+
+        .category-section:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .category-title {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .category-title h2 {
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .category-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        /* LightGallery Custom Styles */
+        .lg-backdrop {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lg-toolbar, .lg-outer .lg-thumb-outer, .lg-outer .lg-toogle-thumb {
+            background-color: rgba(0, 0, 0, 0.45);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        .testimonials .section-title h2 {
+            color: var(--light);
+        }
+
+        .testimonials .section-title h2::after {
+            background: var(--accent);
+        }
+
+        .testimonial-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-item::before {
+            content: '\f10d';
+            font-family: 'Bootstrap-icons';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.1);
         }
 
         .testimonial-text {
             margin-bottom: 25px;
-            position: relative;
             font-style: italic;
         }
 
-        .testimonial-text::before {
-            content: '\f10d';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            font-size: 24px;
-            color: var(--accent-color);
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
+        .testimonial-author {
+            display: flex;
+            align-items: center;
         }
 
-        .client-info h5 {
-            font-size: 20px;
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .testimonial-author-info h5 {
             margin-bottom: 5px;
+            color: var(--light);
         }
 
-        .client-info p {
-            color: var(--primary-color);
-            font-weight: 500;
+        .testimonial-author-info span {
             font-size: 14px;
+            color: var(--accent);
         }
 
-        /* CTA Section */
-        .cta {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 80px 0;
+        /* Contact CTA */
+        .contact-cta {
+            background-color: #f8f9fa;
             text-align: center;
         }
 
-        .cta h2 {
-            color: var(--white);
-            font-size: 42px;
-            margin-bottom: 20px;
+        .contact-cta h2 {
+            margin-bottom: 30px;
         }
 
-        .cta p {
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto 30px;
-            font-size: 18px;
-        }
-
-        .btn-light {
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 12px 28px;
-            font-weight: 500;
-            border-radius: 0;
-            transition: var(--transition);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .btn-light:hover {
-            background-color: var(--secondary-color);
-            color: var(--white);
+        .contact-cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
         }
 
         /* Footer */
         .footer {
-            background-color: var(--secondary-color);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 80px 0 0;
+            background: var(--dark);
+            color: #999;
         }
 
         .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 20px;
-            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 25px;
+            display: block;
         }
 
         .footer-logo span {
-            color: var(--primary-color);
+            color: var(--accent);
         }
 
-        .footer-about p {
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer h5 {
+            color: #fff;
             margin-bottom: 25px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 16px;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .footer-title {
-            color: var(--white);
-            font-size: 22px;
-            margin-bottom: 25px;
+            font-size: 20px;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
 
-        .footer-title::after {
+        .footer h5::after {
             content: '';
             position: absolute;
-            left: 0;
             bottom: 0;
-            width: 40px;
+            left: 0;
+            width: 50px;
             height: 2px;
-            background-color: var(--primary-color);
+            background: var(--accent);
         }
 
         .footer-links {
@@ -1649,135 +1181,136 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
+        .footer-links li a {
+            color: #999;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
+            text-decoration: none;
         }
 
-        .footer-links a i {
-            margin-right: 10px;
-            color: var(--primary-color);
-            font-size: 12px;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
+        .footer-links li a:hover {
+            color: var(--accent);
             padding-left: 5px;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .contact-icon {
+        .footer-contact-info li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact-info li i {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .footer-social {
+            margin-top: 30px;
+        }
+
+        .footer-social a {
+            display: inline-block;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            line-height: 40px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: 16px;
-            margin-right: 15px;
-            flex-shrink: 0;
+            margin-right: 10px;
+            transition: var(--transition);
         }
 
-        .contact-text {
-            line-height: 1.6;
+        .footer-social a:hover {
+            background: var(--accent);
+            color: var(--dark);
         }
 
         .footer-bottom {
-            padding: 25px 0;
-            text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 60px;
+            padding: 20px 0;
+            text-align: center;
         }
 
         .footer-bottom p {
-            margin: 0;
-            font-size: 14px;
+            margin-bottom: 0;
         }
 
-        @media (max-width: 991.98px) {
-            .footer-widget {
-                margin-bottom: 40px;
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            .section-padding {
+                padding: 80px 0;
+            }
+            .section-title h2 {
+                font-size: 36px;
+            }
+            .page-banner h1 {
+                font-size: 36px;
             }
         }
 
-        /* Back to top */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--secondary-color);
+        @media (max-width: 767px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+            .section-title h2 {
+                font-size: 30px;
+            }
+            .page-banner h1 {
+                font-size: 32px;
+            }
         }
     
     </style>
 <style>
-  /* Industry-specific color scheme for General Business */
+  /* Industry-specific color scheme for Creative & Design */
   :root {
     /* Override ALL color variables with industry-specific colors */
-    --primary-color: #2563eb !important;
-    --primary-light: #1d4ed8 !important;
-    --primary-dark: #1e40af !important;
+    --primary-color: #7c3aed !important;
+    --primary-light: #6d28d9 !important;
+    --primary-dark: #5b21b6 !important;
     
-    --secondary-color: #64748b !important;
-    --secondary-light: #475569 !important;
-    --secondary-dark: #334155 !important;
+    --secondary-color: #f59e0b !important;
+    --secondary-light: #d97706 !important;
+    --secondary-dark: #b45309 !important;
     
-    --accent-color: #059669 !important;
-    --accent-light: #047857 !important;
-    --accent-dark: #065f46 !important;
+    --accent-color: #ec4899 !important;
+    --accent-light: #db2777 !important;
+    --accent-dark: #be185d !important;
     
     /* Override common template color variables */
-    --primary: #2563eb !important;
-    --secondary: #64748b !important;
-    --accent: #059669 !important;
+    --primary: #7c3aed !important;
+    --secondary: #f59e0b !important;
+    --accent: #ec4899 !important;
     --dark: #1A1A1A !important;
     --light: #FFFFFF !important;
     --gray: #6C6C6C !important;
     
     /* Override gradient */
-    --gradient: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    --gradient: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%) !important;
     
     /* Common color mappings */
-    --brand-primary: #2563eb !important;
-    --brand-secondary: #64748b !important;
-    --color-primary: #2563eb !important;
-    --color-secondary: #64748b !important;
-    --theme-primary: #2563eb !important;
-    --theme-secondary: #64748b !important;
+    --brand-primary: #7c3aed !important;
+    --brand-secondary: #f59e0b !important;
+    --color-primary: #7c3aed !important;
+    --color-secondary: #f59e0b !important;
+    --theme-primary: #7c3aed !important;
+    --theme-secondary: #f59e0b !important;
   }
   
   /* Apply colors to common Bootstrap and template patterns */
@@ -1854,32 +1387,32 @@
   
   /* Aggressive overrides for templates with hardcoded colors */
   /* Target specific color values that templates might use */
-  [style*="#FF6B35"] { color: #2563eb !important; }
-  [style*="#F7931E"] { color: #64748b !important; }
-  [style*="#FFD23F"] { color: #059669 !important; }
+  [style*="#FF6B35"] { color: #7c3aed !important; }
+  [style*="#F7931E"] { color: #f59e0b !important; }
+  [style*="#FFD23F"] { color: #ec4899 !important; }
   
   /* Override inline styles and hardcoded backgrounds */
   .hero[style*="background"] {
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%) !important;
   }
   
   /* Force color changes on elements that might have inline styles */
   .text-primary,
   [class*="text-primary"],
   [class*="color-primary"] {
-    color: #2563eb !important;
+    color: #7c3aed !important;
   }
   
   .bg-primary,
   [class*="bg-primary"],
   [class*="background-primary"] {
-    background-color: #2563eb !important;
+    background-color: #7c3aed !important;
   }
   
   /* Override gradient classes */
   .text-gradient,
   [class*="gradient"] {
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%) !important;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
@@ -1895,460 +1428,435 @@
   
   button:not(.btn-secondary):not(.btn-light):not(.btn-dark),
   .btn:not(.btn-secondary):not(.btn-light):not(.btn-dark) {
-    background-color: #2563eb !important;
-    border-color: #2563eb !important;
+    background-color: #7c3aed !important;
+    border-color: #7c3aed !important;
   }
   
   button:not(.btn-secondary):not(.btn-light):not(.btn-dark):hover,
   .btn:not(.btn-secondary):not(.btn-light):not(.btn-dark):hover {
-    background-color: #1e40af !important;
-    border-color: #1e40af !important;
+    background-color: #5b21b6 !important;
+    border-color: #5b21b6 !important;
   }
 </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Elegance<span>Interiors</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="portfolio.html">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-                <a href="contact.html" class="btn nav-button ms-lg-4">Get Quote</a>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Lens<span>Vision</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Page Banner -->
+    <section class="page-banner" style="background-image: url('images/portfolio-banner.jpg');">
         <div class="container">
-            <h1 data-aos="fade-up" data-aos-duration="1000">Our Portfolio</h1>
-            <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
-                </ol>
-            </nav>
+            <div class="page-banner-content">
+                <h1>Our Portfolio</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                    </ol>
+                </nav>
+            </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio-section">
+    <!-- Portfolio Filter & Grid -->
+    <section class="section-padding">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                <h2>Our implementations and deployments</h2>
-                <p>Explore our carefully curated collection of interior design implementations and deployments that showcase our creativity, attention to detail, and commitment to excellence.</p>
+            <div class="section-title text-center">
+                <h2>Our Work</h2>
+                <p>Browse through our collection of professional photography across various categories</p>
             </div>
-            
-            <div class="portfolio-filters" data-aos="fade-up" data-aos-duration="1000">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="residential">Residential</button>
-                <button class="filter-btn" data-filter="commercial">Commercial</button>
-                <button class="filter-btn" data-filter="modern">Modern</button>
-                <button class="filter-btn" data-filter="traditional">Traditional</button>
-                <button class="filter-btn" data-filter="minimalist">Minimalist</button>
+            <div class="portfolio-filter">
+                <button class="active" data-filter="all">All</button>
+                <button data-filter="portrait">Portrait</button>
+                <button data-filter="wedding">Wedding</button>
+                <button data-filter="commercial">Commercial</button>
+                <button data-filter="event">Event</button>
+                <button data-filter="fineart">Fine Art</button>
             </div>
-            
-            <div class="portfolio-grid" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <div class="portfolio-item" data-category="residential modern">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Modern Living Room">
-                        <div class="portfolio-overlay">
-                            <h4 class="portfolio-title">Modern Living Room</h4>
-                            <p class="portfolio-category">Residential Design</p>
-                            <div class="portfolio-links">
-                                <a href="portfolio-details.html" class="portfolio-link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="images/project-1.jpg" class="portfolio-link gallery-item">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                            </div>
-                        </div>
+            <div class="row portfolio-container">
+                <div class="col-lg-4 col-md-6 portfolio-item portrait">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1493421419110-74f4e85ba126?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Portrait Photography" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Corporate Headshot</h4>
+                        <p>Portrait Photography</p>
                     </div>
                 </div>
-                
-                <div class="portfolio-item" data-category="commercial modern">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Corporate Office">
-                        <div class="portfolio-overlay">
-                            <h4 class="portfolio-title">Corporate Office Design</h4>
-                            <p class="portfolio-category">Commercial Design</p>
-                            <div class="portfolio-links">
-                                <a href="portfolio-details.html" class="portfolio-link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="images/project-2.jpg" class="portfolio-link gallery-item">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-md-6 portfolio-item wedding">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1542744173-8659b8e77b29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Wedding Photography" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Garden Wedding</h4>
+                        <p>Wedding Photography</p>
                     </div>
                 </div>
-                
-                <div class="portfolio-item" data-category="residential traditional">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1493421419110-74f4e85ba126?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Classic Bedroom">
-                        <div class="portfolio-overlay">
-                            <h4 class="portfolio-title">Classic Bedroom Suite</h4>
-                            <p class="portfolio-category">Residential Design</p>
-                            <div class="portfolio-links">
-                                <a href="portfolio-details.html" class="portfolio-link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="images/project-3.jpg" class="portfolio-link gallery-item">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-md-6 portfolio-item commercial">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Commercial Photography" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Product Display</h4>
+                        <p>Commercial Photography</p>
                     </div>
                 </div>
-                
-                <div class="portfolio-item" data-category="commercial modern">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1542744173-8659b8e77b29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Restaurant Interior">
-                        <div class="portfolio-overlay">
-                            <h4 class="portfolio-title">Upscale Restaurant</h4>
-                            <p class="portfolio-category">Commercial Design</p>
-                            <div class="portfolio-links">
-                                <a href="portfolio-details.html" class="portfolio-link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="images/project-4.jpg" class="portfolio-link gallery-item">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-md-6 portfolio-item event">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Event Photography" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Corporate Gala</h4>
+                        <p>Event Photography</p>
                     </div>
                 </div>
-                
-                <div class="portfolio-item" data-category="residential modern">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Contemporary Kitchen">
-                        <div class="portfolio-overlay">
-                            <h4 class="portfolio-title">Contemporary Kitchen</h4>
-                            <p class="portfolio-category">Residential Design</p>
-                            <div class="portfolio-links">
-                                <a href="portfolio-details.html" class="portfolio-link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="images/project-5.jpg" class="portfolio-link gallery-item">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-md-6 portfolio-item fineart">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Fine Art Photography" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Urban Landscape</h4>
+                        <p>Fine Art Photography</p>
                     </div>
                 </div>
-                
-                <div class="portfolio-item" data-category="residential traditional">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Traditional Study">
-                        <div class="portfolio-overlay">
-                            <h4 class="portfolio-title">Traditional Study Room</h4>
-                            <p class="portfolio-category">Residential Design</p>
-                            <div class="portfolio-links">
-                                <a href="portfolio-details.html" class="portfolio-link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="images/project-6.jpg" class="portfolio-link gallery-item">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-md-6 portfolio-item portrait">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1493421419110-74f4e85ba126?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Portrait Photography" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Family Portrait</h4>
+                        <p>Portrait Photography</p>
                     </div>
                 </div>
-                
-                <div class="portfolio-item" data-category="residential minimalist">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Minimalist Apartment">
-                        <div class="portfolio-overlay">
-                            <h4 class="portfolio-title">Minimalist Apartment</h4>
-                            <p class="portfolio-category">Residential Design</p>
-                            <div class="portfolio-links">
-                                <a href="portfolio-details.html" class="portfolio-link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="images/project-7.jpg" class="portfolio-link gallery-item">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-md-6 portfolio-item wedding">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1542744173-8659b8e77b29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Wedding Photography" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Beach Ceremony</h4>
+                        <p>Wedding Photography</p>
                     </div>
                 </div>
-                
-                <div class="portfolio-item" data-category="commercial modern">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1493421419110-74f4e85ba126?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Retail Store">
-                        <div class="portfolio-overlay">
-                            <h4 class="portfolio-title">Luxury Retail Store</h4>
-                            <p class="portfolio-category">Commercial Design</p>
-                            <div class="portfolio-links">
-                                <a href="portfolio-details.html" class="portfolio-link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="images/project-8.jpg" class="portfolio-link gallery-item">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-md-6 portfolio-item commercial">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Commercial Photography" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Fashion Lookbook</h4>
+                        <p>Commercial Photography</p>
                     </div>
                 </div>
-                
-                <div class="portfolio-item" data-category="residential modern minimalist">
-                    <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1542744173-8659b8e77b29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Modern Bathroom">
-                        <div class="portfolio-overlay">
-                            <h4 class="portfolio-title">Modern Bathroom Design</h4>
-                            <p class="portfolio-category">Residential Design</p>
-                            <div class="portfolio-links">
-                                <a href="portfolio-details.html" class="portfolio-link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="images/project-9.jpg" class="portfolio-link gallery-item">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div class="col-lg-4 col-md-6 portfolio-item event">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Event Photography" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Music Festival</h4>
+                        <p>Event Photography</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item fineart">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Fine Art Photography" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Minimalist Study</h4>
+                        <p>Fine Art Photography</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item portrait">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1493421419110-74f4e85ba126?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Portrait Photography" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Studio Portrait</h4>
+                        <p>Portrait Photography</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item wedding">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1542744173-8659b8e77b29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Wedding Photography" class="img-fluid">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>First Dance</h4>
+                        <p>Wedding Photography</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured implementations and deployments -->
-    <section class="featured-implementations and deployments">
+    <!-- Portfolio Categories -->
+    <section id="wedding" class="category-section">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                <h2>Featured implementations and deployments</h2>
-                <p>Take a closer look at some of our most significant and innovative design implementations and deployments.</p>
+            <div class="category-title">
+                <h2>Wedding Photography</h2>
+                <p>Capturing your special day with elegance and emotion</p>
             </div>
-            
-            <div class="featured-project" data-aos="fade-up" data-aos-duration="1000">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="featured-image">
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Riverside Penthouse">
-                        </div>
+            <div class="masonry-layout" id="weddingGallery">
+                <div class="masonry-item" data-src="images/wedding-1.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Wedding Photography">
                     </div>
-                    <div class="col-lg-6">
-                        <div class="featured-content">
-                            <h3>Riverside Penthouse</h3>
-                            <div class="featured-meta">
-                                <div class="meta-item">
-                                    <p class="meta-title">Client</p>
-                                    <p class="meta-text">Private Homeowner</p>
-                                </div>
-                                <div class="meta-item">
-                                    <p class="meta-title">Location</p>
-                                    <p class="meta-text">New York, NY</p>
-                                </div>
-                                <div class="meta-item">
-                                    <p class="meta-title">Category</p>
-                                    <p class="meta-text">Residential Design</p>
-                                </div>
-                                <div class="meta-item">
-                                    <p class="meta-title">Year</p>
-                                    <p class="meta-text">2022</p>
-                                </div>
-                            </div>
-                            <div class="featured-text">
-                                <p>This luxurious penthouse project involved completely redesigning a 3,800 square foot space with panoramic river views. Our design focused on creating an open, airy environment that maximizes the stunning vistas while incorporating high-end finishes and custom furniture pieces.</p>
-                                <p>The client wanted a modern yet warm aesthetic with ample space for entertaining. We developed a neutral color palette with selective bold accents, integrated smart home technology throughout, and designed multiple conversation areas for gatherings of various sizes.</p>
-                            </div>
-                            <a href="portfolio-details.html" class="btn btn-primary">View Project</a>
-                        </div>
+                    <div class="masonry-info">
+                        <h4>Garden Wedding</h4>
+                        <p>Sarah & David</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="featured-project" data-aos="fade-up" data-aos-duration="1000">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 order-lg-2">
-                        <div class="featured-image">
-                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Bloom Restaurant">
-                        </div>
+                <div class="masonry-item" data-src="images/wedding-2.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Wedding Photography">
                     </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <div class="featured-content">
-                            <h3>Bloom Restaurant</h3>
-                            <div class="featured-meta">
-                                <div class="meta-item">
-                                    <p class="meta-title">Client</p>
-                                    <p class="meta-text">Bloom Hospitality Group</p>
-                                </div>
-                                <div class="meta-item">
-                                    <p class="meta-title">Location</p>
-                                    <p class="meta-text">Chicago, IL</p>
-                                </div>
-                                <div class="meta-item">
-                                    <p class="meta-title">Category</p>
-                                    <p class="meta-text">Commercial Design</p>
-                                </div>
-                                <div class="meta-item">
-                                    <p class="meta-title">Year</p>
-                                    <p class="meta-text">2021</p>
-                                </div>
-                            </div>
-                            <div class="featured-text">
-                                <p>Bloom Restaurant required a complete interior redesign to reflect their new farm-to-table concept and attract a younger demographic. Working within the constraints of the existing 4,200 square foot space, we created distinct dining zones with varying levels of privacy and ambiance.</p>
-                                <p>The design incorporates natural materials like reclaimed wood, living plant walls, and stone surfaces to reinforce the restaurant's connection to nature. Custom lighting software solutions and digital innovations create a warm, inviting atmosphere that transitions seamlessly from day to night service.</p>
-                            </div>
-                            <a href="portfolio-details.html" class="btn btn-primary">View Project</a>
-                        </div>
+                    <div class="masonry-info">
+                        <h4>Ceremony Moments</h4>
+                        <p>Jessica & Michael</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="featured-project" data-aos="fade-up" data-aos-duration="1000">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="featured-image">
-                            <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300&q=80" alt="Axis Corporate Headquarters">
-                        </div>
+                <div class="masonry-item" data-src="images/wedding-3.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Wedding Photography">
                     </div>
-                    <div class="col-lg-6">
-                        <div class="featured-content">
-                            <h3>Axis Corporate Headquarters</h3>
-                            <div class="featured-meta">
-                                <div class="meta-item">
-                                    <p class="meta-title">Client</p>
-                                    <p class="meta-text">Axis Technologies</p>
-                                </div>
-                                <div class="meta-item">
-                                    <p class="meta-title">Location</p>
-                                    <p class="meta-text">San Francisco, CA</p>
-                                </div>
-                                <div class="meta-item">
-                                    <p class="meta-title">Category</p>
-                                    <p class="meta-text">Commercial Design</p>
-                                </div>
-                                <div class="meta-item">
-                                    <p class="meta-title">Year</p>
-                                    <p class="meta-text">2022</p>
-                                </div>
-                            </div>
-                            <div class="featured-text">
-                                <p>This tech company headquarters spans 25,000 square feet across two floors. The client wanted a space that would foster creativity, collaboration, and employee wellbeing while reflecting their brand identity and company culture.</p>
-                                <p>Our design solution included flexible workspace configurations, acoustically-treated meeting areas, wellness rooms, and comfortable break spaces. Environmental graphics and custom architectural elements incorporate the company's branding throughout. The design emphasizes natural light, biophilic elements, and a careful balance between open collaboration and focused work areas.</p>
-                            </div>
-                            <a href="portfolio-details.html" class="btn btn-primary">View Project</a>
-                        </div>
+                    <div class="masonry-info">
+                        <h4>First Look</h4>
+                        <p>Emily & James</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/wedding-4.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Wedding Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Sunset Portraits</h4>
+                        <p>Ashley & Thomas</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/wedding-5.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Wedding Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Reception Details</h4>
+                        <p>Emma & John</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/wedding-6.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Wedding Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>First Dance</h4>
+                        <p>Olivia & William</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Project Gallery -->
-    <section class="project-gallery" id="lightgallery">
+    <section id="portrait" class="category-section">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                <h2>Project Gallery</h2>
-                <p>Explore more images from our diverse portfolio of interior design implementations and deployments.</p>
+            <div class="category-title">
+                <h2>Portrait Photography</h2>
+                <p>Capturing personalities with creative, expressive portraiture</p>
             </div>
-            
-            <div class="gallery-container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                <a href="images/gallery-1.jpg" class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Gallery Image 1">
-                </a>
-                <a href="images/gallery-2.jpg" class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Gallery Image 2">
-                </a>
-                <a href="images/gallery-3.jpg" class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Gallery Image 3">
-                </a>
-                <a href="images/gallery-4.jpg" class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1493421419110-74f4e85ba126?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Gallery Image 4">
-                </a>
-                <a href="images/gallery-5.jpg" class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1542744173-8659b8e77b29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Gallery Image 5">
-                </a>
-                <a href="images/gallery-6.jpg" class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Gallery Image 6">
-                </a>
-                <a href="images/gallery-7.jpg" class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Gallery Image 7">
-                </a>
-                <a href="images/gallery-8.jpg" class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Gallery Image 8">
-                </a>
-                <a href="images/gallery-9.jpg" class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1493421419110-74f4e85ba126?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80" alt="Gallery Image 9">
-                </a>
+            <div class="masonry-layout" id="portraitGallery">
+                <div class="masonry-item" data-src="images/portrait-1.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Portrait Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Corporate Headshot</h4>
+                        <p>Executive Series</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/portrait-2.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Portrait Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Family Session</h4>
+                        <p>The Wilson Family</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/portrait-3.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Portrait Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Lifestyle Portrait</h4>
+                        <p>Urban Setting</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/portrait-4.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Portrait Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Graduation Portrait</h4>
+                        <p>Class of 2025</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/portrait-5.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Portrait Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Maternity Session</h4>
+                        <p>New Beginnings</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/portrait-6.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Portrait Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Studio Portrait</h4>
+                        <p>Classic Series</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="commercial" class="category-section">
+        <div class="container">
+            <div class="category-title">
+                <h2>Commercial Photography</h2>
+                <p>Elevating brands with high-quality commercial imagery</p>
+            </div>
+            <div class="masonry-layout" id="commercialGallery">
+                <div class="masonry-item" data-src="images/commercial-1.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Commercial Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Product Photography</h4>
+                        <p>Lifestyle Products</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/commercial-2.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Commercial Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Real Estate</h4>
+                        <p>Luxury Properties</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/commercial-3.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Commercial Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Food Photography</h4>
+                        <p>Restaurant Menu</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/commercial-4.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Commercial Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Fashion Campaign</h4>
+                        <p>Seasonal Collection</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/commercial-5.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Commercial Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Corporate Branding</h4>
+                        <p>Team & Workspace</p>
+                    </div>
+                </div>
+                <div class="masonry-item" data-src="images/commercial-6.jpg">
+                    <div class="masonry-img">
+                        <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Commercial Photography">
+                    </div>
+                    <div class="masonry-info">
+                        <h4>Product Lifestyle</h4>
+                        <p>Tech Gadgets</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
+    <section class="testimonials section-padding">
         <div class="container">
-            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-                <h2>Client Testimonials</h2>
-                <p>Don't just take our word for it. Here's what our users and businesses have to say about working with Elegance Interiors.</p>
+            <div class="section-title text-center">
+                <h2>Client Reviews</h2>
+                <p>What our users and businesses say about their experience with our photography services</p>
             </div>
-            
             <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="testimonial-card">
-                        <div class="client-image">
-                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Sarah Johnson">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-item">
+                        <div class="testimonial-text">
+                            <p>"Working with LensVision for our wedding photography was an absolute dream. Michael and his team were incredibly professional, made everyone feel comfortable, and captured all the special moments of our day beautifully. The photos exceeded our expectations!"</p>
                         </div>
-                        <p class="testimonial-text">Working with Elegance Interiors was a pleasure from start to finish. They transformed our outdated living space into a modern, functional, and beautiful home that we love spending time in. Their attention to detail was impressive!</p>
-                        <div class="client-info">
-                            <h5>Sarah Johnson</h5>
-                            <p>Residential Client</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                    <div class="testimonial-card">
-                        <div class="client-image">
-                            <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Robert Davis">
-                        </div>
-                        <p class="testimonial-text">As a business owner, I needed an office space that reflects our brand identity and impresses users and businesses. Elegance Interiors delivered beyond my expectations, creating a stylish yet functional workspace that my team loves.</p>
-                        <div class="client-info">
-                            <h5>Robert Davis</h5>
-                            <p>CEO, Davis Enterprises</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100&q=80" alt="Client">
+                            <div class="testimonial-author-info">
+                                <h5>Emily & David</h5>
+                                <span>Wedding users and businesses</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="testimonial-card">
-                        <div class="client-image">
-                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600&q=80" alt="Jennifer Williams">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-item">
+                        <div class="testimonial-text">
+                            <p>"The product photography that LensVision created for our e-commerce site has significantly improved our conversion rates. Their attention to detail and understanding of how to showcase products in the best light has been invaluable to our business."</p>
                         </div>
-                        <p class="testimonial-text">I was amazed by how well the design team understood my vision. They took my ideas and elevated them to create a home that truly reflects my personality. They stayed within budget and delivered on time!</p>
-                        <div class="client-info">
-                            <h5>Jennifer Williams</h5>
-                            <p>Residential Client</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100&q=80" alt="Client">
+                            <div class="testimonial-author-info">
+                                <h5>Robert Johnson</h5>
+                                <span>Business Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-item">
+                        <div class="testimonial-text">
+                            <p>"I was nervous about my corporate headshots, but LensVision made the experience enjoyable and stress-free. They took the time to understand what I wanted to convey through my photos and delivered results that perfectly aligned with my professional brand."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100&q=80" alt="Client">
+                            <div class="testimonial-author-info">
+                                <h5>Jennifer Taylor</h5>
+                                <span>Executive Director</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2356,199 +1864,138 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
+    <!-- Contact CTA Section -->
+    <section class="contact-cta section-padding">
         <div class="container">
-            <div data-aos="fade-up" data-aos-duration="1000">
-                <h2>Ready to Transform Your Space?</h2>
-                <p>Connect with beasy for exceptional interior services for a technical assessment and take the first step towards your dream interior.</p>
-                <a href="contact.html" class="btn btn-light">Reach out to our interior experts today</a>
-            </div>
+            <h2>Ready to Capture Your Special Moments?</h2>
+            <p>Connect with beasy for exceptional photography services to discuss your photography needs and book your session. Whether you need portrait, wedding, commercial, or event photography, we're here to help bring your vision to life.</p>
+            <a href="contact.html" class="btn btn-primary">Connect with beasy for exceptional photography services</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <div class="footer-widget footer-about">
-                        <a href="index.html" class="footer-logo">Elegance<span>Interiors</span></a>
-                        <p>We create beautiful and functional spaces that inspire and delight. With our expertise and passion for design, we transform ordinary spaces into extraordinary environments.</p>
-                        <div class="footer-social">
-                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
-                        </div>
+                    <div class="footer-about">
+                        <a href="index.html" class="footer-logo">Lens<span>Vision</span></a>
+                        <p>Premium photography studio specializing in portrait, wedding, commercial, and fine art photography. We capture life's precious moments with creativity and passion.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-pinterest"></i></a>
                     </div>
                 </div>
-                
                 <div class="col-lg-2 col-md-6">
-                    <div class="footer-widget">
-                        <h4 class="footer-title">Quick Links</h4>
-                        <ul class="footer-links">
-                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
-                            <li><a href="portfolio.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
-                            <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                        </ul>
-                    </div>
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                 </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget">
-                        <h4 class="footer-title">our innovative tech software solutions and digital innovations</h4>
-                        <ul class="footer-links">
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Residential Design</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Commercial Design</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Space Planning</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Furniture Selection</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Color technical assessment</a></li>
-                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Lighting Design</a></li>
-                        </ul>
-                    </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="services.html#portrait">Portrait Photography</a></li>
+                        <li><a href="services.html#wedding">Wedding Photography</a></li>
+                        <li><a href="services.html#commercial">Commercial Photography</a></li>
+                        <li><a href="services.html#event">Event Photography</a></li>
+                        <li><a href="services.html#fineart">Fine Art Photography</a></li>
+                    </ul>
                 </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget">
-                        <h4 class="footer-title">Contact Info</h4>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-text">
-                                    123 Design Street, Creative Avenue<br>New York, NY 10001
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div class="contact-text">
-                                    +1 (555) 123-4567<br>+1 (555) 987-6543
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-text">
-                                    info@eleganceinteriors.com<br>support@eleganceinteriors.com
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact-info">
+                        <li><i class="bi bi-geo-alt"></i> 123 Broadway, New York, NY 10001</li>
+                        <li><i class="bi bi-telephone"></i> (212) 555-1234</li>
+                        <li><i class="bi bi-envelope"></i> info@lensvision.com</li>
+                        <li><i class="bi bi-clock"></i> Monday-Friday: 9am-6pm<br>Saturday: 10am-4pm<br>Sunday: Closed</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2023 Elegance Interiors. All Rights Reserved. Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i> by CreativeDesign</p>
+                <p>&copy; 2025 LensVision Photography Studio. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top -->
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS Animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Lightbox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/lightgallery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/plugins/zoom/lg-zoom.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/plugins/thumbnail/lg-thumbnail.min.js"></script>
-    
-    <!-- Custom JS -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
     <script>
-        // Initialize AOS Animation
-        AOS.init();
-        
-        // Sticky Navbar
+        // Navbar scroll
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
-                navbar.classList.add('sticky');
+                navbar.classList.add('scrolled');
             } else {
-                navbar.classList.remove('sticky');
+                navbar.classList.remove('scrolled');
             }
         });
-        
-        // Portfolio Filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(button => button.classList.remove('active'));
-                
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Get filter value
-                const filter = btn.getAttribute('data-filter');
-                
-                // Filter portfolio items
-                portfolioItems.forEach(item => {
-                    const categories = item.getAttribute('data-category').split(' ');
-                    
-                    if (filter === 'all' || categories.includes(filter)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
+
+        // Portfolio filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.portfolio-filter button');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filterValue = this.getAttribute('data-filter');
+
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
                 });
             });
-        });
-        
-        // Initialize Lightbox Gallery
-        lightGallery(document.getElementById('lightgallery'), {
-            selector: '.gallery-item',
-            plugins: [lgZoom, lgThumbnail],
-            speed: 500,
-            download: false,
-            counter: true,
-            thumbnail: true,
-            animateThumb: true,
-            zoomFromOrigin: true,
-            allowMediaOverlap: true,
-        });
-        
-        // Back to Top Button
-        const backToTop = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-        
-        backToTop.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+
+            // Initialize LightGallery for wedding gallery
+            lightGallery(document.getElementById('weddingGallery'), {
+                selector: '.masonry-item',
+                plugins: [lgZoom, lgThumbnail],
+                speed: 500,
+                download: false,
+                counter: true,
+                thumbnail: true
             });
-        });
-        
-        // Preloader
-        window.addEventListener('load', function() {
-            const preloader = document.querySelector('.preloader');
-            if (preloader) {
-                preloader.style.display = 'none';
-            }
+
+            // Initialize LightGallery for portrait gallery
+            lightGallery(document.getElementById('portraitGallery'), {
+                selector: '.masonry-item',
+                plugins: [lgZoom, lgThumbnail],
+                speed: 500,
+                download: false,
+                counter: true,
+                thumbnail: true
+            });
+
+            // Initialize LightGallery for commercial gallery
+            lightGallery(document.getElementById('commercialGallery'), {
+                selector: '.masonry-item',
+                plugins: [lgZoom, lgThumbnail],
+                speed: 500,
+                download: false,
+                counter: true,
+                thumbnail: true
+            });
         });
     </script>
 
